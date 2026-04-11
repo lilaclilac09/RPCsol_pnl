@@ -1,0 +1,934 @@
+{
+  "generation": 1,
+  "results": [
+    {
+      "hypothesisName": "baseline",
+      "description": "Current best strategy, unmodified",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1630.931,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1382.3877499999999,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 9773.914334,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4262.4110279999995,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.22287855248107247
+      },
+      "evalWallMs": 12787.680458,
+      "timestamp": "2026-04-11T16:31:26.393Z"
+    },
+    {
+      "hypothesisName": "golomb-order-4",
+      "description": "Fewer Golomb probes (order 4 = 3 windows) — faster but less density info",
+      "strategy": {
+        "golombOrder": 4,
+        "probeWindowLimit": 100,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1739.0210829999999,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1474.605208,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 63971.442291,
+          "rpcCalls": 42,
+          "sampleCount": 286,
+          "continuityHits": 4,
+          "openGaps": 2,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 22395.022860666664,
+        "totalRpc": 46,
+        "openGapPenalty": 2,
+        "completeness": 1,
+        "score": 0.040187500838889896
+      },
+      "evalWallMs": 67185.56612500001,
+      "timestamp": "2026-04-11T16:32:20.790Z"
+    },
+    {
+      "hypothesisName": "golomb-order-7",
+      "description": "More Golomb probes (order 7 = 6 windows) — better density, more calls",
+      "strategy": {
+        "golombOrder": 7,
+        "probeWindowLimit": 100,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1246.564458,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1798.2974159999999,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 45940.412125,
+          "rpcCalls": 40,
+          "sampleCount": 286,
+          "continuityHits": 11,
+          "openGaps": 2,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 16328.424666333334,
+        "totalRpc": 44,
+        "openGapPenalty": 2,
+        "completeness": 1,
+        "score": 0.0551186056457522
+      },
+      "evalWallMs": 48985.780583,
+      "timestamp": "2026-04-11T16:32:02.590Z"
+    },
+    {
+      "hypothesisName": "golomb-order-8",
+      "description": "Maximum Golomb probes (order 8 = 7 windows)",
+      "strategy": {
+        "golombOrder": 8,
+        "probeWindowLimit": 100,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1404.304458,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 3393.431667,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 55526.523875,
+          "rpcCalls": 40,
+          "sampleCount": 286,
+          "continuityHits": 11,
+          "openGaps": 2,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 20108.086666666666,
+        "totalRpc": 44,
+        "openGapPenalty": 2,
+        "completeness": 1,
+        "score": 0.04475811224207309
+      },
+      "evalWallMs": 60324.8395,
+      "timestamp": "2026-04-11T16:32:13.930Z"
+    },
+    {
+      "hypothesisName": "high-concurrency",
+      "description": "Push concurrency to 20 — faster on high-tier API keys",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 20,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2432.5737080000004,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2597.619875,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 8376.649583,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4468.947722,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.21257800697092155
+      },
+      "evalWallMs": 13407.403625,
+      "timestamp": "2026-04-11T16:32:34.267Z"
+    },
+    {
+      "hypothesisName": "low-concurrency",
+      "description": "Conservative concurrency 6 — less rate limiting",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 6,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1113.369542,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 848.0846670000001,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 8795.728333000001,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 3585.727514,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.26493926163961157
+      },
+      "evalWallMs": 10757.777875,
+      "timestamp": "2026-04-11T16:32:31.620Z"
+    },
+    {
+      "hypothesisName": "big-budget",
+      "description": "Double the RPC budget to 80 — better completeness on busy wallets",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 80,
+        "maxRounds": 6,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2113.9075,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2861.4630409999995,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 11221.589958,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 5398.986833,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.17595893996135625
+      },
+      "evalWallMs": 16197.405584,
+      "timestamp": "2026-04-11T16:32:37.057Z"
+    },
+    {
+      "hypothesisName": "tight-budget",
+      "description": "Halve budget to 20 — minimize calls, accept less completeness",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 20,
+        "maxRounds": 2,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1185.6812080000002,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2858.350292,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 8138.650542,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4060.894014,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.23393863438071988
+      },
+      "evalWallMs": 12183.105375,
+      "timestamp": "2026-04-11T16:32:33.046Z"
+    },
+    {
+      "hypothesisName": "large-probe-window",
+      "description": "Fetch more per probe (300 limit) — fewer rounds needed for medium wallets",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1060.027167,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1095.6087920000002,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 8661.402167,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 3605.679375333333,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.2634732323952613
+      },
+      "evalWallMs": 10817.610542,
+      "timestamp": "2026-04-11T16:32:47.962Z"
+    },
+    {
+      "hypothesisName": "no-continuity-oracle",
+      "description": "Disable continuity oracle — measures how much it actually helps",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": false,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 3534.928875,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1145.0950409999996,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 10931.400125,
+          "rpcCalls": 20,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 5203.808013666667,
+        "totalRpc": 24,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.18255861813215096
+      },
+      "evalWallMs": 15612.050041999999,
+      "timestamp": "2026-04-11T16:32:52.757Z"
+    },
+    {
+      "hypothesisName": "no-delta-weighting",
+      "description": "Uniform gap priority instead of delta-weighted — simpler but may miss hot spots",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": false
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1977.736542,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1674.4165830000002,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 10395.548875,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4682.567333333333,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.2028801579076777
+      },
+      "evalWallMs": 14048.470792,
+      "timestamp": "2026-04-11T16:32:51.193Z"
+    },
+    {
+      "hypothesisName": "include-zero-delta",
+      "description": "Don't skip pre===post transactions — complete but noisier",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": false,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1950.039375,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1836.1770839999997,
+          "rpcCalls": 2,
+          "sampleCount": 60,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 7561.575667000001,
+          "rpcCalls": 14,
+          "sampleCount": 451,
+          "continuityHits": 4,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 3782.5973753333333,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.25115017691151525
+      },
+      "evalWallMs": 11348.263542,
+      "timestamp": "2026-04-11T16:32:48.493Z"
+    },
+    {
+      "hypothesisName": "aggressive-rounds",
+      "description": "Max refinement rounds (8) with large budget — exhaust the history",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 60,
+        "maxRounds": 8,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 3323.831583,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2628.4845840000003,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 8188.876541,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4713.730902666667,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.20153887008326313
+      },
+      "evalWallMs": 14141.612958,
+      "timestamp": "2026-04-11T16:33:06.972Z"
+    },
+    {
+      "hypothesisName": "one-round-only",
+      "description": "No refinement — just Golomb probe, rely entirely on continuity oracle",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2202.9898329999996,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1409.088792,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 6464.066333000001,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 3358.7149860000004,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.28284626827815035
+      },
+      "evalWallMs": 10076.682375,
+      "timestamp": "2026-04-11T16:33:02.907Z"
+    },
+    {
+      "hypothesisName": "small-windows",
+      "description": "Target 50 txns/window instead of 80 — less overflow risk",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 50,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2604.3601670000003,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2181.9937500000005,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 9059.267709,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4615.207208666667,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.20584124548428562
+      },
+      "evalWallMs": 13846.079375000001,
+      "timestamp": "2026-04-11T16:33:06.677Z"
+    },
+    {
+      "hypothesisName": "large-windows",
+      "description": "Target 95 txns/window — fewest windows, more overflow risk",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 40,
+        "maxRounds": 4,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 95,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 4000.679625,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 988.6351670000004,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 10182.949833,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 6,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 5057.4215416666675,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.18784275587336713
+      },
+      "evalWallMs": 15172.885042,
+      "timestamp": "2026-04-11T16:33:08.004Z"
+    }
+  ],
+  "winner": "one-round-only"
+}

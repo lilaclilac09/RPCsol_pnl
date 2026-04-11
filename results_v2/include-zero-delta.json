@@ -1,0 +1,54 @@
+{
+  "hypothesisName": "include-zero-delta",
+  "description": "Include zero-delta txns — complete but noisier",
+  "strategy": {
+    "anchorSize": 100,
+    "sigPageSize": 1000,
+    "windowSize": 90,
+    "maxSigPages": 20,
+    "maxConcurrency": 12,
+    "useContinuityOracle": true,
+    "skipZeroDelta": false
+  },
+  "results": [
+    {
+      "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+      "type": "sparse",
+      "wallMs": 3220.761041,
+      "rpcCalls": 2,
+      "sampleCount": 4,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+      "type": "medium",
+      "wallMs": 1027.1150830000001,
+      "rpcCalls": 2,
+      "sampleCount": 60,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+      "type": "dense",
+      "wallMs": 6174.525040999999,
+      "rpcCalls": 10,
+      "sampleCount": 451,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    }
+  ],
+  "aggregate": {
+    "avgLatencyMs": 3474.1337216666666,
+    "totalRpc": 14,
+    "openGapPenalty": 0,
+    "completeness": 1,
+    "score": 0.2878415398242829
+  },
+  "evalWallMs": 10422.920042,
+  "timestamp": "2026-04-11T16:46:58.286Z"
+}

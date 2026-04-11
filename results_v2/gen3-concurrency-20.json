@@ -1,0 +1,54 @@
+{
+  "hypothesisName": "gen3-concurrency-20",
+  "description": "Gen-derived: maxConcurrency=20",
+  "strategy": {
+    "anchorSize": 50,
+    "sigPageSize": 1000,
+    "windowSize": 100,
+    "maxSigPages": 20,
+    "maxConcurrency": 20,
+    "useContinuityOracle": true,
+    "skipZeroDelta": true
+  },
+  "results": [
+    {
+      "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+      "type": "sparse",
+      "wallMs": 2315.874917,
+      "rpcCalls": 2,
+      "sampleCount": 4,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+      "type": "medium",
+      "wallMs": 1447.04225,
+      "rpcCalls": 2,
+      "sampleCount": 59,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+      "type": "dense",
+      "wallMs": 5828.7484589999995,
+      "rpcCalls": 12,
+      "sampleCount": 283,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    }
+  ],
+  "aggregate": {
+    "avgLatencyMs": 3197.221875333333,
+    "totalRpc": 16,
+    "openGapPenalty": 0,
+    "completeness": 1,
+    "score": 0.31277153697559473
+  },
+  "evalWallMs": 9592.411584,
+  "timestamp": "2026-04-11T16:47:57.142Z"
+}

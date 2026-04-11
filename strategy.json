@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "generation": 3,
+    "score": 0.39794753556957807,
+    "winnerHypothesis": "gen3-concurrency-12",
+    "notes": "Gen 3 winner: Gen-derived: concurrency=12 — score=0.398 avgMs=2387"
+  },
+  "golombOrder": 6,
+  "probeWindowLimit": 300,
+  "phase1AnchorSize": 100,
+  "maxRpcCalls": 10,
+  "maxRounds": 0,
+  "windowLimit": 300,
+  "targetTxnsPerWindow": 80,
+  "maxConcurrency": 12,
+  "useContinuityOracle": true,
+  "skipZeroDelta": true,
+  "deltaWeightedFill": true
+}

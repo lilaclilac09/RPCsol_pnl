@@ -1,0 +1,470 @@
+{
+  "generation": 3,
+  "results": [
+    {
+      "hypothesisName": "gen3-golomb-5",
+      "description": "Gen-derived: golomb=5",
+      "strategy": {
+        "golombOrder": 5,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 8,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 3308.3516670000004,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2419.300084,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 7604.245250000001,
+          "rpcCalls": 13,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4443.965667,
+        "totalRpc": 17,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.21377302868348194
+      },
+      "evalWallMs": 13332.327292,
+      "timestamp": "2026-04-11T16:33:53.526Z"
+    },
+    {
+      "hypothesisName": "gen3-golomb-7",
+      "description": "Gen-derived: golomb=7",
+      "strategy": {
+        "golombOrder": 7,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 8,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1902.2237499999999,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1152.900042,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 23261.603708000002,
+          "rpcCalls": 16,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 8772.2425,
+        "totalRpc": 20,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.1082961397840974
+      },
+      "evalWallMs": 26317.239665999998,
+      "timestamp": "2026-04-11T16:34:06.510Z"
+    },
+    {
+      "hypothesisName": "gen3-concurrency-4",
+      "description": "Gen-derived: concurrency=4",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 4,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2098.63025,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1682.217083,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 15689.710000000001,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 6490.185777666667,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.1463748546719631
+      },
+      "evalWallMs": 19470.976917,
+      "timestamp": "2026-04-11T16:33:59.664Z"
+    },
+    {
+      "hypothesisName": "gen3-concurrency-12",
+      "description": "Gen-derived: concurrency=12",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 12,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 1112.645875,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 710.386583,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 5338.715625,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 2387.2493609999997,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.39794753556957807
+      },
+      "evalWallMs": 7162.382209,
+      "timestamp": "2026-04-11T16:33:47.355Z"
+    },
+    {
+      "hypothesisName": "gen3-budget-7",
+      "description": "Gen-derived: budget=7",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 7,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 8,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 4944.529791999999,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1063.395042,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 6102.802125,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4036.9089863333334,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.23532856529987597
+      },
+      "evalWallMs": 12111.282707999999,
+      "timestamp": "2026-04-11T16:34:18.708Z"
+    },
+    {
+      "hypothesisName": "gen3-budget-15",
+      "description": "Gen-derived: budget=15",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 15,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 8,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 3139.438083,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 1848.5572080000002,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 11836.830875,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 5608.275388666666,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.16939253766314366
+      },
+      "evalWallMs": 16825.230333,
+      "timestamp": "2026-04-11T16:34:23.421Z"
+    },
+    {
+      "hypothesisName": "gen3-cross-top2",
+      "description": "Crossover of top-2 results from previous generation",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 10,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 2678.9278750000003,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 2948.785208,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 9098.234666,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 4908.649249666667,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.19353593049340648
+      },
+      "evalWallMs": 14726.419542,
+      "timestamp": "2026-04-11T16:34:21.326Z"
+    },
+    {
+      "hypothesisName": "baseline",
+      "description": "Current best strategy, unmodified",
+      "strategy": {
+        "golombOrder": 6,
+        "probeWindowLimit": 300,
+        "phase1AnchorSize": 100,
+        "maxRpcCalls": 10,
+        "maxRounds": 0,
+        "windowLimit": 300,
+        "targetTxnsPerWindow": 80,
+        "maxConcurrency": 8,
+        "useContinuityOracle": true,
+        "skipZeroDelta": true,
+        "deltaWeightedFill": true
+      },
+      "results": [
+        {
+          "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+          "type": "sparse",
+          "wallMs": 899.3881250000001,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+          "type": "medium",
+          "wallMs": 3159.7312500000003,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "continuityHits": 0,
+          "openGaps": 0,
+          "complete": true
+        },
+        {
+          "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+          "type": "dense",
+          "wallMs": 5948.029375000001,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "continuityHits": 0,
+          "openGaps": 1,
+          "complete": true
+        }
+      ],
+      "aggregate": {
+        "avgLatencyMs": 3335.71625,
+        "totalRpc": 18,
+        "openGapPenalty": 1,
+        "completeness": 1,
+        "score": 0.2847964061691398
+      },
+      "evalWallMs": 10007.474625,
+      "timestamp": "2026-04-11T16:34:16.604Z"
+    }
+  ],
+  "winner": "gen3-concurrency-12"
+}

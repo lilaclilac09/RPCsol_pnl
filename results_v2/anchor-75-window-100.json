@@ -1,0 +1,54 @@
+{
+  "hypothesisName": "anchor-75-window-100",
+  "description": "Trimmed anchors + max single-page windows",
+  "strategy": {
+    "anchorSize": 75,
+    "sigPageSize": 1000,
+    "windowSize": 100,
+    "maxSigPages": 20,
+    "maxConcurrency": 12,
+    "useContinuityOracle": true,
+    "skipZeroDelta": true
+  },
+  "results": [
+    {
+      "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+      "type": "sparse",
+      "wallMs": 2121.647708,
+      "rpcCalls": 2,
+      "sampleCount": 4,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+      "type": "medium",
+      "wallMs": 1634.0059999999999,
+      "rpcCalls": 2,
+      "sampleCount": 59,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    },
+    {
+      "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+      "type": "dense",
+      "wallMs": 7059.6753340000005,
+      "rpcCalls": 12,
+      "sampleCount": 286,
+      "continuityHits": 0,
+      "openGaps": 0,
+      "complete": true
+    }
+  ],
+  "aggregate": {
+    "avgLatencyMs": 3605.109680666667,
+    "totalRpc": 16,
+    "openGapPenalty": 0,
+    "completeness": 1,
+    "score": 0.27738407110406615
+  },
+  "evalWallMs": 10815.700165999999,
+  "timestamp": "2026-04-11T16:47:11.368Z"
+}

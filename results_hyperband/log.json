@@ -1,0 +1,416 @@
+[
+  {
+    "round": 1,
+    "bracket": 0,
+    "cfg": {
+      "anchorSize": 68,
+      "windowSize": 23,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.3215633165415091,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 929.9969580000015,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 1155.7189999999991,
+          "rpcCalls": 2,
+          "sampleCount": 60,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 7243.706416000001,
+          "rpcCalls": 32,
+          "sampleCount": 448,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 3109.8074580000007,
+      "completeness": 1,
+      "score": 0.3215633165415091,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 1,
+    "bracket": 1,
+    "cfg": {
+      "anchorSize": 50,
+      "windowSize": 72,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.1619636246734317,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 690.0650000000023,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 3190.3330000000024,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 14642.279583,
+          "rpcCalls": 14,
+          "sampleCount": 283,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 6174.225861000002,
+      "completeness": 1,
+      "score": 0.1619636246734317,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 1,
+    "bracket": 2,
+    "cfg": {
+      "anchorSize": 26,
+      "windowSize": 46,
+      "maxConcurrency": 17,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.18297510103424128,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 1111.3984589999964,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 4197.240041000005,
+          "rpcCalls": 6,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 11087.034917000004,
+          "rpcCalls": 22,
+          "sampleCount": 286,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 5465.224472333335,
+      "completeness": 1,
+      "score": 0.18297510103424128,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 2,
+    "bracket": 0,
+    "cfg": {
+      "anchorSize": 56,
+      "windowSize": 40,
+      "maxConcurrency": 21,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.2571410204212824,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 626.5795420000068,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 1829.6867920000077,
+          "rpcCalls": 2,
+          "sampleCount": 60,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 9210.483666,
+          "rpcCalls": 22,
+          "sampleCount": 451,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 3888.9166666666715,
+      "completeness": 1,
+      "score": 0.2571410204212824,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 2,
+    "bracket": 1,
+    "cfg": {
+      "anchorSize": 91,
+      "windowSize": 85,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.23417759103502603,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 611.7724580000067,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 1816.8581669999985,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 10382.159625,
+          "rpcCalls": 12,
+          "sampleCount": 286,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 4270.2634166666685,
+      "completeness": 1,
+      "score": 0.23417759103502603,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 2,
+    "bracket": 2,
+    "cfg": {
+      "anchorSize": 44,
+      "windowSize": 43,
+      "maxConcurrency": 7,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.25347003115070404,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 2233.0391249999957,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 1643.807083000007,
+          "rpcCalls": 2,
+          "sampleCount": 60,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 7958.87254099999,
+          "rpcCalls": 22,
+          "sampleCount": 451,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 3945.2395829999973,
+      "completeness": 1,
+      "score": 0.25347003115070404,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 3,
+    "bracket": 0,
+    "cfg": {
+      "anchorSize": 96,
+      "windowSize": 63,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.12389888308945722,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 1038.6668340000033,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 4602.342124999996,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 18572.284375000003,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 8071.097778,
+      "completeness": 1,
+      "score": 0.12389888308945722,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 3,
+    "bracket": 1,
+    "cfg": {
+      "anchorSize": 40,
+      "windowSize": 81,
+      "maxConcurrency": 23,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.21206628347290635,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 1288.4772499999963,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 2050.4257920000236,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 10807.617333000002,
+          "rpcCalls": 14,
+          "sampleCount": 286,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 4715.506791666674,
+      "completeness": 1,
+      "score": 0.21206628347290635,
+      "fidelity": 3
+    }
+  },
+  {
+    "round": 3,
+    "bracket": 2,
+    "cfg": {
+      "anchorSize": 59,
+      "windowSize": 73,
+      "maxConcurrency": 5,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true,
+      "sigPageSize": 1000,
+      "maxSigPages": 20
+    },
+    "score": 0.20328392245152513,
+    "results": {
+      "results": [
+        {
+          "type": "sparse",
+          "wallMs": 962.7797919999866,
+          "rpcCalls": 2,
+          "sampleCount": 4,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "medium",
+          "wallMs": 2640.9309170000197,
+          "rpcCalls": 2,
+          "sampleCount": 59,
+          "complete": true,
+          "openGaps": 0
+        },
+        {
+          "type": "dense",
+          "wallMs": 11153.973832999996,
+          "rpcCalls": 14,
+          "sampleCount": 285,
+          "complete": true,
+          "openGaps": 0
+        }
+      ],
+      "avgMs": 4919.228180666668,
+      "completeness": 1,
+      "score": 0.20328392245152513,
+      "fidelity": 3
+    }
+  }
+]

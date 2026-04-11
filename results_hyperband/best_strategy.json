@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "method": "hyperband",
+    "round": 1,
+    "bracket": 0,
+    "score": 0.3215633165415091
+  },
+  "anchorSize": 68,
+  "windowSize": 23,
+  "maxConcurrency": 16,
+  "useContinuityOracle": false,
+  "skipZeroDelta": false,
+  "sigPageSize": 1000,
+  "maxSigPages": 20
+}

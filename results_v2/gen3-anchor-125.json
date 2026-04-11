@@ -1,0 +1,54 @@
+{
+  "hypothesisName": "gen3-anchor-125",
+  "description": "Gen-derived: anchorSize=125",
+  "strategy": {
+    "anchorSize": 125,
+    "sigPageSize": 1000,
+    "windowSize": 95,
+    "maxSigPages": 20,
+    "maxConcurrency": 20,
+    "useContinuityOracle": true,
+    "skipZeroDelta": true
+  },
+  "results": [
+    {
+      "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+      "type": "sparse",
+      "wallMs": 120000,
+      "rpcCalls": 20,
+      "sampleCount": 0,
+      "openGaps": 99,
+      "complete": false,
+      "error": "{\"code\":-32603,\"message\":\"Bad request: Invalid limit: You can only request up to 100 transactions at a time (when transactionDetails is set to 'full'). Please reduce your limit and try again.\"}"
+    },
+    {
+      "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+      "type": "medium",
+      "wallMs": 120000,
+      "rpcCalls": 20,
+      "sampleCount": 0,
+      "openGaps": 99,
+      "complete": false,
+      "error": "{\"code\":-32603,\"message\":\"Bad request: Invalid limit: You can only request up to 100 transactions at a time (when transactionDetails is set to 'full'). Please reduce your limit and try again.\"}"
+    },
+    {
+      "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+      "type": "dense",
+      "wallMs": 120000,
+      "rpcCalls": 20,
+      "sampleCount": 0,
+      "openGaps": 99,
+      "complete": false,
+      "error": "{\"code\":-32603,\"message\":\"Bad request: Invalid limit: You can only request up to 100 transactions at a time (when transactionDetails is set to 'full'). Please reduce your limit and try again.\"}"
+    }
+  ],
+  "aggregate": {
+    "avgLatencyMs": 120000,
+    "totalRpc": 60,
+    "openGapPenalty": 297,
+    "completeness": 0,
+    "score": 0
+  },
+  "evalWallMs": 2403.5423330000003,
+  "timestamp": "2026-04-11T16:43:25.306Z"
+}

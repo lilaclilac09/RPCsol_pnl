@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "generation": 2,
+    "score": 0.41673740593127706,
+    "winnerHypothesis": "baseline",
+    "notes": "Gen 2 winner: V2 baseline: anchorSize=100, sigPageSize=1000, windowSize=90, concurrency=12 — score=0.417 avgMs=2400"
+  },
+  "anchorSize": 50,
+  "sigPageSize": 1000,
+  "windowSize": 100,
+  "maxSigPages": 20,
+  "maxConcurrency": 16,
+  "useContinuityOracle": true,
+  "skipZeroDelta": true
+}
