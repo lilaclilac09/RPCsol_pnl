@@ -287,8 +287,12 @@
         <span class="label">Best stable score (V4)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">7</span>
-        <span class="label">Algorithms evaluated</span>
+        <span class="value" style="color:var(--teal)">~1.1+</span>
+        <span class="label">V8 projected score (BO pending)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value" style="color:var(--purple)">9</span>
+        <span class="label">Algorithms (V8 streaming + V9 cache)</span>
       </div>
       <div class="hero-stat">
         <span class="value" style="color:var(--orange)">7</span>
@@ -327,6 +331,15 @@
           </tr>
         </thead>
         <tbody>
+          <tr style="background:rgba(57,211,83,0.06)">
+            <td class="rank" style="color:var(--teal)">—</td>
+            <td class="algo-name">V8 — Streaming Pipeline<span class="algo-badge" style="background:var(--teal);color:var(--bg)">Next</span></td>
+            <td>Bayesian GP-UCB <span style="color:var(--muted);font-size:11px">(pending)</span></td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">~1.1+</span><div class="bar-bg"><div class="bar-fill" style="width:100%;background:var(--teal);opacity:.5"></div></div></div></td>
+            <td class="ms-val" style="color:var(--teal)">~800–950 ms</td>
+            <td>~24–28 calls</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">streaming</span><span class="chip" style="border-color:var(--teal)">c=25–32?</span><span class="chip" style="border-color:var(--teal)">BO pending</span></div></td>
+          </tr>
           <tr>
             <td class="rank gold">1</td>
             <td class="algo-name">V4 — Hybrid Density<span class="algo-badge badge-new">New</span></td>
@@ -899,6 +912,14 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
     <div class="section-subtitle">Non-obvious findings from 200+ evaluated configurations across 7 search methods.</div>
     <div class="insight-grid">
 
+      <div class="insight" style="border-color:var(--teal)">
+        <div class="insight-icon">🌊</div>
+        <div class="insight-body">
+          <h4>V8: Streaming pipeline breaks the 2-serial-RT ceiling</h4>
+          <p>V3 fires <code>Promise.all([oldestFull, newestSigs])</code> and waits for BOTH. V8 awaits sigs first (small payload = fast), immediately starts Phase 1 windows, then merges the anchor when it arrives. Sigs arrive ~150–250ms before fullTxns — that's free latency savings. Projected score: ~1.1+ (BO not yet run — Helius free tier quota exhausted).</p>
+        </div>
+      </div>
+
       <div class="insight">
         <div class="insight-icon">⚡</div>
         <div class="insight-body">
@@ -967,7 +988,7 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
   </section>
 
   <footer class="footer">
-    <span>RPCsol_pnl · Research Dashboard · Generated 2026-04-13</span>
+    <span>RPCsol_pnl · Research Dashboard · Updated 2026-04-13 · V8/V9 pending BO</span>
     <span>Helius <code>getTransactionsForAddress</code> · Mainnet · Free Tier</span>
   </footer>
 
