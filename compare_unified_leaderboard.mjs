@@ -13,6 +13,8 @@ import { evaluate as evalV2 } from "./eval_v2.mjs";
 import { evaluate as evalV3 } from "./eval_v3.mjs";
 import { evaluate as evalV4 } from "./eval_v4.mjs";
 import { evaluate as evalV8 } from "./eval_v8.mjs";
+import { evaluate as evalV10 } from "./eval_v10.mjs";
+import { evaluate as evalV11 } from "./eval_v11.mjs";
 import { evaluate as evalCodex } from "./eval_codex.mjs";
 
 const apiKey = process.argv[2] ?? process.env.HELIUS_API_KEY;
@@ -148,6 +150,35 @@ const candidates = [
     extract: s => ({
       anchorSize: s.anchorSize,
       windowSize: s.windowSize,
+      sigPageSize: s.sigPageSize,
+      maxSigPages: s.maxSigPages,
+      maxConcurrency: s.maxConcurrency,
+      skipZeroDelta: s.skipZeroDelta,
+    }),
+  },
+  {
+    id: "v10-bayes",
+    label: "V10 Bayesian",
+    evalFn: evalV10,
+    strategyPath: "results_bayes_v10/best_strategy.json",
+    optional: true,
+    extract: s => ({
+      windowSize: s.windowSize,
+      sigPageSize: s.sigPageSize,
+      maxSigPages: s.maxSigPages,
+      maxConcurrency: s.maxConcurrency,
+      skipZeroDelta: s.skipZeroDelta,
+    }),
+  },
+  {
+    id: "v11-bayes",
+    label: "V11 Bayesian",
+    evalFn: evalV11,
+    strategyPath: "results_bayes_v11/best_strategy.json",
+    optional: true,
+    extract: s => ({
+      windowSize: s.windowSize,
+      windowTarget: s.windowTarget,
       sigPageSize: s.sigPageSize,
       maxSigPages: s.maxSigPages,
       maxConcurrency: s.maxConcurrency,

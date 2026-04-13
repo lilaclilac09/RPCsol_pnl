@@ -1,21 +1,13 @@
 {
   "_meta": {
     "method": "bayesian-gp-ucb-v10-ultra",
-    "trial": 32,
-    "score": 0.6898,
-    "avgMs": 1450,
-    "vs_v3_same_key": "+68.6% score, -40.7% latency",
-    "vs_v8_same_key": "+24.1% score, -19.4% latency",
-    "per_wallet": {
-      "sparse_ms": 330,
-      "medium_ms": 1301,
-      "dense_ms": 2718
-    },
-    "note": "anchor fixed at 100 (fast-exit). sparse+medium complete in 1 serial RT."
+    "trial": 4,
+    "score": 0.6845686112456086,
+    "note": "anchor fixed at 100 for fast-exit"
   },
   "sigPageSize": 1000,
   "maxSigPages": 20,
-  "windowSize": 83,
-  "maxConcurrency": 19,
-  "skipZeroDelta": true
+  "windowSize": 67,
+  "maxConcurrency": 6,
+  "skipZeroDelta": false
 }

@@ -1,77 +1,25 @@
 {
-  "generatedAt": "2026-04-13T04:58:24.762Z",
+  "generatedAt": "2026-04-13T05:10:25.935Z",
   "scope": "unified-current-conditions",
-  "repeatsPerCandidate": 4,
+  "repeatsPerCandidate": 6,
   "leaderboard": [
     {
       "rank": 1,
-      "id": "v3-prime",
-      "label": "V3 PRIME",
-      "repeats": 4,
-      "meanScore": 0.5019,
-      "stdScore": 0.045,
-      "p50Score": 0.5004,
-      "p90Score": 0.5284,
-      "meanAvgMs": 2009.8,
-      "p90AvgMs": 1998.3,
-      "meanRpc": 26,
-      "meanCompleteness": 1,
-      "minScore": 0.4299,
-      "maxScore": 0.5488,
-      "minAvgMs": 1822.2,
-      "maxAvgMs": 2326.2,
-      "strategy": {
-        "anchorSize": 77,
-        "windowSize": 41,
-        "sigPageSize": 1000,
-        "maxSigPages": 20,
-        "maxConcurrency": 14,
-        "skipZeroDelta": false
-      }
-    },
-    {
-      "rank": 2,
-      "id": "v4-bayes",
-      "label": "V4 Bayesian",
-      "repeats": 4,
-      "meanScore": 0.4552,
-      "stdScore": 0.1403,
-      "p50Score": 0.4767,
-      "p90Score": 0.553,
-      "meanAvgMs": 2549.8,
-      "p90AvgMs": 2097.9,
-      "meanRpc": 16,
-      "meanCompleteness": 1,
-      "minScore": 0.2202,
-      "maxScore": 0.571,
-      "minAvgMs": 1751.3,
-      "maxAvgMs": 4541.8,
-      "strategy": {
-        "anchorSize": 92,
-        "windowSize": 79,
-        "windowTarget": 79,
-        "sigPageSize": 1000,
-        "maxConcurrency": 9,
-        "skipZeroDelta": false
-      }
-    },
-    {
-      "rank": 3,
       "id": "v4-prime",
       "label": "V4 PRIME",
-      "repeats": 4,
-      "meanScore": 0.4549,
-      "stdScore": 0.0515,
-      "p50Score": 0.4463,
-      "p90Score": 0.469,
-      "meanAvgMs": 2227.7,
-      "p90AvgMs": 2240.7,
+      "repeats": 6,
+      "meanScore": 0.5733,
+      "stdScore": 0.0474,
+      "p50Score": 0.5812,
+      "p90Score": 0.6258,
+      "meanAvgMs": 1756.4,
+      "p90AvgMs": 1949.9,
       "meanRpc": 16,
       "meanCompleteness": 1,
-      "minScore": 0.3803,
-      "maxScore": 0.5239,
-      "minAvgMs": 1908.6,
-      "maxAvgMs": 2629.3,
+      "minScore": 0.5107,
+      "maxScore": 0.6282,
+      "minAvgMs": 1591.8,
+      "maxAvgMs": 1958.1,
       "strategy": {
         "anchorSize": 65,
         "windowSize": 86,
@@ -82,22 +30,22 @@
       }
     },
     {
-      "rank": 4,
+      "rank": 2,
       "id": "v3-bayes",
       "label": "V3 Bayesian",
-      "repeats": 4,
-      "meanScore": 0.4231,
-      "stdScore": 0.0741,
-      "p50Score": 0.3674,
-      "p90Score": 0.4651,
-      "meanAvgMs": 2436.9,
-      "p90AvgMs": 2722.2,
+      "repeats": 6,
+      "meanScore": 0.5547,
+      "stdScore": 0.0812,
+      "p50Score": 0.5535,
+      "p90Score": 0.6376,
+      "meanAvgMs": 1842.5,
+      "p90AvgMs": 2189.8,
       "meanRpc": 22,
       "meanCompleteness": 1,
-      "minScore": 0.3378,
-      "maxScore": 0.5222,
-      "minAvgMs": 1915.1,
-      "maxAvgMs": 2960.2,
+      "minScore": 0.4562,
+      "maxScore": 0.6703,
+      "minAvgMs": 1491.9,
+      "maxAvgMs": 2192.2,
       "strategy": {
         "anchorSize": 76,
         "windowSize": 52,
@@ -108,22 +56,48 @@
       }
     },
     {
-      "rank": 5,
-      "id": "v2-bayes",
-      "label": "V2 Bayesian",
-      "repeats": 4,
-      "meanScore": 0.3926,
-      "stdScore": 0.0383,
-      "p50Score": 0.3583,
-      "p90Score": 0.4264,
-      "meanAvgMs": 2571.8,
-      "p90AvgMs": 2791.1,
+      "rank": 3,
+      "id": "v4-bayes",
+      "label": "V4 Bayesian",
+      "repeats": 6,
+      "meanScore": 0.4102,
+      "stdScore": 0.0668,
+      "p50Score": 0.406,
+      "p90Score": 0.4185,
+      "meanAvgMs": 2502.5,
+      "p90AvgMs": 2577.3,
       "meanRpc": 16,
       "meanCompleteness": 1,
-      "minScore": 0.3506,
-      "maxScore": 0.435,
-      "minAvgMs": 2298.8,
-      "maxAvgMs": 2852.1,
+      "minScore": 0.3065,
+      "maxScore": 0.5344,
+      "minAvgMs": 1871.3,
+      "maxAvgMs": 3262.8,
+      "strategy": {
+        "anchorSize": 92,
+        "windowSize": 79,
+        "windowTarget": 79,
+        "sigPageSize": 1000,
+        "maxConcurrency": 9,
+        "skipZeroDelta": false
+      }
+    },
+    {
+      "rank": 4,
+      "id": "v2-bayes",
+      "label": "V2 Bayesian",
+      "repeats": 6,
+      "meanScore": 0.3549,
+      "stdScore": 0.0561,
+      "p50Score": 0.3714,
+      "p90Score": 0.3963,
+      "meanAvgMs": 2914.1,
+      "p90AvgMs": 2824,
+      "meanRpc": 16,
+      "meanCompleteness": 1,
+      "minScore": 0.2342,
+      "maxScore": 0.3989,
+      "minAvgMs": 2506.6,
+      "maxAvgMs": 4269.7,
       "strategy": {
         "anchorSize": 85,
         "windowSize": 80,
@@ -135,22 +109,22 @@
       }
     },
     {
-      "rank": 6,
+      "rank": 5,
       "id": "v2-codex-sa",
       "label": "V2 Codex SA",
-      "repeats": 4,
-      "meanScore": 0.3765,
-      "stdScore": 0.0323,
-      "p50Score": 0.3518,
-      "p90Score": 0.3807,
-      "meanAvgMs": 2674.8,
-      "p90AvgMs": 2842.3,
+      "repeats": 6,
+      "meanScore": 0.3312,
+      "stdScore": 0.0353,
+      "p50Score": 0.3165,
+      "p90Score": 0.3531,
+      "meanAvgMs": 3052.3,
+      "p90AvgMs": 3384.6,
       "meanRpc": 18,
       "meanCompleteness": 1,
-      "minScore": 0.3459,
-      "maxScore": 0.4275,
-      "minAvgMs": 2339,
-      "maxAvgMs": 2891.3,
+      "minScore": 0.2901,
+      "maxScore": 0.3925,
+      "minAvgMs": 2547.6,
+      "maxAvgMs": 3446.9,
       "strategy": {
         "anchorSize": 80,
         "windowSize": 70,
@@ -162,22 +136,48 @@
       }
     },
     {
+      "rank": 6,
+      "id": "v3-prime",
+      "label": "V3 PRIME",
+      "repeats": 6,
+      "meanScore": 0.3249,
+      "stdScore": 0.1147,
+      "p50Score": 0.3317,
+      "p90Score": 0.3652,
+      "meanAvgMs": 3534.7,
+      "p90AvgMs": 5115.2,
+      "meanRpc": 26,
+      "meanCompleteness": 1,
+      "minScore": 0.1771,
+      "maxScore": 0.5181,
+      "minAvgMs": 1930.1,
+      "maxAvgMs": 5646.6,
+      "strategy": {
+        "anchorSize": 77,
+        "windowSize": 41,
+        "sigPageSize": 1000,
+        "maxSigPages": 20,
+        "maxConcurrency": 14,
+        "skipZeroDelta": false
+      }
+    },
+    {
       "rank": 7,
       "id": "v8-bayes",
       "label": "V8 Bayesian",
-      "repeats": 4,
-      "meanScore": 0.309,
-      "stdScore": 0.0674,
-      "p50Score": 0.3386,
-      "p90Score": 0.3406,
-      "meanAvgMs": 3453.1,
-      "p90AvgMs": 2953.4,
+      "repeats": 6,
+      "meanScore": 0.3079,
+      "stdScore": 0.1265,
+      "p50Score": 0.2688,
+      "p90Score": 0.4356,
+      "meanAvgMs": 3993.2,
+      "p90AvgMs": 4479,
       "meanRpc": 21,
       "meanCompleteness": 1,
-      "minScore": 0.1934,
-      "maxScore": 0.3632,
-      "minAvgMs": 2753.5,
-      "maxAvgMs": 5169.7,
+      "minScore": 0.1237,
+      "maxScore": 0.5001,
+      "minAvgMs": 1999.6,
+      "maxAvgMs": 8083.1,
       "strategy": {
         "anchorSize": 18,
         "windowSize": 98,
@@ -191,19 +191,19 @@
       "rank": 8,
       "id": "codex-bayes",
       "label": "Codex blockTime BO",
-      "repeats": 4,
-      "meanScore": 0.195,
-      "stdScore": 0.0405,
-      "p50Score": 0.2002,
-      "p90Score": 0.2011,
-      "meanAvgMs": 5391.6,
-      "p90AvgMs": 4994.3,
+      "repeats": 6,
+      "meanScore": 0.15,
+      "stdScore": 0.0605,
+      "p50Score": 0.1247,
+      "p90Score": 0.1782,
+      "meanAvgMs": 7647.2,
+      "p90AvgMs": 8438.3,
       "meanRpc": 214,
       "meanCompleteness": 1,
-      "minScore": 0.1327,
-      "maxScore": 0.2462,
-      "minAvgMs": 4062.5,
-      "maxAvgMs": 7536.8,
+      "minScore": 0.0819,
+      "maxScore": 0.2698,
+      "minAvgMs": 3706.7,
+      "maxAvgMs": 12208.3,
       "strategy": {
         "windowTarget": 44,
         "maxConcurrency": 31
@@ -213,19 +213,19 @@
       "rank": 9,
       "id": "codex-default",
       "label": "Codex blockTime default",
-      "repeats": 4,
-      "meanScore": 0.1462,
-      "stdScore": 0.0364,
-      "p50Score": 0.1263,
-      "p90Score": 0.1797,
-      "meanAvgMs": 7330.3,
-      "p90AvgMs": 7916.6,
+      "repeats": 6,
+      "meanScore": 0.1286,
+      "stdScore": 0.0427,
+      "p50Score": 0.1131,
+      "p90Score": 0.1545,
+      "meanAvgMs": 8559.7,
+      "p90AvgMs": 10887.3,
       "meanRpc": 127,
       "meanCompleteness": 1,
-      "minScore": 0.0966,
-      "maxScore": 0.1824,
-      "minAvgMs": 5483.5,
-      "maxAvgMs": 10356.1,
+      "minScore": 0.0833,
+      "maxScore": 0.2093,
+      "minAvgMs": 4777,
+      "maxAvgMs": 12009.2,
       "strategy": {
         "windowTarget": 80,
         "maxConcurrency": 12
@@ -246,39 +246,40 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.3926,
-        "stdScore": 0.0383,
-        "p50Score": 0.3583,
-        "p90Score": 0.4264,
-        "meanAvgMs": 2571.8,
-        "p90AvgMs": 2791.1,
+        "repeats": 6,
+        "meanScore": 0.3549,
+        "stdScore": 0.0561,
+        "p50Score": 0.3714,
+        "p90Score": 0.3963,
+        "meanAvgMs": 2914.1,
+        "p90AvgMs": 2824,
         "meanRpc": 16,
         "meanCompleteness": 1,
-        "minScore": 0.3506,
-        "maxScore": 0.435,
-        "minAvgMs": 2298.8,
-        "maxAvgMs": 2852.1
+        "minScore": 0.2342,
+        "maxScore": 0.3989,
+        "minAvgMs": 2506.6,
+        "maxAvgMs": 4269.7
       },
       "failureModes": [
-        "score<0.4 on 2/4 runs",
+        "score<0.4 on 6/6 runs",
+        "latency jitter >1.5x between min/max runs",
         "median score below 0.45 in current conditions"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 2298.8069723333333,
+            "avgLatencyMs": 4269.667485999999,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.4350082508167185
+            "score": 0.2342102759240489
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1373.165834,
+              "wallMs": 1681.404875,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -288,7 +289,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 960.2656659999998,
+              "wallMs": 5630.3180409999995,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -298,7 +299,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4562.989417000001,
+              "wallMs": 5497.279541999999,
               "rpcCalls": 12,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -310,17 +311,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 2852.0737913333337,
+            "avgLatencyMs": 2823.9815003333338,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.35062206421121517
+            "score": 0.35410996845480863
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 952.6753330000001,
+              "wallMs": 720.6119999999992,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -330,7 +331,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1149.6857909999999,
+              "wallMs": 1228.3719170000004,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -340,7 +341,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6453.86025,
+              "wallMs": 6522.960584000002,
               "rpcCalls": 12,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -352,17 +353,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 2791.107957999999,
+            "avgLatencyMs": 2523.3811943333335,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.35828065952581845
+            "score": 0.39629367225438
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1098.6799580000006,
+              "wallMs": 605.6002919999992,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -372,7 +373,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 775.6393329999992,
+              "wallMs": 685.3822910000017,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -382,7 +383,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6499.004582999998,
+              "wallMs": 6279.161,
               "rpcCalls": 12,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -394,17 +395,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 2345.1993886666664,
+            "avgLatencyMs": 2506.633486,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.4264029765795468
+            "score": 0.3989414509880205
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 424.79020799999853,
+              "wallMs": 346.0330409999988,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -414,7 +415,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 965.2399580000019,
+              "wallMs": 1330.7027500000004,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -424,7 +425,91 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5645.567999999999,
+              "wallMs": 5843.164667000001,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 2668.4679999999985,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.37474685849708544
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 331.92583300000115,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 753.3527499999982,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 6920.125416999996,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 2692.538652666665,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.37139671105913724
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 330.60304099999485,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 901.7627500000017,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 6845.250166999998,
               "rpcCalls": 12,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -448,39 +533,39 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.3765,
-        "stdScore": 0.0323,
-        "p50Score": 0.3518,
-        "p90Score": 0.3807,
-        "meanAvgMs": 2674.8,
-        "p90AvgMs": 2842.3,
+        "repeats": 6,
+        "meanScore": 0.3312,
+        "stdScore": 0.0353,
+        "p50Score": 0.3165,
+        "p90Score": 0.3531,
+        "meanAvgMs": 3052.3,
+        "p90AvgMs": 3384.6,
         "meanRpc": 18,
         "meanCompleteness": 1,
-        "minScore": 0.3459,
-        "maxScore": 0.4275,
-        "minAvgMs": 2339,
-        "maxAvgMs": 2891.3
+        "minScore": 0.2901,
+        "maxScore": 0.3925,
+        "minAvgMs": 2547.6,
+        "maxAvgMs": 3446.9
       },
       "failureModes": [
-        "score<0.4 on 3/4 runs",
+        "score<0.4 on 6/6 runs",
         "median score below 0.45 in current conditions"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 2339.0390560000014,
+            "avgLatencyMs": 2832.185278000002,
             "totalRpc": 18,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.4275259951024945
+            "score": 0.3530842447942416
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 773.6067500000026,
+              "wallMs": 601.9221249999973,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -490,7 +575,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 905.3233340000006,
+              "wallMs": 966.7124170000025,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -500,7 +585,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5338.187084000001,
+              "wallMs": 6927.921292000006,
               "rpcCalls": 14,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -512,17 +597,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 2891.2957636666665,
+            "avgLatencyMs": 3446.8885273333312,
             "totalRpc": 18,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.3458656885146284
+            "score": 0.2901167218116117
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 480.91362500000105,
+              "wallMs": 360.7981660000005,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -532,7 +617,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1028.0888750000013,
+              "wallMs": 997.5565829999978,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -542,7 +627,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 7164.884790999997,
+              "wallMs": 8982.310832999996,
               "rpcCalls": 14,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -554,17 +639,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 2842.279014000002,
+            "avgLatencyMs": 2942.641875000001,
             "totalRpc": 18,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.35183034286020987
+            "score": 0.33983068360977486
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 583.8374170000025,
+              "wallMs": 367.47804099999485,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -574,7 +659,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1399.1656250000015,
+              "wallMs": 1095.171709000002,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -584,7 +669,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6543.834000000003,
+              "wallMs": 7365.275875000007,
               "rpcCalls": 14,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -596,17 +681,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 2626.6285276666654,
+            "avgLatencyMs": 2547.5821946666642,
             "totalRpc": 18,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.38071618786853667
+            "score": 0.3925290426717101
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1523.576457999996,
+              "wallMs": 682.1988339999953,
               "rpcCalls": 2,
               "sampleCount": 4,
               "continuityHits": 0,
@@ -616,7 +701,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1559.835957999996,
+              "wallMs": 1145.534667,
               "rpcCalls": 2,
               "sampleCount": 60,
               "continuityHits": 0,
@@ -626,7 +711,91 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4796.473167000004,
+              "wallMs": 5815.013082999998,
+              "rpcCalls": 14,
+              "sampleCount": 451,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 3160.0362916666686,
+            "totalRpc": 18,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.31645206184406804
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 1177.2139590000006,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1475.3097500000003,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 6827.585166000004,
+              "rpcCalls": 14,
+              "sampleCount": 451,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 3384.555486333333,
+            "totalRpc": 18,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.29545977427108233
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 927.412124999988,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1780.163584000009,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "continuityHits": 0,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 7446.090750000003,
               "rpcCalls": 14,
               "sampleCount": 451,
               "continuityHits": 0,
@@ -649,40 +818,38 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.4231,
-        "stdScore": 0.0741,
-        "p50Score": 0.3674,
-        "p90Score": 0.4651,
-        "meanAvgMs": 2436.9,
-        "p90AvgMs": 2722.2,
+        "repeats": 6,
+        "meanScore": 0.5547,
+        "stdScore": 0.0812,
+        "p50Score": 0.5535,
+        "p90Score": 0.6376,
+        "meanAvgMs": 1842.5,
+        "p90AvgMs": 2189.8,
         "meanRpc": 22,
         "meanCompleteness": 1,
-        "minScore": 0.3378,
-        "maxScore": 0.5222,
-        "minAvgMs": 1915.1,
-        "maxAvgMs": 2960.2
+        "minScore": 0.4562,
+        "maxScore": 0.6703,
+        "minAvgMs": 1491.9,
+        "maxAvgMs": 2192.2
       },
       "failureModes": [
-        "score<0.4 on 2/4 runs",
-        "latency jitter >1.5x between min/max runs",
-        "median score below 0.45 in current conditions"
+        "high score variance (std > 0.08)"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 2150.218930333334,
+            "avgLatencyMs": 1805.6676390000018,
             "totalRpc": 22,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.46506892200273614
+            "score": 0.5538117748811242
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 584.643333,
+              "wallMs": 348.6503329999978,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -691,7 +858,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1541.3432079999984,
+              "wallMs": 705.353375000006,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -700,7 +867,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4324.670250000003,
+              "wallMs": 4362.999209000001,
               "rpcCalls": 18,
               "sampleCount": 451,
               "openGaps": 0,
@@ -711,17 +878,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 1915.0739723333343,
+            "avgLatencyMs": 1568.3741943333298,
             "totalRpc": 22,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.522173041066187
+            "score": 0.6376029417042729
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 510.7412089999998,
+              "wallMs": 344.10899999999674,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -730,7 +897,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 743.0553749999963,
+              "wallMs": 730.8368329999939,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -739,7 +906,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4491.4253330000065,
+              "wallMs": 3630.1767499999987,
               "rpcCalls": 18,
               "sampleCount": 451,
               "openGaps": 0,
@@ -750,17 +917,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 2960.1661109999986,
+            "avgLatencyMs": 1491.9279999999999,
             "totalRpc": 22,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.3378188799216344
+            "score": 0.670273632507735
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1602.2790830000013,
+              "wallMs": 360.3455830000021,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -769,7 +936,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 925.5570420000004,
+              "wallMs": 957.3289170000062,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -778,7 +945,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6352.662207999994,
+              "wallMs": 3158.1094999999914,
               "rpcCalls": 18,
               "sampleCount": 451,
               "openGaps": 0,
@@ -789,17 +956,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 2722.1513193333326,
+            "avgLatencyMs": 1806.7609996666627,
             "totalRpc": 22,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.3673565069280956
+            "score": 0.5534766359161474
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1095.8000829999946,
+              "wallMs": 353.67995799999335,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -808,7 +975,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 981.3644579999964,
+              "wallMs": 1005.1032080000004,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -817,7 +984,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6089.289417000007,
+              "wallMs": 4061.4998329999944,
+              "rpcCalls": 18,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 2189.785306000005,
+            "totalRpc": 22,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.45666577324270236
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 335.08683400000155,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1241.8371670000051,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 4992.431917000009,
+              "rpcCalls": 18,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 2192.1886526666544,
+            "totalRpc": 22,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.4561651200883488
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 335.109375,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 884.2557499999821,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 5357.200832999981,
               "rpcCalls": 18,
               "sampleCount": 451,
               "openGaps": 0,
@@ -839,38 +1084,41 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.5019,
-        "stdScore": 0.045,
-        "p50Score": 0.5004,
-        "p90Score": 0.5284,
-        "meanAvgMs": 2009.8,
-        "p90AvgMs": 1998.3,
+        "repeats": 6,
+        "meanScore": 0.3249,
+        "stdScore": 0.1147,
+        "p50Score": 0.3317,
+        "p90Score": 0.3652,
+        "meanAvgMs": 3534.7,
+        "p90AvgMs": 5115.2,
         "meanRpc": 26,
         "meanCompleteness": 1,
-        "minScore": 0.4299,
-        "maxScore": 0.5488,
-        "minAvgMs": 1822.2,
-        "maxAvgMs": 2326.2
+        "minScore": 0.1771,
+        "maxScore": 0.5181,
+        "minAvgMs": 1930.1,
+        "maxAvgMs": 5646.6
       },
       "failureModes": [
-        "no major instability in sampled repeats"
+        "score<0.4 on 5/6 runs",
+        "latency jitter >1.5x between min/max runs",
+        "high score variance (std > 0.08)",
+        "median score below 0.45 in current conditions"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 2326.2405833333323,
+            "avgLatencyMs": 1930.0537360000017,
             "totalRpc": 26,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.42987815067995816
+            "score": 0.5181202892684638
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 820.3953340000007,
+              "wallMs": 342.3221659999981,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -879,7 +1127,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 816.6569160000072,
+              "wallMs": 1197.7276669999992,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -888,7 +1136,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5341.669499999989,
+              "wallMs": 4250.111375000008,
               "rpcCalls": 22,
               "sampleCount": 451,
               "openGaps": 0,
@@ -899,17 +1147,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 1822.236375333329,
+            "avgLatencyMs": 5646.611847333348,
             "totalRpc": 26,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.5487762254867056
+            "score": 0.1770973509490044
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 322.8649999999907,
+              "wallMs": 696.6301670000248,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -918,7 +1166,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1106.1595839999936,
+              "wallMs": 664.3112499999988,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -927,7 +1175,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4037.6845420000027,
+              "wallMs": 15578.89412500002,
               "rpcCalls": 22,
               "sampleCount": 451,
               "openGaps": 0,
@@ -938,17 +1186,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 1892.4953053333302,
+            "avgLatencyMs": 2737.947444333336,
             "totalRpc": 26,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.5284028959976033
+            "score": 0.36523710565360773
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 338.43191600000137,
+              "wallMs": 1934.9040420000092,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -957,7 +1205,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1088.2825409999932,
+              "wallMs": 853.3503329999803,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -966,7 +1214,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4250.771458999996,
+              "wallMs": 5425.587958000018,
               "rpcCalls": 22,
               "sampleCount": 451,
               "openGaps": 0,
@@ -977,17 +1225,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 1998.3035833333367,
+            "avgLatencyMs": 5115.240541666659,
             "totalRpc": 26,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.500424464200738
+            "score": 0.19549422785779255
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 333.6196670000063,
+              "wallMs": 1044.6911670000118,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -996,7 +1244,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1427.543458,
+              "wallMs": 1020.0905829999829,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1005,7 +1253,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4233.747625000004,
+              "wallMs": 13280.939874999982,
+              "rpcCalls": 22,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 3014.6665000000016,
+            "totalRpc": 26,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.33171165035999817
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 599.6767080000136,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1230.702250000002,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 7213.62054199999,
+              "rpcCalls": 22,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 2763.5621386666608,
+            "totalRpc": 26,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.36185182377786923
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 935.0890409999993,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 989.7708749999874,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 6365.826499999996,
               "rpcCalls": 22,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1027,40 +1353,40 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.4552,
-        "stdScore": 0.1403,
-        "p50Score": 0.4767,
-        "p90Score": 0.553,
-        "meanAvgMs": 2549.8,
-        "p90AvgMs": 2097.9,
+        "repeats": 6,
+        "meanScore": 0.4102,
+        "stdScore": 0.0668,
+        "p50Score": 0.406,
+        "p90Score": 0.4185,
+        "meanAvgMs": 2502.5,
+        "p90AvgMs": 2577.3,
         "meanRpc": 16,
         "meanCompleteness": 1,
-        "minScore": 0.2202,
-        "maxScore": 0.571,
-        "minAvgMs": 1751.3,
-        "maxAvgMs": 4541.8
+        "minScore": 0.3065,
+        "maxScore": 0.5344,
+        "minAvgMs": 1871.3,
+        "maxAvgMs": 3262.8
       },
       "failureModes": [
-        "score<0.4 on 1/4 runs",
+        "score<0.4 on 2/6 runs",
         "latency jitter >1.5x between min/max runs",
-        "high score variance (std > 0.08)"
+        "median score below 0.45 in current conditions"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 1808.188875000007,
+            "avgLatencyMs": 2577.318708666668,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.5530395711565231
+            "score": 0.3880001323225303
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 367.5450000000128,
+              "wallMs": 592.4296669999894,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1069,7 +1395,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 802.0930829999998,
+              "wallMs": 966.9355000000214,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1078,7 +1404,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4254.928542000009,
+              "wallMs": 6172.590958999994,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1089,17 +1415,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 2097.884763999997,
+            "avgLatencyMs": 3262.849111000008,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.4766706051543646
+            "score": 0.3064806143283521
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 677.2817499999946,
+              "wallMs": 1404.638500000001,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1108,7 +1434,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1422.316208999997,
+              "wallMs": 916.7545420000097,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1117,7 +1443,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4194.056333,
+              "wallMs": 7467.1542910000135,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1128,17 +1454,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 1751.2878609999996,
+            "avgLatencyMs": 2450.747500000007,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.5710083546339388
+            "score": 0.4080387718440994
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 337.45720900000015,
+              "wallMs": 356.4697499999893,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1147,7 +1473,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 831.0706659999996,
+              "wallMs": 928.2578750000102,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1156,7 +1482,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 4085.3357079999987,
+              "wallMs": 6067.514875000023,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1167,17 +1493,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 4541.845986,
+            "avgLatencyMs": 1871.3380140000081,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.2201747930428392
+            "score": 0.5343770032558082
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 395.0485409999965,
+              "wallMs": 344.28283300000476,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1186,7 +1512,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 751.4867500000109,
+              "wallMs": 681.2376670000085,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1195,7 +1521,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 12479.002666999993,
+              "wallMs": 4588.493542000011,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 2463.315694666662,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.4059568987300757
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 343.3822499999951,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1539.7932089999958,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 5506.771624999994,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 2389.361875333338,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.41852178622398534
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 624.6767090000212,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1388.7309999999998,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 5154.677916999994,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1217,39 +1621,38 @@
         "skipZeroDelta": false
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.4549,
-        "stdScore": 0.0515,
-        "p50Score": 0.4463,
-        "p90Score": 0.469,
-        "meanAvgMs": 2227.7,
-        "p90AvgMs": 2240.7,
+        "repeats": 6,
+        "meanScore": 0.5733,
+        "stdScore": 0.0474,
+        "p50Score": 0.5812,
+        "p90Score": 0.6258,
+        "meanAvgMs": 1756.4,
+        "p90AvgMs": 1949.9,
         "meanRpc": 16,
         "meanCompleteness": 1,
-        "minScore": 0.3803,
-        "maxScore": 0.5239,
-        "minAvgMs": 1908.6,
-        "maxAvgMs": 2629.3
+        "minScore": 0.5107,
+        "maxScore": 0.6282,
+        "minAvgMs": 1591.8,
+        "maxAvgMs": 1958.1
       },
       "failureModes": [
-        "score<0.4 on 1/4 runs",
-        "median score below 0.45 in current conditions"
+        "no major instability in sampled repeats"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 1908.5937363333262,
+            "avgLatencyMs": 1949.909791666675,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.5239459718238094
+            "score": 0.512844237345593
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1306.3389169999864,
+              "wallMs": 1029.5596670000232,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1258,7 +1661,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1230.747000000003,
+              "wallMs": 714.8754999999946,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1267,7 +1670,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 3188.6952919999894,
+              "wallMs": 4105.294208000007,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1278,17 +1681,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 2629.28561099999,
+            "avgLatencyMs": 1720.4407356666732,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.38033144661666196
+            "score": 0.581246409288547
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 325.4857079999929,
+              "wallMs": 333.31220799998846,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1297,7 +1700,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1505.140791999991,
+              "wallMs": 847.5071660000249,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1306,7 +1709,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 6057.230332999985,
+              "wallMs": 3980.502833000006,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1317,17 +1720,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 2240.6982636666703,
+            "avgLatencyMs": 1597.988583333344,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.44628945191558445
+            "score": 0.6257866986221126
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 342.99145800000406,
+              "wallMs": 338.75875000000815,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1336,7 +1739,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 656.4958329999936,
+              "wallMs": 768.8666669999948,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1345,7 +1748,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5722.607500000013,
+              "wallMs": 3686.340333000029,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1356,17 +1759,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 2132.05105566668,
+            "avgLatencyMs": 1958.0736803333275,
             "totalRpc": 16,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.4690319199168079
+            "score": 0.5107060117522072
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 344.0727080000215,
+              "wallMs": 994.6461249999702,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1375,7 +1778,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 526.2092500000144,
+              "wallMs": 902.5981659999816,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1384,7 +1787,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5525.8712090000045,
+              "wallMs": 3976.9767500000307,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 1591.7657640000107,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.6282331374479753
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 330.2751250000438,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 737.6394590000273,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 3707.382707999961,
+              "rpcCalls": 12,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 1720.3801249999863,
+            "totalRpc": 16,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.5812668871654211
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 331.7088329999824,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 690.0844999999972,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 4139.347041999979,
               "rpcCalls": 12,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1406,40 +1887,41 @@
         "skipZeroDelta": true
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.309,
-        "stdScore": 0.0674,
-        "p50Score": 0.3386,
-        "p90Score": 0.3406,
-        "meanAvgMs": 3453.1,
-        "p90AvgMs": 2953.4,
+        "repeats": 6,
+        "meanScore": 0.3079,
+        "stdScore": 0.1265,
+        "p50Score": 0.2688,
+        "p90Score": 0.4356,
+        "meanAvgMs": 3993.2,
+        "p90AvgMs": 4479,
         "meanRpc": 21,
         "meanCompleteness": 1,
-        "minScore": 0.1934,
-        "maxScore": 0.3632,
-        "minAvgMs": 2753.5,
-        "maxAvgMs": 5169.7
+        "minScore": 0.1237,
+        "maxScore": 0.5001,
+        "minAvgMs": 1999.6,
+        "maxAvgMs": 8083.1
       },
       "failureModes": [
-        "score<0.4 on 4/4 runs",
+        "score<0.4 on 4/6 runs",
         "latency jitter >1.5x between min/max runs",
+        "high score variance (std > 0.08)",
         "median score below 0.45 in current conditions"
       ],
       "runs": [
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 2753.4513609999944,
+            "avgLatencyMs": 1999.6202360000073,
             "totalRpc": 21,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.36318055737756755
+            "score": 0.5000949590310089
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1024.187082999997,
+              "wallMs": 1225.68841599999,
               "rpcCalls": 4,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1448,7 +1930,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 2059.5294169999834,
+              "wallMs": 1445.5188330000383,
               "rpcCalls": 4,
               "sampleCount": 59,
               "openGaps": 0,
@@ -1457,7 +1939,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5176.637583000003,
+              "wallMs": 3327.6534589999937,
               "rpcCalls": 13,
               "sampleCount": 286,
               "openGaps": 0,
@@ -1468,17 +1950,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 2935.9852503333336,
+            "avgLatencyMs": 8083.074236333312,
             "totalRpc": 21,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.340601166128633
+            "score": 0.12371530568221348
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 2006.0822090000147,
+              "wallMs": 1888.7346669999533,
               "rpcCalls": 4,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1487,7 +1969,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1775.2906669999938,
+              "wallMs": 2183.605500000005,
               "rpcCalls": 4,
               "sampleCount": 59,
               "openGaps": 0,
@@ -1496,7 +1978,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5026.582874999993,
+              "wallMs": 20176.882541999978,
               "rpcCalls": 13,
               "sampleCount": 286,
               "openGaps": 0,
@@ -1507,17 +1989,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 2953.3794166666726,
+            "avgLatencyMs": 4479.010416666667,
             "totalRpc": 21,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.3385951680832964
+            "score": 0.22326360221868202
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1235.4140840000182,
+              "wallMs": 1514.629917000013,
               "rpcCalls": 4,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1526,7 +2008,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1878.9412500000035,
+              "wallMs": 5785.394707999949,
               "rpcCalls": 4,
               "sampleCount": 59,
               "openGaps": 0,
@@ -1535,7 +2017,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 5745.7829159999965,
+              "wallMs": 6137.006625000038,
               "rpcCalls": 13,
               "sampleCount": 286,
               "openGaps": 0,
@@ -1546,17 +2028,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 5169.700166999993,
+            "avgLatencyMs": 3720.85518033333,
             "totalRpc": 21,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.19343481588803743
+            "score": 0.26875542087354654
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1992.846291999973,
+              "wallMs": 959.2876659999602,
               "rpcCalls": 4,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1565,7 +2047,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 3537.837292000011,
+              "wallMs": 4846.116500000004,
               "rpcCalls": 4,
               "sampleCount": 59,
               "openGaps": 0,
@@ -1574,7 +2056,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 9978.416916999995,
+              "wallMs": 5357.161375000025,
+              "rpcCalls": 13,
+              "sampleCount": 286,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 2295.699458333353,
+            "totalRpc": 21,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.43559708844727724
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 1257.55587500002,
+              "rpcCalls": 4,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1658.6549160000286,
+              "rpcCalls": 4,
+              "sampleCount": 59,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 3970.887584000011,
+              "rpcCalls": 13,
+              "sampleCount": 286,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 3380.7943886666712,
+            "totalRpc": 21,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.29578847011586035
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 1238.440958000021,
+              "rpcCalls": 4,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1456.5614159999532,
+              "rpcCalls": 4,
+              "sampleCount": 59,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 7447.38079200004,
               "rpcCalls": 13,
               "sampleCount": 286,
               "openGaps": 0,
@@ -1592,22 +2152,22 @@
         "maxConcurrency": 12
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.1462,
-        "stdScore": 0.0364,
-        "p50Score": 0.1263,
-        "p90Score": 0.1797,
-        "meanAvgMs": 7330.3,
-        "p90AvgMs": 7916.6,
+        "repeats": 6,
+        "meanScore": 0.1286,
+        "stdScore": 0.0427,
+        "p50Score": 0.1131,
+        "p90Score": 0.1545,
+        "meanAvgMs": 8559.7,
+        "p90AvgMs": 10887.3,
         "meanRpc": 127,
         "meanCompleteness": 1,
-        "minScore": 0.0966,
-        "maxScore": 0.1824,
-        "minAvgMs": 5483.5,
-        "maxAvgMs": 10356.1
+        "minScore": 0.0833,
+        "maxScore": 0.2093,
+        "minAvgMs": 4777,
+        "maxAvgMs": 12009.2
       },
       "failureModes": [
-        "score<0.4 on 4/4 runs",
+        "score<0.4 on 6/6 runs",
         "latency jitter >1.5x between min/max runs",
         "median score below 0.45 in current conditions"
       ],
@@ -1615,17 +2175,17 @@
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 5564.76706933333,
+            "avgLatencyMs": 6471.884846666672,
             "totalRpc": 127,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.17970204099123271
+            "score": 0.154514492098086
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 1331.338208000001,
+              "wallMs": 2639.7679580000113,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1634,7 +2194,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1715.2659999999742,
+              "wallMs": 2319.844041000004,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1643,7 +2203,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 13647.697000000015,
+              "wallMs": 14456.042541000003,
               "rpcCalls": 123,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1654,17 +2214,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 5483.515888666666,
+            "avgLatencyMs": 4776.970777999978,
             "totalRpc": 127,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.18236474924177765
+            "score": 0.20933768416701096
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 969.7232910000021,
+              "wallMs": 593.92520899995,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1673,7 +2233,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1938.6306669999904,
+              "wallMs": 1035.8792499999981,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1682,7 +2242,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 13542.193708000006,
+              "wallMs": 12701.107874999987,
               "rpcCalls": 123,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1693,17 +2253,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 10356.123805666672,
+            "avgLatencyMs": 8843.086902999998,
             "totalRpc": 127,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.0965612249105036
+            "score": 0.11308268379232508
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 5170.325584000006,
+              "wallMs": 454.8753339999821,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1712,7 +2272,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 6159.0743749999965,
+              "wallMs": 4534.67208400002,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1721,7 +2281,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 19738.971458000015,
+              "wallMs": 21539.713290999993,
               "rpcCalls": 123,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1732,17 +2292,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 7916.634125333338,
+            "avgLatencyMs": 8369.842360999997,
             "totalRpc": 127,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.12631630869487656
+            "score": 0.11947656322173836
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 706.6700420000125,
+              "wallMs": 430.00754199997755,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1751,7 +2311,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 2711.7817090000026,
+              "wallMs": 3299.751290999993,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1760,7 +2320,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 20331.450624999998,
+              "wallMs": 21379.768250000023,
+              "rpcCalls": 123,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 12009.235125333324,
+            "totalRpc": 127,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.08326924983677879
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 997.6567919999943,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 7328.400208999985,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 27701.64837499999,
+              "rpcCalls": 123,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 10887.34787466668,
+            "totalRpc": 127,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.09184973342560851
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 456.2569580000127,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 4432.761125000019,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 27773.02554100001,
               "rpcCalls": 123,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1778,22 +2416,22 @@
         "maxConcurrency": 31
       },
       "summary": {
-        "repeats": 4,
-        "meanScore": 0.195,
-        "stdScore": 0.0405,
-        "p50Score": 0.2002,
-        "p90Score": 0.2011,
-        "meanAvgMs": 5391.6,
-        "p90AvgMs": 4994.3,
+        "repeats": 6,
+        "meanScore": 0.15,
+        "stdScore": 0.0605,
+        "p50Score": 0.1247,
+        "p90Score": 0.1782,
+        "meanAvgMs": 7647.2,
+        "p90AvgMs": 8438.3,
         "meanRpc": 214,
         "meanCompleteness": 1,
-        "minScore": 0.1327,
-        "maxScore": 0.2462,
-        "minAvgMs": 4062.5,
-        "maxAvgMs": 7536.8
+        "minScore": 0.0819,
+        "maxScore": 0.2698,
+        "minAvgMs": 3706.7,
+        "maxAvgMs": 12208.3
       },
       "failureModes": [
-        "score<0.4 on 4/4 runs",
+        "score<0.4 on 6/6 runs",
         "latency jitter >1.5x between min/max runs",
         "median score below 0.45 in current conditions"
       ],
@@ -1801,17 +2439,17 @@
         {
           "repeat": 1,
           "aggregate": {
-            "avgLatencyMs": 4972.809333000022,
+            "avgLatencyMs": 12208.284805666694,
             "totalRpc": 214,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.20109357367955125
+            "score": 0.08191158839412332
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 394.58191599999554,
+              "wallMs": 974.9927080000052,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1820,7 +2458,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 2217.1892920000246,
+              "wallMs": 4134.924459000002,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1829,7 +2467,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 12306.656791000045,
+              "wallMs": 31514.937250000075,
               "rpcCalls": 210,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1840,17 +2478,17 @@
         {
           "repeat": 2,
           "aggregate": {
-            "avgLatencyMs": 4994.314541333355,
+            "avgLatencyMs": 7899.257069666637,
             "totalRpc": 214,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.20022767723656937
+            "score": 0.12659418362772712
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 349.649207999988,
+              "wallMs": 1173.5508749999572,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1859,7 +2497,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1647.1255000000237,
+              "wallMs": 4930.494749999954,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1868,7 +2506,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 12986.168916000053,
+              "wallMs": 17593.725584,
               "rpcCalls": 210,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1879,17 +2517,17 @@
         {
           "repeat": 3,
           "aggregate": {
-            "avgLatencyMs": 4062.5353890000065,
+            "avgLatencyMs": 8019.215346999971,
             "totalRpc": 214,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.24615170189228802
+            "score": 0.12470047962661397
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 408.6729589999886,
+              "wallMs": 957.982624999946,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1898,7 +2536,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1002.7710829999996,
+              "wallMs": 4323.260499999975,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1907,7 +2545,7 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 10776.162125000032,
+              "wallMs": 18776.402915999992,
               "rpcCalls": 210,
               "sampleCount": 451,
               "openGaps": 0,
@@ -1918,17 +2556,17 @@
         {
           "repeat": 4,
           "aggregate": {
-            "avgLatencyMs": 7536.811930000006,
+            "avgLatencyMs": 5611.415514333329,
             "totalRpc": 214,
             "openGapPenalty": 0,
             "completeness": 1,
-            "score": 0.1326820954652638
+            "score": 0.17820815397570966
           },
           "wallets": [
             {
               "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
               "type": "sparse",
-              "wallMs": 607.5614160000114,
+              "wallMs": 2509.630083999946,
               "rpcCalls": 2,
               "sampleCount": 4,
               "openGaps": 0,
@@ -1937,7 +2575,7 @@
             {
               "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
               "type": "medium",
-              "wallMs": 1495.1369580000173,
+              "wallMs": 1559.2429590000538,
               "rpcCalls": 2,
               "sampleCount": 60,
               "openGaps": 0,
@@ -1946,7 +2584,85 @@
             {
               "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
               "type": "dense",
-              "wallMs": 20507.73741599999,
+              "wallMs": 12765.373499999987,
+              "rpcCalls": 210,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 5,
+          "aggregate": {
+            "avgLatencyMs": 8438.310416666636,
+            "totalRpc": 214,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.1185071359812605
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 327.155124999932,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1104.9146249999758,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 23882.8615,
+              "rpcCalls": 210,
+              "sampleCount": 451,
+              "openGaps": 0,
+              "complete": true
+            }
+          ]
+        },
+        {
+          "repeat": 6,
+          "aggregate": {
+            "avgLatencyMs": 3706.664166666645,
+            "totalRpc": 214,
+            "openGapPenalty": 0,
+            "completeness": 1,
+            "score": 0.26978435462074435
+          },
+          "wallets": [
+            {
+              "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+              "type": "sparse",
+              "wallMs": 2948.346416999935,
+              "rpcCalls": 2,
+              "sampleCount": 4,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+              "type": "medium",
+              "wallMs": 1147.247875000001,
+              "rpcCalls": 2,
+              "sampleCount": 60,
+              "openGaps": 0,
+              "complete": true
+            },
+            {
+              "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+              "type": "dense",
+              "wallMs": 7024.398207999999,
               "rpcCalls": 210,
               "sampleCount": 451,
               "openGaps": 0,
