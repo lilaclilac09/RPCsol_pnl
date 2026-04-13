@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v14-phantom-fixed",
+    "best_all_under_2s": null,
+    "best_all_under_3s": {
+      "trial": 60,
+      "score": 0.5210333442545516
+    },
+    "best_overall": {
+      "trial": 60,
+      "score": 0.5210333442545516
+    }
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "windowTarget": 100,
+  "windowSize": 62,
+  "maxConcurrency": 13,
+  "skipZeroDelta": false
+}

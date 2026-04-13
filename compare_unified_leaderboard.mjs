@@ -16,6 +16,8 @@ import { evaluate as evalV8 } from "./eval_v8.mjs";
 import { evaluate as evalV10 } from "./eval_v10.mjs";
 import { evaluate as evalV11 } from "./eval_v11.mjs";
 import { evaluate as evalCodex } from "./eval_codex.mjs";
+import { evaluate as evalV15 } from "./eval_v15_stable.mjs";
+import { probeCapabilities } from "./capability_probe.mjs";
 
 const apiKey = process.argv[2] ?? process.env.HELIUS_API_KEY;
 const REPEATS = parseInt(process.argv[3] ?? "3", 10);
@@ -200,9 +202,28 @@ const candidates = [
     optional: true,
     extract: s => ({ windowTarget: s.windowTarget, maxConcurrency: s.maxConcurrency }),
   },
+  {
+    id: "v15-free",
+    label: "V15 Free-tier Adaptive",
+    evalFn: evalV15,
+    strategyPath: "results_v15/best_strategy.json",
+    optional: true,
+    extract: s => ({
+      sigPageSize: s.sigPageSize,
+      maxSigPages: s.maxSigPages,
+      txTarget: s.txTarget,
+      walletBudgets: s.walletBudgets,
+      phase1Coverage: s.phase1Coverage,
+      maxConcurrency: s.maxConcurrency,
+      minRequestIntervalMs: s.minRequestIntervalMs,
+      skipZeroDelta: s.skipZeroDelta,
+    }),
+  },
 ];
 
 mkdirSync("results_unified", { recursive: true });
+const capability = await probeCapabilities(apiKey);
+console.log(`[capability] mode=${capability.mode} paidCapable=${capability.paidCapable} batch=${capability.batchAllowed}`);
 
 const details = [];
 
@@ -290,6 +311,7 @@ const leaderboard = details
 const report = {
   generatedAt: new Date().toISOString(),
   scope: "unified-current-conditions",
+  capability,
   repeatsPerCandidate: REPEATS,
   leaderboard,
   details,
@@ -348,7 +370,35 @@ for (const d of details) {
 
 writeFileSync("results_unified/leaderboard_unified.md", lines.join("\n"));
 
+const paidDetails = details.filter(d => !d.id.startsWith("v15-"));
+const freeDetails = details.filter(d => d.id.startsWith("v15-"));
+const rankSubset = subset => subset
+  .slice()
+  .sort((a, b) => b.summary.meanScore - a.summary.meanScore)
+  .map((d, i) => ({ rank: i + 1, id: d.id, label: d.label, ...d.summary, strategy: d.strategy }));
+
+const paidLeaderboard = rankSubset(paidDetails);
+const freeLeaderboard = rankSubset(freeDetails);
+
+writeFileSync("results_unified/leaderboard_paid.json", JSON.stringify({
+  generatedAt: report.generatedAt,
+  repeatsPerCandidate: REPEATS,
+  capability,
+  leaderboard: paidLeaderboard,
+  details: paidDetails,
+}, null, 2));
+
+writeFileSync("results_unified/leaderboard_free.json", JSON.stringify({
+  generatedAt: report.generatedAt,
+  repeatsPerCandidate: REPEATS,
+  capability,
+  leaderboard: freeLeaderboard,
+  details: freeDetails,
+}, null, 2));
+
 console.log("\nUnified leaderboard artifacts:");
 console.log("- results_unified/leaderboard_unified.json");
 console.log("- results_unified/leaderboard_unified.csv");
 console.log("- results_unified/leaderboard_unified.md");
+console.log("- results_unified/leaderboard_paid.json");
+console.log("- results_unified/leaderboard_free.json");

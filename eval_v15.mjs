@@ -20,7 +20,10 @@ export async function evaluate(strategy, apiKey) {
   for (const wallet of TEST_WALLETS) {
     try {
       const t0     = performance.now();
-      const result = await solBalanceOverTime(wallet.address, apiKey, strategy);
+      const result = await solBalanceOverTime(wallet.address, apiKey, {
+        ...strategy,
+        walletType: wallet.type,
+      });
       const wallMs = performance.now() - t0;
       results.push({
         wallet: wallet.address, type: wallet.type, wallMs,

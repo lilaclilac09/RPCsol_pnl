@@ -38,7 +38,10 @@ export async function evaluate(strategy, apiKey, runs = RUNS) {
     for (let r = 0; r < runs; r++) {
       try {
         const t0     = performance.now();
-        const result = await solBalanceOverTime(wallet.address, apiKey, strategy);
+        const result = await solBalanceOverTime(wallet.address, apiKey, {
+          ...strategy,
+          walletType: wallet.type,
+        });
         const wallMs = performance.now() - t0;
         wallMsArr.push(wallMs);
         rpcArr.push(result.stats.totalRpcCalls);

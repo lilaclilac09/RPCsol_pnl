@@ -18,7 +18,7 @@
 | V12S | Paid | Score-Max | 0.744 | 1344ms | Bayesian GP-UCB 4D | window=105 c=23 skip=off |
 | V12L | Paid | Latency-Min | 0.532 | 1881ms | Bayesian GP-UCB (bottleneck) | window=63 c=22 skip=off |
 | V13 | Paid | Constrained BO | **0.789** | **1267ms** | Bayesian GP-UCB 60-trial | window=91 c=31 skip=on |
-| V14 | Paid | Phantom-token fix | TBD | est. <1000ms | GP-UCB pending | phantom-fix applied |
+| V14 | Paid | Phantom-token fix | **0.521** (base **0.868**) | **1152ms** | GP-UCB 60-trial | window=62 c=13 skip=off |
 | V15 | **Free** | getSignaturesForAddr | ~0.009 | ~3800ms | Bayesian GP-UCB 3D | txTarget=31 c=12 skip=off |
 
 ¹ V3 single-trial score 0.879 was not stable — 3-run stable average = 0.7156.  
@@ -49,7 +49,14 @@ Dense wallet (59tGCiHi…1P8n, ~451 SOL transactions) = **77.3% of total wall ti
 
 Improving dense is the primary lever for score improvement. This drove the V13 constrained BO to optimize specifically for dense wallet latency.
 
-### 3. Phantom PaginationToken Bug (V11–V13, Fixed in V14)
+### 3. Phantom PaginationToken Bug (V11–V13, Fixed in V14 — CONFIRMED)
+
+**V14 BO results (60 trials, key 414c80da):** window=62, c=13, skip=false → score=0.521, base=0.868, avg=1152ms.  
+Dense wallet: **14 calls → 10 calls, 2951ms → 2120ms** (28% faster, 4 fewer calls).  
+Gate=0.60 (dense 2120ms — 120ms over 2s gate). No trial hit gate=1.0 due to API latency variance.  
+**Base score 0.868 beats V13 base 0.789** — new best paid-tier result.
+
+### 3b. Original Analysis
 
 **Root cause:** Helius `getTransactionsForAddress` returns `paginationToken` even when `data.length < limit` (e.g., 80 results returned with a limit of 100 still includes a token). The `fetchSlotWindow` while-loop followed this phantom token, making one extra API call per window that returned 0 results.
 
@@ -138,5 +145,5 @@ Expect: sparse ~2s, medium ~3.5s, dense ~6s. Score ~0.009 (100× worse than paid
 
 ## Versions Pending
 
-- **V14 BO run:** Paid API key renewal required. Expected to achieve gate=1.0 (all wallets <2s) after phantom-token fix. Estimated score 1.5–2.0.
+- **V14 BO run:** COMPLETE. Best: window=62, c=13, skip=false → score=0.521, base=0.868, dense=2120ms (10 calls). Gate=0.60, 120ms from gate=1.0.
 - **CMA-ES re-run:** `research_cmaes.mjs` is running on V2 solver — historical comparison only.

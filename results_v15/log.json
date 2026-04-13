@@ -2,39 +2,39 @@
   {
     "trial": 1,
     "x": [
-      0.7465279930692097,
-      0.2414673206506257,
-      0.879633473180218
+      0.3671294170571857,
+      0.4244951010473299,
+      0.11140980470149064
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 46,
-      "maxConcurrency": 9,
-      "skipZeroDelta": true
+      "txTarget": 25,
+      "maxConcurrency": 12,
+      "skipZeroDelta": false
     },
-    "score": 0.005444649358765593,
+    "score": 0.006815477545429638,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6122.218555666666,
-      "maxWalletMs": 8525.449916999998,
-      "totalRpc": 139,
+      "avgLatencyMs": 2445.414361,
+      "maxWalletMs": 3009.9612500000003,
+      "totalRpc": 57,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.005444649358765593,
+      "completeness": 0.3333333333333333,
+      "score": 0.006815477545429638,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2187.8815830000003,
-        "wallMsMin": 752.5462499999999,
-        "wallMsMax": 3897.686625,
+        "wallMs": 2542.1592499999997,
+        "wallMsMin": 2029.074125,
+        "wallMsMax": 3135.9475420000003,
         "wallMsAll": [
-          3897.686625,
-          752.5462499999999,
-          2187.8815830000003
+          3135.9475420000003,
+          2542.1592499999997,
+          2029.074125
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -44,32 +44,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 7653.324166999999,
-        "wallMsMin": 4305.835791999999,
-        "wallMsMax": 7692.130958000002,
+        "wallMs": 1784.1225830000003,
+        "wallMsMin": 1584.403542,
+        "wallMsMax": 3015.3838749999995,
         "wallMsAll": [
-          4305.835791999999,
-          7692.130958000002,
-          7653.324166999999
+          3015.3838749999995,
+          1784.1225830000003,
+          1584.403542
         ],
-        "rpcCalls": 85,
-        "sampleCount": 45,
+        "rpcCalls": 26,
+        "sampleCount": 25,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8525.449916999998,
-        "wallMsMin": 6195.055084,
-        "wallMsMax": 9716.279125000001,
+        "wallMs": 3009.9612500000003,
+        "wallMsMin": 2834.666333000001,
+        "wallMsMax": 4769.915625,
         "wallMsAll": [
-          9716.279125000001,
-          6195.055084,
-          8525.449916999998
+          4769.915625,
+          3009.9612500000003,
+          2834.666333000001
         ],
-        "rpcCalls": 49,
-        "sampleCount": 37,
+        "rpcCalls": 26,
+        "sampleCount": 25,
         "openGaps": 0,
         "complete": false
       }
@@ -78,39 +78,39 @@
   {
     "trial": 2,
     "x": [
-      0.9304858455500014,
-      0.04594232111104435,
-      0.6261020031506084
+      0.004716329792718854,
+      0.6180915252980226,
+      0.10004324026892619
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 56,
-      "maxConcurrency": 5,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 16,
+      "skipZeroDelta": false
     },
-    "score": 0.0051062398083637365,
+    "score": 0.11210242347931029,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6527.960805666665,
-      "maxWalletMs": 10046.37324999999,
-      "totalRpc": 145,
+      "avgLatencyMs": 1784.0827503333337,
+      "maxWalletMs": 2604.4427920000016,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.0051062398083637365,
-      "gate": 0.05
+      "completeness": 0.3333333333333333,
+      "score": 0.11210242347931029,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1421.7340420000037,
-        "wallMsMin": 833.226999999999,
-        "wallMsMax": 1551.728332999999,
+        "wallMs": 1196.3641669999997,
+        "wallMsMin": 1088.0700419999994,
+        "wallMsMax": 1823.3482079999994,
         "wallMsAll": [
-          833.226999999999,
-          1551.728332999999,
-          1421.7340420000037
+          1196.3641669999997,
+          1088.0700419999994,
+          1823.3482079999994
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -120,32 +120,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 8115.775125,
-        "wallMsMin": 7679.543208999996,
-        "wallMsMax": 9161.082625000003,
+        "wallMs": 1551.4412919999995,
+        "wallMsMin": 1049.3505829999995,
+        "wallMsMax": 1572.7109579999997,
         "wallMsAll": [
-          8115.775125,
-          9161.082625000003,
-          7679.543208999996
+          1551.4412919999995,
+          1572.7109579999997,
+          1049.3505829999995
         ],
-        "rpcCalls": 79,
-        "sampleCount": 55,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 10046.37324999999,
-        "wallMsMin": 9880.110749999993,
-        "wallMsMax": 10636.780459000001,
+        "wallMs": 2604.4427920000016,
+        "wallMsMin": 2053.269416999996,
+        "wallMsMax": 6103.2824580000015,
         "wallMsAll": [
-          10636.780459000001,
-          10046.37324999999,
-          9880.110749999993
+          6103.2824580000015,
+          2604.4427920000016,
+          2053.269416999996
         ],
-        "rpcCalls": 61,
-        "sampleCount": 47,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -154,39 +154,39 @@
   {
     "trial": 3,
     "x": [
-      0.2780782818032297,
-      0.058056872005211035,
-      0.7123457191930722
+      0.4538706483286761,
+      0.20282082178269856,
+      0.3994689144300805
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 20,
-      "maxConcurrency": 5,
-      "skipZeroDelta": true
+      "txTarget": 30,
+      "maxConcurrency": 8,
+      "skipZeroDelta": false
     },
-    "score": 0.0059226112529197385,
+    "score": 0.011266445188678939,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 2814.0740553333308,
-      "maxWalletMs": 4245.919250000006,
-      "totalRpc": 47,
+      "avgLatencyMs": 2958.6380419999964,
+      "maxWalletMs": 4683.644166999991,
+      "totalRpc": 67,
       "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.0059226112529197385,
+      "completeness": 0.6666666666666666,
+      "score": 0.011266445188678939,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1242.5064159999893,
-        "wallMsMin": 1201.1579999999958,
-        "wallMsMax": 1840.4953749999986,
+        "wallMs": 1181.2319169999973,
+        "wallMsMin": 1048.1812079999945,
+        "wallMsMax": 1588.5035419999986,
         "wallMsAll": [
-          1201.1579999999958,
-          1242.5064159999893,
-          1840.4953749999986
+          1181.2319169999973,
+          1588.5035419999986,
+          1048.1812079999945
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -196,32 +196,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 2953.7964999999967,
-        "wallMsMin": 2880.7923750000045,
-        "wallMsMax": 4678.465207999994,
+        "wallMs": 3011.038042,
+        "wallMsMin": 2920.0781659999993,
+        "wallMsMax": 3319.9159170000057,
         "wallMsAll": [
-          2953.7964999999967,
-          2880.7923750000045,
-          4678.465207999994
+          3319.9159170000057,
+          3011.038042,
+          2920.0781659999993
         ],
-        "rpcCalls": 21,
-        "sampleCount": 20,
+        "rpcCalls": 31,
+        "sampleCount": 30,
         "openGaps": 0,
-        "complete": false
+        "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4245.919250000006,
-        "wallMsMin": 3887.464000000007,
-        "wallMsMax": 4765.475000000006,
+        "wallMs": 4683.644166999991,
+        "wallMsMin": 4419.208333000002,
+        "wallMsMax": 5744.167083,
         "wallMsAll": [
-          4765.475000000006,
-          4245.919250000006,
-          3887.464000000007
+          5744.167083,
+          4419.208333000002,
+          4683.644166999991
         ],
-        "rpcCalls": 21,
-        "sampleCount": 14,
+        "rpcCalls": 31,
+        "sampleCount": 30,
         "openGaps": 0,
         "complete": false
       }
@@ -230,39 +230,39 @@
   {
     "trial": 4,
     "x": [
-      0.41734143704203275,
-      0.7313723498757327,
-      0.004374124551915326
+      0.7706374604747244,
+      0.0008835360391796776,
+      0.45967086444767147
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 28,
-      "maxConcurrency": 19,
+      "txTarget": 47,
+      "maxConcurrency": 4,
       "skipZeroDelta": false
     },
-    "score": 0.004602839681768091,
+    "score": 0.005076784407829551,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 3620.9531113333264,
-      "maxWalletMs": 5891.953999999998,
-      "totalRpc": 64,
+      "avgLatencyMs": 6565.835902333332,
+      "maxWalletMs": 10002.763040999998,
+      "totalRpc": 101,
       "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.004602839681768091,
+      "completeness": 0.6666666666666666,
+      "score": 0.005076784407829551,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1230.7212500000023,
-        "wallMsMin": 870.0390830000106,
-        "wallMsMax": 2356.26541599998,
+        "wallMs": 971.924583,
+        "wallMsMin": 734.7767920000042,
+        "wallMsMax": 1280.5999169999996,
         "wallMsAll": [
-          1230.7212500000023,
-          2356.26541599998,
-          870.0390830000106
+          1280.5999169999996,
+          971.924583,
+          734.7767920000042
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -272,32 +272,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 3740.1840839999786,
-        "wallMsMin": 2774.693790999998,
-        "wallMsMax": 4853.877999999997,
+        "wallMs": 8722.820082999999,
+        "wallMsMin": 7850.012000000002,
+        "wallMsMax": 8964.860667,
         "wallMsAll": [
-          3740.1840839999786,
-          4853.877999999997,
-          2774.693790999998
+          7850.012000000002,
+          8964.860667,
+          8722.820082999999
         ],
-        "rpcCalls": 30,
-        "sampleCount": 28,
+        "rpcCalls": 48,
+        "sampleCount": 47,
         "openGaps": 0,
-        "complete": false
+        "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5891.953999999998,
-        "wallMsMin": 3774.6808330000204,
-        "wallMsMax": 7399.993457999983,
+        "wallMs": 10002.763040999998,
+        "wallMsMin": 9962.875124999991,
+        "wallMsMax": 12884.490332999994,
         "wallMsAll": [
-          5891.953999999998,
-          7399.993457999983,
-          3774.6808330000204
+          9962.875124999991,
+          10002.763040999998,
+          12884.490332999994
         ],
-        "rpcCalls": 29,
-        "sampleCount": 28,
+        "rpcCalls": 48,
+        "sampleCount": 47,
         "openGaps": 0,
         "complete": false
       }
@@ -306,39 +306,39 @@
   {
     "trial": 5,
     "x": [
-      0.3920438449729007,
-      0.9634351432133919,
-      0.9138526297413458
+      0.7826894213421094,
+      0.6884800259482289,
+      0.6322897494609303
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 27,
-      "maxConcurrency": 23,
+      "txTarget": 48,
+      "maxConcurrency": 18,
       "skipZeroDelta": true
     },
-    "score": 0.00521086017116316,
+    "score": 0.013356689210512362,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 3198.44826366668,
-      "maxWalletMs": 4292.6262080000015,
-      "totalRpc": 65,
+      "avgLatencyMs": 2495.628430666664,
+      "maxWalletMs": 3739.8216250000114,
+      "totalRpc": 103,
       "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.00521086017116316,
+      "completeness": 0.6666666666666666,
+      "score": 0.013356689210512362,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1720.2360410000256,
-        "wallMsMin": 1027.0807080000232,
-        "wallMsMax": 2388.1287909999955,
+        "wallMs": 910.0317919999943,
+        "wallMsMin": 838.3761249999807,
+        "wallMsMax": 1323.925292,
         "wallMsAll": [
-          1720.2360410000256,
-          2388.1287909999955,
-          1027.0807080000232
+          1323.925292,
+          838.3761249999807,
+          910.0317919999943
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -348,32 +348,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 3582.4825420000125,
-        "wallMsMin": 2697.0824999999895,
-        "wallMsMax": 5970.869250000018,
+        "wallMs": 2837.031874999986,
+        "wallMsMin": 2200.2186250000086,
+        "wallMsMax": 3147.543208999996,
         "wallMsAll": [
-          3582.4825420000125,
-          2697.0824999999895,
-          5970.869250000018
+          3147.543208999996,
+          2200.2186250000086,
+          2837.031874999986
         ],
-        "rpcCalls": 31,
-        "sampleCount": 27,
+        "rpcCalls": 49,
+        "sampleCount": 47,
         "openGaps": 0,
-        "complete": false
+        "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4292.6262080000015,
-        "wallMsMin": 4028.5582920000015,
-        "wallMsMax": 6222.287875000009,
+        "wallMs": 3739.8216250000114,
+        "wallMsMin": 3737.612792,
+        "wallMsMax": 4392.288874999998,
         "wallMsAll": [
-          4292.6262080000015,
-          4028.5582920000015,
-          6222.287875000009
+          3739.8216250000114,
+          3737.612792,
+          4392.288874999998
         ],
-        "rpcCalls": 29,
-        "sampleCount": 19,
+        "rpcCalls": 49,
+        "sampleCount": 39,
         "openGaps": 0,
         "complete": false
       }
@@ -382,39 +382,39 @@
   {
     "trial": 6,
     "x": [
-      0.5619549385945015,
-      0.1690741097706825,
-      0.5195453323331785
+      0.7301221692264768,
+      0.4057682141803245,
+      0.0640350344725864
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 36,
-      "maxConcurrency": 7,
-      "skipZeroDelta": true
+      "txTarget": 45,
+      "maxConcurrency": 12,
+      "skipZeroDelta": false
     },
-    "score": 0.005875568675712943,
+    "score": 0.010842069178423478,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 5673.209722,
-      "maxWalletMs": 8665.561249999999,
-      "totalRpc": 82,
+      "avgLatencyMs": 3074.443889333333,
+      "maxWalletMs": 4663.0112500000105,
+      "totalRpc": 97,
       "openGapPenalty": 0,
       "completeness": 0.6666666666666666,
-      "score": 0.005875568675712943,
+      "score": 0.010842069178423478,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2690.706333000009,
-        "wallMsMin": 2120.527000000002,
-        "wallMsMax": 2838.809458999982,
+        "wallMs": 1000.7680840000103,
+        "wallMsMin": 879.148125000007,
+        "wallMsMax": 1248.205667000002,
         "wallMsAll": [
-          2690.706333000009,
-          2838.809458999982,
-          2120.527000000002
+          879.148125000007,
+          1000.7680840000103,
+          1248.205667000002
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -424,32 +424,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 5663.361582999991,
-        "wallMsMin": 4753.6882500000065,
-        "wallMsMax": 6806.244124999997,
+        "wallMs": 3559.552333999978,
+        "wallMsMin": 2891.9334159999853,
+        "wallMsMax": 3881.2005000000063,
         "wallMsAll": [
-          5663.361582999991,
-          4753.6882500000065,
-          6806.244124999997
+          3881.2005000000063,
+          3559.552333999978,
+          2891.9334159999853
         ],
-        "rpcCalls": 40,
-        "sampleCount": 36,
+        "rpcCalls": 46,
+        "sampleCount": 45,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8665.561249999999,
-        "wallMsMin": 7782.2494169999845,
-        "wallMsMax": 15839.381499999989,
+        "wallMs": 4663.0112500000105,
+        "wallMsMin": 4075.0140420000243,
+        "wallMsMax": 5000.133708999987,
         "wallMsAll": [
-          15839.381499999989,
-          8665.561249999999,
-          7782.2494169999845
+          4663.0112500000105,
+          5000.133708999987,
+          4075.0140420000243
         ],
-        "rpcCalls": 37,
-        "sampleCount": 27,
+        "rpcCalls": 46,
+        "sampleCount": 45,
         "openGaps": 0,
         "complete": false
       }
@@ -458,39 +458,39 @@
   {
     "trial": 7,
     "x": [
-      0.46893026666158244,
-      0.42307611386389454,
-      0.19866778264720208
+      0.6145622631724836,
+      0.3259125791231361,
+      0.039199682047928563
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 31,
-      "maxConcurrency": 12,
+      "txTarget": 39,
+      "maxConcurrency": 11,
       "skipZeroDelta": false
     },
-    "score": 0.008696652068837855,
+    "score": 0.008599182371355077,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 3832.892596999998,
-      "maxWalletMs": 5977.129666000023,
-      "totalRpc": 78,
+      "avgLatencyMs": 3876.337527666668,
+      "maxWalletMs": 6744.066374999995,
+      "totalRpc": 85,
       "openGapPenalty": 0,
       "completeness": 0.6666666666666666,
-      "score": 0.008696652068837855,
+      "score": 0.008599182371355077,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2040.0812920000171,
-        "wallMsMin": 615.3105410000426,
-        "wallMsMax": 3055.616708000016,
+        "wallMs": 862.3352080000041,
+        "wallMsMin": 819.8185839999933,
+        "wallMsMax": 1430.0765409999876,
         "wallMsAll": [
-          2040.0812920000171,
-          3055.616708000016,
-          615.3105410000426
+          819.8185839999933,
+          862.3352080000041,
+          1430.0765409999876
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -500,32 +500,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 3481.466832999955,
-        "wallMsMin": 2924.3384999999544,
-        "wallMsMax": 5839.1029160000035,
+        "wallMs": 4022.6110000000044,
+        "wallMsMin": 3509.811166999978,
+        "wallMsMax": 4481.929457999999,
         "wallMsAll": [
-          3481.466832999955,
-          2924.3384999999544,
-          5839.1029160000035
+          4481.929457999999,
+          3509.811166999978,
+          4022.6110000000044
         ],
-        "rpcCalls": 41,
-        "sampleCount": 31,
+        "rpcCalls": 40,
+        "sampleCount": 39,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5977.129666000023,
-        "wallMsMin": 5537.147166999988,
-        "wallMsMax": 7633.962082999991,
+        "wallMs": 6744.066374999995,
+        "wallMsMin": 4653.983334000019,
+        "wallMsMax": 7730.569665999996,
         "wallMsAll": [
-          5977.129666000023,
-          7633.962082999991,
-          5537.147166999988
+          6744.066374999995,
+          7730.569665999996,
+          4653.983334000019
         ],
-        "rpcCalls": 32,
-        "sampleCount": 31,
+        "rpcCalls": 40,
+        "sampleCount": 39,
         "openGaps": 0,
         "complete": false
       }
@@ -534,39 +534,39 @@
   {
     "trial": 8,
     "x": [
-      0.9134553562412562,
-      0.6782299259156286,
-      0.8619975563264077
+      0.6526896946333769,
+      0.98170010294179,
+      0.896815982566382
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 55,
-      "maxConcurrency": 18,
+      "txTarget": 41,
+      "maxConcurrency": 24,
       "skipZeroDelta": true
     },
-    "score": 0.004905286329913844,
+    "score": 0.013717094503685546,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6795.389930666657,
-      "maxWalletMs": 11897.782667000021,
-      "totalRpc": 298,
+      "avgLatencyMs": 2430.0578613333346,
+      "maxWalletMs": 3999.1100419999857,
+      "totalRpc": 89,
       "openGapPenalty": 0,
       "completeness": 0.6666666666666666,
-      "score": 0.004905286329913844,
+      "score": 0.013717094503685546,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1209.7494999999763,
-        "wallMsMin": 610.9237089999951,
-        "wallMsMax": 1227.8124160000007,
+        "wallMs": 1032.0731250000244,
+        "wallMsMin": 623.5461659999855,
+        "wallMsMax": 1130.7965419999964,
         "wallMsAll": [
-          1209.7494999999763,
-          610.9237089999951,
-          1227.8124160000007
+          623.5461659999855,
+          1032.0731250000244,
+          1130.7965419999964
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -576,32 +576,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 7278.637624999974,
-        "wallMsMin": 7074.371749999991,
-        "wallMsMax": 7326.774083000026,
+        "wallMs": 2258.9904169999936,
+        "wallMsMin": 2029.1909999999916,
+        "wallMsMax": 4600.667375000019,
         "wallMsAll": [
-          7074.371749999991,
-          7326.774083000026,
-          7278.637624999974
+          4600.667375000019,
+          2258.9904169999936,
+          2029.1909999999916
         ],
-        "rpcCalls": 131,
-        "sampleCount": 54,
+        "rpcCalls": 42,
+        "sampleCount": 40,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 11897.782667000021,
-        "wallMsMin": 11059.947999999975,
-        "wallMsMax": 12416.871249999967,
+        "wallMs": 3999.1100419999857,
+        "wallMsMin": 3053.8624999999884,
+        "wallMsMax": 6548.869082999998,
         "wallMsAll": [
-          12416.871249999967,
-          11059.947999999975,
-          11897.782667000021
+          3053.8624999999884,
+          3999.1100419999857,
+          6548.869082999998
         ],
-        "rpcCalls": 162,
-        "sampleCount": 39,
+        "rpcCalls": 42,
+        "sampleCount": 32,
         "openGaps": 0,
         "complete": false
       }
@@ -610,39 +610,39 @@
   {
     "trial": 9,
     "x": [
-      0.10231685538760948,
-      0.571526466578262,
-      0.9559900149568525
+      0.3143567213494982,
+      0.33358179057872506,
+      0.7104192603187061
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 11,
-      "maxConcurrency": 15,
+      "txTarget": 22,
+      "maxConcurrency": 11,
       "skipZeroDelta": true
     },
-    "score": 0.004582717751675232,
+    "score": 0.0056022961089483014,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 3636.852097333312,
-      "maxWalletMs": 6789.964166999969,
-      "totalRpc": 32,
+      "avgLatencyMs": 2974.9706803333247,
+      "maxWalletMs": 5013.175457999983,
+      "totalRpc": 51,
       "openGapPenalty": 0,
       "completeness": 0.3333333333333333,
-      "score": 0.004582717751675232,
+      "score": 0.0056022961089483014,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1509.9183750000084,
-        "wallMsMin": 1272.598249999981,
-        "wallMsMax": 1756.5457499999902,
+        "wallMs": 910.4797079999989,
+        "wallMsMin": 857.4928329999966,
+        "wallMsMax": 1913.9920830000192,
         "wallMsAll": [
-          1509.9183750000084,
-          1272.598249999981,
-          1756.5457499999902
+          1913.9920830000192,
+          857.4928329999966,
+          910.4797079999989
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -652,32 +652,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 2610.673749999958,
-        "wallMsMin": 1723.8953750000219,
-        "wallMsMax": 3104.550917000044,
+        "wallMs": 3001.256874999992,
+        "wallMsMin": 2191.8341669999936,
+        "wallMsMax": 3979.508375000005,
         "wallMsAll": [
-          3104.550917000044,
-          2610.673749999958,
-          1723.8953750000219
+          3979.508375000005,
+          3001.256874999992,
+          2191.8341669999936
         ],
-        "rpcCalls": 15,
-        "sampleCount": 11,
+        "rpcCalls": 23,
+        "sampleCount": 22,
         "openGaps": 0,
         "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 6789.964166999969,
-        "wallMsMin": 5493.645833000017,
-        "wallMsMax": 9565.008291999984,
+        "wallMs": 5013.175457999983,
+        "wallMsMin": 4481.556624999968,
+        "wallMsMax": 5723.996207999997,
         "wallMsAll": [
-          6789.964166999969,
-          9565.008291999984,
-          5493.645833000017
+          5013.175457999983,
+          4481.556624999968,
+          5723.996207999997
         ],
-        "rpcCalls": 12,
-        "sampleCount": 5,
+        "rpcCalls": 23,
+        "sampleCount": 16,
         "openGaps": 0,
         "complete": false
       }
@@ -686,573 +686,41 @@
   {
     "trial": 10,
     "x": [
-      0.36991220062817964,
-      0.2165693229054404,
-      0.03558342198138931
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 25,
-      "maxConcurrency": 8,
-      "skipZeroDelta": false
-    },
-    "score": 0.004176191849278235,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 3990.8766809999747,
-      "maxWalletMs": 6707.406958999985,
-      "totalRpc": 86,
-      "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.004176191849278235,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 703.5367499999702,
-        "wallMsMin": 586.3332499999669,
-        "wallMsMax": 1514.2074169999687,
-        "wallMsAll": [
-          703.5367499999702,
-          586.3332499999669,
-          1514.2074169999687
-        ],
-        "rpcCalls": 5,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 4561.686333999969,
-        "wallMsMin": 4505.651665999962,
-        "wallMsMax": 6567.74770800001,
-        "wallMsAll": [
-          6567.74770800001,
-          4561.686333999969,
-          4505.651665999962
-        ],
-        "rpcCalls": 50,
-        "sampleCount": 25,
-        "openGaps": 0,
-        "complete": false
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 6707.406958999985,
-        "wallMsMin": 5659.113417000044,
-        "wallMsMax": 8998.684833000007,
-        "wallMsAll": [
-          6707.406958999985,
-          5659.113417000044,
-          8998.684833000007
-        ],
-        "rpcCalls": 31,
-        "sampleCount": 25,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 11,
-    "x": [
-      0.5558147719547692,
-      0.5737256927261014,
-      0.36174252631719583
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 36,
-      "maxConcurrency": 15,
-      "skipZeroDelta": false
-    },
-    "score": 0.005270011579467073,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 6325.0967916666605,
-      "maxWalletMs": 9144.094500000007,
-      "totalRpc": 157,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.005270011579467073,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 2846.898916999984,
-        "wallMsMin": 2094.109999999986,
-        "wallMsMax": 3618.2971249999828,
-        "wallMsAll": [
-          2094.109999999986,
-          2846.898916999984,
-          3618.2971249999828
-        ],
-        "rpcCalls": 7,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 6984.296957999992,
-        "wallMsMin": 6607.941667000006,
-        "wallMsMax": 7701.9879580000415,
-        "wallMsAll": [
-          7701.9879580000415,
-          6607.941667000006,
-          6984.296957999992
-        ],
-        "rpcCalls": 98,
-        "sampleCount": 34,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 9144.094500000007,
-        "wallMsMin": 7070.820084000006,
-        "wallMsMax": 11563.471500000043,
-        "wallMsAll": [
-          9144.094500000007,
-          11563.471500000043,
-          7070.820084000006
-        ],
-        "rpcCalls": 52,
-        "sampleCount": 36,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 12,
-    "x": [
-      0.5747598323005276,
-      0.3997885449809966,
-      0.2080094517361759
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 37,
-      "maxConcurrency": 12,
-      "skipZeroDelta": false
-    },
-    "score": 0.0052492276306542705,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 6350.140568999981,
-      "maxWalletMs": 10235.174457999994,
-      "totalRpc": 189,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.0052492276306542705,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1847.0823329999694,
-        "wallMsMin": 1233.793915999995,
-        "wallMsMax": 2707.467958000023,
-        "wallMsAll": [
-          2707.467958000023,
-          1847.0823329999694,
-          1233.793915999995
-        ],
-        "rpcCalls": 5,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 6968.16491599998,
-        "wallMsMin": 6608.128708000004,
-        "wallMsMax": 7539.721667000034,
-        "wallMsAll": [
-          6608.128708000004,
-          7539.721667000034,
-          6968.16491599998
-        ],
-        "rpcCalls": 89,
-        "sampleCount": 35,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 10235.174457999994,
-        "wallMsMin": 9669.424875000026,
-        "wallMsMax": 12823.970459000091,
-        "wallMsAll": [
-          10235.174457999994,
-          9669.424875000026,
-          12823.970459000091
-        ],
-        "rpcCalls": 95,
-        "sampleCount": 36,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 13,
-    "x": [
-      0.20201768583187385,
-      0.4695608998074261,
-      0.37637867585037155
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 16,
-      "maxConcurrency": 13,
-      "skipZeroDelta": false
-    },
-    "score": 0.004154827572404295,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 4011.3979163332842,
-      "maxWalletMs": 6870.70620799996,
-      "totalRpc": 59,
-      "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.004154827572404295,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1328.4306660000002,
-        "wallMsMin": 892.6026249999413,
-        "wallMsMax": 2511.8494159999536,
-        "wallMsAll": [
-          1328.4306660000002,
-          2511.8494159999536,
-          892.6026249999413
-        ],
-        "rpcCalls": 6,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 3835.056874999893,
-        "wallMsMin": 2947.572792000021,
-        "wallMsMax": 4885.457708000089,
-        "wallMsAll": [
-          2947.572792000021,
-          4885.457708000089,
-          3835.056874999893
-        ],
-        "rpcCalls": 33,
-        "sampleCount": 16,
-        "openGaps": 0,
-        "complete": false
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 6870.70620799996,
-        "wallMsMin": 6392.474208999891,
-        "wallMsMax": 7955.630458999891,
-        "wallMsAll": [
-          6870.70620799996,
-          6392.474208999891,
-          7955.630458999891
-        ],
-        "rpcCalls": 20,
-        "sampleCount": 16,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 14,
-    "x": [
-      0.4064209973892481,
-      0.3833012123645205,
-      0.2495782625909051
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 27,
-      "maxConcurrency": 12,
-      "skipZeroDelta": false
-    },
-    "score": 0.00279472285535695,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 5963.620555333367,
-      "maxWalletMs": 10867.504458000069,
-      "totalRpc": 131,
-      "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.00279472285535695,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 822.1950829999987,
-        "wallMsMin": 647.8859589999774,
-        "wallMsMax": 861.6335409999592,
-        "wallMsAll": [
-          647.8859589999774,
-          861.6335409999592,
-          822.1950829999987
-        ],
-        "rpcCalls": 5,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 6201.162125000032,
-        "wallMsMin": 5971.068583999993,
-        "wallMsMax": 6451.546290999977,
-        "wallMsAll": [
-          6451.546290999977,
-          6201.162125000032,
-          5971.068583999993
-        ],
-        "rpcCalls": 60,
-        "sampleCount": 27,
-        "openGaps": 0,
-        "complete": false
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 10867.504458000069,
-        "wallMsMin": 9706.289791999967,
-        "wallMsMax": 12583.891084000003,
-        "wallMsAll": [
-          12583.891084000003,
-          9706.289791999967,
-          10867.504458000069
-        ],
-        "rpcCalls": 66,
-        "sampleCount": 26,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 15,
-    "x": [
-      0.7447964954791839,
-      0.4255203775136387,
-      0.008642416148584076
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 46,
-      "maxConcurrency": 13,
-      "skipZeroDelta": false
-    },
-    "score": 0.004530920604953423,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 7356.856638999966,
-      "maxWalletMs": 11213.26316699991,
-      "totalRpc": 283,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004530920604953423,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 3177.2008749999804,
-        "wallMsMin": 1445.3024160000496,
-        "wallMsMax": 3438.4852919999976,
-        "wallMsAll": [
-          3177.2008749999804,
-          1445.3024160000496,
-          3438.4852919999976
-        ],
-        "rpcCalls": 7,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 7680.105875000008,
-        "wallMsMin": 7343.062333000009,
-        "wallMsMax": 8954.578833000036,
-        "wallMsAll": [
-          7680.105875000008,
-          8954.578833000036,
-          7343.062333000009
-        ],
-        "rpcCalls": 162,
-        "sampleCount": 31,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 11213.26316699991,
-        "wallMsMin": 10472.102333000046,
-        "wallMsMax": 11298.49774999998,
-        "wallMsAll": [
-          10472.102333000046,
-          11213.26316699991,
-          11298.49774999998
-        ],
-        "rpcCalls": 114,
-        "sampleCount": 43,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 16,
-    "x": [
-      0.3255862973071155,
-      0.006100947484450003,
-      0.8864979372154185
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 23,
-      "maxConcurrency": 4,
-      "skipZeroDelta": true
-    },
-    "score": 0.0030162020116981433,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 5525.713000000028,
-      "maxWalletMs": 8043.792917000013,
-      "totalRpc": 93,
-      "openGapPenalty": 0,
-      "completeness": 0.3333333333333333,
-      "score": 0.0030162020116981433,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1703.987375000026,
-        "wallMsMin": 1536.0236670000013,
-        "wallMsMax": 2174.6687089999905,
-        "wallMsAll": [
-          1703.987375000026,
-          2174.6687089999905,
-          1536.0236670000013
-        ],
-        "rpcCalls": 5,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 6829.358708000043,
-        "wallMsMin": 5462.682375000091,
-        "wallMsMax": 8349.56812499999,
-        "wallMsAll": [
-          6829.358708000043,
-          8349.56812499999,
-          5462.682375000091
-        ],
-        "rpcCalls": 48,
-        "sampleCount": 23,
-        "openGaps": 0,
-        "complete": false
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 8043.792917000013,
-        "wallMsMin": 7610.367457999964,
-        "wallMsMax": 10495.47654199996,
-        "wallMsAll": [
-          8043.792917000013,
-          10495.47654199996,
-          7610.367457999964
-        ],
-        "rpcCalls": 40,
-        "sampleCount": 17,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 17,
-    "x": [
-      0.013878226161850638,
-      0.0016276860531785342,
-      0.6910014986102722
+      0.02361909873289325,
+      0.7508593606288747,
+      0.02677640361257061
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
       "txTarget": 6,
-      "maxConcurrency": 4,
-      "skipZeroDelta": true
+      "maxConcurrency": 19,
+      "skipZeroDelta": false
     },
-    "score": 0.0048879802421683905,
+    "score": 0.10973136369675898,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 3409.724638999983,
-      "maxWalletMs": 6300.9050419999985,
-      "totalRpc": 22,
+      "avgLatencyMs": 1822.6329580000213,
+      "maxWalletMs": 2715.852125000034,
+      "totalRpc": 19,
       "openGapPenalty": 0,
       "completeness": 0.3333333333333333,
-      "score": 0.0048879802421683905,
-      "gate": 0.05
+      "score": 0.10973136369675898,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1845.7781660000328,
-        "wallMsMin": 1750.45074999996,
-        "wallMsMax": 5105.117374999914,
+        "wallMs": 1263.437957999995,
+        "wallMsMin": 681.4792090000119,
+        "wallMsMax": 1457.9879159999546,
         "wallMsAll": [
-          1750.45074999996,
-          1845.7781660000328,
-          5105.117374999914
+          1457.9879159999546,
+          1263.437957999995,
+          681.4792090000119
         ],
-        "rpcCalls": 8,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1260,13 +728,13 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 2082.490708999918,
-        "wallMsMin": 1225.109541999991,
-        "wallMsMax": 5593.794875000021,
+        "wallMs": 1488.6087910000351,
+        "wallMsMin": 1089.0104999999749,
+        "wallMsMax": 2300.1096670000115,
         "wallMsAll": [
-          2082.490708999918,
-          1225.109541999991,
-          5593.794875000021
+          2300.1096670000115,
+          1089.0104999999749,
+          1488.6087910000351
         ],
         "rpcCalls": 7,
         "sampleCount": 6,
@@ -1276,16 +744,548 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 6300.9050419999985,
-        "wallMsMin": 3693.6507920000004,
-        "wallMsMax": 6748.679250000045,
+        "wallMs": 2715.852125000034,
+        "wallMsMin": 2635.189041000034,
+        "wallMsMax": 3957.7360000000335,
         "wallMsAll": [
-          6748.679250000045,
-          6300.9050419999985,
-          3693.6507920000004
+          3957.7360000000335,
+          2715.852125000034,
+          2635.189041000034
         ],
         "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 11,
+    "x": [
+      0.027721140522669607,
+      0.8074462619854521,
+      0.276612587033058
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 7,
+      "maxConcurrency": 20,
+      "skipZeroDelta": false
+    },
+    "score": 0.007912658441681864,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2106.3295970000327,
+      "maxWalletMs": 3436.711708000046,
+      "totalRpc": 21,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007912658441681864,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 819.7041660000104,
+        "wallMsMin": 747.9664999999804,
+        "wallMsMax": 2281.767041999963,
+        "wallMsAll": [
+          819.7041660000104,
+          747.9664999999804,
+          2281.767041999963
+        ],
+        "rpcCalls": 5,
         "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2062.5729170000413,
+        "wallMsMin": 1304.7601250000298,
+        "wallMsMax": 3076.61050000001,
+        "wallMsAll": [
+          3076.61050000001,
+          2062.5729170000413,
+          1304.7601250000298
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3436.711708000046,
+        "wallMsMin": 2827.0194589999737,
+        "wallMsMax": 4197.309833000007,
+        "wallMsAll": [
+          4197.309833000007,
+          3436.711708000046,
+          2827.0194589999737
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 12,
+    "x": [
+      0.01511993128069622,
+      0.3057067035430152,
+      0.040416870158490825
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 10,
+      "skipZeroDelta": false
+    },
+    "score": 0.11265800812315578,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 1775.2843613333146,
+      "maxWalletMs": 2744.490374999994,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.11265800812315578,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1068.2931249999674,
+        "wallMsMin": 851.9396660000202,
+        "wallMsMax": 2275.5227089999826,
+        "wallMsAll": [
+          2275.5227089999826,
+          851.9396660000202,
+          1068.2931249999674
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1513.0695839999826,
+        "wallMsMin": 1250.8651250000112,
+        "wallMsMax": 1626.9412080000038,
+        "wallMsAll": [
+          1250.8651250000112,
+          1513.0695839999826,
+          1626.9412080000038
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2744.490374999994,
+        "wallMsMin": 2650.7753750000265,
+        "wallMsMax": 3091.714541000023,
+        "wallMsAll": [
+          3091.714541000023,
+          2650.7753750000265,
+          2744.490374999994
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 13,
+    "x": [
+      0.00160671367951859,
+      0.5259984159157567,
+      0.013949933165146478
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 15,
+      "skipZeroDelta": false
+    },
+    "score": 0.006817393402748677,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2444.7271386666494,
+      "maxWalletMs": 5187.550791000016,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006817393402748677,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 639.8644999999669,
+        "wallMsMin": 638.8501249999972,
+        "wallMsMax": 2283.065874999971,
+        "wallMsAll": [
+          638.8501249999972,
+          639.8644999999669,
+          2283.065874999971
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1506.7661249999655,
+        "wallMsMin": 1399.3219159999862,
+        "wallMsMax": 1507.8724999999977,
+        "wallMsAll": [
+          1507.8724999999977,
+          1506.7661249999655,
+          1399.3219159999862
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5187.550791000016,
+        "wallMsMin": 3739.80691699998,
+        "wallMsMax": 5516.201291999954,
+        "wallMsAll": [
+          5516.201291999954,
+          5187.550791000016,
+          3739.80691699998
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 14,
+    "x": [
+      0.002418445283527415,
+      0.07398163118352086,
+      0.2760389245895465
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
+    },
+    "score": 0.008667547150314104,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 1922.8815693333356,
+      "maxWalletMs": 3010.312082999968,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.008667547150314104,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1486.4977500000386,
+        "wallMsMin": 624.2925420000101,
+        "wallMsMax": 1543.4494580000173,
+        "wallMsAll": [
+          624.2925420000101,
+          1543.4494580000173,
+          1486.4977500000386
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1271.8348750000005,
+        "wallMsMin": 909.9650409999886,
+        "wallMsMax": 1430.8997079999535,
+        "wallMsAll": [
+          1271.8348750000005,
+          909.9650409999886,
+          1430.8997079999535
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3010.312082999968,
+        "wallMsMin": 2484.610667000001,
+        "wallMsMax": 3360.1241670000018,
+        "wallMsAll": [
+          2484.610667000001,
+          3010.312082999968,
+          3360.1241670000018
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 15,
+    "x": [
+      0.002689453415535059,
+      0.9616878580308879,
+      0.008160705022930426
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 23,
+      "skipZeroDelta": false
+    },
+    "score": 0.11150534876141867,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 1793.6359306666807,
+      "maxWalletMs": 2720.3256670000264,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.11150534876141867,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1443.7030420000083,
+        "wallMsMin": 636.3072909999755,
+        "wallMsMax": 1515.6063330000034,
+        "wallMsAll": [
+          636.3072909999755,
+          1443.7030420000083,
+          1515.6063330000034
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1216.879083000007,
+        "wallMsMin": 1185.5579579999903,
+        "wallMsMax": 1957.8744999999763,
+        "wallMsAll": [
+          1216.879083000007,
+          1957.8744999999763,
+          1185.5579579999903
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2720.3256670000264,
+        "wallMsMin": 2607.76654099999,
+        "wallMsMax": 4249.566667000006,
+        "wallMsAll": [
+          4249.566667000006,
+          2607.76654099999,
+          2720.3256670000264
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 16,
+    "x": [
+      0.07142772809238584,
+      0.12100021440955455,
+      0.011563665359237252
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 9,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.09841007789186795,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2032.3121806666798,
+      "maxWalletMs": 2990.2735000000102,
+      "totalRpc": 25,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.09841007789186795,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1603.4081250000163,
+        "wallMsMin": 816.9334999999846,
+        "wallMsMax": 2321.674417000031,
+        "wallMsAll": [
+          2321.674417000031,
+          1603.4081250000163,
+          816.9334999999846
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1503.254917000013,
+        "wallMsMin": 1437.8919170000008,
+        "wallMsMax": 1863.7947080000304,
+        "wallMsAll": [
+          1437.8919170000008,
+          1503.254917000013,
+          1863.7947080000304
+        ],
+        "rpcCalls": 10,
+        "sampleCount": 9,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2990.2735000000102,
+        "wallMsMin": 2617.075583000027,
+        "wallMsMax": 3057.463374999992,
+        "wallMsAll": [
+          3057.463374999992,
+          2990.2735000000102,
+          2617.075583000027
+        ],
+        "rpcCalls": 10,
+        "sampleCount": 9,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 17,
+    "x": [
+      0.04964324716056079,
+      0.871172926946399,
+      0.030238250295066216
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 8,
+      "maxConcurrency": 21,
+      "skipZeroDelta": false
+    },
+    "score": 0.006708552183076918,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2484.3910000000033,
+      "maxWalletMs": 4266.832750000001,
+      "totalRpc": 23,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006708552183076918,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1185.3008750000154,
+        "wallMsMin": 808.2298749999609,
+        "wallMsMax": 1583.5592080000206,
+        "wallMsAll": [
+          808.2298749999609,
+          1185.3008750000154,
+          1583.5592080000206
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2001.039374999993,
+        "wallMsMin": 1381.7191669999738,
+        "wallMsMax": 2999.01675000001,
+        "wallMsAll": [
+          2001.039374999993,
+          1381.7191669999738,
+          2999.01675000001
+        ],
+        "rpcCalls": 9,
+        "sampleCount": 8,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4266.832750000001,
+        "wallMsMin": 3828.9883329999866,
+        "wallMsMax": 7249.876458999992,
+        "wallMsAll": [
+          7249.876458999992,
+          4266.832750000001,
+          3828.9883329999866
+        ],
+        "rpcCalls": 9,
+        "sampleCount": 8,
         "openGaps": 0,
         "complete": false
       }
@@ -1294,39 +1294,39 @@
   {
     "trial": 18,
     "x": [
-      0.5368775167623736,
-      0.017832726786960462,
-      0.5865123401263994
+      0.13351128519381494,
+      0.05773612262126537,
+      0.032116907100820935
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 35,
-      "maxConcurrency": 4,
-      "skipZeroDelta": true
+      "txTarget": 12,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
     },
-    "score": 0.004620544564098243,
+    "score": 0.0068296596037934745,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 7214.156875000025,
-      "maxWalletMs": 10466.097542000003,
-      "totalRpc": 136,
+      "avgLatencyMs": 2440.33636133334,
+      "maxWalletMs": 3634.65295899997,
+      "totalRpc": 31,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004620544564098243,
+      "completeness": 0.3333333333333333,
+      "score": 0.0068296596037934745,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 836.2774579999968,
-        "wallMsMin": 587.7841250000056,
-        "wallMsMax": 1554.0533330000471,
+        "wallMs": 1229.1015420000185,
+        "wallMsMin": 829.2607500000158,
+        "wallMsMax": 1432.6062500000116,
         "wallMsAll": [
-          836.2774579999968,
-          587.7841250000056,
-          1554.0533330000471
+          1432.6062500000116,
+          1229.1015420000185,
+          829.2607500000158
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -1336,32 +1336,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 10340.095625000075,
-        "wallMsMin": 7331.346791999997,
-        "wallMsMax": 12630.766125000082,
+        "wallMs": 2457.254583000031,
+        "wallMsMin": 2076.8252910000156,
+        "wallMsMax": 2922.654416000005,
         "wallMsAll": [
-          10340.095625000075,
-          12630.766125000082,
-          7331.346791999997
+          2457.254583000031,
+          2922.654416000005,
+          2076.8252910000156
         ],
-        "rpcCalls": 60,
-        "sampleCount": 35,
+        "rpcCalls": 13,
+        "sampleCount": 12,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 10466.097542000003,
-        "wallMsMin": 8731.595000000088,
-        "wallMsMax": 10869.177167000016,
+        "wallMs": 3634.65295899997,
+        "wallMsMin": 3197.7034580000327,
+        "wallMsMax": 6079.904875000007,
         "wallMsAll": [
-          8731.595000000088,
-          10869.177167000016,
-          10466.097542000003
+          6079.904875000007,
+          3634.65295899997,
+          3197.7034580000327
         ],
-        "rpcCalls": 71,
-        "sampleCount": 26,
+        "rpcCalls": 13,
+        "sampleCount": 12,
         "openGaps": 0,
         "complete": false
       }
@@ -1370,41 +1370,41 @@
   {
     "trial": 19,
     "x": [
-      0.5528624267459679,
-      0.37770223708295014,
-      0.6710409256345167
+      0.0027569684384520787,
+      0.3013929109122091,
+      0.19856876101763676
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 35,
-      "maxConcurrency": 12,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 10,
+      "skipZeroDelta": false
     },
-    "score": 0.005627749986946601,
+    "score": 0.12755381108163727,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 5923.030236000001,
-      "maxWalletMs": 9054.92941699992,
-      "totalRpc": 177,
+      "avgLatencyMs": 1567.9656946666655,
+      "maxWalletMs": 2381.1716250000172,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.005627749986946601,
-      "gate": 0.05
+      "completeness": 0.3333333333333333,
+      "score": 0.12755381108163727,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1794.7263329999987,
-        "wallMsMin": 1089.953291999991,
-        "wallMsMax": 5249.401667000027,
+        "wallMs": 1081.7329589999863,
+        "wallMsMin": 710.9930419999873,
+        "wallMsMax": 1180.7650830000057,
         "wallMsAll": [
-          1089.953291999991,
-          1794.7263329999987,
-          5249.401667000027
+          1081.7329589999863,
+          710.9930419999873,
+          1180.7650830000057
         ],
-        "rpcCalls": 11,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1412,32 +1412,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 6919.434958000085,
-        "wallMsMin": 6607.589625000022,
-        "wallMsMax": 8889.58050000004,
+        "wallMs": 1240.992499999993,
+        "wallMsMin": 1192.855749999988,
+        "wallMsMax": 1970.6897499999614,
         "wallMsAll": [
-          6919.434958000085,
-          8889.58050000004,
-          6607.589625000022
+          1970.6897499999614,
+          1192.855749999988,
+          1240.992499999993
         ],
-        "rpcCalls": 74,
-        "sampleCount": 33,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 9054.92941699992,
-        "wallMsMin": 7991.891792000039,
-        "wallMsMax": 10010.290000000037,
+        "wallMs": 2381.1716250000172,
+        "wallMsMin": 2058.9517500000075,
+        "wallMsMax": 5067.820416999981,
         "wallMsAll": [
-          10010.290000000037,
-          7991.891792000039,
-          9054.92941699992
+          5067.820416999981,
+          2058.9517500000075,
+          2381.1716250000172
         ],
-        "rpcCalls": 92,
-        "sampleCount": 21,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1446,41 +1446,41 @@
   {
     "trial": 20,
     "x": [
-      0.5334334285684383,
-      0.5045396013488401,
-      0.0851464403871971
+      0.006345767011285197,
+      0.2956634473045785,
+      0.1728005884578181
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 34,
-      "maxConcurrency": 14,
+      "txTarget": 5,
+      "maxConcurrency": 10,
       "skipZeroDelta": false
     },
-    "score": 0.00522538498461109,
+    "score": 0.006368486858662099,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6379.115305666656,
-      "maxWalletMs": 7002.009416999994,
-      "totalRpc": 220,
+      "avgLatencyMs": 2617.0528473333493,
+      "maxWalletMs": 4656.581166999997,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.00522538498461109,
+      "completeness": 0.3333333333333333,
+      "score": 0.006368486858662099,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 5183.020625000005,
-        "wallMsMin": 4346.052750000032,
-        "wallMsMax": 120000,
+        "wallMs": 1209.740625000035,
+        "wallMsMin": 577.1543329999549,
+        "wallMsMax": 1216.3634999999776,
         "wallMsAll": [
-          120000,
-          5183.020625000005,
-          4346.052750000032
+          577.1543329999549,
+          1216.3634999999776,
+          1209.740625000035
         ],
-        "rpcCalls": 9,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1488,32 +1488,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 6952.315874999971,
-        "wallMsMin": 6057.763916000025,
-        "wallMsMax": 7550.422666000086,
+        "wallMs": 1984.8367500000168,
+        "wallMsMin": 1391.0357089999598,
+        "wallMsMax": 3031.725999999966,
         "wallMsAll": [
-          7550.422666000086,
-          6952.315874999971,
-          6057.763916000025
+          1391.0357089999598,
+          3031.725999999966,
+          1984.8367500000168
         ],
-        "rpcCalls": 117,
-        "sampleCount": 26,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7002.009416999994,
-        "wallMsMin": 6967.904333000071,
-        "wallMsMax": 7336.119666999904,
+        "wallMs": 4656.581166999997,
+        "wallMsMin": 3636.3732919999748,
+        "wallMsMax": 6319.562208999996,
         "wallMsAll": [
-          7336.119666999904,
-          6967.904333000071,
-          7002.009416999994
+          6319.562208999996,
+          4656.581166999997,
+          3636.3732919999748
         ],
-        "rpcCalls": 94,
-        "sampleCount": 31,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1522,41 +1522,41 @@
   {
     "trial": 21,
     "x": [
-      0.9847006651228156,
-      0.32425019510338005,
-      0.9054257016959273
+      0.0030052726822300535,
+      0.07070738584468095,
+      0.020524935324123472
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 59,
-      "maxConcurrency": 10,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
     },
-    "score": 0.004711185272395296,
+    "score": 0.13059846956328802,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 7075.360319333345,
-      "maxWalletMs": 9767.113207999966,
-      "totalRpc": 366,
+      "avgLatencyMs": 1531.4115140000165,
+      "maxWalletMs": 2464.3423340000445,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004711185272395296,
-      "gate": 0.05
+      "completeness": 0.3333333333333333,
+      "score": 0.13059846956328802,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2392.8632080000825,
-        "wallMsMin": 1185.0994159999536,
-        "wallMsMax": 5329.950500000035,
+        "wallMs": 878.7326250000042,
+        "wallMsMin": 634.3189589999965,
+        "wallMsMax": 2499.9565839999705,
         "wallMsAll": [
-          1185.0994159999536,
-          5329.950500000035,
-          2392.8632080000825
+          2499.9565839999705,
+          634.3189589999965,
+          878.7326250000042
         ],
-        "rpcCalls": 7,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1564,32 +1564,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 9066.104541999986,
-        "wallMsMin": 7878.614792000037,
-        "wallMsMax": 10543.331166999997,
+        "wallMs": 1251.1595830000006,
+        "wallMsMin": 1080.6309580000234,
+        "wallMsMax": 1815.5609159999876,
         "wallMsAll": [
-          9066.104541999986,
-          10543.331166999997,
-          7878.614792000037
+          1251.1595830000006,
+          1080.6309580000234,
+          1815.5609159999876
         ],
-        "rpcCalls": 169,
-        "sampleCount": 48,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 9767.113207999966,
-        "wallMsMin": 9513.472333000042,
-        "wallMsMax": 10681.262708000024,
+        "wallMs": 2464.3423340000445,
+        "wallMsMin": 1834.643167000031,
+        "wallMsMax": 3192.070416999981,
         "wallMsAll": [
-          10681.262708000024,
-          9513.472333000042,
-          9767.113207999966
+          3192.070416999981,
+          2464.3423340000445,
+          1834.643167000031
         ],
-        "rpcCalls": 190,
-        "sampleCount": 37,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1598,41 +1598,41 @@
   {
     "trial": 22,
     "x": [
-      0.6997798965949291,
-      0.28838926282976485,
-      0.5909361157988344
+      0.0018067452953551832,
+      0.8748845986734848,
+      0.0011586992869150325
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 43,
-      "maxConcurrency": 10,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 21,
+      "skipZeroDelta": false
     },
-    "score": 0.004652012053363265,
+    "score": 0.10563070331823447,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 7165.358333333279,
-      "maxWalletMs": 9506.340374999912,
-      "totalRpc": 252,
+      "avgLatencyMs": 1893.3888889999944,
+      "maxWalletMs": 2856.7469580000034,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004652012053363265,
-      "gate": 0.05
+      "completeness": 0.3333333333333333,
+      "score": 0.10563070331823447,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 3460.3615829999326,
-        "wallMsMin": 3129.104207999888,
-        "wallMsMax": 4413.493167000008,
+        "wallMs": 937.9662919999682,
+        "wallMsMin": 929.2829170000041,
+        "wallMsMax": 1404.8562919999822,
         "wallMsAll": [
-          3129.104207999888,
-          4413.493167000008,
-          3460.3615829999326
+          1404.8562919999822,
+          929.2829170000041,
+          937.9662919999682
         ],
-        "rpcCalls": 9,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1640,32 +1640,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 9506.340374999912,
-        "wallMsMin": 7225.8570419999305,
-        "wallMsMax": 120000,
+        "wallMs": 1885.4534170000115,
+        "wallMsMin": 1655.294292000006,
+        "wallMsMax": 2346.5160000000033,
         "wallMsAll": [
-          7225.8570419999305,
-          120000,
-          9506.340374999912
+          2346.5160000000033,
+          1885.4534170000115,
+          1655.294292000006
         ],
-        "rpcCalls": 155,
-        "sampleCount": 22,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8529.373041999992,
-        "wallMsMin": 7612.425999999978,
-        "wallMsMax": 13233.038083000109,
+        "wallMs": 2856.7469580000034,
+        "wallMsMin": 2634.6537499999977,
+        "wallMsMax": 3670.7915839999914,
         "wallMsAll": [
-          8529.373041999992,
-          13233.038083000109,
-          7612.425999999978
+          3670.7915839999914,
+          2856.7469580000034,
+          2634.6537499999977
         ],
-        "rpcCalls": 88,
-        "sampleCount": 26,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1674,41 +1674,41 @@
   {
     "trial": 23,
     "x": [
-      0.36173431753997587,
-      0.2816151279380861,
-      0.6549718022020139
+      0.010564887578015547,
+      0.24228988099529292,
+      0.02858403133634302
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 25,
-      "maxConcurrency": 10,
-      "skipZeroDelta": true
+      "txTarget": 6,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
     },
-    "score": 0.0027236739245358917,
+    "score": 0.00896689141179864,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6119.185750000023,
-      "maxWalletMs": 7459.274417000124,
-      "totalRpc": 136,
+      "avgLatencyMs": 1858.6894723333728,
+      "maxWalletMs": 3408.131374999997,
+      "totalRpc": 19,
       "openGapPenalty": 0,
       "completeness": 0.3333333333333333,
-      "score": 0.0027236739245358917,
+      "score": 0.00896689141179864,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 3907.6342080000322,
-        "wallMsMin": 1136.2052499998827,
-        "wallMsMax": 5543.557165999897,
+        "wallMs": 878.7547920000507,
+        "wallMsMin": 634.0389999999898,
+        "wallMsMax": 1172.2527919999557,
         "wallMsAll": [
-          3907.6342080000322,
-          1136.2052499998827,
-          5543.557165999897
+          878.7547920000507,
+          634.0389999999898,
+          1172.2527919999557
         ],
-        "rpcCalls": 13,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1716,32 +1716,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 6990.648624999914,
-        "wallMsMin": 6479.63599999994,
-        "wallMsMax": 7783.306749999989,
+        "wallMs": 1289.1822500000708,
+        "wallMsMin": 1279.3516250000102,
+        "wallMsMax": 1583.5197499999776,
         "wallMsAll": [
-          6479.63599999994,
-          7783.306749999989,
-          6990.648624999914
+          1279.3516250000102,
+          1289.1822500000708,
+          1583.5197499999776
         ],
-        "rpcCalls": 58,
-        "sampleCount": 22,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7459.274417000124,
-        "wallMsMin": 7321.981958999997,
-        "wallMsMax": 8536.443916999968,
+        "wallMs": 3408.131374999997,
+        "wallMsMin": 3244.3112919999985,
+        "wallMsMax": 3520.5311659999425,
         "wallMsAll": [
-          7459.274417000124,
-          7321.981958999997,
-          8536.443916999968
+          3244.3112919999985,
+          3408.131374999997,
+          3520.5311659999425
         ],
-        "rpcCalls": 65,
-        "sampleCount": 17,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       }
@@ -1750,41 +1750,41 @@
   {
     "trial": 24,
     "x": [
-      0.5939379425742388,
-      0.6227567252828232,
-      0.9781582341679305
+      0.007924031328732761,
+      0.7211395572042967,
+      0.04584165716334487
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 38,
-      "maxConcurrency": 16,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 18,
+      "skipZeroDelta": false
     },
-    "score": 0.0050538854106785686,
+    "score": 0.008415324718663719,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6595.585500000045,
-      "maxWalletMs": 8579.841250000056,
-      "totalRpc": 255,
+      "avgLatencyMs": 1980.5137916666379,
+      "maxWalletMs": 3315.1371250000084,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.0050538854106785686,
+      "completeness": 0.3333333333333333,
+      "score": 0.008415324718663719,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2735.0091670001857,
-        "wallMsMin": 2118.75704200007,
-        "wallMsMax": 4472.458416000009,
+        "wallMs": 870.5437499999534,
+        "wallMsMin": 691.6350410000887,
+        "wallMsMax": 1200.7068749999162,
         "wallMsAll": [
-          2735.0091670001857,
-          4472.458416000009,
-          2118.75704200007
+          870.5437499999534,
+          691.6350410000887,
+          1200.7068749999162
         ],
-        "rpcCalls": 10,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1792,32 +1792,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 8471.906082999893,
-        "wallMsMin": 6917.839999999851,
-        "wallMsMax": 9072.318292000098,
+        "wallMs": 1755.8604999999516,
+        "wallMsMin": 1711.0477089999476,
+        "wallMsMax": 1855.3714160000673,
         "wallMsAll": [
-          6917.839999999851,
-          8471.906082999893,
-          9072.318292000098
+          1755.8604999999516,
+          1855.3714160000673,
+          1711.0477089999476
         ],
-        "rpcCalls": 131,
-        "sampleCount": 26,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8579.841250000056,
-        "wallMsMin": 7939.802208000096,
-        "wallMsMax": 8749.593292000005,
+        "wallMs": 3315.1371250000084,
+        "wallMsMin": 2855.0507080000825,
+        "wallMsMax": 3483.3546250000363,
         "wallMsAll": [
-          8749.593292000005,
-          7939.802208000096,
-          8579.841250000056
+          3315.1371250000084,
+          3483.3546250000363,
+          2855.0507080000825
         ],
-        "rpcCalls": 114,
-        "sampleCount": 25,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1826,41 +1826,41 @@
   {
     "trial": 25,
     "x": [
-      0.0010556837819357678,
-      0.8500901716059455,
-      0.8934451627466418
+      0.006367470817209897,
+      0.8075128085223311,
+      0.03228435262970608
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
       "txTarget": 5,
-      "maxConcurrency": 21,
-      "skipZeroDelta": true
+      "maxConcurrency": 20,
+      "skipZeroDelta": false
     },
-    "score": 0.004158771758329989,
+    "score": 0.11352774003667965,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 4007.593499999959,
-      "maxWalletMs": 5026.447249999968,
-      "totalRpc": 28,
+      "avgLatencyMs": 1761.6839719999891,
+      "maxWalletMs": 2991.6165830000537,
+      "totalRpc": 17,
       "openGapPenalty": 0,
       "completeness": 0.3333333333333333,
-      "score": 0.004158771758329989,
-      "gate": 0.05
+      "score": 0.11352774003667965,
+      "gate": 0.6
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 5026.447249999968,
-        "wallMsMin": 2810.1699999999255,
-        "wallMsMax": 5389.0918749999255,
+        "wallMs": 876.2917919999454,
+        "wallMsMin": 858.0743749999674,
+        "wallMsMax": 1485.1940830000676,
         "wallMsAll": [
-          5389.0918749999255,
-          5026.447249999968,
-          2810.1699999999255
+          876.2917919999454,
+          858.0743749999674,
+          1485.1940830000676
         ],
-        "rpcCalls": 8,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1868,15 +1868,15 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 3141.0361249998678,
-        "wallMsMin": 2103.957417000085,
-        "wallMsMax": 4828.53600000008,
+        "wallMs": 1417.1435409999685,
+        "wallMsMin": 972.0874579999363,
+        "wallMsMax": 2251.59062500007,
         "wallMsAll": [
-          3141.0361249998678,
-          2103.957417000085,
-          4828.53600000008
+          972.0874579999363,
+          2251.59062500007,
+          1417.1435409999685
         ],
-        "rpcCalls": 10,
+        "rpcCalls": 6,
         "sampleCount": 5,
         "openGaps": 0,
         "complete": false
@@ -1884,16 +1884,16 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 3855.297125000041,
-        "wallMsMin": 2372.0351250001695,
-        "wallMsMax": 6930.77908300003,
+        "wallMs": 2991.6165830000537,
+        "wallMsMin": 2400.621000000043,
+        "wallMsMax": 3097.2126249999274,
         "wallMsAll": [
-          6930.77908300003,
-          3855.297125000041,
-          2372.0351250001695
+          2991.6165830000537,
+          2400.621000000043,
+          3097.2126249999274
         ],
-        "rpcCalls": 10,
-        "sampleCount": 4,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1902,39 +1902,39 @@
   {
     "trial": 26,
     "x": [
-      0.45287696169612435,
-      0.5383383648916615,
-      0.17151973482395277
+      0.007013592944445257,
+      0.4764164407838922,
+      0.1468244035126931
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 30,
-      "maxConcurrency": 15,
+      "txTarget": 5,
+      "maxConcurrency": 14,
       "skipZeroDelta": false
     },
-    "score": 0.00531306668777447,
+    "score": 0.006479398270225492,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6273.840569333406,
-      "maxWalletMs": 8938.226917000022,
-      "totalRpc": 177,
+      "avgLatencyMs": 2572.2553193333247,
+      "maxWalletMs": 4603.564208000083,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.00531306668777447,
+      "completeness": 0.3333333333333333,
+      "score": 0.006479398270225492,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1794.7168330000713,
-        "wallMsMin": 829.4697080000769,
-        "wallMsMax": 1911.9340409999713,
+        "wallMs": 1209.95395799994,
+        "wallMsMin": 1176.3926670000656,
+        "wallMsMax": 1231.9722499999916,
         "wallMsAll": [
-          1794.7168330000713,
-          829.4697080000769,
-          1911.9340409999713
+          1176.3926670000656,
+          1231.9722499999916,
+          1209.95395799994
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -1944,32 +1944,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 8938.226917000022,
-        "wallMsMin": 6672.630125000142,
-        "wallMsMax": 13152.183250000002,
+        "wallMs": 1903.247791999951,
+        "wallMsMin": 1882.155040999991,
+        "wallMsMax": 3115.9648750000633,
         "wallMsAll": [
-          8938.226917000022,
-          13152.183250000002,
-          6672.630125000142
+          1903.247791999951,
+          1882.155040999991,
+          3115.9648750000633
         ],
-        "rpcCalls": 100,
-        "sampleCount": 30,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8088.577958000125,
-        "wallMsMin": 7512.182875000173,
-        "wallMsMax": 9439.680540999863,
+        "wallMs": 4603.564208000083,
+        "wallMsMin": 2098.9305419999873,
+        "wallMsMax": 4622.458125000005,
         "wallMsAll": [
-          7512.182875000173,
-          8088.577958000125,
-          9439.680540999863
+          4622.458125000005,
+          4603.564208000083,
+          2098.9305419999873
         ],
-        "rpcCalls": 72,
-        "sampleCount": 30,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -1978,41 +1978,41 @@
   {
     "trial": 27,
     "x": [
-      0.5374817846921476,
-      0.5058260080509176,
-      0.2177127894714621
+      0.015142092652017158,
+      0.8710368616710034,
+      0.004699571144646475
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 35,
-      "maxConcurrency": 14,
+      "txTarget": 6,
+      "maxConcurrency": 21,
       "skipZeroDelta": false
     },
-    "score": 0.005473367481914217,
+    "score": 0.007487338629602031,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 6090.0959863333655,
-      "maxWalletMs": 8538.589583999943,
-      "totalRpc": 256,
+      "avgLatencyMs": 2225.980083333367,
+      "maxWalletMs": 4030.1365000000224,
+      "totalRpc": 19,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.005473367481914217,
+      "completeness": 0.3333333333333333,
+      "score": 0.007487338629602031,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2406.979542000219,
-        "wallMsMin": 1766.610582999885,
-        "wallMsMax": 3818.0394590001088,
+        "wallMs": 833.3299589999951,
+        "wallMsMin": 825.8950829999521,
+        "wallMsMax": 1246.5630830000155,
         "wallMsAll": [
-          2406.979542000219,
-          3818.0394590001088,
-          1766.610582999885
+          825.8950829999521,
+          833.3299589999951,
+          1246.5630830000155
         ],
-        "rpcCalls": 9,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -2020,32 +2020,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 7324.7188329999335,
-        "wallMsMin": 6855.045084000099,
-        "wallMsMax": 8457.89458400011,
+        "wallMs": 1814.473791000084,
+        "wallMsMin": 1094.113708000048,
+        "wallMsMax": 2232.6160420000087,
         "wallMsAll": [
-          6855.045084000099,
-          8457.89458400011,
-          7324.7188329999335
+          1094.113708000048,
+          2232.6160420000087,
+          1814.473791000084
         ],
-        "rpcCalls": 117,
-        "sampleCount": 30,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 8538.589583999943,
-        "wallMsMin": 6695.957374999998,
-        "wallMsMax": 12661.311375000048,
+        "wallMs": 4030.1365000000224,
+        "wallMsMin": 2638.6227499999804,
+        "wallMsMax": 4063.068874999997,
         "wallMsAll": [
-          8538.589583999943,
-          6695.957374999998,
-          12661.311375000048
+          4063.068874999997,
+          4030.1365000000224,
+          2638.6227499999804
         ],
-        "rpcCalls": 130,
-        "sampleCount": 22,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       }
@@ -2054,41 +2054,41 @@
   {
     "trial": 28,
     "x": [
-      0.5140323692483901,
-      0.4336294275205328,
-      0.1761630482733758
+      0.038581511091673626,
+      0.06694278977952917,
+      0.017647398766411193
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 33,
-      "maxConcurrency": 13,
+      "txTarget": 7,
+      "maxConcurrency": 5,
       "skipZeroDelta": false
     },
-    "score": 0.0036827894718345997,
+    "score": 0.007874828187234763,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 9051.110194666699,
-      "maxWalletMs": 14800.888625000138,
-      "totalRpc": 283,
+      "avgLatencyMs": 2116.448292000025,
+      "maxWalletMs": 3078.8693750000093,
+      "totalRpc": 21,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.0036827894718345997,
+      "completeness": 0.3333333333333333,
+      "score": 0.007874828187234763,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 5080.516291999957,
-        "wallMsMin": 1680.182083999971,
-        "wallMsMax": 8273.275542000076,
+        "wallMs": 1273.0501670000376,
+        "wallMsMin": 863.1124579999596,
+        "wallMsMax": 1492.8580839999486,
         "wallMsAll": [
-          8273.275542000076,
-          5080.516291999957,
-          1680.182083999971
+          863.1124579999596,
+          1273.0501670000376,
+          1492.8580839999486
         ],
-        "rpcCalls": 9,
+        "rpcCalls": 5,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -2096,32 +2096,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 7271.925667000003,
-        "wallMsMin": 6989.540415999945,
-        "wallMsMax": 120000,
+        "wallMs": 1997.4253340000287,
+        "wallMsMin": 1918.9662500000559,
+        "wallMsMax": 2385.398416000069,
         "wallMsAll": [
-          7271.925667000003,
-          6989.540415999945,
-          120000
+          2385.398416000069,
+          1918.9662500000559,
+          1997.4253340000287
         ],
-        "rpcCalls": 116,
-        "sampleCount": 22,
+        "rpcCalls": 8,
+        "sampleCount": 7,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 14800.888625000138,
-        "wallMsMin": 13036.008583999937,
-        "wallMsMax": 120000,
+        "wallMs": 3078.8693750000093,
+        "wallMsMin": 2944.8165000000736,
+        "wallMsMax": 3754.7316669999855,
         "wallMsAll": [
-          120000,
-          14800.888625000138,
-          13036.008583999937
+          3754.7316669999855,
+          3078.8693750000093,
+          2944.8165000000736
         ],
-        "rpcCalls": 158,
-        "sampleCount": 8,
+        "rpcCalls": 8,
+        "sampleCount": 7,
         "openGaps": 0,
         "complete": false
       }
@@ -2130,39 +2130,39 @@
   {
     "trial": 29,
     "x": [
-      0.6483451492705541,
-      0.8952644489769419,
-      0.6285849661274912
+      0.024805021854925835,
+      0.08451342595817346,
+      0.0009131523563816746
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 41,
-      "maxConcurrency": 22,
-      "skipZeroDelta": true
+      "txTarget": 6,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
     },
-    "score": 0.004052322541864597,
+    "score": 0.007453764206708404,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 8225.735486,
-      "maxWalletMs": 12069.691290999996,
-      "totalRpc": 146,
+      "avgLatencyMs": 2236.0066946666534,
+      "maxWalletMs": 3710.8667090000818,
+      "totalRpc": 19,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004052322541864597,
+      "completeness": 0.3333333333333333,
+      "score": 0.007453764206708404,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 911.437750000041,
-        "wallMsMin": 837.9490829999559,
-        "wallMsMax": 1873.2193750001024,
+        "wallMs": 853.8524999999208,
+        "wallMsMin": 825.7667920000385,
+        "wallMsMax": 1843.5808330000145,
         "wallMsAll": [
-          911.437750000041,
-          837.9490829999559,
-          1873.2193750001024
+          825.7667920000385,
+          1843.5808330000145,
+          853.8524999999208
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2172,32 +2172,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 12069.691290999996,
-        "wallMsMin": 6535.436207999941,
-        "wallMsMax": 120000,
+        "wallMs": 2143.300874999957,
+        "wallMsMin": 1790.5519169999752,
+        "wallMsMax": 2231.1351670000004,
         "wallMsAll": [
-          6535.436207999941,
-          120000,
-          12069.691290999996
+          1790.5519169999752,
+          2231.1351670000004,
+          2143.300874999957
         ],
-        "rpcCalls": 94,
-        "sampleCount": 37,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 11696.077416999964,
-        "wallMsMin": 6115.640833999962,
-        "wallMsMax": 16162.866333000129,
+        "wallMs": 3710.8667090000818,
+        "wallMsMin": 3467.2996669999557,
+        "wallMsMax": 4483.059708000044,
         "wallMsAll": [
-          16162.866333000129,
-          11696.077416999964,
-          6115.640833999962
+          4483.059708000044,
+          3710.8667090000818,
+          3467.2996669999557
         ],
-        "rpcCalls": 47,
-        "sampleCount": 32,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       }
@@ -2206,39 +2206,39 @@
   {
     "trial": 30,
     "x": [
-      0.7627414437963425,
-      0.376457715030198,
-      0.6920379485049617
+      0.003284491464131012,
+      0.3332466048605114,
+      0.08570733685364829
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 47,
-      "maxConcurrency": 12,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 11,
+      "skipZeroDelta": false
     },
-    "score": 0.006458596573283322,
+    "score": 0.007741208557817566,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 5161.079958333401,
-      "maxWalletMs": 7276.916667000158,
-      "totalRpc": 146,
+      "avgLatencyMs": 2152.9799309999994,
+      "maxWalletMs": 4130.139959000051,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.006458596573283322,
+      "completeness": 0.3333333333333333,
+      "score": 0.007741208557817566,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1245.4232080001384,
-        "wallMsMin": 959.0971250000875,
-        "wallMsMax": 1614.5637910000514,
+        "wallMs": 841.0933339999756,
+        "wallMsMin": 615.2703749999637,
+        "wallMsMax": 1498.8558750000084,
         "wallMsAll": [
-          1245.4232080001384,
-          1614.5637910000514,
-          959.0971250000875
+          841.0933339999756,
+          615.2703749999637,
+          1498.8558750000084
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2248,32 +2248,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 6960.899999999907,
-        "wallMsMin": 6718.774208000163,
-        "wallMsMax": 7763.488791999873,
+        "wallMs": 1487.7064999999711,
+        "wallMsMin": 986.7953330000164,
+        "wallMsMax": 1671.483416999923,
         "wallMsAll": [
-          6718.774208000163,
-          7763.488791999873,
-          6960.899999999907
+          1671.483416999923,
+          1487.7064999999711,
+          986.7953330000164
         ],
-        "rpcCalls": 76,
-        "sampleCount": 46,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7276.916667000158,
-        "wallMsMin": 6926.844999999972,
-        "wallMsMax": 8606.41954199993,
+        "wallMs": 4130.139959000051,
+        "wallMsMin": 3513.7749579999363,
+        "wallMsMax": 4555.966083000065,
         "wallMsAll": [
-          7276.916667000158,
-          6926.844999999972,
-          8606.41954199993
+          4555.966083000065,
+          4130.139959000051,
+          3513.7749579999363
         ],
-        "rpcCalls": 65,
-        "sampleCount": 38,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       }
@@ -2282,39 +2282,39 @@
   {
     "trial": 31,
     "x": [
-      0.7998732931742223,
-      0.43187919616983494,
-      0.6530334974644967
+      0.03461067796380557,
+      0.9240587033153045,
+      0.06436551009040081
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 49,
-      "maxConcurrency": 13,
-      "skipZeroDelta": true
+      "txTarget": 7,
+      "maxConcurrency": 22,
+      "skipZeroDelta": false
     },
-    "score": 0.005858419345229838,
+    "score": 0.007645375135001623,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 5689.816889000048,
-      "maxWalletMs": 9318.04625000013,
-      "totalRpc": 171,
+      "avgLatencyMs": 2179.9671530000246,
+      "maxWalletMs": 3712.9238749999786,
+      "totalRpc": 21,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.005858419345229838,
+      "completeness": 0.3333333333333333,
+      "score": 0.007645375135001623,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1342.8625420001335,
-        "wallMsMin": 879.718249999918,
-        "wallMsMax": 1942.6925839998294,
+        "wallMs": 1466.7072920000646,
+        "wallMsMin": 1171.7912090000464,
+        "wallMsMax": 1873.5043750000186,
         "wallMsAll": [
-          1942.6925839998294,
-          1342.8625420001335,
-          879.718249999918
+          1873.5043750000186,
+          1171.7912090000464,
+          1466.7072920000646
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2324,32 +2324,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 6408.541874999879,
-        "wallMsMin": 3852.2133749998175,
-        "wallMsMax": 7059.8617080000695,
+        "wallMs": 1360.2702920000302,
+        "wallMsMin": 1262.5998329999857,
+        "wallMsMax": 2629.1457080000546,
         "wallMsAll": [
-          3852.2133749998175,
-          7059.8617080000695,
-          6408.541874999879
+          2629.1457080000546,
+          1360.2702920000302,
+          1262.5998329999857
         ],
-        "rpcCalls": 110,
-        "sampleCount": 48,
+        "rpcCalls": 8,
+        "sampleCount": 7,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 9318.04625000013,
-        "wallMsMin": 8421.472499999916,
-        "wallMsMax": 11691.005458000116,
+        "wallMs": 3712.9238749999786,
+        "wallMsMin": 3466.5239160000347,
+        "wallMsMax": 5095.7970000000205,
         "wallMsAll": [
-          9318.04625000013,
-          11691.005458000116,
-          8421.472499999916
+          5095.7970000000205,
+          3712.9238749999786,
+          3466.5239160000347
         ],
-        "rpcCalls": 56,
-        "sampleCount": 40,
+        "rpcCalls": 8,
+        "sampleCount": 7,
         "openGaps": 0,
         "complete": false
       }
@@ -2358,39 +2358,39 @@
   {
     "trial": 32,
     "x": [
-      0.8155065866397229,
-      0.40559540096267055,
-      0.7261083195670894
+      0.009699349768029109,
+      0.9205489187337152,
+      0.07449066395035131
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 50,
-      "maxConcurrency": 12,
-      "skipZeroDelta": true
+      "txTarget": 6,
+      "maxConcurrency": 22,
+      "skipZeroDelta": false
     },
-    "score": 0.0060646262954964884,
+    "score": 0.007438213318846112,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 5496.35405533334,
-      "maxWalletMs": 7910.4380830000155,
-      "totalRpc": 164,
+      "avgLatencyMs": 2240.681458333352,
+      "maxWalletMs": 4019.8568339999765,
+      "totalRpc": 19,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.0060646262954964884,
+      "completeness": 0.3333333333333333,
+      "score": 0.007438213318846112,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1515.5858750001062,
-        "wallMsMin": 655.1542500001378,
-        "wallMsMax": 1520.0450000001583,
+        "wallMs": 1383.1651660000207,
+        "wallMsMin": 841.0220830000471,
+        "wallMsMax": 1812.2605419999454,
         "wallMsAll": [
-          1515.5858750001062,
-          1520.0450000001583,
-          655.1542500001378
+          1812.2605419999454,
+          841.0220830000471,
+          1383.1651660000207
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2400,32 +2400,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 7063.038207999896,
-        "wallMsMin": 6677.761292000068,
-        "wallMsMax": 7445.46845899988,
+        "wallMs": 1319.0223750000587,
+        "wallMsMin": 1091.6200420000823,
+        "wallMsMax": 1717.8791249999776,
         "wallMsAll": [
-          7445.46845899988,
-          6677.761292000068,
-          7063.038207999896
+          1319.0223750000587,
+          1717.8791249999776,
+          1091.6200420000823
         ],
-        "rpcCalls": 94,
-        "sampleCount": 49,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7910.4380830000155,
-        "wallMsMin": 7022.6620830001775,
-        "wallMsMax": 8748.533333000029,
+        "wallMs": 4019.8568339999765,
+        "wallMsMin": 2702.9745419999817,
+        "wallMsMax": 4759.004332999932,
         "wallMsAll": [
-          7910.4380830000155,
-          8748.533333000029,
-          7022.6620830001775
+          4759.004332999932,
+          4019.8568339999765,
+          2702.9745419999817
         ],
-        "rpcCalls": 65,
-        "sampleCount": 41,
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       }
@@ -2434,39 +2434,39 @@
   {
     "trial": 33,
     "x": [
-      0.7597751672280912,
-      0.42367884450951276,
-      0.7671918173153844
+      0.005761301968827404,
+      0.49446180288598396,
+      0.5257523029487385
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 47,
-      "maxConcurrency": 12,
+      "txTarget": 5,
+      "maxConcurrency": 14,
       "skipZeroDelta": true
     },
-    "score": 0.004610793213748406,
+    "score": 0.007371170414776896,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 7229.414070000018,
-      "maxWalletMs": 11429.469334000023,
-      "totalRpc": 304,
+      "avgLatencyMs": 2261.061097333363,
+      "maxWalletMs": 3384.141082999995,
+      "totalRpc": 17,
       "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004610793213748406,
+      "completeness": 0.3333333333333333,
+      "score": 0.007371170414776896,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1645.8834170000628,
-        "wallMsMin": 875.4703750000335,
-        "wallMsMax": 2170.9736669999547,
+        "wallMs": 1708.3901250000345,
+        "wallMsMin": 1424.764124999987,
+        "wallMsMax": 1836.5126669999445,
         "wallMsAll": [
-          2170.9736669999547,
-          1645.8834170000628,
-          875.4703750000335
+          1708.3901250000345,
+          1424.764124999987,
+          1836.5126669999445
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2476,32 +2476,32 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 8612.889458999969,
-        "wallMsMin": 7516.478624999989,
-        "wallMsMax": 10354.718957999954,
+        "wallMs": 1690.6520840000594,
+        "wallMsMin": 1191.0979580000276,
+        "wallMsMax": 1741.1685409999918,
         "wallMsAll": [
-          8612.889458999969,
-          10354.718957999954,
-          7516.478624999989
+          1690.6520840000594,
+          1741.1685409999918,
+          1191.0979580000276
         ],
-        "rpcCalls": 159,
-        "sampleCount": 36,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
-        "complete": true
+        "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 11429.469334000023,
-        "wallMsMin": 10971.374374999898,
-        "wallMsMax": 13443.503958000103,
+        "wallMs": 3384.141082999995,
+        "wallMsMin": 2684.9281249999767,
+        "wallMsMax": 3891.155040999991,
         "wallMsAll": [
-          10971.374374999898,
-          13443.503958000103,
-          11429.469334000023
+          3891.155040999991,
+          3384.141082999995,
+          2684.9281249999767
         ],
-        "rpcCalls": 140,
-        "sampleCount": 32,
+        "rpcCalls": 6,
+        "sampleCount": 4,
         "openGaps": 0,
         "complete": false
       }
@@ -2510,267 +2510,39 @@
   {
     "trial": 34,
     "x": [
-      0.791704022607012,
-      0.38976042690113766,
-      0.5760053666873075
+      0.007293286916203234,
+      0.6118857140193745,
+      0.09439248094558872
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 6,
-      "txTarget": 49,
-      "maxConcurrency": 12,
-      "skipZeroDelta": true
+      "txTarget": 5,
+      "maxConcurrency": 16,
+      "skipZeroDelta": false
     },
-    "score": 0.004298031376745797,
+    "score": 0.007634220960387137,
     "runs": 3,
     "aggregate": {
-      "avgLatencyMs": 7755.488597333431,
-      "maxWalletMs": 10673.00950000016,
-      "totalRpc": 278,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004298031376745797,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 3523.816749999998,
-        "wallMsMin": 3298.3533330000937,
-        "wallMsMax": 7461.474916000152,
-        "wallMsAll": [
-          3298.3533330000937,
-          3523.816749999998,
-          7461.474916000152
-        ],
-        "rpcCalls": 9,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 9069.639542000135,
-        "wallMsMin": 7449.962374999886,
-        "wallMsMax": 14288.18287499994,
-        "wallMsAll": [
-          7449.962374999886,
-          9069.639542000135,
-          14288.18287499994
-        ],
-        "rpcCalls": 144,
-        "sampleCount": 37,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 10673.00950000016,
-        "wallMsMin": 9314.826082999818,
-        "wallMsMax": 10863.916457999963,
-        "wallMsAll": [
-          10863.916457999963,
-          10673.00950000016,
-          9314.826082999818
-        ],
-        "rpcCalls": 125,
-        "sampleCount": 32,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 35,
-    "x": [
-      0.7800397508112853,
-      0.3401854163263629,
-      0.7482238035538222
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 48,
-      "maxConcurrency": 11,
-      "skipZeroDelta": true
-    },
-    "score": 0.004575508609244035,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 7285.164596999995,
-      "maxWalletMs": 12265.179790999973,
-      "totalRpc": 281,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.004575508609244035,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1838.016375000123,
-        "wallMsMin": 1410.3987080000807,
-        "wallMsMax": 2747.505458999891,
-        "wallMsAll": [
-          1838.016375000123,
-          2747.505458999891,
-          1410.3987080000807
-        ],
-        "rpcCalls": 6,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 7752.29762499989,
-        "wallMsMin": 6968.836959000211,
-        "wallMsMax": 8796.202041999903,
-        "wallMsAll": [
-          6968.836959000211,
-          7752.29762499989,
-          8796.202041999903
-        ],
-        "rpcCalls": 134,
-        "sampleCount": 45,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 12265.179790999973,
-        "wallMsMin": 10038.064665999962,
-        "wallMsMax": 17667.49166599987,
-        "wallMsAll": [
-          10038.064665999962,
-          17667.49166599987,
-          12265.179790999973
-        ],
-        "rpcCalls": 141,
-        "sampleCount": 34,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 36,
-    "x": [
-      0.7941646858769364,
-      0.4758453749148652,
-      0.7750502177341998
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 49,
-      "maxConcurrency": 14,
-      "skipZeroDelta": true
-    },
-    "score": 0.003910269029955383,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 8524.562652333329,
-      "maxWalletMs": 15006.349041000009,
-      "totalRpc": 355,
-      "openGapPenalty": 0,
-      "completeness": 0.6666666666666666,
-      "score": 0.003910269029955383,
-      "gate": 0.05
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1713.2495409999974,
-        "wallMsMin": 1526.6300419999752,
-        "wallMsMax": 4542.048833000008,
-        "wallMsAll": [
-          1526.6300419999752,
-          1713.2495409999974,
-          4542.048833000008
-        ],
-        "rpcCalls": 7,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 8854.089374999981,
-        "wallMsMin": 8449.989166999934,
-        "wallMsMax": 120000,
-        "wallMsAll": [
-          8854.089374999981,
-          8449.989166999934,
-          120000
-        ],
-        "rpcCalls": 155,
-        "sampleCount": 33,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 15006.349041000009,
-        "wallMsMin": 11449.67741600005,
-        "wallMsMax": 17584.55145899998,
-        "wallMsAll": [
-          11449.67741600005,
-          17584.55145899998,
-          15006.349041000009
-        ],
-        "rpcCalls": 193,
-        "sampleCount": 24,
-        "openGaps": 0,
-        "complete": false
-      }
-    ]
-  },
-  {
-    "trial": 37,
-    "x": [
-      0.5066939856721744,
-      0.886191396891512,
-      0.9857599284463328
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 6,
-      "txTarget": 33,
-      "maxConcurrency": 22,
-      "skipZeroDelta": true
-    },
-    "score": 0.002348002962493382,
-    "runs": 3,
-    "aggregate": {
-      "avgLatencyMs": 7098.230680666631,
-      "maxWalletMs": 11608.762958999956,
-      "totalRpc": 271,
+      "avgLatencyMs": 2183.152250000043,
+      "maxWalletMs": 3988.149667000049,
+      "totalRpc": 17,
       "openGapPenalty": 0,
       "completeness": 0.3333333333333333,
-      "score": 0.002348002962493382,
+      "score": 0.007634220960387137,
       "gate": 0.05
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1571.1325410001446,
-        "wallMsMin": 1477.0201250000391,
-        "wallMsMax": 1881.6910840000492,
+        "wallMs": 818.7170829999959,
+        "wallMsMin": 645.4787919999799,
+        "wallMsMax": 884.4880000000121,
         "wallMsAll": [
-          1881.6910840000492,
-          1571.1325410001446,
-          1477.0201250000391
+          645.4787919999799,
+          884.4880000000121,
+          818.7170829999959
         ],
         "rpcCalls": 5,
         "sampleCount": 4,
@@ -2780,32 +2552,1248 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 8114.796541999793,
-        "wallMsMin": 7416.140083999839,
-        "wallMsMax": 8641.23295799992,
+        "wallMs": 1742.5900000000838,
+        "wallMsMin": 1678.3710829999764,
+        "wallMsMax": 2178.3497080000816,
         "wallMsAll": [
-          8641.23295799992,
-          7416.140083999839,
-          8114.796541999793
+          1678.3710829999764,
+          2178.3497080000816,
+          1742.5900000000838
         ],
-        "rpcCalls": 138,
-        "sampleCount": 12,
+        "rpcCalls": 6,
+        "sampleCount": 5,
         "openGaps": 0,
         "complete": false
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 11608.762958999956,
-        "wallMsMin": 10163.800583000062,
-        "wallMsMax": 13533.655125000048,
+        "wallMs": 3988.149667000049,
+        "wallMsMin": 3874.3244580000173,
+        "wallMsMax": 5395.2666250000475,
         "wallMsAll": [
-          11608.762958999956,
-          13533.655125000048,
-          10163.800583000062
+          3874.3244580000173,
+          3988.149667000049,
+          5395.2666250000475
         ],
-        "rpcCalls": 128,
-        "sampleCount": 18,
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 35,
+    "x": [
+      0.000878015563227974,
+      0.14506793821349961,
+      0.04962338958042056
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 7,
+      "skipZeroDelta": false
+    },
+    "score": 0.007848060707164171,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2123.666889000024,
+      "maxWalletMs": 3998.575375000015,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007848060707164171,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1036.7172080000164,
+        "wallMsMin": 878.1463750000112,
+        "wallMsMax": 1125.374208000023,
+        "wallMsAll": [
+          878.1463750000112,
+          1036.7172080000164,
+          1125.374208000023
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1335.7080840000417,
+        "wallMsMin": 1053.2281250000233,
+        "wallMsMax": 1471.1981659999583,
+        "wallMsAll": [
+          1471.1981659999583,
+          1053.2281250000233,
+          1335.7080840000417
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3998.575375000015,
+        "wallMsMin": 2959.378374999971,
+        "wallMsMax": 4119.767166999984,
+        "wallMsAll": [
+          4119.767166999984,
+          3998.575375000015,
+          2959.378374999971
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 36,
+    "x": [
+      0.0029280001220466367,
+      0.7121181584164025,
+      0.0584000013797501
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 18,
+      "skipZeroDelta": false
+    },
+    "score": 0.006247126972855484,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2667.893055333329,
+      "maxWalletMs": 4065.9183750000084,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006247126972855484,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1334.1379159999778,
+        "wallMsMin": 791.5541250000242,
+        "wallMsMax": 1491.1095409999834,
+        "wallMsAll": [
+          1334.1379159999778,
+          1491.1095409999834,
+          791.5541250000242
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2603.622875000001,
+        "wallMsMin": 2238.2990829999326,
+        "wallMsMax": 3263.2465420000954,
+        "wallMsAll": [
+          3263.2465420000954,
+          2603.622875000001,
+          2238.2990829999326
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4065.9183750000084,
+        "wallMsMin": 3334.155832999968,
+        "wallMsMax": 5063.564749999903,
+        "wallMsAll": [
+          5063.564749999903,
+          4065.9183750000084,
+          3334.155832999968
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 37,
+    "x": [
+      0.02970280567221284,
+      0.9429680406173979,
+      0.014214510736939356
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 7,
+      "maxConcurrency": 23,
+      "skipZeroDelta": false
+    },
+    "score": 0.006870061044500263,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2425.9852363333725,
+      "maxWalletMs": 4398.418082999997,
+      "totalRpc": 21,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006870061044500263,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1402.515209000092,
+        "wallMsMin": 820.1523749999469,
+        "wallMsMax": 1770.7781250000698,
+        "wallMsAll": [
+          1770.7781250000698,
+          820.1523749999469,
+          1402.515209000092
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1477.0224170000292,
+        "wallMsMin": 1449.4309999999823,
+        "wallMsMax": 2400.6455419999547,
+        "wallMsAll": [
+          1477.0224170000292,
+          1449.4309999999823,
+          2400.6455419999547
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4398.418082999997,
+        "wallMsMin": 3636.1656250000233,
+        "wallMsMax": 6174.008207999985,
+        "wallMsAll": [
+          4398.418082999997,
+          6174.008207999985,
+          3636.1656250000233
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 38,
+    "x": [
+      0.022630980848235227,
+      0.27782235849567494,
+      0.23076122709507896
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 10,
+      "skipZeroDelta": false
+    },
+    "score": 0.09733349746118618,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2054.7910556666707,
+      "maxWalletMs": 2886.271417000098,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.09733349746118618,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1291.8298749999376,
+        "wallMsMin": 825.6967500000028,
+        "wallMsMax": 1441.6368749999674,
+        "wallMsAll": [
+          1441.6368749999674,
+          1291.8298749999376,
+          825.6967500000028
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1986.2718749999767,
+        "wallMsMin": 1075.6992909999099,
+        "wallMsMax": 2070.1154579999857,
+        "wallMsAll": [
+          1986.2718749999767,
+          2070.1154579999857,
+          1075.6992909999099
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2886.271417000098,
+        "wallMsMin": 2468.8051249999553,
+        "wallMsMax": 4315.882375000045,
+        "wallMsAll": [
+          4315.882375000045,
+          2886.271417000098,
+          2468.8051249999553
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 39,
+    "x": [
+      0.026753373360266064,
+      0.3205947902184805,
+      0.3143281958695454
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 10,
+      "skipZeroDelta": false
+    },
+    "score": 0.0059934902010650385,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2780.7948470000024,
+      "maxWalletMs": 5386.388082999969,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.0059934902010650385,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1263.2499170000665,
+        "wallMsMin": 564.1530410000123,
+        "wallMsMax": 1436.1589580000145,
+        "wallMsAll": [
+          564.1530410000123,
+          1263.2499170000665,
+          1436.1589580000145
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1692.7465409999713,
+        "wallMsMin": 1343.751209000009,
+        "wallMsMax": 1927.8378750000848,
+        "wallMsAll": [
+          1927.8378750000848,
+          1692.7465409999713,
+          1343.751209000009
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5386.388082999969,
+        "wallMsMin": 4494.5941250000615,
+        "wallMsMax": 5792.739834000007,
+        "wallMsAll": [
+          5792.739834000007,
+          5386.388082999969,
+          4494.5941250000615
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 40,
+    "x": [
+      0.03639978777227104,
+      0.26355653363714704,
+      0.10402981216720053
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 7,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
+    },
+    "score": 0.007078004797506952,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2354.712541666697,
+      "maxWalletMs": 3880.28674999997,
+      "totalRpc": 21,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007078004797506952,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1350.7464580000378,
+        "wallMsMin": 843.986082999967,
+        "wallMsMax": 2159.223333000089,
+        "wallMsAll": [
+          2159.223333000089,
+          1350.7464580000378,
+          843.986082999967
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1833.1044170000823,
+        "wallMsMin": 1702.624708999996,
+        "wallMsMax": 2944.4221249999246,
+        "wallMsAll": [
+          2944.4221249999246,
+          1833.1044170000823,
+          1702.624708999996
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3880.28674999997,
+        "wallMsMin": 3436.144250000012,
+        "wallMsMax": 4149.576125000021,
+        "wallMsAll": [
+          3880.28674999997,
+          4149.576125000021,
+          3436.144250000012
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 41,
+    "x": [
+      0.003463575422500753,
+      0.8289950450370818,
+      0.028578856747814907
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 21,
+      "skipZeroDelta": false
+    },
+    "score": 0.0074441384407269206,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2238.898000000006,
+      "maxWalletMs": 3315.4857499999925,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.0074441384407269206,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1191.438666000031,
+        "wallMsMin": 847.4891250000801,
+        "wallMsMax": 2847.4437920000637,
+        "wallMsAll": [
+          847.4891250000801,
+          1191.438666000031,
+          2847.4437920000637
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2209.769583999994,
+        "wallMsMin": 1405.5449999999255,
+        "wallMsMax": 2231.4977079998935,
+        "wallMsAll": [
+          2231.4977079998935,
+          2209.769583999994,
+          1405.5449999999255
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3315.4857499999925,
+        "wallMsMin": 3098.347833000007,
+        "wallMsMax": 3791.1500410001026,
+        "wallMsAll": [
+          3791.1500410001026,
+          3098.347833000007,
+          3315.4857499999925
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 42,
+    "x": [
+      0.019811367018151893,
+      0.2300230151229934,
+      0.08559956126799739
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
+    },
+    "score": 0.007602483616204605,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2192.2660419999934,
+      "maxWalletMs": 4142.081333999988,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007602483616204605,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 803.9649170000339,
+        "wallMsMin": 611.6889580000425,
+        "wallMsMax": 2205.426041999948,
+        "wallMsAll": [
+          2205.426041999948,
+          611.6889580000425,
+          803.9649170000339
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1630.751874999958,
+        "wallMsMin": 1309.5570840000873,
+        "wallMsMax": 2171.4972499998985,
+        "wallMsAll": [
+          2171.4972499998985,
+          1309.5570840000873,
+          1630.751874999958
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4142.081333999988,
+        "wallMsMin": 3440.8604999999516,
+        "wallMsMax": 4447.827249999973,
+        "wallMsAll": [
+          4142.081333999988,
+          3440.8604999999516,
+          4447.827249999973
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 43,
+    "x": [
+      0.005383785259167384,
+      0.21015443877581141,
+      0.14991272371263853
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 8,
+      "skipZeroDelta": false
+    },
+    "score": 0.007514015564494253,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2218.077208333338,
+      "maxWalletMs": 4427.452291999944,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007514015564494253,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 844.8025830000406,
+        "wallMsMin": 588.1329590000678,
+        "wallMsMax": 1201.0338749999646,
+        "wallMsAll": [
+          1201.0338749999646,
+          844.8025830000406,
+          588.1329590000678
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1381.9767500000307,
+        "wallMsMin": 1370.8453329999465,
+        "wallMsMax": 3887.146625000052,
+        "wallMsAll": [
+          1370.8453329999465,
+          1381.9767500000307,
+          3887.146625000052
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4427.452291999944,
+        "wallMsMin": 3746.270125000039,
+        "wallMsMax": 7813.59375,
+        "wallMsAll": [
+          7813.59375,
+          4427.452291999944,
+          3746.270125000039
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 44,
+    "x": [
+      0.015852189602883815,
+      0.9989532490064574,
+      0.02853786804867231
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 24,
+      "skipZeroDelta": false
+    },
+    "score": 0.008163038462946675,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2041.723402666704,
+      "maxWalletMs": 3174.8370000000577,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.008163038462946675,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1038.0443750000559,
+        "wallMsMin": 671.9243750000605,
+        "wallMsMax": 1255.360250000027,
+        "wallMsAll": [
+          671.9243750000605,
+          1038.0443750000559,
+          1255.360250000027
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1912.2888329999987,
+        "wallMsMin": 1726.2122499999823,
+        "wallMsMax": 2106.6901249999646,
+        "wallMsAll": [
+          1912.2888329999987,
+          2106.6901249999646,
+          1726.2122499999823
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3174.8370000000577,
+        "wallMsMin": 2602.4531669999706,
+        "wallMsMax": 3463.470250000013,
+        "wallMsAll": [
+          3174.8370000000577,
+          3463.470250000013,
+          2602.4531669999706
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 45,
+    "x": [
+      0.02771425664000038,
+      0.7351242152100907,
+      0.04595752848186008
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 7,
+      "maxConcurrency": 19,
+      "skipZeroDelta": false
+    },
+    "score": 0.006089367033474257,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2737.011346999983,
+      "maxWalletMs": 5528.764291999978,
+      "totalRpc": 21,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006089367033474257,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 839.0827079999726,
+        "wallMsMin": 583.5781660000794,
+        "wallMsMax": 1501.5068749999627,
+        "wallMsAll": [
+          839.0827079999726,
+          1501.5068749999627,
+          583.5781660000794
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1843.1870409999974,
+        "wallMsMin": 1358.9268750000047,
+        "wallMsMax": 1852.029125000001,
+        "wallMsAll": [
+          1358.9268750000047,
+          1843.1870409999974,
+          1852.029125000001
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5528.764291999978,
+        "wallMsMin": 4295.284542000038,
+        "wallMsMax": 5574.529875000007,
+        "wallMsAll": [
+          5574.529875000007,
+          5528.764291999978,
+          4295.284542000038
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 46,
+    "x": [
+      0.006960729892807382,
+      0.9803899109140528,
+      0.00023400561952291454
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 24,
+      "skipZeroDelta": false
+    },
+    "score": 0.008245584171520255,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2021.283916333341,
+      "maxWalletMs": 3961.3652909999946,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.008245584171520255,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 639.1816249999683,
+        "wallMsMin": 615.5405419999734,
+        "wallMsMax": 1446.282666999963,
+        "wallMsAll": [
+          1446.282666999963,
+          639.1816249999683,
+          615.5405419999734
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1463.3048330000602,
+        "wallMsMin": 1444.7218339999672,
+        "wallMsMax": 1465.4822089999216,
+        "wallMsAll": [
+          1465.4822089999216,
+          1463.3048330000602,
+          1444.7218339999672
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3961.3652909999946,
+        "wallMsMin": 3429.934499999974,
+        "wallMsMax": 7452.548999999999,
+        "wallMsAll": [
+          7452.548999999999,
+          3429.934499999974,
+          3961.3652909999946
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 47,
+    "x": [
+      0.0038400688298012575,
+      0.888815669101167,
+      0.004657373886499228
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 5,
+      "maxConcurrency": 22,
+      "skipZeroDelta": false
+    },
+    "score": 0.007993776417871327,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2084.955319666653,
+      "maxWalletMs": 3310.9452919999603,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007993776417871327,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1333.8173749999842,
+        "wallMsMin": 849.1549589999486,
+        "wallMsMax": 2458.6864589999896,
+        "wallMsAll": [
+          849.1549589999486,
+          2458.6864589999896,
+          1333.8173749999842
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1610.1032920000143,
+        "wallMsMin": 1454.6334590000333,
+        "wallMsMax": 2929.67104200006,
+        "wallMsAll": [
+          2929.67104200006,
+          1610.1032920000143,
+          1454.6334590000333
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3310.9452919999603,
+        "wallMsMin": 3116.003167000017,
+        "wallMsMax": 5607.3162909999955,
+        "wallMsAll": [
+          5607.3162909999955,
+          3116.003167000017,
+          3310.9452919999603
+        ],
+        "rpcCalls": 6,
+        "sampleCount": 5,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 48,
+    "x": [
+      0.010694430054093207,
+      0.33744336365246963,
+      0.20376364931802216
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 11,
+      "skipZeroDelta": false
+    },
+    "score": 0.1227581338515019,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 1629.2199443332695,
+      "maxWalletMs": 2187.53199999989,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.1227581338515019,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1255.8725829999894,
+        "wallMsMin": 1043.1161660000216,
+        "wallMsMax": 1285.592166999937,
+        "wallMsAll": [
+          1255.8725829999894,
+          1285.592166999937,
+          1043.1161660000216
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1444.2552499999292,
+        "wallMsMin": 1051.547082999954,
+        "wallMsMax": 2620.02183400013,
+        "wallMsAll": [
+          2620.02183400013,
+          1444.2552499999292,
+          1051.547082999954
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2187.53199999989,
+        "wallMsMin": 1594.6643749999348,
+        "wallMsMax": 2433.6910409999546,
+        "wallMsAll": [
+          2187.53199999989,
+          1594.6643749999348,
+          2433.6910409999546
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 49,
+    "x": [
+      0.03175838421382182,
+      0.42754128050187656,
+      0.2836026692887348
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 7,
+      "maxConcurrency": 13,
+      "skipZeroDelta": false
+    },
+    "score": 0.00854420983192565,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 1950.6387360000517,
+      "maxWalletMs": 3446.1498330000322,
+      "totalRpc": 21,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.00854420983192565,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 936.6770840000827,
+        "wallMsMin": 793.2976670002099,
+        "wallMsMax": 1207.4898340001237,
+        "wallMsAll": [
+          793.2976670002099,
+          1207.4898340001237,
+          936.6770840000827
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1469.0892910000402,
+        "wallMsMin": 1134.3818749999627,
+        "wallMsMax": 2602.263375000097,
+        "wallMsAll": [
+          2602.263375000097,
+          1469.0892910000402,
+          1134.3818749999627
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3446.1498330000322,
+        "wallMsMin": 3080.151542000007,
+        "wallMsMax": 3705.0060830002185,
+        "wallMsAll": [
+          3705.0060830002185,
+          3446.1498330000322,
+          3080.151542000007
+        ],
+        "rpcCalls": 8,
+        "sampleCount": 7,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 50,
+    "x": [
+      0.013416371776176383,
+      0.2608772497874017,
+      0.2898403460080945
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "txTarget": 6,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
+    },
+    "score": 0.007736279964945728,
+    "runs": 3,
+    "aggregate": {
+      "avgLatencyMs": 2154.3515413332884,
+      "maxWalletMs": 3230.7081659999676,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007736279964945728,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1279.9520000000484,
+        "wallMsMin": 841.973208000185,
+        "wallMsMax": 1343.591957999859,
+        "wallMsAll": [
+          1279.9520000000484,
+          841.973208000185,
+          1343.591957999859
+        ],
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1952.3944579998497,
+        "wallMsMin": 1037.3211250000168,
+        "wallMsMax": 2103.0941670001484,
+        "wallMsAll": [
+          2103.0941670001484,
+          1037.3211250000168,
+          1952.3944579998497
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3230.7081659999676,
+        "wallMsMin": 2565.724084000103,
+        "wallMsMax": 3255.769832999911,
+        "wallMsAll": [
+          2565.724084000103,
+          3255.769832999911,
+          3230.7081659999676
+        ],
+        "rpcCalls": 7,
+        "sampleCount": 6,
         "openGaps": 0,
         "complete": false
       }

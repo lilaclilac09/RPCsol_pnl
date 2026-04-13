@@ -19,18 +19,21 @@
  */
 import { mkdirSync, writeFileSync } from "fs";
 import { evaluate } from "./eval_v15_stable.mjs";
+import { probeCapabilities } from "./capability_probe.mjs";
 
 const apiKey = process.argv[2] ?? process.env.HELIUS_API_KEY;
 const BUDGET = parseInt(process.argv[3] ?? "50", 10);
 if (!apiKey) { console.error("Usage: node research_v15.mjs <api-key> [budget=50]"); process.exit(1); }
 
 const PARAMS = [
-  { name: "txTarget",       lo: 5,   hi: 60,  integer: true  },
-  { name: "maxConcurrency", lo: 4,   hi: 24,  integer: true  },
+  { name: "denseTarget",    lo: 80,  hi: 180, integer: true  },
+  { name: "mediumTarget",   lo: 24,  hi: 72,  integer: true  },
+  { name: "maxConcurrency", lo: 4,   hi: 20,  integer: true  },
+  { name: "minRequestIntervalMs", lo: 70, hi: 200, integer: true },
   { name: "skipZeroDelta",  lo: 0,   hi: 1,   boolean: true  },
 ];
 const DIM   = PARAMS.length;
-const FIXED = { sigPageSize: 1000, maxSigPages: 6 };
+const FIXED = { sigPageSize: 1000, maxSigPages: 6, phase1Coverage: 36 };
 
 function xToStrategy(x) {
   const s = { ...FIXED };
@@ -39,6 +42,12 @@ function xToStrategy(x) {
     const v = x[i] * (p.hi - p.lo) + p.lo;
     s[p.name] = p.boolean ? v > 0.5 : Math.round(v);
   }
+  s.walletBudgets = {
+    sparse: 8,
+    medium: s.mediumTarget,
+    dense: s.denseTarget,
+  };
+  s.txTarget = s.denseTarget;
   return s;
 }
 function randomX() { return PARAMS.map(() => Math.random()); }
@@ -105,9 +114,11 @@ function suggest(gp, kappa) {
 }
 
 mkdirSync("results_v15", { recursive: true });
-console.log(`\nV15 Stable GP-UCB (3-run median) — Budget ${BUDGET}  3D  ${apiKey.slice(0, 8)}...`);
+const capability = await probeCapabilities(apiKey);
+console.log(`\nV15 Stable GP-UCB (3-run median) — Budget ${BUDGET}  5D  ${apiKey.slice(0, 8)}...`);
 console.log(`  Solver: free-tier (getSignaturesForAddress + getTransaction)`);
-console.log(`  Search: txTarget [5,60]  concurrency [4,24]  skip {0,1}`);
+console.log(`  Key mode: ${capability.mode}  (batch=${capability.batchAllowed ? "yes" : "no"}, gta=${capability.paidCapable ? "yes" : "no"})`);
+console.log(`  Search: denseTarget [80,180] mediumTarget [24,72] concurrency [4,20] minInterval [70,200] skip {0,1}`);
 
 const gp = new GP(), Xs = [], ys = [], logs = [];
 let bestGate1 = null, bestOverall = null;
@@ -118,7 +129,7 @@ for (let trial = 0; trial < BUDGET; trial++) {
   const strategy = xToStrategy(x);
 
   console.log(`\n[V15 trial ${trial + 1}/${BUDGET}  k=${kappa.toFixed(2)}]`);
-  console.log(`  txTarget=${strategy.txTarget}  c=${strategy.maxConcurrency}  skip=${strategy.skipZeroDelta}`);
+  console.log(`  dense=${strategy.walletBudgets.dense} medium=${strategy.walletBudgets.medium} c=${strategy.maxConcurrency} interval=${strategy.minRequestIntervalMs} skip=${strategy.skipZeroDelta}`);
 
   let score = 0;
   try {
@@ -167,6 +178,7 @@ writeFileSync("results_v15/best_strategy.json", JSON.stringify({
   _meta: {
     method: "bayesian-gp-ucb-v15-stable-3run",
     solver: "free-tier (getSignaturesForAddress + getTransaction)",
+    capability,
     runs_per_eval: 3,
     best_gate1:   bestGate1 ? { trial: bestGate1.trial, score: bestGate1.score } : null,
     best_overall: best      ? { trial: best.trial,      score: best.score      } : null,
@@ -180,4 +192,4 @@ const ranked = [
   ...logs.filter(l => l.aggregate?.gate !== 1.0 && l.score > 0).sort((a, b) => b.score - a.score),
 ].slice(0, 5);
 for (const r of ranked)
-  console.log(`  #${r.trial}  score=${r.score.toFixed(4)}  gate=${r.aggregate?.gate?.toFixed(2)}  tx=${r.strategy.txTarget}  c=${r.strategy.maxConcurrency}  skip=${r.strategy.skipZeroDelta}  max=${r.aggregate?.maxWalletMs?.toFixed(0)}ms  avg=${r.aggregate?.avgLatencyMs?.toFixed(0)}ms`);
+  console.log(`  #${r.trial}  score=${r.score.toFixed(4)}  gate=${r.aggregate?.gate?.toFixed(2)}  dense=${r.strategy.walletBudgets?.dense} medium=${r.strategy.walletBudgets?.medium} c=${r.strategy.maxConcurrency} interval=${r.strategy.minRequestIntervalMs} skip=${r.strategy.skipZeroDelta}  max=${r.aggregate?.maxWalletMs?.toFixed(0)}ms  avg=${r.aggregate?.avgLatencyMs?.toFixed(0)}ms`);
