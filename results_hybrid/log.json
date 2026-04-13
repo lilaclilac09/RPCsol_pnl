@@ -1,0 +1,392 @@
+[
+  {
+    "trial": 1,
+    "x": [
+      0.3928807952624569,
+      0.520217662591308,
+      0.2940630516840079,
+      0.0998784117301581,
+      0.6723717446269746
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 12,
+      "txTargetSparse": 9,
+      "cSparse": 6,
+      "txTargetMedDense": 24,
+      "cMedDense": 19
+    },
+    "score": 0.0032012003649080816,
+    "aggregate": {
+      "avgLatencyMs": 5206.380347,
+      "maxWalletMs": 6012.027958000002,
+      "totalRpc": 144,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.0032012003649080816,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 3626.180791,
+        "wallMsMin": 1101.5654170000003,
+        "wallMsMax": 5865.005125000001,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 6012.027958000002,
+        "wallMsMin": 5273.055499999999,
+        "wallMsMax": 6024.6118339999975,
+        "rpcCalls": 76,
+        "sampleCount": 17,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5980.932291999998,
+        "wallMsMin": 5002.785875000001,
+        "wallMsMax": 9374.371207999997,
+        "rpcCalls": 62,
+        "sampleCount": 24,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 2,
+    "x": [
+      0.3995687040804583,
+      0.6454979834391137,
+      0.5329170576739586,
+      0.8463343335230384,
+      0.40450837802547746
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 12,
+      "txTargetSparse": 11,
+      "cSparse": 8,
+      "txTargetMedDense": 54,
+      "cMedDense": 14
+    },
+    "score": 0.005136940264621385,
+    "aggregate": {
+      "avgLatencyMs": 6488.947041666669,
+      "maxWalletMs": 9855.065917,
+      "totalRpc": 401,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.005136940264621385,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 2072.4273749999993,
+        "wallMsMin": 1888.5446250000023,
+        "wallMsMax": 3332.9584169999944,
+        "rpcCalls": 8,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 7539.347833000007,
+        "wallMsMin": 6943.7618340000045,
+        "wallMsMax": 8940.681625000005,
+        "rpcCalls": 182,
+        "sampleCount": 42,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9855.065917,
+        "wallMsMin": 9655.82854100001,
+        "wallMsMax": 11239.301875000005,
+        "rpcCalls": 211,
+        "sampleCount": 34,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 3,
+    "x": [
+      0.5350524860387882,
+      0.12342172145481278,
+      0.30527804478944454,
+      0.047557397546733604,
+      0.2816022681604131
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 15,
+      "txTargetSparse": 4,
+      "cSparse": 6,
+      "txTargetMedDense": 22,
+      "cMedDense": 13
+    },
+    "score": 0.002970987821141037,
+    "aggregate": {
+      "avgLatencyMs": 5609.806458333333,
+      "maxWalletMs": 8841.096374999994,
+      "totalRpc": 131,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.002970987821141037,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1358.293458,
+        "wallMsMin": 1177.2024999999994,
+        "wallMsMax": 1779.1489160000056,
+        "rpcCalls": 5,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 6630.029542000004,
+        "wallMsMin": 5444.676500000001,
+        "wallMsMax": 7414.883166999993,
+        "rpcCalls": 68,
+        "sampleCount": 21,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 8841.096374999994,
+        "wallMsMin": 8781.878750000003,
+        "wallMsMax": 10158.570290999982,
+        "rpcCalls": 58,
+        "sampleCount": 22,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 4,
+    "x": [
+      0.3417547440511275,
+      0.46235827543996133,
+      0.44842268646415295,
+      0.1212877163679631,
+      0.12273281192073027
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 11,
+      "txTargetSparse": 9,
+      "cSparse": 8,
+      "txTargetMedDense": 25,
+      "cMedDense": 10
+    },
+    "score": 0.0024862661866860225,
+    "aggregate": {
+      "avgLatencyMs": 6703.492472333339,
+      "maxWalletMs": 10423.457958000014,
+      "totalRpc": 121,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.0024862661866860225,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 2559.609083999996,
+        "wallMsMin": 2195.92416699999,
+        "wallMsMax": 120000,
+        "rpcCalls": 7,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 7127.410375000007,
+        "wallMsMin": 5344.503874999995,
+        "wallMsMax": 7242.454125000018,
+        "rpcCalls": 50,
+        "sampleCount": 24,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 10423.457958000014,
+        "wallMsMin": 8168.93637499999,
+        "wallMsMax": 11163.682832999999,
+        "rpcCalls": 64,
+        "sampleCount": 21,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 5,
+    "x": [
+      0.12310078342130004,
+      0.7007623285765059,
+      0.13642150817477616,
+      0.5090626570600634,
+      0.22235770165812907
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 6,
+      "txTargetSparse": 11,
+      "cSparse": 5,
+      "txTargetMedDense": 40,
+      "cMedDense": 12
+    },
+    "score": 0.0039936764526416505,
+    "aggregate": {
+      "avgLatencyMs": 8346.528250000003,
+      "maxWalletMs": 11845.301208999997,
+      "totalRpc": 251,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.0039936764526416505,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 5214.650458000018,
+        "wallMsMin": 3911.571708000003,
+        "wallMsMax": 120000,
+        "rpcCalls": 12,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 7979.633082999993,
+        "wallMsMin": 7865.491833000007,
+        "wallMsMax": 11767.898291999998,
+        "rpcCalls": 122,
+        "sampleCount": 33,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 11845.301208999997,
+        "wallMsMin": 9232.828083,
+        "wallMsMax": 120000,
+        "rpcCalls": 117,
+        "sampleCount": 32,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 6,
+    "x": [
+      0.6875929029551708,
+      0.5829339154506563,
+      0.4809726914903263,
+      0.7023452051589683,
+      0.7864697545216839
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 18,
+      "txTargetSparse": 10,
+      "cSparse": 8,
+      "txTargetMedDense": 48,
+      "cMedDense": 21
+    },
+    "score": 0.004093216888564947,
+    "aggregate": {
+      "avgLatencyMs": 8143.554138666659,
+      "maxWalletMs": 13258.690541999997,
+      "totalRpc": 355,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.004093216888564947,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 4300.214457999973,
+        "wallMsMin": 3221.1397920000018,
+        "wallMsMax": 5101.157999999996,
+        "rpcCalls": 9,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 6871.757416000008,
+        "wallMsMin": 6746.154458999983,
+        "wallMsMax": 7360.912666999968,
+        "rpcCalls": 174,
+        "sampleCount": 26,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 13258.690541999997,
+        "wallMsMin": 7095.697832999984,
+        "wallMsMax": 120000,
+        "rpcCalls": 172,
+        "sampleCount": 31,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  }
+]

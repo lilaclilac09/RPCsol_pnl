@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-hybrid-5d-3run",
+    "solver": "free-tier density-aware router",
+    "runs_per_eval": 3,
+    "trials_complete": 6,
+    "trials_total": 60,
+    "status": "running",
+    "best_gate1": null,
+    "best_overall": {
+      "trial": 2,
+      "score": 0.005136940264621385,
+      "gate": 0.05,
+      "avgLatencyMs": 6488.947041666669,
+      "maxWalletMs": 9855.065917
+    }
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 6,
+  "skipZeroDelta": false,
+  "sparseThreshold": 12,
+  "txTargetSparse": 11,
+  "cSparse": 8,
+  "txTargetMedDense": 54,
+  "cMedDense": 14
+}
