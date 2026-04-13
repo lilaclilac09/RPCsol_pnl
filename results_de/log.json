@@ -1,0 +1,822 @@
+[
+  {
+    "generation": 1,
+    "bestScore": 0.6204053062203702,
+    "bestStrategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 54,
+      "windowSize": 45,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "population": [
+      {
+        "score": 0.5398395475077005,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 59,
+          "windowSize": 88,
+          "maxConcurrency": 18,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1852.402264,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5398395475077005
+        }
+      },
+      {
+        "score": 0.5708240731929243,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 73,
+          "windowSize": 72,
+          "maxConcurrency": 18,
+          "useContinuityOracle": true,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1751.8532363333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5708240731929243
+        }
+      },
+      {
+        "score": 0.2997080543842245,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 72,
+          "windowSize": 98,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 3336.5803333333315,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.2997080543842245
+        }
+      },
+      {
+        "score": 0.3966664503750289,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 94,
+          "maxConcurrency": 5,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 2521.009778000001,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.3966664503750289
+        }
+      },
+      {
+        "score": 0.4152635755970024,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 56,
+          "windowSize": 64,
+          "maxConcurrency": 24,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 2408.1091113333337,
+          "totalRpc": 20,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.4152635755970024
+        }
+      },
+      {
+        "score": 0.5442765618531238,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 82,
+          "windowSize": 77,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1837.3012363333328,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5442765618531238
+        }
+      },
+      {
+        "score": 0.5653557444410942,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 39,
+          "windowSize": 77,
+          "maxConcurrency": 9,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1768.797805333333,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5653557444410942
+        }
+      },
+      {
+        "score": 0.5343972985940094,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 67,
+          "windowSize": 37,
+          "maxConcurrency": 17,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1871.2669443333336,
+          "totalRpc": 26,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5343972985940094
+        }
+      },
+      {
+        "score": 0.49375605344510043,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 89,
+          "windowSize": 68,
+          "maxConcurrency": 8,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 2025.291625333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.49375605344510043
+        }
+      },
+      {
+        "score": 0.6204053062203702,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 45,
+          "maxConcurrency": 10,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1611.8495280000013,
+          "totalRpc": 24,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.6204053062203702
+        }
+      }
+    ]
+  },
+  {
+    "generation": 2,
+    "bestScore": 0.6204053062203702,
+    "bestStrategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 54,
+      "windowSize": 45,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "population": [
+      {
+        "score": 0.5461364548081332,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 45,
+          "windowSize": 52,
+          "maxConcurrency": 24,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1831.0442220000066,
+          "totalRpc": 22,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5461364548081332
+        }
+      },
+      {
+        "score": 0.5708240731929243,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 73,
+          "windowSize": 72,
+          "maxConcurrency": 18,
+          "useContinuityOracle": true,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1751.8532363333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5708240731929243
+        }
+      },
+      {
+        "score": 0.5240888142741715,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 43,
+          "windowSize": 21,
+          "maxConcurrency": 18,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1908.0735416666623,
+          "totalRpc": 44,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5240888142741715
+        }
+      },
+      {
+        "score": 0.3966664503750289,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 94,
+          "maxConcurrency": 5,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 2521.009778000001,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.3966664503750289
+        }
+      },
+      {
+        "score": 0.42327679262560014,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 69,
+          "windowSize": 58,
+          "maxConcurrency": 24,
+          "useContinuityOracle": true,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 2362.5202643333373,
+          "totalRpc": 20,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.42327679262560014
+        }
+      },
+      {
+        "score": 0.5442765618531238,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 82,
+          "windowSize": 77,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1837.3012363333328,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5442765618531238
+        }
+      },
+      {
+        "score": 0.5653557444410942,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 39,
+          "windowSize": 77,
+          "maxConcurrency": 9,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1768.797805333333,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5653557444410942
+        }
+      },
+      {
+        "score": 0.5899725463650215,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 67,
+          "windowSize": 80,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1694.9941249999974,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5899725463650215
+        }
+      },
+      {
+        "score": 0.5531408057444249,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 77,
+          "windowSize": 68,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1807.857944333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5531408057444249
+        }
+      },
+      {
+        "score": 0.6204053062203702,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 45,
+          "maxConcurrency": 10,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1611.8495280000013,
+          "totalRpc": 24,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.6204053062203702
+        }
+      }
+    ]
+  },
+  {
+    "generation": 3,
+    "bestScore": 0.6204053062203702,
+    "bestStrategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 54,
+      "windowSize": 45,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "population": [
+      {
+        "score": 0.5461364548081332,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 45,
+          "windowSize": 52,
+          "maxConcurrency": 24,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1831.0442220000066,
+          "totalRpc": 22,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5461364548081332
+        }
+      },
+      {
+        "score": 0.5708240731929243,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 73,
+          "windowSize": 72,
+          "maxConcurrency": 18,
+          "useContinuityOracle": true,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1751.8532363333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5708240731929243
+        }
+      },
+      {
+        "score": 0.5240888142741715,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 43,
+          "windowSize": 21,
+          "maxConcurrency": 18,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1908.0735416666623,
+          "totalRpc": 44,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5240888142741715
+        }
+      },
+      {
+        "score": 0.3966664503750289,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 94,
+          "maxConcurrency": 5,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 2521.009778000001,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.3966664503750289
+        }
+      },
+      {
+        "score": 0.5016458897970761,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 37,
+          "windowSize": 35,
+          "maxConcurrency": 24,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1993.4380413333322,
+          "totalRpc": 30,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5016458897970761
+        }
+      },
+      {
+        "score": 0.5442765618531238,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 82,
+          "windowSize": 77,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1837.3012363333328,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5442765618531238
+        }
+      },
+      {
+        "score": 0.5653557444410942,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 39,
+          "windowSize": 77,
+          "maxConcurrency": 9,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1768.797805333333,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5653557444410942
+        }
+      },
+      {
+        "score": 0.5899725463650215,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 67,
+          "windowSize": 80,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1694.9941249999974,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5899725463650215
+        }
+      },
+      {
+        "score": 0.5531408057444249,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 77,
+          "windowSize": 68,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1807.857944333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5531408057444249
+        }
+      },
+      {
+        "score": 0.6204053062203702,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 45,
+          "maxConcurrency": 10,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1611.8495280000013,
+          "totalRpc": 24,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.6204053062203702
+        }
+      }
+    ]
+  },
+  {
+    "generation": 4,
+    "bestScore": 0.6204053062203702,
+    "bestStrategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 54,
+      "windowSize": 45,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "population": [
+      {
+        "score": 0.5461364548081332,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 45,
+          "windowSize": 52,
+          "maxConcurrency": 24,
+          "useContinuityOracle": false,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1831.0442220000066,
+          "totalRpc": 22,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5461364548081332
+        }
+      },
+      {
+        "score": 0.5708240731929243,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 73,
+          "windowSize": 72,
+          "maxConcurrency": 18,
+          "useContinuityOracle": true,
+          "skipZeroDelta": true
+        },
+        "aggregate": {
+          "avgLatencyMs": 1751.8532363333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5708240731929243
+        }
+      },
+      {
+        "score": 0.5738532791542511,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 57,
+          "windowSize": 68,
+          "maxConcurrency": 7,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1742.6057083333337,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5738532791542511
+        }
+      },
+      {
+        "score": 0.5347461048782243,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 47,
+          "windowSize": 68,
+          "maxConcurrency": 5,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1870.0463469999959,
+          "totalRpc": 20,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5347461048782243
+        }
+      },
+      {
+        "score": 0.5694846222199367,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 37,
+          "windowSize": 100,
+          "maxConcurrency": 24,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1755.9736663333413,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5694846222199367
+        }
+      },
+      {
+        "score": 0.5442765618531238,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 82,
+          "windowSize": 77,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1837.3012363333328,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5442765618531238
+        }
+      },
+      {
+        "score": 0.5653557444410942,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 39,
+          "windowSize": 77,
+          "maxConcurrency": 9,
+          "useContinuityOracle": false,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1768.797805333333,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5653557444410942
+        }
+      },
+      {
+        "score": 0.5899725463650215,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 67,
+          "windowSize": 80,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1694.9941249999974,
+          "totalRpc": 16,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5899725463650215
+        }
+      },
+      {
+        "score": 0.5531408057444249,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 77,
+          "windowSize": 68,
+          "maxConcurrency": 4,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1807.857944333334,
+          "totalRpc": 18,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.5531408057444249
+        }
+      },
+      {
+        "score": 0.6204053062203702,
+        "strategy": {
+          "sigPageSize": 1000,
+          "maxSigPages": 20,
+          "anchorSize": 54,
+          "windowSize": 45,
+          "maxConcurrency": 10,
+          "useContinuityOracle": true,
+          "skipZeroDelta": false
+        },
+        "aggregate": {
+          "avgLatencyMs": 1611.8495280000013,
+          "totalRpc": 24,
+          "openGapPenalty": 0,
+          "completeness": 1,
+          "score": 0.6204053062203702
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v3",
+    "trial": 19,
+    "score_trial": 0.8790,
+    "score_stable_3run": 0.7156,
+    "avgMs_trial": 1138,
+    "avgMs_stable": 1530,
+    "notes": "Best V3 config from BO trial 19/35. Single-trial score 0.8790, stable 3-run avg 0.7156. Beats V2 best (0.4585) by 56% on avg. Key insight: high concurrency (c=23) optimal for V3's 2-RT structure vs V2's c=6."
+  },
+  "anchorSize": 76,
+  "windowSize": 52,
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "maxConcurrency": 23,
+  "skipZeroDelta": false
+}

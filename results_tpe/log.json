@@ -1,0 +1,947 @@
+[
+  {
+    "trial": 1,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 39,
+      "windowSize": 96,
+      "maxConcurrency": 11,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "score": 0.4526907912110062,
+    "aggregate": {
+      "avgLatencyMs": 2209.0133473333335,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4526907912110062
+    }
+  },
+  {
+    "trial": 2,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 46,
+      "windowSize": 87,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.526979988394467,
+    "aggregate": {
+      "avgLatencyMs": 1897.6052640000007,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.526979988394467
+    }
+  },
+  {
+    "trial": 3,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 71,
+      "windowSize": 61,
+      "maxConcurrency": 23,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "score": 0.4581671705773747,
+    "aggregate": {
+      "avgLatencyMs": 2182.609458333334,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4581671705773747
+    }
+  },
+  {
+    "trial": 4,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 98,
+      "windowSize": 100,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.4457684289157804,
+    "aggregate": {
+      "avgLatencyMs": 2243.3172363333324,
+      "totalRpc": 15,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4457684289157804
+    }
+  },
+  {
+    "trial": 5,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 91,
+      "windowSize": 44,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.47725974316109093,
+    "aggregate": {
+      "avgLatencyMs": 2095.295097333334,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47725974316109093
+    }
+  },
+  {
+    "trial": 6,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 26,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "score": 0.3332676857832009,
+    "aggregate": {
+      "avgLatencyMs": 3000.5909443333353,
+      "totalRpc": 30,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3332676857832009
+    }
+  },
+  {
+    "trial": 7,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 85,
+      "windowSize": 81,
+      "maxConcurrency": 5,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.4466061256086797,
+    "aggregate": {
+      "avgLatencyMs": 2239.1094583333347,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4466061256086797
+    }
+  },
+  {
+    "trial": 8,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 62,
+      "windowSize": 75,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.6109509494824762,
+    "aggregate": {
+      "avgLatencyMs": 1636.7926113333306,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6109509494824762
+    }
+  },
+  {
+    "trial": 9,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 84,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.4840242810277199,
+    "aggregate": {
+      "avgLatencyMs": 2066.0120559999973,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4840242810277199
+    }
+  },
+  {
+    "trial": 10,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 41,
+      "windowSize": 81,
+      "maxConcurrency": 9,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.5404780569922808,
+    "aggregate": {
+      "avgLatencyMs": 1850.2138746666678,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5404780569922808
+    }
+  },
+  {
+    "trial": 11,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 61,
+      "windowSize": 73,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.5258923883451656,
+    "aggregate": {
+      "avgLatencyMs": 1901.5297086666662,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5258923883451656
+    }
+  },
+  {
+    "trial": 12,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 66,
+      "windowSize": 72,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.6143785730547776,
+    "aggregate": {
+      "avgLatencyMs": 1627.6609306666699,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6143785730547776
+    }
+  },
+  {
+    "trial": 13,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 58,
+      "windowSize": 65,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5485769707661966,
+    "aggregate": {
+      "avgLatencyMs": 1822.8982499999984,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5485769707661966
+    }
+  },
+  {
+    "trial": 14,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 58,
+      "windowSize": 69,
+      "maxConcurrency": 17,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.4488985880132383,
+    "aggregate": {
+      "avgLatencyMs": 2227.6746389999994,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4488985880132383
+    }
+  },
+  {
+    "trial": 15,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 68,
+      "windowSize": 73,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5949032900404254,
+    "aggregate": {
+      "avgLatencyMs": 1680.945485999997,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5949032900404254
+    }
+  },
+  {
+    "trial": 16,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 54,
+      "windowSize": 72,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.3125416505049338,
+    "aggregate": {
+      "avgLatencyMs": 3199.5735556666673,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3125416505049338
+    }
+  },
+  {
+    "trial": 17,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 63,
+      "windowSize": 62,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.33212456751975983,
+    "aggregate": {
+      "avgLatencyMs": 3010.918486,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.33212456751975983
+    }
+  },
+  {
+    "trial": 18,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 78,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.36516442737950033,
+    "aggregate": {
+      "avgLatencyMs": 2738.492374999992,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.36516442737950033
+    }
+  },
+  {
+    "trial": 19,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 62,
+      "windowSize": 62,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.49128316951930345,
+    "aggregate": {
+      "avgLatencyMs": 2035.485972333331,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.49128316951930345
+    }
+  },
+  {
+    "trial": 20,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 66,
+      "windowSize": 77,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5908869185131232,
+    "aggregate": {
+      "avgLatencyMs": 1692.3711943333376,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5908869185131232
+    }
+  },
+  {
+    "trial": 21,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 74,
+      "windowSize": 78,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5051559265000373,
+    "aggregate": {
+      "avgLatencyMs": 1979.5867920000067,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5051559265000373
+    }
+  },
+  {
+    "trial": 22,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 65,
+      "windowSize": 83,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5163668313323962,
+    "aggregate": {
+      "avgLatencyMs": 1936.60773566666,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5163668313323962
+    }
+  },
+  {
+    "trial": 23,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 69,
+      "windowSize": 74,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.3953822082002052,
+    "aggregate": {
+      "avgLatencyMs": 2529.1982776666605,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3953822082002052
+    }
+  },
+  {
+    "trial": 24,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 59,
+      "windowSize": 65,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.43960632988808596,
+    "aggregate": {
+      "avgLatencyMs": 2274.762513666666,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.43960632988808596
+    }
+  },
+  {
+    "trial": 25,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 69,
+      "windowSize": 65,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.22741800701251283,
+    "aggregate": {
+      "avgLatencyMs": 4397.189180999984,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.22741800701251283
+    }
+  },
+  {
+    "trial": 26,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 64,
+      "windowSize": 79,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.39490747284278316,
+    "aggregate": {
+      "avgLatencyMs": 2532.238736333335,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.39490747284278316
+    }
+  },
+  {
+    "trial": 27,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 64,
+      "windowSize": 67,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.42959381834737975,
+    "aggregate": {
+      "avgLatencyMs": 2327.780236333327,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.42959381834737975
+    }
+  },
+  {
+    "trial": 28,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 76,
+      "windowSize": 68,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.45778805054163063,
+    "aggregate": {
+      "avgLatencyMs": 2184.4170000000063,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45778805054163063
+    }
+  },
+  {
+    "trial": 29,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 62,
+      "windowSize": 74,
+      "maxConcurrency": 17,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.39755678382855897,
+    "aggregate": {
+      "avgLatencyMs": 2515.3639446666734,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.39755678382855897
+    }
+  },
+  {
+    "trial": 30,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 76,
+      "windowSize": 73,
+      "maxConcurrency": 17,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.47239155154686896,
+    "aggregate": {
+      "avgLatencyMs": 2116.887985666661,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47239155154686896
+    }
+  },
+  {
+    "trial": 31,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 41,
+      "windowSize": 93,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.5124506321736977,
+    "aggregate": {
+      "avgLatencyMs": 1951.4074863333274,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5124506321736977
+    }
+  },
+  {
+    "trial": 32,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 64,
+      "windowSize": 75,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.40490106649163354,
+    "aggregate": {
+      "avgLatencyMs": 2469.7391110000026,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.40490106649163354
+    }
+  },
+  {
+    "trial": 33,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 59,
+      "maxConcurrency": 17,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5042235656698892,
+    "aggregate": {
+      "avgLatencyMs": 1983.2472499999956,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5042235656698892
+    }
+  },
+  {
+    "trial": 34,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 66,
+      "windowSize": 74,
+      "maxConcurrency": 15,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5982867360514261,
+    "aggregate": {
+      "avgLatencyMs": 1671.439361333333,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5982867360514261
+    }
+  },
+  {
+    "trial": 35,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 51,
+      "windowSize": 92,
+      "maxConcurrency": 9,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.502370462910807,
+    "aggregate": {
+      "avgLatencyMs": 1990.5628889999934,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.502370462910807
+    }
+  },
+  {
+    "trial": 36,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 64,
+      "windowSize": 75,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.42465184905415787,
+    "aggregate": {
+      "avgLatencyMs": 2354.8702359999975,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.42465184905415787
+    }
+  },
+  {
+    "trial": 37,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 55,
+      "windowSize": 80,
+      "maxConcurrency": 13,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.44205980736705874,
+    "aggregate": {
+      "avgLatencyMs": 2262.1373473333274,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44205980736705874
+    }
+  },
+  {
+    "trial": 38,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 38,
+      "windowSize": 82,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "score": 0.44826420058913957,
+    "aggregate": {
+      "avgLatencyMs": 2230.8272636666757,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44826420058913957
+    }
+  },
+  {
+    "trial": 39,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 69,
+      "windowSize": 72,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5079530741944406,
+    "aggregate": {
+      "avgLatencyMs": 1968.685791666668,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5079530741944406
+    }
+  },
+  {
+    "trial": 40,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 66,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5248423750735668,
+    "aggregate": {
+      "avgLatencyMs": 1905.3339583333582,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5248423750735668
+    }
+  },
+  {
+    "trial": 41,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 64,
+      "windowSize": 67,
+      "maxConcurrency": 15,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.41796058364284755,
+    "aggregate": {
+      "avgLatencyMs": 2392.5701110000177,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41796058364284755
+    }
+  },
+  {
+    "trial": 42,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 74,
+      "windowSize": 71,
+      "maxConcurrency": 13,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.5125120711412872,
+    "aggregate": {
+      "avgLatencyMs": 1951.173555333342,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5125120711412872
+    }
+  },
+  {
+    "trial": 43,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 62,
+      "windowSize": 75,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "score": 0.45070720467485886,
+    "aggregate": {
+      "avgLatencyMs": 2218.735333333316,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45070720467485886
+    }
+  },
+  {
+    "trial": 44,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 67,
+      "windowSize": 70,
+      "maxConcurrency": 17,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "score": 0.4868928940112342,
+    "aggregate": {
+      "avgLatencyMs": 2053.8397916666386,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4868928940112342
+    }
+  },
+  {
+    "trial": 45,
+    "method": "tpe",
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 41,
+      "windowSize": 81,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "score": 0.47672433813498144,
+    "aggregate": {
+      "avgLatencyMs": 2097.648305333336,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47672433813498144
+    }
+  }
+]

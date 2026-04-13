@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v4",
+    "trial": 27,
+    "score_trial": 0.7890,
+    "avgMs_trial": 1267,
+    "notes": "Best V4 config from BO trial 27/36. Hybrid density probe algo. anchor=92, window=79, c=9, skip=false. Beats V2 (0.4585) by 72%. V4 optimal concurrency (c=9) is between V2 (c=6) and V3 (c=23)."
+  },
+  "anchorSize": 92,
+  "windowTarget": 79,
+  "windowSize": 79,
+  "sigPageSize": 1000,
+  "maxConcurrency": 9,
+  "skipZeroDelta": false
+}

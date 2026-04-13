@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v4",
+    "trial": 27,
+    "score": 0.7889758334003986
+  },
+  "sigPageSize": 1000,
+  "windowSize": 79,
+  "anchorSize": 92,
+  "windowTarget": 79,
+  "maxConcurrency": 9,
+  "skipZeroDelta": false
+}

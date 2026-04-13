@@ -1,0 +1,190 @@
+
+🔬 Bayesian Optimisation (GP-UCB) — V3
+   Budget: 40 evals  |  Params: 4D  |  API key: 524c2cce...
+
+[BO-V3 trial 1/40  κ=2.00]
+  anchor=26  window=47  c=15  skipZero=false
+  → score=0.4939  avgMs=2025  rpc=28  complete=100%
+
+[BO-V3 trial 2/40  κ=1.80]
+  anchor=45  window=48  c=20  skipZero=true
+  → score=0.6174  avgMs=1620  rpc=26  complete=100%
+
+[BO-V3 trial 3/40  κ=1.62]
+  anchor=94  window=99  c=12  skipZero=true
+  → score=0.5585  avgMs=1791  rpc=14  complete=100%
+
+[BO-V3 trial 4/40  κ=1.46]
+  anchor=59  window=25  c=14  skipZero=false
+  → score=0.2949  avgMs=3391  rpc=40  complete=100%
+
+[BO-V3 trial 5/40  κ=1.31]
+  anchor=83  window=29  c=5  skipZero=true
+  → score=0.4229  avgMs=2365  rpc=32  complete=100%
+
+[BO-V3 trial 6/40  κ=1.18]
+  anchor=43  window=87  c=24  skipZero=false
+  → score=0.2952  avgMs=3388  rpc=18  complete=100%
+
+[BO-V3 trial 7/40  κ=1.06]
+  anchor=20  window=38  c=19  skipZero=true
+  → score=0.4434  avgMs=2255  rpc=34  complete=100%
+
+[BO-V3 trial 8/40  κ=0.96]
+  anchor=84  window=68  c=10  skipZero=true
+  → score=0.5863  avgMs=1706  rpc=18  complete=100%
+
+[BO-V3 trial 9/40  κ=0.86]
+  anchor=82  window=37  c=24  skipZero=true
+  → score=0.6592  avgMs=1517  rpc=26  complete=100%
+
+[BO-V3 trial 10/40  κ=0.77]
+  anchor=72  window=42  c=22  skipZero=true
+  → score=0.6991  avgMs=1431  rpc=26  complete=100%
+
+[BO-V3 trial 11/40  κ=0.70]
+  anchor=86  window=47  c=20  skipZero=true
+  → score=0.6546  avgMs=1528  rpc=22  complete=100%
+
+[BO-V3 trial 12/40  κ=0.63]
+  anchor=87  window=43  c=23  skipZero=true
+  → score=0.6718  avgMs=1488  rpc=24  complete=100%
+
+[BO-V3 trial 13/40  κ=0.56]
+  anchor=57  window=42  c=24  skipZero=true
+  → score=0.5363  avgMs=1865  rpc=28  complete=100%
+
+[BO-V3 trial 14/40  κ=0.51]
+  anchor=88  window=36  c=24  skipZero=true
+  → score=0.4562  avgMs=2192  rpc=28  complete=100%
+
+[BO-V3 trial 15/40  κ=0.46]
+  anchor=80  window=61  c=20  skipZero=true
+  → score=0.5693  avgMs=1756  rpc=20  complete=100%
+
+[BO-V3 trial 16/40  κ=0.41]
+  anchor=61  window=56  c=23  skipZero=true
+  → score=0.7645  avgMs=1308  rpc=20  complete=100%
+
+[BO-V3 trial 17/40  κ=0.37]
+  anchor=70  window=58  c=22  skipZero=false
+  → score=0.5810  avgMs=1721  rpc=20  complete=100%
+
+[BO-V3 trial 18/40  κ=0.33]
+  anchor=52  window=49  c=23  skipZero=true
+  → score=0.3304  avgMs=3027  rpc=26  complete=100%
+
+[BO-V3 trial 19/40  κ=0.30]
+  anchor=44  window=63  c=9  skipZero=true
+  → score=0.1631  avgMs=6131  rpc=22  complete=100%
+
+[BO-V3 trial 20/40  κ=0.27]
+  anchor=91  window=39  c=4  skipZero=true
+  → score=0.3584  avgMs=2791  rpc=26  complete=100%
+
+[BO-V3 trial 21/40  κ=0.24]
+  anchor=84  window=54  c=20  skipZero=true
+  → score=0.4932  avgMs=2028  rpc=20  complete=100%
+
+[BO-V3 trial 22/40  κ=0.22]
+  anchor=98  window=82  c=6  skipZero=true
+  → score=0.4715  avgMs=2121  rpc=16  complete=100%
+
+[BO-V3 trial 23/40  κ=0.20]
+  anchor=57  window=34  c=15  skipZero=true
+  → score=0.2379  avgMs=4203  rpc=32  complete=100%
+
+[BO-V3 trial 24/40  κ=0.18]
+  anchor=89  window=80  c=10  skipZero=true
+  → score=0.6811  avgMs=1468  rpc=16  complete=100%
+
+[BO-V3 trial 25/40  κ=0.16]
+  anchor=68  window=61  c=22  skipZero=true
+  → score=0.7435  avgMs=1345  rpc=20  complete=100%
+
+[BO-V3 trial 26/40  κ=0.14]
+  anchor=70  window=50  c=22  skipZero=true
+  → score=0.3182  avgMs=3142  rpc=22  complete=100%
+
+[BO-V3 trial 27/40  κ=0.13]
+  anchor=74  window=53  c=23  skipZero=true
+  → score=0.5774  avgMs=1732  rpc=22  complete=100%
+
+[BO-V3 trial 28/40  κ=0.12]
+  anchor=100  window=91  c=12  skipZero=true
+  → score=0.4597  avgMs=2175  rpc=14  complete=100%
+
+[BO-V3 trial 29/40  κ=0.10]
+  anchor=83  window=75  c=22  skipZero=false
+  → score=0.5428  avgMs=1842  rpc=16  complete=100%
+
+[BO-V3 trial 30/40  κ=0.09]
+  anchor=63  window=65  c=19  skipZero=true
+  → score=0.7175  avgMs=1394  rpc=18  complete=100%
+
+[BO-V3 trial 31/40  κ=0.08]
+  anchor=65  window=66  c=18  skipZero=true
+  → score=0.7564  avgMs=1322  rpc=18  complete=100%
+
+[BO-V3 trial 32/40  κ=0.08]
+  anchor=69  window=82  c=19  skipZero=true
+  → score=0.8969  avgMs=1115  rpc=16  complete=100%
+
+[BO-V3 trial 33/40  κ=0.07]
+  anchor=68  window=97  c=20  skipZero=true
+  → score=0.5816  avgMs=1719  rpc=14  complete=100%
+
+[BO-V3 trial 34/40  κ=0.06]
+  anchor=67  window=85  c=16  skipZero=true
+  → score=0.6935  avgMs=1442  rpc=16  complete=100%
+
+[BO-V3 trial 35/40  κ=0.06]
+  anchor=67  window=88  c=17  skipZero=false
+  → score=0.8515  avgMs=1174  rpc=16  complete=100%
+
+[BO-V3 trial 36/40  κ=0.05]
+  anchor=61  window=74  c=17  skipZero=false
+  → score=0.7640  avgMs=1309  rpc=18  complete=100%
+
+[BO-V3 trial 37/40  κ=0.05]
+  anchor=59  window=79  c=17  skipZero=false
+  → score=0.5271  avgMs=1897  rpc=18  complete=100%
+
+[BO-V3 trial 38/40  κ=0.04]
+  anchor=75  window=86  c=17  skipZero=false
+  → score=0.6753  avgMs=1481  rpc=16  complete=100%
+
+[BO-V3 trial 39/40  κ=0.04]
+  anchor=73  window=77  c=16  skipZero=true
+  → score=0.7232  avgMs=1383  rpc=16  complete=100%
+
+[BO-V3 trial 40/40  κ=0.03]
+  anchor=75  window=84  c=12  skipZero=true
+  → score=0.6697  avgMs=1493  rpc=16  complete=100%
+
+════════════════════════════════════════════════════════════
+BAYESIAN OPTIMISATION V3 COMPLETE
+════════════════════════════════════════════════════════════
+
+Best config found (trial 32):
+{
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 69,
+  "windowSize": 82,
+  "maxConcurrency": 19,
+  "skipZeroDelta": true
+}
+Score: 0.8969  avgMs: 1115
+
+Top 10:
+  #32  score=0.8969  anchor=69  window=82  c=19  1115ms
+  #35  score=0.8515  anchor=67  window=88  c=17  1174ms
+  #16  score=0.7645  anchor=61  window=56  c=23  1308ms
+  #36  score=0.7640  anchor=61  window=74  c=17  1309ms
+  #31  score=0.7564  anchor=65  window=66  c=18  1322ms
+  #25  score=0.7435  anchor=68  window=61  c=22  1345ms
+  #39  score=0.7232  anchor=73  window=77  c=16  1383ms
+  #30  score=0.7175  anchor=63  window=65  c=19  1394ms
+  #10  score=0.6991  anchor=72  window=42  c=22  1431ms
+  #34  score=0.6935  anchor=67  window=85  c=16  1442ms

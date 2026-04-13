@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "method": "tpe",
+    "trial": 12,
+    "score": 0.6143785730547776
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 66,
+  "windowSize": 72,
+  "maxConcurrency": 16,
+  "useContinuityOracle": true,
+  "skipZeroDelta": false
+}

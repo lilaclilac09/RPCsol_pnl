@@ -1,4 +1,4 @@
-/**
+w/**
  * SOL Balance History — Adaptive Parallel Algorithm
  *
  * Returns a chronological time series of SOL balance snapshots.
