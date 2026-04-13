@@ -12,13 +12,15 @@ _Evaluated on 3 wallets: sparse (4 txns), medium (~60 txns), dense (~286–451 t
 |------|-----------|---------------|-------|-------------|-------------------|-----------|
 | 1 | **V3** (merged anchor-sig) | Bayesian GP-UCB | **~0.72** (stable avg) | ~1460ms | ~22 | anchor=76 window=52 c=23 skip=off |
 | 2 | **V4** (hybrid density) | Bayesian GP-UCB | **~0.79** | ~1267ms | ~22 | anchor=92 window=79 c=9 skip=off |
-| 3 | V2 (signatures-first) | Bayesian GP-UCB | 0.4585 | 2181ms | ~14 | anchor=85 window=80 c=6 oracle=off |
-| 4 | V2 (signatures-first) | CMA-ES | 0.4357 | ~2300ms | ~16 | anchor=55 window=100 c=4 |
-| 5 | V2 (signatures-first) | Neighbourhood | 0.4170 | 2400ms | ~16 | anchor=50 window=100 c=16 oracle=on |
-| 6 | V1 (Golomb probing) | Neighbourhood | 0.3980 | 2387ms | ~40 | golomb=6 window=300 c=12 |
-| 7 | Codex (blockTime density) | Default config | 0.2819 | 3547ms | 127 | windowTarget=80 c=12 |
-| 8 | V2 baseline | Default | 0.2740 | 3650ms | ~20 | anchor=100 window=90 c=12 oracle=on |
-| 9 | V1 baseline | Default | 0.0780 | 9589ms | ~200 | golomb=6 rounds=4 |
+| 3 | V2 (signatures-first) | DE (Codex) | **0.6204** | ~1612ms | ~14 | anchor=54 window=45 c=10 oracle=on |
+| 4 | V2 (signatures-first) | TPE (Codex) | 0.6144 | ~1628ms | ~14 | anchor=66 window=72 c=16 oracle=on |
+| 5 | V2 (signatures-first) | Bayesian GP-UCB | 0.4585 | 2181ms | ~14 | anchor=85 window=80 c=6 oracle=off |
+| 6 | V2 (signatures-first) | CMA-ES | 0.4357 | ~2300ms | ~16 | anchor=55 window=100 c=4 |
+| 7 | V2 (signatures-first) | Neighbourhood | 0.4170 | 2400ms | ~16 | anchor=50 window=100 c=16 oracle=on |
+| 8 | V1 (Golomb probing) | Neighbourhood | 0.3980 | 2387ms | ~40 | golomb=6 window=300 c=12 |
+| 9 | Codex (blockTime density) | Default config | 0.2819 | 3547ms | 127 | windowTarget=80 c=12 |
+| 10 | V2 baseline | Default | 0.2740 | 3650ms | ~20 | anchor=100 window=90 c=12 oracle=on |
+| 11 | V1 baseline | Default | 0.0780 | 9589ms | ~200 | golomb=6 rounds=4 |
 
 > V3 single-trial best: **0.8790** (1138ms). Stable 3-run average: **0.72** (1530ms). High variance due to Helius free-tier latency jitter.
 
@@ -185,6 +187,8 @@ Use Codex variant with smaller `windowTarget` (40–60) to balance call count vs
 | Hyperband | ~13 eq-evals, 3 rounds | Multi-fidelity filter | **Not suitable here** — sparse/dense wallets don't correlate |
 | CMA-ES | ~64 evals, 8 gen | Covariance adaptation | Correlated parameters (anchor+window) |
 | **Bayesian GP-UCB** | **~20 evals** | Uncertainty-aware UCB | **Best overall** — finds novel configs (c=23) quickly |
+| **DE (Differential Evolution)** | **~4 gen × 8 pop** | Population mutation/crossover | Good — found V2 score 0.6204 in only 4 generations; oracle=true surprising |
+| **TPE (Codex)** | **~45 trials** | Parzen density modeling | Competitive — score 0.6144; similar to BO but simpler implementation |
 
 ---
 

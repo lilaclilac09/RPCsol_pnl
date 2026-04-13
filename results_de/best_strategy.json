@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "method": "differential-evolution",
+    "score": 0.6204053062203702
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 54,
+  "windowSize": 45,
+  "maxConcurrency": 10,
+  "useContinuityOracle": true,
+  "skipZeroDelta": false
+}
