@@ -331,18 +331,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="background:rgba(57,211,83,0.08)">
+          <tr style="background:rgba(57,211,83,0.12)">
             <td class="rank" style="color:var(--teal)">*</td>
-            <td class="algo-name">V10 — Ultra Low Latency<span class="algo-badge" style="background:var(--teal);color:var(--bg)">New</span></td>
+            <td class="algo-name">V11 — Hybrid + Ultra Low<span class="algo-badge" style="background:var(--teal);color:var(--bg)">New</span></td>
+            <td>Bayesian GP-UCB</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.663†</span><div class="bar-bg"><div class="bar-fill" style="width:75%;background:var(--teal)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--teal)">1509 ms†</td>
+            <td>~22 calls</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">anchor=100</span><span class="chip" style="border-color:var(--teal)">window=71</span><span class="chip" style="border-color:var(--teal)">c=17</span><span class="chip" style="border-color:var(--teal)">skip=on</span></div></td>
+          </tr>
+          <tr style="background:rgba(57,211,83,0.06)">
+            <td class="rank" style="color:var(--muted)">*</td>
+            <td class="algo-name">V10 — Ultra Low Latency</td>
             <td>Bayesian GP-UCB</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.690†</span><div class="bar-bg"><div class="bar-fill" style="width:78%;background:var(--teal)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--teal)">1450 ms†</td>
+            <td class="ms-val" style="color:var(--muted)">1450 ms†</td>
             <td>~20 calls</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">anchor=100</span><span class="chip" style="border-color:var(--teal)">window=83</span><span class="chip" style="border-color:var(--teal)">c=19</span><span class="chip" style="border-color:var(--teal)">skip=on</span></div></td>
+            <td><div class="config-chips"><span class="chip">anchor=100</span><span class="chip">window=83</span><span class="chip">c=19</span><span class="chip">skip=on</span></div></td>
           </tr>
-          <tr style="background:rgba(57,211,83,0.04)">
+          <tr style="background:rgba(57,211,83,0.02)">
             <td class="rank" style="color:var(--muted)">*</td>
-            <td class="algo-name">V8 — Streaming Pipeline<span class="algo-badge" style="background:rgba(57,211,83,0.3);color:var(--teal)">New</span></td>
+            <td class="algo-name">V8 — Streaming Pipeline</td>
             <td>Bayesian GP-UCB</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.556†</span><div class="bar-bg"><div class="bar-fill" style="width:63%;background:rgba(57,211,83,0.5)"></div></div></div></td>
             <td class="ms-val" style="color:var(--muted)">1799 ms†</td>
@@ -436,10 +445,10 @@
     <p style="color:var(--muted);font-size:12px;margin-top:8px;">
       * V3 stable avg over 3 repeated evals. Single-trial peak: <strong>0.879</strong>.
       Score variance is high on the Helius free tier — sparse wallet latency jitter ±2×.<br>
-      † V8/V10 measured on a different API key with higher baseline latency than V3/V4 historical results.
+      † V8/V10/V11 measured on a different API key with higher baseline latency than V3/V4 historical results.
       Head-to-head on the same key — V10 vs V3: <strong>+68.6% score / -40.7% latency</strong>.
-      V10 vs V8: <strong>+24.1% score / -19.4% latency</strong>.
-      V10 sparse wallet: <strong>330ms</strong>. Medium: <strong>1301ms</strong>. Dense: <strong>2718ms</strong>.
+      V11 (V4 density + V10 fast-exit): sparse <strong>333ms</strong>, medium <strong>1053ms</strong>, dense <strong>3141ms</strong>, score <strong>0.663</strong>.
+      V10: sparse <strong>330ms</strong>, medium <strong>1301ms</strong>, dense <strong>2718ms</strong>, score <strong>0.690</strong>.
     </p>
   </section>
 

@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v11-hybrid",
+    "trial": 31,
+    "score": 0.6626294799373533,
+    "note": "V4 density probe for large wallets + V10 fast-exit for small/medium"
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "windowSize": 71,
+  "windowTarget": 114,
+  "maxConcurrency": 17,
+  "skipZeroDelta": true
+}
