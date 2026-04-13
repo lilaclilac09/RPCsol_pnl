@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-04-13T08:22:04.925Z",
+  "repeatsPerCandidate": 1,
+  "capability": {
+    "checkedAt": "2026-04-13T08:20:57.850Z",
+    "endpointReachable": true,
+    "paidCapable": false,
+    "batchAllowed": false,
+    "mode": "free-tier",
+    "details": {
+      "getVersion": {
+        "ok": true,
+        "status": 200,
+        "message": "{\"jsonrpc\":\"2.0\",\"result\":{\"feature-set\":534737035,\"solana-core\":\"3.1.13\"},\"id\":1}\n"
+      },
+      "getTransactionsForAddress": {
+        "ok": false,
+        "status": 403,
+        "message": "This feature is only available for paid plans. Please upgrade if you would like to gain access."
+      },
+      "batchRequests": {
+        "ok": false,
+        "status": 403,
+        "message": "Batch requests are only available for paid plans. Please upgrade if you would like to gain access"
+      }
+    }
+  },
+  "leaderboard": [],
+  "details": []
+}

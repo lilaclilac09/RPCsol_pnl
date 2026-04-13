@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-04-13T08:22:04.925Z",
-  "scope": "unified-current-conditions",
+  "repeatsPerCandidate": 1,
   "capability": {
     "checkedAt": "2026-04-13T08:20:57.850Z",
     "endpointReachable": true,
@@ -25,7 +25,6 @@
       }
     }
   },
-  "repeatsPerCandidate": 1,
   "leaderboard": [
     {
       "rank": 1,

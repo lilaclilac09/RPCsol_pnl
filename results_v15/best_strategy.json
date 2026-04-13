@@ -2,16 +2,49 @@
   "_meta": {
     "method": "bayesian-gp-ucb-v15-stable-3run",
     "solver": "free-tier (getSignaturesForAddress + getTransaction)",
+    "capability": {
+      "checkedAt": "2026-04-13T08:10:26.978Z",
+      "endpointReachable": true,
+      "paidCapable": false,
+      "batchAllowed": false,
+      "mode": "free-tier",
+      "details": {
+        "getVersion": {
+          "ok": true,
+          "status": 200,
+          "message": "{\"jsonrpc\":\"2.0\",\"result\":{\"feature-set\":534737035,\"solana-core\":\"3.1.13\"},\"id\":1}\n"
+        },
+        "getTransactionsForAddress": {
+          "ok": false,
+          "status": 403,
+          "message": "This feature is only available for paid plans. Please upgrade if you would like to gain access."
+        },
+        "batchRequests": {
+          "ok": false,
+          "status": 403,
+          "message": "Batch requests are only available for paid plans. Please upgrade if you would like to gain access"
+        }
+      }
+    },
     "runs_per_eval": 3,
     "best_gate1": null,
     "best_overall": {
-      "trial": 21,
-      "score": 0.13059846956328802
+      "trial": 3,
+      "score": 0.004479388075969527
     }
   },
   "sigPageSize": 1000,
   "maxSigPages": 6,
-  "txTarget": 5,
-  "maxConcurrency": 5,
-  "skipZeroDelta": false
+  "phase1Coverage": 36,
+  "denseTarget": 82,
+  "mediumTarget": 42,
+  "maxConcurrency": 14,
+  "minRequestIntervalMs": 93,
+  "skipZeroDelta": false,
+  "walletBudgets": {
+    "sparse": 8,
+    "medium": 42,
+    "dense": 82
+  },
+  "txTarget": 82
 }

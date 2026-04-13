@@ -224,10 +224,16 @@ const candidates = [
 mkdirSync("results_unified", { recursive: true });
 const capability = await probeCapabilities(apiKey);
 console.log(`[capability] mode=${capability.mode} paidCapable=${capability.paidCapable} batch=${capability.batchAllowed}`);
+const activeCandidates = capability.paidCapable
+  ? candidates
+  : candidates.filter(c => c.id.startsWith("v15-"));
+if (!capability.paidCapable) {
+  console.log("[capability] free-tier mode detected, running free-tier candidates only");
+}
 
 const details = [];
 
-for (const c of candidates) {
+for (const c of activeCandidates) {
   const raw = c.strategyPath ? readJson(c.strategyPath) : {};
   if (c.strategyPath && !raw) {
     if (!c.optional) console.log(`[skip] ${c.label} missing strategy file ${c.strategyPath}`);

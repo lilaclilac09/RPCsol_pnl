@@ -11,9 +11,11 @@
  * BO must explore low txTarget region to discover this tradeoff.
  *
  * Search space:
- *   txTarget       [5, 60]    low end keeps wallets under 2s; high end for completeness
- *   maxConcurrency [4, 24]    parallelism vs rate-limit tradeoff
- *   skipZeroDelta  {0, 1}     filter zero-delta txns after fetch
+ *   denseTarget            [80, 180]
+ *   mediumTarget           [24, 72]
+ *   maxConcurrency         [4, 20]
+ *   minRequestIntervalMs   [70, 200]
+ *   skipZeroDelta          {0, 1}
  *
  * Usage: node research_v15.mjs <api-key> [budget=50]
  */

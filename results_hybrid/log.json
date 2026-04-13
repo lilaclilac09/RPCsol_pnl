@@ -3183,5 +3183,720 @@
         "complete": false
       }
     ]
+  },
+  {
+    "trial": 50,
+    "x": [
+      0.76756925131396,
+      0.5152180391409817,
+      0.8251785732081454,
+      0.6220750583376338,
+      0.6478998556891431
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 20,
+      "txTargetSparse": 9,
+      "cSparse": 11,
+      "txTargetMedDense": 45,
+      "cMedDense": 18
+    },
+    "score": 0.013293419103360633,
+    "aggregate": {
+      "avgLatencyMs": 2507.5063890001425,
+      "maxWalletMs": 3592.2587920001242,
+      "totalRpc": 98,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.013293419103360633,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1705.4750410001725,
+        "wallMsMin": 1634.2274579999503,
+        "wallMsMax": 1941.6488749999553,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2224.785334000131,
+        "wallMsMin": 1956.8114169999026,
+        "wallMsMax": 3114.948624999961,
+        "rpcCalls": 46,
+        "sampleCount": 45,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3592.2587920001242,
+        "wallMsMin": 3305.0549170000013,
+        "wallMsMax": 4015.160957999993,
+        "rpcCalls": 46,
+        "sampleCount": 45,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 51,
+    "x": [
+      0.9995634832086815,
+      0.2566247301509814,
+      0.9848752331197039,
+      0.17999942019889525,
+      0.588438423625506
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 25,
+      "txTargetSparse": 6,
+      "cSparse": 12,
+      "txTargetMedDense": 27,
+      "cMedDense": 17
+    },
+    "score": 0.007624818806931999,
+    "aggregate": {
+      "avgLatencyMs": 2185.844292000014,
+      "maxWalletMs": 3426.0715840000194,
+      "totalRpc": 62,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007624818806931999,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 942.1727080000564,
+        "wallMsMin": 936.2047500000335,
+        "wallMsMax": 1138.4281669999473,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2189.2885839999653,
+        "wallMsMin": 1835.43429200002,
+        "wallMsMax": 3182.3620419998188,
+        "rpcCalls": 28,
+        "sampleCount": 27,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3426.0715840000194,
+        "wallMsMin": 3016.6017079998273,
+        "wallMsMax": 3695.7083329998422,
+        "rpcCalls": 28,
+        "sampleCount": 27,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 52,
+    "x": [
+      0.8140646835568899,
+      0.217940614618936,
+      0.2969175184530659,
+      0.22000220585699193,
+      0.589920626643861
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 21,
+      "txTargetSparse": 6,
+      "cSparse": 6,
+      "txTargetMedDense": 29,
+      "cMedDense": 17
+    },
+    "score": 0.006369160389248001,
+    "aggregate": {
+      "avgLatencyMs": 2616.7760973333693,
+      "maxWalletMs": 3584.3768750000745,
+      "totalRpc": 66,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.006369160389248001,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1519.7710839998908,
+        "wallMsMin": 1197.9717919998802,
+        "wallMsMax": 1880.157542000059,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2746.180333000142,
+        "wallMsMin": 1860.7347079999745,
+        "wallMsMax": 3067.3828750001267,
+        "rpcCalls": 30,
+        "sampleCount": 29,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3584.3768750000745,
+        "wallMsMin": 2787.763958999887,
+        "wallMsMax": 3790.6266250000335,
+        "rpcCalls": 30,
+        "sampleCount": 29,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 53,
+    "x": [
+      0.5187325117825987,
+      0.5897652101307724,
+      0.8393076383175178,
+      0.8969220694753566,
+      0.5596662443242773
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 14,
+      "txTargetSparse": 10,
+      "cSparse": 11,
+      "txTargetMedDense": 56,
+      "cMedDense": 17
+    },
+    "score": 0.014272763194664194,
+    "aggregate": {
+      "avgLatencyMs": 2335.4505976666696,
+      "maxWalletMs": 3057.2003340001684,
+      "totalRpc": 120,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.014272763194664194,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1533.1167089999653,
+        "wallMsMin": 930.2942919998895,
+        "wallMsMax": 1555.2909170000348,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 3057.2003340001684,
+        "wallMsMin": 2123.5226669998374,
+        "wallMsMax": 3063.5346670001745,
+        "rpcCalls": 57,
+        "sampleCount": 56,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2416.034749999875,
+        "wallMsMin": 2234.076958999969,
+        "wallMsMax": 2574.715165999951,
+        "rpcCalls": 57,
+        "sampleCount": 56,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 54,
+    "x": [
+      0.7247313215592794,
+      0.4286449413454332,
+      0.8921033369203519,
+      0.7145542200706532,
+      0.6224654679320516
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 19,
+      "txTargetSparse": 8,
+      "cSparse": 11,
+      "txTargetMedDense": 49,
+      "cMedDense": 18
+    },
+    "score": 0.2107224124028602,
+    "aggregate": {
+      "avgLatencyMs": 1898.2318749999783,
+      "maxWalletMs": 2159.9897079998627,
+      "totalRpc": 106,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.2107224124028602,
+      "gate": 0.6
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1763.5190840000287,
+        "wallMsMin": 1211.6327919999603,
+        "wallMsMax": 1776.1112500000745,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1771.1868330000434,
+        "wallMsMin": 1748.7853330001235,
+        "wallMsMax": 2393.252250000136,
+        "rpcCalls": 50,
+        "sampleCount": 49,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 2159.9897079998627,
+        "wallMsMin": 1596.6299590000417,
+        "wallMsMax": 2652.7793749999255,
+        "rpcCalls": 50,
+        "sampleCount": 49,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 55,
+    "x": [
+      0.6664550067019559,
+      0.5550239112796962,
+      0.7942217513205503,
+      0.7538561251576843,
+      0.642161928019209
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 18,
+      "txTargetSparse": 10,
+      "cSparse": 10,
+      "txTargetMedDense": 50,
+      "cMedDense": 18
+    },
+    "score": 0.01248195285145103,
+    "aggregate": {
+      "avgLatencyMs": 2670.5222916667503,
+      "maxWalletMs": 3979.2407500001136,
+      "totalRpc": 108,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.01248195285145103,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1491.0215000000317,
+        "wallMsMin": 1290.1042080000043,
+        "wallMsMax": 4481.7285419998225,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2541.304625000106,
+        "wallMsMin": 2000.1327079997864,
+        "wallMsMax": 7660.319583999924,
+        "rpcCalls": 51,
+        "sampleCount": 50,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3979.2407500001136,
+        "wallMsMin": 2984.9061249999795,
+        "wallMsMax": 7040.112250000006,
+        "rpcCalls": 51,
+        "sampleCount": 50,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 56,
+    "x": [
+      0.7291272626215115,
+      0.28070819624002064,
+      0.785591745939423,
+      0.5740322005939691,
+      0.6552860719088078
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 19,
+      "txTargetSparse": 6,
+      "cSparse": 10,
+      "txTargetMedDense": 43,
+      "cMedDense": 18
+    },
+    "score": 0.013705486400431274,
+    "aggregate": {
+      "avgLatencyMs": 2432.116041666673,
+      "maxWalletMs": 3146.4468330000527,
+      "totalRpc": 94,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.013705486400431274,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1989.2894170000218,
+        "wallMsMin": 935.6779579999857,
+        "wallMsMax": 2784.629416000098,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2160.611874999944,
+        "wallMsMin": 1872.1866249998566,
+        "wallMsMax": 3742.407041999977,
+        "rpcCalls": 44,
+        "sampleCount": 43,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3146.4468330000527,
+        "wallMsMin": 2974.6102080000564,
+        "wallMsMax": 3392.0852920000907,
+        "rpcCalls": 44,
+        "sampleCount": 43,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 57,
+    "x": [
+      0.7475756458336129,
+      0.41261534221539686,
+      0.8347107188015443,
+      0.6891740618218205,
+      0.6843834868375271
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 19,
+      "txTargetSparse": 8,
+      "cSparse": 11,
+      "txTargetMedDense": 48,
+      "cMedDense": 19
+    },
+    "score": 0.014144554661172077,
+    "aggregate": {
+      "avgLatencyMs": 2356.619499999952,
+      "maxWalletMs": 3421.1649579999503,
+      "totalRpc": 104,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.014144554661172077,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1199.7831250000745,
+        "wallMsMin": 910.9173339998815,
+        "wallMsMax": 1664.1649159998633,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2448.910416999832,
+        "wallMsMin": 1976.015083000064,
+        "wallMsMax": 4090.7458329999354,
+        "rpcCalls": 49,
+        "sampleCount": 48,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3421.1649579999503,
+        "wallMsMin": 2530.727208999917,
+        "wallMsMax": 5356.7342920000665,
+        "rpcCalls": 49,
+        "sampleCount": 48,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 58,
+    "x": [
+      0.6272017129291501,
+      0.49565053548669535,
+      0.27679378942619737,
+      0.2828681992015287,
+      0.26616934434117945
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 17,
+      "txTargetSparse": 9,
+      "cSparse": 6,
+      "txTargetMedDense": 31,
+      "cMedDense": 12
+    },
+    "score": 0.013730668441721931,
+    "aggregate": {
+      "avgLatencyMs": 2427.6555416666283,
+      "maxWalletMs": 3342.198166999966,
+      "totalRpc": 70,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.013730668441721931,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1537.0727500000503,
+        "wallMsMin": 1162.6480839999858,
+        "wallMsMax": 1787.2007919999305,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2403.6957079998683,
+        "wallMsMin": 1912.8023329998832,
+        "wallMsMax": 3397.3352500000037,
+        "rpcCalls": 32,
+        "sampleCount": 31,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3342.198166999966,
+        "wallMsMin": 3042.731209000107,
+        "wallMsMax": 3957.651792000048,
+        "rpcCalls": 32,
+        "sampleCount": 31,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 59,
+    "x": [
+      0.6710617767056608,
+      0.5063091249728546,
+      0.8828336933342729,
+      0.7792564206200909,
+      0.6406916982822914
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 18,
+      "txTargetSparse": 9,
+      "cSparse": 11,
+      "txTargetMedDense": 51,
+      "cMedDense": 18
+    },
+    "score": 0.011865370228819505,
+    "aggregate": {
+      "avgLatencyMs": 2809.295680666653,
+      "maxWalletMs": 4149.8729169999715,
+      "totalRpc": 110,
+      "openGapPenalty": 0,
+      "completeness": 0.6666666666666666,
+      "score": 0.011865370228819505,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1557.3815419999883,
+        "wallMsMin": 1127.2411660000216,
+        "wallMsMax": 2472.441249999916,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2720.6325829999987,
+        "wallMsMin": 1848.329625000013,
+        "wallMsMax": 3768.2886250000447,
+        "rpcCalls": 52,
+        "sampleCount": 51,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4149.8729169999715,
+        "wallMsMin": 4133.549458999885,
+        "wallMsMax": 4315.613667000085,
+        "rpcCalls": 52,
+        "sampleCount": 51,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
+  },
+  {
+    "trial": 60,
+    "x": [
+      0.9276834852723208,
+      0.5340338971608978,
+      0.9782632140661445,
+      0.09044163208102884,
+      0.6961719242108295
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 6,
+      "skipZeroDelta": false,
+      "sparseThreshold": 23,
+      "txTargetSparse": 9,
+      "cSparse": 12,
+      "txTargetMedDense": 24,
+      "cMedDense": 19
+    },
+    "score": 0.007082776563822679,
+    "aggregate": {
+      "avgLatencyMs": 2353.1261386666447,
+      "maxWalletMs": 3656.2218750000466,
+      "totalRpc": 56,
+      "openGapPenalty": 0,
+      "completeness": 0.3333333333333333,
+      "score": 0.007082776563822679,
+      "gate": 0.05
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1163.3833329998888,
+        "wallMsMin": 939.0814580000006,
+        "wallMsMax": 1847.5883750000503,
+        "rpcCalls": 6,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2239.7732079999987,
+        "wallMsMin": 1779.6072079997975,
+        "wallMsMax": 3790.436749999877,
+        "rpcCalls": 25,
+        "sampleCount": 24,
+        "openGaps": 0,
+        "complete": false
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3656.2218750000466,
+        "wallMsMin": 3058.703582999995,
+        "wallMsMax": 3763.3262079998385,
+        "rpcCalls": 25,
+        "sampleCount": 24,
+        "openGaps": 0,
+        "complete": false
+      }
+    ]
   }
 ]
