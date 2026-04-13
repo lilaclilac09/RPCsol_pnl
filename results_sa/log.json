@@ -1,0 +1,4682 @@
+[
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 1,
+    "temperature": 1,
+    "currentScore": 0.45892184808882525,
+    "candidateScore": 0.45892184808882525,
+    "bestLocalScore": 0.45892184808882525,
+    "bestGlobalScore": 0.45892184808882525,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 50,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2179.0202496666666,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45892184808882525
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 2,
+    "temperature": 0.9830508474576272,
+    "currentScore": 0.49574868992360577,
+    "candidateScore": 0.49574868992360577,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 70,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2017.1510693333323,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.49574868992360577
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 3,
+    "temperature": 0.9661016949152542,
+    "currentScore": 0.41488854988148804,
+    "candidateScore": 0.41488854988148804,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 40,
+      "maxConcurrency": 4,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2410.2858473333326,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41488854988148804
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 4,
+    "temperature": 0.9491525423728814,
+    "currentScore": 0.39758664466691296,
+    "candidateScore": 0.39758664466691296,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2515.1750276666667,
+      "totalRpc": 42,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.39758664466691296
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 5,
+    "temperature": 0.9322033898305084,
+    "currentScore": 0.41615284073125053,
+    "candidateScore": 0.41615284073125053,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2402.963291666667,
+      "totalRpc": 44,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41615284073125053
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 6,
+    "temperature": 0.9152542372881356,
+    "currentScore": 0.28656200432483586,
+    "candidateScore": 0.28656200432483586,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 40,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3489.6461669999967,
+      "totalRpc": 34,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.28656200432483586
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 7,
+    "temperature": 0.8983050847457628,
+    "currentScore": 0.24554612243226925,
+    "candidateScore": 0.24554612243226925,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4072.5546389999995,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.24554612243226925
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 8,
+    "temperature": 0.8813559322033898,
+    "currentScore": 0.3120600305936413,
+    "candidateScore": 0.3120600305936413,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 20,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3204.511638666668,
+      "totalRpc": 46,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3120600305936413
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 9,
+    "temperature": 0.864406779661017,
+    "currentScore": 0.29471972767897187,
+    "candidateScore": 0.29471972767897187,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3393.0541666666636,
+      "totalRpc": 54,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.29471972767897187
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 10,
+    "temperature": 0.847457627118644,
+    "currentScore": 0.3509174390263289,
+    "candidateScore": 0.3509174390263289,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2849.673139000001,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3509174390263289
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 11,
+    "temperature": 0.8305084745762712,
+    "currentScore": 0.3509174390263289,
+    "candidateScore": 0.2926615565681984,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3416.9161529999983,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2926615565681984
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 12,
+    "temperature": 0.8135593220338984,
+    "currentScore": 0.38157433296658233,
+    "candidateScore": 0.38157433296658233,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2620.7213473333345,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.38157433296658233
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 13,
+    "temperature": 0.7966101694915254,
+    "currentScore": 0.36018629013578235,
+    "candidateScore": 0.36018629013578235,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2776.3410973333325,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.36018629013578235
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 14,
+    "temperature": 0.7796610169491526,
+    "currentScore": 0.36018629013578235,
+    "candidateScore": 0.21530555648273325,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 4644.561971999996,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.21530555648273325
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 15,
+    "temperature": 0.7627118644067796,
+    "currentScore": 0.3446176070942737,
+    "candidateScore": 0.3446176070942737,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 50,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2901.7670003333283,
+      "totalRpc": 30,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3446176070942737
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 16,
+    "temperature": 0.7457627118644068,
+    "currentScore": 0.4911703231943693,
+    "candidateScore": 0.4911703231943693,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 80,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2035.9536250000044,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4911703231943693
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 17,
+    "temperature": 0.728813559322034,
+    "currentScore": 0.4711933059639031,
+    "candidateScore": 0.4711933059639031,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 80,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2122.2712363333267,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4711933059639031
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 18,
+    "temperature": 0.711864406779661,
+    "currentScore": 0.4352161533666917,
+    "candidateScore": 0.4352161533666917,
+    "bestLocalScore": 0.49574868992360577,
+    "bestGlobalScore": 0.49574868992360577,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2297.708833333328,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4352161533666917
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 19,
+    "temperature": 0.6949152542372881,
+    "currentScore": 0.5782649155272737,
+    "candidateScore": 0.5782649155272737,
+    "bestLocalScore": 0.5782649155272737,
+    "bestGlobalScore": 0.5782649155272737,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1729.3112086666708,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5782649155272737
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 20,
+    "temperature": 0.6779661016949152,
+    "currentScore": 0.49789171908947377,
+    "candidateScore": 0.49789171908947377,
+    "bestLocalScore": 0.5782649155272737,
+    "bestGlobalScore": 0.5782649155272737,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2008.4688330000015,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.49789171908947377
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 21,
+    "temperature": 0.6610169491525424,
+    "currentScore": 0.6540310294596634,
+    "candidateScore": 0.6540310294596634,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1528.9794443333424,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6540310294596634
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 22,
+    "temperature": 0.6440677966101696,
+    "currentScore": 0.38670633387321335,
+    "candidateScore": 0.38670633387321335,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2585.941610999997,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.38670633387321335
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 23,
+    "temperature": 0.6271186440677966,
+    "currentScore": 0.5373834451401717,
+    "candidateScore": 0.5373834451401717,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 100,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1860.8686386666766,
+      "totalRpc": 15,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5373834451401717
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 24,
+    "temperature": 0.6101694915254237,
+    "currentScore": 0.5373834451401717,
+    "candidateScore": 0.27178304281982296,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 100,
+      "maxConcurrency": 24,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3679.4054170000018,
+      "totalRpc": 15,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.27178304281982296
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 25,
+    "temperature": 0.5932203389830508,
+    "currentScore": 0.39064869492884,
+    "candidateScore": 0.39064869492884,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2559.8447223333446,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.39064869492884
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 26,
+    "temperature": 0.576271186440678,
+    "currentScore": 0.5130341747162391,
+    "candidateScore": 0.5130341747162391,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1949.1878889999934,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5130341747162391
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 27,
+    "temperature": 0.5593220338983051,
+    "currentScore": 0.5531478090602824,
+    "candidateScore": 0.5531478090602824,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1807.8350553333196,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5531478090602824
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 28,
+    "temperature": 0.5423728813559322,
+    "currentScore": 0.5245923961410057,
+    "candidateScore": 0.5245923961410057,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 50,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1906.2418886666612,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5245923961410057
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 29,
+    "temperature": 0.5254237288135593,
+    "currentScore": 0.5421057160758103,
+    "candidateScore": 0.5421057160758103,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 40,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1844.6586529999913,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5421057160758103
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 30,
+    "temperature": 0.5084745762711864,
+    "currentScore": 0.44092008852499415,
+    "candidateScore": 0.44092008852499415,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 50,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2267.984666666676,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44092008852499415
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 31,
+    "temperature": 0.4915254237288136,
+    "currentScore": 0.5700132691963927,
+    "candidateScore": 0.5700132691963927,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 30,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1754.3451249999925,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5700132691963927
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 32,
+    "temperature": 0.47457627118644063,
+    "currentScore": 0.5700132691963927,
+    "candidateScore": 0.47367402346839527,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 20,
+      "maxConcurrency": 24,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2111.1565136666663,
+      "totalRpc": 34,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47367402346839527
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 33,
+    "temperature": 0.4576271186440678,
+    "currentScore": 0.4520012439146545,
+    "candidateScore": 0.4520012439146545,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 50,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2212.3832920000036,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4520012439146545
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 34,
+    "temperature": 0.44067796610169496,
+    "currentScore": 0.330160074685149,
+    "candidateScore": 0.330160074685149,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 50,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3028.833819333338,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.330160074685149
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 35,
+    "temperature": 0.423728813559322,
+    "currentScore": 0.44596516636964634,
+    "candidateScore": 0.44596516636964634,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 50,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2242.3275973333125,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44596516636964634
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 36,
+    "temperature": 0.4067796610169492,
+    "currentScore": 0.49673049233093053,
+    "candidateScore": 0.49673049233093053,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 30,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2013.16411100002,
+      "totalRpc": 28,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.49673049233093053
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 37,
+    "temperature": 0.38983050847457623,
+    "currentScore": 0.5437525668995388,
+    "candidateScore": 0.5437525668995388,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 40,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1839.0717780000025,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5437525668995388
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 38,
+    "temperature": 0.3728813559322034,
+    "currentScore": 0.5794642693361423,
+    "candidateScore": 0.5794642693361423,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 40,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1725.7319439999992,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5794642693361423
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 39,
+    "temperature": 0.35593220338983056,
+    "currentScore": 0.5669095687466592,
+    "candidateScore": 0.5669095687466592,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 40,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1763.9497639999802,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5669095687466592
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 40,
+    "temperature": 0.3389830508474576,
+    "currentScore": 0.540254513836643,
+    "candidateScore": 0.540254513836643,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 50,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1850.9794446666492,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.540254513836643
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 41,
+    "temperature": 0.3220338983050848,
+    "currentScore": 0.6295804657221507,
+    "candidateScore": 0.6295804657221507,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 50,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1588.3593193333363,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6295804657221507
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 42,
+    "temperature": 0.30508474576271183,
+    "currentScore": 0.4535244691285926,
+    "candidateScore": 0.4535244691285926,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 50,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2204.952693999978,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4535244691285926
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 43,
+    "temperature": 0.288135593220339,
+    "currentScore": 0.6321559949315897,
+    "candidateScore": 0.6321559949315897,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 60,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1581.8880276666798,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6321559949315897
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 44,
+    "temperature": 0.27118644067796616,
+    "currentScore": 0.6321559949315897,
+    "candidateScore": 0.4176201359530941,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 60,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2394.5205556666865,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4176201359530941
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 45,
+    "temperature": 0.2542372881355932,
+    "currentScore": 0.6321559949315897,
+    "candidateScore": 0.4673283845714474,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 50,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2139.822944666686,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4673283845714474
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 46,
+    "temperature": 0.23728813559322037,
+    "currentScore": 0.5640344159699798,
+    "candidateScore": 0.5640344159699798,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 60,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1772.9414583333225,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5640344159699798
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 47,
+    "temperature": 0.22033898305084743,
+    "currentScore": 0.5640344159699798,
+    "candidateScore": 0.3911880033774139,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 60,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2556.315611333334,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3911880033774139
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 48,
+    "temperature": 0.2033898305084746,
+    "currentScore": 0.544919129516493,
+    "candidateScore": 0.544919129516493,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 70,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1835.1346940000076,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.544919129516493
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 49,
+    "temperature": 0.18644067796610164,
+    "currentScore": 0.5138297564993679,
+    "candidateScore": 0.5138297564993679,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1946.1698886666757,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5138297564993679
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 50,
+    "temperature": 0.1694915254237288,
+    "currentScore": 0.6154743432112806,
+    "candidateScore": 0.6154743432112806,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1624.763096999998,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6154743432112806
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 51,
+    "temperature": 0.15254237288135597,
+    "currentScore": 0.6011096081825831,
+    "candidateScore": 0.6011096081825831,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 80,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1663.5901113333337,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6011096081825831
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 52,
+    "temperature": 0.13559322033898302,
+    "currentScore": 0.6011096081825831,
+    "candidateScore": 0.46032104226303183,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 90,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2172.3968886666503,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46032104226303183
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 53,
+    "temperature": 0.11864406779661019,
+    "currentScore": 0.6011096081825831,
+    "candidateScore": 0.5712085380916367,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 70,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1750.6741116666817,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5712085380916367
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 54,
+    "temperature": 0.10169491525423724,
+    "currentScore": 0.6011096081825831,
+    "candidateScore": 0.4304532008589698,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2323.132916666664,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4304532008589698
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 55,
+    "temperature": 0.0847457627118644,
+    "currentScore": 0.5694672765573382,
+    "candidateScore": 0.5694672765573382,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1756.027152333331,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5694672765573382
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 56,
+    "temperature": 0.06779661016949157,
+    "currentScore": 0.5278649070224816,
+    "candidateScore": 0.5278649070224816,
+    "bestLocalScore": 0.6540310294596634,
+    "bestGlobalScore": 0.6540310294596634,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 80,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1894.424097333317,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5278649070224816
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 57,
+    "temperature": 0.05084745762711862,
+    "currentScore": 0.7152730821871567,
+    "candidateScore": 0.7152730821871567,
+    "bestLocalScore": 0.7152730821871567,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 70,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1398.0674303333315,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.7152730821871567
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 58,
+    "temperature": 0.03389830508474578,
+    "currentScore": 0.7152730821871567,
+    "candidateScore": 0.6778743397221593,
+    "bestLocalScore": 0.7152730821871567,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 70,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1475.199666666643,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6778743397221593
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 59,
+    "temperature": 0.02,
+    "currentScore": 0.7152730821871567,
+    "candidateScore": 0.4246839626417836,
+    "bestLocalScore": 0.7152730821871567,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2354.6921663333196,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4246839626417836
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 1,
+    "step": 60,
+    "temperature": 0.02,
+    "currentScore": 0.7152730821871567,
+    "candidateScore": 0.5967717731190797,
+    "bestLocalScore": 0.7152730821871567,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 70,
+      "maxConcurrency": 8,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1675.6824719999956,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5967717731190797
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 1,
+    "temperature": 1,
+    "currentScore": 0.29556281643073784,
+    "candidateScore": 0.29556281643073784,
+    "bestLocalScore": 0.29556281643073784,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 90,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3383.3755276666875,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.29556281643073784
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 2,
+    "temperature": 0.9830508474576272,
+    "currentScore": 0.3312425716631197,
+    "candidateScore": 0.3312425716631197,
+    "bestLocalScore": 0.3312425716631197,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 90,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3018.9356246666866,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3312425716631197
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 3,
+    "temperature": 0.9661016949152542,
+    "currentScore": 0.44327980064820666,
+    "candidateScore": 0.44327980064820666,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 80,
+      "maxConcurrency": 4,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2255.911500000007,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44327980064820666
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 4,
+    "temperature": 0.9491525423728814,
+    "currentScore": 0.1392258600418024,
+    "candidateScore": 0.1392258600418024,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 90,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 7182.573694999989,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.1392258600418024
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 5,
+    "temperature": 0.9322033898305084,
+    "currentScore": 0.29199630347552086,
+    "candidateScore": 0.29199630347552086,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 70,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3424.7008886666736,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.29199630347552086
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 6,
+    "temperature": 0.9152542372881356,
+    "currentScore": 0.32025626622889974,
+    "candidateScore": 0.32025626622889974,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 80,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3122.4994026666777,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.32025626622889974
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 7,
+    "temperature": 0.8983050847457628,
+    "currentScore": 0.37616215301877004,
+    "candidateScore": 0.37616215301877004,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 50,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2658.4279996666787,
+      "totalRpc": 30,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.37616215301877004
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 8,
+    "temperature": 0.8813559322033898,
+    "currentScore": 0.21000472055120956,
+    "candidateScore": 0.21000472055120956,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4761.797722333344,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.21000472055120956
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 9,
+    "temperature": 0.864406779661017,
+    "currentScore": 0.23678611234524116,
+    "candidateScore": 0.23678611234524116,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4223.220652999997,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.23678611234524116
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 10,
+    "temperature": 0.847457627118644,
+    "currentScore": 0.320560674844649,
+    "candidateScore": 0.320560674844649,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 30,
+      "maxConcurrency": 4,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3119.534236333333,
+      "totalRpc": 44,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.320560674844649
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 11,
+    "temperature": 0.8305084745762712,
+    "currentScore": 0.2934048925045807,
+    "candidateScore": 0.2934048925045807,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3408.2594583332925,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2934048925045807
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 12,
+    "temperature": 0.8135593220338984,
+    "currentScore": 0.3323972687200987,
+    "candidateScore": 0.3323972687200987,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3008.4483059999766,
+      "totalRpc": 54,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3323972687200987
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 13,
+    "temperature": 0.7966101694915254,
+    "currentScore": 0.31449441188187643,
+    "candidateScore": 0.31449441188187643,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 20,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3179.7067363333576,
+      "totalRpc": 54,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.31449441188187643
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 14,
+    "temperature": 0.7796610169491526,
+    "currentScore": 0.290611762766801,
+    "candidateScore": 0.290611762766801,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 40,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3441.016944666626,
+      "totalRpc": 34,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.290611762766801
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 15,
+    "temperature": 0.7627118644067796,
+    "currentScore": 0.39489092095656514,
+    "candidateScore": 0.39489092095656514,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 20,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2532.3448753332873,
+      "totalRpc": 58,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.39489092095656514
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 16,
+    "temperature": 0.7457627118644068,
+    "currentScore": 0.37749367798470823,
+    "candidateScore": 0.37749367798470823,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 50,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2649.0509863333623,
+      "totalRpc": 30,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.37749367798470823
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 17,
+    "temperature": 0.728813559322034,
+    "currentScore": 0.34595816025623544,
+    "candidateScore": 0.34595816025623544,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 70,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2890.5229443333424,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.34595816025623544
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 18,
+    "temperature": 0.711864406779661,
+    "currentScore": 0.3250506074216111,
+    "candidateScore": 0.3250506074216111,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 80,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3076.4440280000367,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3250506074216111
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 19,
+    "temperature": 0.6949152542372881,
+    "currentScore": 0.3857498146333525,
+    "candidateScore": 0.3857498146333525,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 80,
+      "maxConcurrency": 4,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2592.3538056667117,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3857498146333525
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 20,
+    "temperature": 0.6779661016949152,
+    "currentScore": 0.3033875329325777,
+    "candidateScore": 0.3033875329325777,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 90,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3296.1143469999856,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3033875329325777
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 21,
+    "temperature": 0.6610169491525424,
+    "currentScore": 0.4008702224412224,
+    "candidateScore": 0.4008702224412224,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 100,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2494.572916666628,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4008702224412224
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 22,
+    "temperature": 0.6440677966101696,
+    "currentScore": 0.41285363126413516,
+    "candidateScore": 0.41285363126413516,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 100,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2422.16593066665,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41285363126413516
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 23,
+    "temperature": 0.6271186440677966,
+    "currentScore": 0.29607384979905066,
+    "candidateScore": 0.29607384979905066,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 90,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3377.535708333288,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.29607384979905066
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 24,
+    "temperature": 0.6101694915254237,
+    "currentScore": 0.29607384979905066,
+    "candidateScore": 0.12311149131392282,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 100,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 8122.71859699996,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.12311149131392282
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 25,
+    "temperature": 0.5932203389830508,
+    "currentScore": 0.30332868604936125,
+    "candidateScore": 0.30332868604936125,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 100,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3296.7538053333606,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.30332868604936125
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 26,
+    "temperature": 0.576271186440678,
+    "currentScore": 0.250296894730197,
+    "candidateScore": 0.250296894730197,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 100,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3995.255318999989,
+      "totalRpc": 17,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.250296894730197
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 27,
+    "temperature": 0.5593220338983051,
+    "currentScore": 0.33122083141769343,
+    "candidateScore": 0.33122083141769343,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 100,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3019.133777666682,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.33122083141769343
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 28,
+    "temperature": 0.5423728813559322,
+    "currentScore": 0.3711581650311481,
+    "candidateScore": 0.3711581650311481,
+    "bestLocalScore": 0.44327980064820666,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 90,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2694.269166666665,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3711581650311481
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 29,
+    "temperature": 0.5254237288135593,
+    "currentScore": 0.4688647772916222,
+    "candidateScore": 0.4688647772916222,
+    "bestLocalScore": 0.4688647772916222,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 90,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2132.8110969999884,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4688647772916222
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 30,
+    "temperature": 0.5084745762711864,
+    "currentScore": 0.46300860882385636,
+    "candidateScore": 0.46300860882385636,
+    "bestLocalScore": 0.4688647772916222,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 70,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2159.787055666675,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46300860882385636
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 31,
+    "temperature": 0.4915254237288136,
+    "currentScore": 0.5022748831423143,
+    "candidateScore": 0.5022748831423143,
+    "bestLocalScore": 0.5022748831423143,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 70,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1990.9416806666413,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5022748831423143
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 32,
+    "temperature": 0.47457627118644063,
+    "currentScore": 0.421542705828436,
+    "candidateScore": 0.421542705828436,
+    "bestLocalScore": 0.5022748831423143,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 70,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2372.2388886666936,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.421542705828436
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 33,
+    "temperature": 0.4576271186440678,
+    "currentScore": 0.511207950335074,
+    "candidateScore": 0.511207950335074,
+    "bestLocalScore": 0.511207950335074,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 6,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1956.1511110000235,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.511207950335074
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 34,
+    "temperature": 0.44067796610169496,
+    "currentScore": 0.45131614223763095,
+    "candidateScore": 0.45131614223763095,
+    "bestLocalScore": 0.511207950335074,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 70,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2215.7417083332934,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45131614223763095
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 35,
+    "temperature": 0.423728813559322,
+    "currentScore": 0.41434008711330206,
+    "candidateScore": 0.41434008711330206,
+    "bestLocalScore": 0.511207950335074,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 90,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2413.4763473333637,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41434008711330206
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 36,
+    "temperature": 0.4067796610169492,
+    "currentScore": 0.4850010658310681,
+    "candidateScore": 0.4850010658310681,
+    "bestLocalScore": 0.511207950335074,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2061.8511389999962,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4850010658310681
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 37,
+    "temperature": 0.38983050847457623,
+    "currentScore": 0.4800625360951617,
+    "candidateScore": 0.4800625360951617,
+    "bestLocalScore": 0.511207950335074,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2083.061944666668,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4800625360951617
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 38,
+    "temperature": 0.3728813559322034,
+    "currentScore": 0.6155052859850376,
+    "candidateScore": 0.6155052859850376,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 100,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1624.6814166666784,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6155052859850376
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 39,
+    "temperature": 0.35593220338983056,
+    "currentScore": 0.6155052859850376,
+    "candidateScore": 0.37580276751169067,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 100,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2660.9702920000223,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.37580276751169067
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 40,
+    "temperature": 0.3389830508474576,
+    "currentScore": 0.46779988804806744,
+    "candidateScore": 0.46779988804806744,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 90,
+      "maxConcurrency": 20,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2137.6661806666525,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46779988804806744
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 41,
+    "temperature": 0.3220338983050848,
+    "currentScore": 0.4335848044697047,
+    "candidateScore": 0.4335848044697047,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 80,
+      "maxConcurrency": 22,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2306.3538889999813,
+      "totalRpc": 19,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4335848044697047
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 42,
+    "temperature": 0.30508474576271183,
+    "currentScore": 0.33965845304595504,
+    "candidateScore": 0.33965845304595504,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 70,
+      "maxConcurrency": 24,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2944.1340000000005,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.33965845304595504
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 43,
+    "temperature": 0.288135593220339,
+    "currentScore": 0.38706783360610464,
+    "candidateScore": 0.38706783360610464,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 80,
+      "maxConcurrency": 24,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2583.5264859999684,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.38706783360610464
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 44,
+    "temperature": 0.27118644067796616,
+    "currentScore": 0.38706783360610464,
+    "candidateScore": 0.21459034890625292,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 10,
+      "windowSize": 70,
+      "maxConcurrency": 24,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4660.041819666668,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.21459034890625292
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 45,
+    "temperature": 0.2542372881355932,
+    "currentScore": 0.3166575974541019,
+    "candidateScore": 0.3166575974541019,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 80,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3157.9851803332954,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3166575974541019
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 46,
+    "temperature": 0.23728813559322037,
+    "currentScore": 0.45290522000015454,
+    "candidateScore": 0.45290522000015454,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 80,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2207.96748599996,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45290522000015454
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 47,
+    "temperature": 0.22033898305084743,
+    "currentScore": 0.497877427542171,
+    "candidateScore": 0.497877427542171,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 80,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2008.5264860000073,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.497877427542171
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 48,
+    "temperature": 0.2033898305084746,
+    "currentScore": 0.4593467562622613,
+    "candidateScore": 0.4593467562622613,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 80,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2177.0045970000406,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4593467562622613
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 49,
+    "temperature": 0.18644067796610164,
+    "currentScore": 0.4230551470562922,
+    "candidateScore": 0.4230551470562922,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 90,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2363.7580276666363,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4230551470562922
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 50,
+    "temperature": 0.1694915254237288,
+    "currentScore": 0.534765252526676,
+    "candidateScore": 0.534765252526676,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 100,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1869.9793886666496,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.534765252526676
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 51,
+    "temperature": 0.15254237288135597,
+    "currentScore": 0.4394921895465325,
+    "candidateScore": 0.4394921895465325,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 90,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2275.3532913333424,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4394921895465325
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 52,
+    "temperature": 0.13559322033898302,
+    "currentScore": 0.4394921895465325,
+    "candidateScore": 0.23733156101781455,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 100,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4213.514611000001,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.23733156101781455
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 53,
+    "temperature": 0.11864406779661019,
+    "currentScore": 0.45931124076897756,
+    "candidateScore": 0.45931124076897756,
+    "bestLocalScore": 0.6155052859850376,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 90,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2177.172930333259,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45931124076897756
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 54,
+    "temperature": 0.10169491525423724,
+    "currentScore": 0.6304196829472006,
+    "candidateScore": 0.6304196829472006,
+    "bestLocalScore": 0.6304196829472006,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 90,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1586.244889000004,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6304196829472006
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 55,
+    "temperature": 0.0847457627118644,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.6375003469276977,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 90,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1568.6265973333113,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6375003469276977
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 56,
+    "temperature": 0.06779661016949157,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.517935815149391,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 100,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1930.7411666666933,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.517935815149391
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 57,
+    "temperature": 0.05084745762711862,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.47917949458791637,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 100,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2086.900652666654,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47917949458791637
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 58,
+    "temperature": 0.03389830508474578,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.4371561368534076,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 80,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2287.5122083333167,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4371561368534076
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 59,
+    "temperature": 0.02,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.5162558349940592,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 30,
+      "windowSize": 90,
+      "maxConcurrency": 22,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1937.0241113333032,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5162558349940592
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 2,
+    "step": 60,
+    "temperature": 0.02,
+    "currentScore": 0.6375003469276977,
+    "candidateScore": 0.3815137572509635,
+    "bestLocalScore": 0.6375003469276977,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 80,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2621.1374583333577,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3815137572509635
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 1,
+    "temperature": 1,
+    "currentScore": 0.4190776119613423,
+    "candidateScore": 0.4190776119613423,
+    "bestLocalScore": 0.4190776119613423,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 100,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2386.192847000008,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4190776119613423
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 2,
+    "temperature": 0.9830508474576272,
+    "currentScore": 0.42179078510685997,
+    "candidateScore": 0.42179078510685997,
+    "bestLocalScore": 0.42179078510685997,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2370.8436393333054,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.42179078510685997
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 3,
+    "temperature": 0.9661016949152542,
+    "currentScore": 0.626128602284239,
+    "candidateScore": 0.626128602284239,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 70,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1597.1159860000091,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.626128602284239
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 4,
+    "temperature": 0.9491525423728814,
+    "currentScore": 0.626128602284239,
+    "candidateScore": 0.45428756024686845,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2201.248917000019,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45428756024686845
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 5,
+    "temperature": 0.9322033898305084,
+    "currentScore": 0.46425063158397145,
+    "candidateScore": 0.46425063158397145,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 70,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2154.0089166666535,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46425063158397145
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 6,
+    "temperature": 0.9152542372881356,
+    "currentScore": 0.5019952289821227,
+    "candidateScore": 0.5019952289821227,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 90,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1992.0508050000062,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5019952289821227
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 7,
+    "temperature": 0.8983050847457628,
+    "currentScore": 0.45737736540804375,
+    "candidateScore": 0.45737736540804375,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2186.3784166666446,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.45737736540804375
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 8,
+    "temperature": 0.8813559322033898,
+    "currentScore": 0.5328715665381902,
+    "candidateScore": 0.5328715665381902,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 80,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1876.6248056666227,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5328715665381902
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 9,
+    "temperature": 0.864406779661017,
+    "currentScore": 0.46154027503670747,
+    "candidateScore": 0.46154027503670747,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 100,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2166.658153333352,
+      "totalRpc": 15,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46154027503670747
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 10,
+    "temperature": 0.847457627118644,
+    "currentScore": 0.4169140066916039,
+    "candidateScore": 0.4169140066916039,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 100,
+      "maxConcurrency": 8,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2398.576166666695,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4169140066916039
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 11,
+    "temperature": 0.8305084745762712,
+    "currentScore": 0.5296417499213586,
+    "candidateScore": 0.5296417499213586,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 100,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1888.0686806666588,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5296417499213586
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 12,
+    "temperature": 0.8135593220338984,
+    "currentScore": 0.4388898116839759,
+    "candidateScore": 0.4388898116839759,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 70,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2278.476222000007,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4388898116839759
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 13,
+    "temperature": 0.7966101694915254,
+    "currentScore": 0.5749192576543523,
+    "candidateScore": 0.5749192576543523,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 70,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1739.3746803333052,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5749192576543523
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 14,
+    "temperature": 0.7796610169491526,
+    "currentScore": 0.5087117595939871,
+    "candidateScore": 0.5087117595939871,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 70,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1965.7497219999786,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5087117595939871
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 15,
+    "temperature": 0.7627118644067796,
+    "currentScore": 0.4256963766806971,
+    "candidateScore": 0.4256963766806971,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 50,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2349.0921106666406,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4256963766806971
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 16,
+    "temperature": 0.7457627118644068,
+    "currentScore": 0.17242347705994002,
+    "candidateScore": 0.17242347705994002,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 30,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 5799.674250000001,
+      "totalRpc": 40,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.17242347705994002
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 17,
+    "temperature": 0.728813559322034,
+    "currentScore": 0.17242347705994002,
+    "candidateScore": 0.1434356955847774,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 20,
+      "windowSize": 50,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 6971.7652633332955,
+      "totalRpc": 30,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.1434356955847774
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 18,
+    "temperature": 0.711864406779661,
+    "currentScore": 0.28922567592330695,
+    "candidateScore": 0.28922567592330695,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 40,
+      "windowSize": 20,
+      "maxConcurrency": 4,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 3457.507694666662,
+      "totalRpc": 46,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.28922567592330695
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 19,
+    "temperature": 0.6949152542372881,
+    "currentScore": 0.3583019123447102,
+    "candidateScore": 0.3583019123447102,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2790.942402333409,
+      "totalRpc": 42,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3583019123447102
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 20,
+    "temperature": 0.6779661016949152,
+    "currentScore": 0.230111538802171,
+    "candidateScore": 0.230111538802171,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 20,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 4345.7186249999795,
+      "totalRpc": 42,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.230111538802171
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 21,
+    "temperature": 0.6610169491525424,
+    "currentScore": 0.3804277810903886,
+    "candidateScore": 0.3804277810903886,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 30,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2628.619805666618,
+      "totalRpc": 32,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3804277810903886
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 22,
+    "temperature": 0.6440677966101696,
+    "currentScore": 0.3648614337966996,
+    "candidateScore": 0.3648614337966996,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 40,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2740.7665139999394,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3648614337966996
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 23,
+    "temperature": 0.6271186440677966,
+    "currentScore": 0.3648614337966996,
+    "candidateScore": 0.3291926220500643,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 40,
+      "maxConcurrency": 6,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 3037.73515266669,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3291926220500643
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 24,
+    "temperature": 0.6101694915254237,
+    "currentScore": 0.4823575805578959,
+    "candidateScore": 0.4823575805578959,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 50,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2073.1507916666255,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4823575805578959
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 25,
+    "temperature": 0.5932203389830508,
+    "currentScore": 0.38594608634520194,
+    "candidateScore": 0.38594608634520194,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 50,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2591.0354720000178,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.38594608634520194
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 26,
+    "temperature": 0.576271186440678,
+    "currentScore": 0.47988150773488375,
+    "candidateScore": 0.47988150773488375,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 30,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2083.8477496666987,
+      "totalRpc": 28,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.47988150773488375
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 27,
+    "temperature": 0.5593220338983051,
+    "currentScore": 0.4488958732205282,
+    "candidateScore": 0.4488958732205282,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 60,
+      "windowSize": 40,
+      "maxConcurrency": 12,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2227.6881113334093,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4488958732205282
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 28,
+    "temperature": 0.5423728813559322,
+    "currentScore": 0.48190796035848116,
+    "candidateScore": 0.48190796035848116,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 40,
+      "maxConcurrency": 10,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2075.085041666714,
+      "totalRpc": 26,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.48190796035848116
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 29,
+    "temperature": 0.5254237288135593,
+    "currentScore": 0.584776104617916,
+    "candidateScore": 0.584776104617916,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 50,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1710.0561943333596,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.584776104617916
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 30,
+    "temperature": 0.5084745762711864,
+    "currentScore": 0.5202380437262762,
+    "candidateScore": 0.5202380437262762,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 50,
+      "windowSize": 70,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1922.1969866666477,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5202380437262762
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 31,
+    "temperature": 0.4915254237288136,
+    "currentScore": 0.5017372862594086,
+    "candidateScore": 0.5017372862594086,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 70,
+      "windowSize": 90,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1993.0749166666064,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5017372862594086
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 32,
+    "temperature": 0.47457627118644063,
+    "currentScore": 0.4682531090429683,
+    "candidateScore": 0.4682531090429683,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": true,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2135.5971389999613,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4682531090429683
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 33,
+    "temperature": 0.4576271186440678,
+    "currentScore": 0.3617183266914885,
+    "candidateScore": 0.3617183266914885,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 100,
+      "maxConcurrency": 20,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2764.582069000074,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3617183266914885
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 34,
+    "temperature": 0.44067796610169496,
+    "currentScore": 0.5493931826395057,
+    "candidateScore": 0.5493931826395057,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 16,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1820.1900416666952,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5493931826395057
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 35,
+    "temperature": 0.423728813559322,
+    "currentScore": 0.5741615485748446,
+    "candidateScore": 0.5741615485748446,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 14,
+      "useContinuityOracle": true,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1741.6700969999656,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5741615485748446
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 36,
+    "temperature": 0.4067796610169492,
+    "currentScore": 0.4582490908380463,
+    "candidateScore": 0.4582490908380463,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 10,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2182.219277666649,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4582490908380463
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 37,
+    "temperature": 0.38983050847457623,
+    "currentScore": 0.5459285769253149,
+    "candidateScore": 0.5459285769253149,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 100,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1831.7414443333012,
+      "totalRpc": 15,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5459285769253149
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 38,
+    "temperature": 0.3728813559322034,
+    "currentScore": 0.5977457961168918,
+    "candidateScore": 0.5977457961168918,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1672.9519579999615,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5977457961168918
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 39,
+    "temperature": 0.35593220338983056,
+    "currentScore": 0.5434117496340559,
+    "candidateScore": 0.5434117496340559,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1840.2252080000471,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5434117496340559
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 40,
+    "temperature": 0.3389830508474576,
+    "currentScore": 0.40180445919918456,
+    "candidateScore": 0.40180445919918456,
+    "bestLocalScore": 0.626128602284239,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2488.7727776666484,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.40180445919918456
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 41,
+    "temperature": 0.3220338983050848,
+    "currentScore": 0.6339152532445776,
+    "candidateScore": 0.6339152532445776,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1577.4979303332511,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6339152532445776
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 42,
+    "temperature": 0.30508474576271183,
+    "currentScore": 0.6339152532445776,
+    "candidateScore": 0.46459121896269645,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2152.4298333333186,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46459121896269645
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 43,
+    "temperature": 0.288135593220339,
+    "currentScore": 0.6339152532445776,
+    "candidateScore": 0.17130329528288152,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 70,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 5837.599319666624,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.17130329528288152
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 44,
+    "temperature": 0.27118644067796616,
+    "currentScore": 0.6339152532445776,
+    "candidateScore": 0.21003156003741577,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 4761.189222333332,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.21003156003741577
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 45,
+    "temperature": 0.2542372881355932,
+    "currentScore": 0.6339152532445776,
+    "candidateScore": 0.4066675632547705,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 12,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2459.010972000038,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4066675632547705
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 46,
+    "temperature": 0.23728813559322037,
+    "currentScore": 0.4567639112552596,
+    "candidateScore": 0.4567639112552596,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2189.314819666557,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4567639112552596
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 47,
+    "temperature": 0.22033898305084743,
+    "currentScore": 0.566155515637897,
+    "candidateScore": 0.566155515637897,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 90,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1766.299139333268,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.566155515637897
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 48,
+    "temperature": 0.2033898305084746,
+    "currentScore": 0.6312192300140878,
+    "candidateScore": 0.6312192300140878,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1584.2356386665876,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6312192300140878
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 49,
+    "temperature": 0.18644067796610164,
+    "currentScore": 0.5512992065400673,
+    "candidateScore": 0.5512992065400673,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1813.8970420000453,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5512992065400673
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 50,
+    "temperature": 0.1694915254237288,
+    "currentScore": 0.5069086081660922,
+    "candidateScore": 0.5069086081660922,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 90,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1972.742194333269,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5069086081660922
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 51,
+    "temperature": 0.15254237288135597,
+    "currentScore": 0.4897657593515246,
+    "candidateScore": 0.4897657593515246,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2041.7923893333257,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4897657593515246
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 52,
+    "temperature": 0.13559322033898302,
+    "currentScore": 0.4897657593515246,
+    "candidateScore": 0.35614779322494294,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2807.8230976666478,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.35614779322494294
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 53,
+    "temperature": 0.11864406779661019,
+    "currentScore": 0.4036258472441785,
+    "candidateScore": 0.4036258472441785,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 70,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2477.5420276666214,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4036258472441785
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 54,
+    "temperature": 0.10169491525423724,
+    "currentScore": 0.5925680070776549,
+    "candidateScore": 0.5925680070776549,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 70,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1687.5700140000165,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5925680070776549
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 55,
+    "temperature": 0.0847457627118644,
+    "currentScore": 0.5925680070776549,
+    "candidateScore": 0.49587672994813836,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 60,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 2016.6302220001041,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.49587672994813836
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 56,
+    "temperature": 0.06779661016949157,
+    "currentScore": 0.5925680070776549,
+    "candidateScore": 0.5192330483343581,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": false
+    },
+    "aggregate": {
+      "avgLatencyMs": 1925.9174723332592,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5192330483343581
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 57,
+    "temperature": 0.05084745762711862,
+    "currentScore": 0.6150229239985591,
+    "candidateScore": 0.6150229239985591,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 90,
+      "windowSize": 80,
+      "maxConcurrency": 16,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 1625.9556529999245,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6150229239985591
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 58,
+    "temperature": 0.03389830508474578,
+    "currentScore": 0.6150229239985591,
+    "candidateScore": 0.4375896324781265,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 100,
+      "windowSize": 70,
+      "maxConcurrency": 18,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2285.2460976665993,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4375896324781265
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 59,
+    "temperature": 0.02,
+    "currentScore": 0.6150229239985591,
+    "candidateScore": 0.41279112893635944,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 90,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2422.5326803332814,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.41279112893635944
+    }
+  },
+  {
+    "method": "simulated-annealing",
+    "restart": 3,
+    "step": 60,
+    "temperature": 0.02,
+    "currentScore": 0.6150229239985591,
+    "candidateScore": 0.4237690207400669,
+    "bestLocalScore": 0.6339152532445776,
+    "bestGlobalScore": 0.7152730821871567,
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "anchorSize": 80,
+      "windowSize": 80,
+      "maxConcurrency": 14,
+      "useContinuityOracle": false,
+      "skipZeroDelta": true
+    },
+    "aggregate": {
+      "avgLatencyMs": 2359.77608333334,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4237690207400669
+    }
+  }
+]

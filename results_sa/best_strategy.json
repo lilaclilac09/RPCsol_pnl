@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "method": "simulated-annealing",
+    "score": 0.7152730821871567
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 80,
+  "windowSize": 70,
+  "maxConcurrency": 6,
+  "useContinuityOracle": true,
+  "skipZeroDelta": false
+}
