@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "method": "prime-v3",
+    "budget": 56,
+    "bestTrialScore": 0.5645615759507691
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 77,
+  "windowSize": 41,
+  "maxConcurrency": 14,
+  "skipZeroDelta": false
+}
