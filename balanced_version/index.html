@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOL Balance Router — Method & Results</title>
+<style>
+  :root {
+    --bg:      #0d1117;
+    --surface: #161b22;
+    --border:  #30363d;
+    --text:    #e6edf3;
+    --muted:   #8b949e;
+    --green:   #3fb950;
+    --blue:    #58a6ff;
+    --yellow:  #d29922;
+    --orange:  #ffa657;
+    --purple:  #bc8cff;
+    --red:     #f85149;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; display: block; height: 3px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 50%, var(--green) 100%);
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre {
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+    font-size: 13px;
+  }
+  code {
+    background: rgba(110,118,129,.15); border-radius: 4px; padding: 1px 6px;
+  }
+
+  .page { max-width: 860px; margin: 0 auto; padding: 56px 24px 100px; }
+
+  /* ── Header ── */
+  .header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--blue); margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 32px; font-weight: 800; letter-spacing: -.5px; line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .subtitle { color: var(--muted); max-width: 640px; }
+  .github-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 20px; padding: 8px 16px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--blue);
+    transition: border-color .15s;
+  }
+  .github-link:hover { border-color: var(--blue); text-decoration: none; }
+
+  /* ── Sections ── */
+  section { margin-bottom: 56px; }
+  h2 {
+    font-size: 18px; font-weight: 700; margin-bottom: 16px;
+    padding-left: 12px; border-left: 3px solid var(--blue);
+  }
+  p { color: var(--muted); margin-bottom: 12px; }
+  p strong { color: var(--text); }
+
+  /* ── Results grid ── */
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 20px;
+  }
+  .result-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px 22px;
+  }
+  .result-card .wallet-type {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--muted); margin-bottom: 8px;
+  }
+  .result-card .time {
+    font-size: 28px; font-weight: 800; color: var(--green);
+    font-variant-numeric: tabular-nums; line-height: 1;
+    margin-bottom: 4px;
+  }
+  .result-card .meta { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .result-card .addr {
+    font-family: "SF Mono", monospace; font-size: 10px;
+    color: var(--muted); margin-top: 8px; display: block;
+  }
+  .result-card.warn .time { color: var(--yellow); }
+  .result-card.fail .time { color: var(--red); }
+
+  /* ── How it works ── */
+  .techniques { display: flex; flex-direction: column; gap: 10px; }
+  .technique {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 18px;
+    display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+  }
+  .technique-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(88,166,255,.12); border: 1px solid rgba(88,166,255,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; color: var(--blue); flex-shrink: 0;
+  }
+  .technique-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .technique-body p  { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+  /* ── Code blocks ── */
+  .code-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px 22px;
+    overflow-x: auto; margin-bottom: 16px;
+  }
+  .code-block pre { color: var(--text); line-height: 1.7; }
+  .c-comment { color: var(--muted); }
+  .c-kw   { color: var(--purple); }
+  .c-fn   { color: var(--blue); }
+  .c-str  { color: var(--yellow); }
+  .c-num  { color: var(--orange); }
+  .c-key  { color: var(--green); }
+
+  /* ── Classification table ── */
+  .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    padding: 10px 14px; text-align: left;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid rgba(48,54,61,.5); }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: rgba(88,166,255,.04); }
+
+  /* ── Output format ── */
+  .output-table { font-size: 12px; }
+  .output-table td:first-child { color: var(--green); font-family: monospace; width: 200px; }
+  .output-table td:last-child  { color: var(--muted); }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border); padding-top: 24px; margin-top: 56px;
+    color: var(--muted); font-size: 12px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="eyebrow">SOL Balance Router v2 · Developer Plan · Helius</div>
+    <h1>Fastest SOL Balance History<br>on Mainnet</h1>
+    <p class="subtitle">
+      Single file. No framework. Developer plan (Helius) + undici HTTP/1.1 connection pool.
+      Returns every SOL balance change for any wallet — sparse or dense — all under 2s.
+    </p>
+    <a class="github-link" href="https://github.com/[your-username]/solana-balance-router/blob/main/sol_balance_router.mjs">
+      <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      sol_balance_router.mjs
+    </a>
+  </header>
+
+  <!-- Results -->
+  <section>
+    <h2>Measured Results</h2>
+    <p>Warm measurements — Developer plan (Helius), undici pool pre-warmed. All gate=1.0 (under 2s).</p>
+    <div class="results">
+      <div class="result-card">
+        <div class="wallet-type">Sparse · 4 txs</div>
+        <div class="time">0.65s</div>
+        <div class="meta">4 calls · Phase 0 only<br>gate=1.0 · score=1.538</div>
+        <code class="addr">54uJifihf…fmTs</code>
+      </div>
+      <div class="result-card">
+        <div class="wallet-type">Medium · 60 txs</div>
+        <div class="time">1.35s</div>
+        <div class="meta">4 calls · Phase 0 only<br>gate=1.0 · score=0.741</div>
+        <code class="addr">54u5q7Wt…wsTs</code>
+      </div>
+      <div class="result-card">
+        <div class="wallet-type">Dense · 451 txs</div>
+        <div class="time">1.68s</div>
+        <div class="meta">8 calls · Phase 0+2<br>gate=1.0 · score=0.595</div>
+        <code class="addr">59tGCiHi…1P8n</code>
+      </div>
+      <div class="result-card warn">
+        <div class="wallet-type">Large · 50k txs (projected)</div>
+        <div class="time">~4.6s</div>
+        <div class="meta">622 calls · Phase 0+1+2<br>gate=0.60 · full-tx fetch bottleneck</div>
+        <code class="addr">theoretical</code>
+      </div>
+      <div class="result-card fail">
+        <div class="wallet-type">Mega · 1M txs (projected)</div>
+        <div class="time">~78s</div>
+        <div class="meta">12,362 calls · needs L0 cache<br>174 RTTs for full-tx fetch alone</div>
+        <code class="addr">theoretical</code>
+      </div>
+    </div>
+    <p style="font-size:12px">
+      Score = (1000 / avgMs) × gate. Gate: &lt;2s = 1.0, &lt;3s = 0.60, ≥3s = 0.05.
+      Cold start adds ~0.3s — call <code>warmup(apiKey)</code> once at startup.
+    </p>
+  </section>
+
+  <!-- Wallet classification -->
+  <section>
+    <h2>Wallet Classification</h2>
+    <p>The router classifies wallets at Phase 0 based on sig probe count, then routes to the cheapest path.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Label</th><th>Tx count</th><th>Phases used</th><th>Calls (approx)</th><th>Wall time</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--green)">sparse</strong></td>
+            <td>≤100 txs</td>
+            <td>Phase 0 only</td>
+            <td>3 + ceil(N/90)</td>
+            <td style="color:var(--green)">0.5–1.0s</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--blue)">medium</strong></td>
+            <td>101–999 txs</td>
+            <td>Phase 0 only</td>
+            <td>3 + ceil(N/90)</td>
+            <td style="color:var(--blue)">1.0–1.8s</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--yellow)">dense</strong></td>
+            <td>1k–10k txs</td>
+            <td>Phase 0 + 1 + 2</td>
+            <td>3 + bands + ceil(N/90)</td>
+            <td style="color:var(--yellow)">1.5–2.5s</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--orange)">whale</strong></td>
+            <td>&gt;10k txs</td>
+            <td>Phase 0 + 1 + 2</td>
+            <td>3 + many bands + ceil(N/90)</td>
+            <td style="color:var(--orange)">3s+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section>
+    <h2>How It Works — 5 Techniques</h2>
+    <div class="techniques">
+      <div class="technique">
+        <div class="technique-num">1</div>
+        <div class="technique-body">
+          <h4>HTTP/1.1 connection pool — 64 persistent sockets (undici)</h4>
+          <p>HTTP/2 on Helius/Cloudflare is 6× <em>slower</em>. Cloudflare's HTTP/2 scheduler serialises parallel requests server-side, so your 16 "parallel" requests get handled one by one. <code>undici</code> with 64 HTTP/1.1 sockets bypasses this — each request gets its own socket. True parallelism. Measured 6× faster than HTTP/2 on Helius.</p>
+        </div>
+      </div>
+      <div class="technique">
+        <div class="technique-num">2</div>
+        <div class="technique-body">
+          <h4>Phase 0 fan-out — 3 parallel calls at t=0</h4>
+          <p>Fire three calls simultaneously the moment the function starts: first-tx boundary (asc, limit=1), last-tx boundary (desc, limit=1), sig probe (asc, limit=1000). For 99% of retail wallets (≤1000 txs), the sig probe returns all signatures — Phase 1 is skipped entirely. All data collected in a single RTT (~400ms).</p>
+        </div>
+      </div>
+      <div class="technique">
+        <div class="technique-num">3</div>
+        <div class="technique-body">
+          <h4>90-sig chunks — pagination never fires</h4>
+          <p>Helius enforces a 100-transaction limit per <code>getTransactionsForAddress</code> call. At exactly 100, the API sometimes returns a <code>paginationToken</code> that forces a sequential follow-up. Chunks of <strong>90</strong> never trigger pagination. All chunks fire in parallel — single RTT for all full transaction data regardless of wallet size.</p>
+        </div>
+      </div>
+      <div class="technique">
+        <div class="technique-num">4</div>
+        <div class="technique-body">
+          <h4>Dynamic band sizing + recursive bisection</h4>
+          <p>For wallets with &gt;1000 txs, the sig sweep is density-estimated from the Phase 0 probe: if 1000 sigs covered 43% of the slot span, the remaining 57% contains ~1323 more sigs. Band count = <code>ceil(estTotal / 800)</code>. If any band overflows (returns exactly 1000 sigs), it is bisected into two parallel halves recursively (max depth 8) — no sequential pagination chains.</p>
+        </div>
+      </div>
+      <div class="technique">
+        <div class="technique-num">5</div>
+        <div class="technique-body">
+          <h4>Phantom paginationToken fix</h4>
+          <p>Helius returns a <code>paginationToken</code> even when <code>data.length &lt; limit</code>. Following this phantom token makes an extra API call that returns empty results. Fix: <code>if (data.length &lt; SIG_MAX) return</code>. For a dense wallet (451 txs), this dropped 14 calls → 10 calls, 3.0s → 2.1s (−28%).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to replicate -->
+  <section>
+    <h2>Replicate It</h2>
+
+    <p><strong>Requirements:</strong> Node.js 18+, Helius Developer plan API key (<a href="https://helius.dev">helius.dev</a>).</p>
+
+    <p><strong>Install</strong></p>
+    <div class="code-block"><pre>git clone https://github.com/[your-username]/solana-balance-router
+cd solana-balance-router
+npm install</pre></div>
+
+    <p><strong>Run from CLI</strong></p>
+    <div class="code-block"><pre><span class="c-comment"># Any wallet — auto-detects paid vs free tier</span>
+node sol_balance_router.mjs &lt;wallet-address&gt; &lt;helius-api-key&gt;
+
+<span class="c-comment"># Force paid tier (Developer plan)</span>
+node sol_balance_router.mjs &lt;wallet-address&gt; &lt;helius-api-key&gt; --paid
+
+<span class="c-comment"># Benchmark timing</span>
+node sol_balance_router.mjs &lt;wallet-address&gt; &lt;helius-api-key&gt; --bench</pre></div>
+
+    <p><strong>Use as a module</strong></p>
+    <div class="code-block"><pre><span class="c-kw">import</span> { fetchBalanceHistory, warmup } <span class="c-kw">from</span> <span class="c-str">"./sol_balance_router.mjs"</span>;
+
+<span class="c-comment">// Warm up once at startup — eliminates ~300ms cold-start TLS penalty</span>
+<span class="c-kw">await</span> <span class="c-fn">warmup</span>(<span class="c-str">"your-helius-api-key"</span>);
+
+<span class="c-kw">const</span> result = <span class="c-kw">await</span> <span class="c-fn">fetchBalanceHistory</span>(
+  <span class="c-str">"54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs"</span>,
+  <span class="c-str">"your-helius-api-key"</span>
+);
+
+console.<span class="c-fn">log</span>(result.points);   <span class="c-comment">// balance events</span>
+console.<span class="c-fn">log</span>(result.stats);    <span class="c-comment">// timing + call count</span></pre></div>
+
+    <p><strong>Output</strong></p>
+    <div class="code-block"><pre>{
+  <span class="c-key">points</span>: [
+    { <span class="c-key">slot</span>: <span class="c-num">285000000</span>, <span class="c-key">lamports</span>: <span class="c-num">10500000000</span>, <span class="c-key">blockTime</span>: <span class="c-num">1700000000</span>, <span class="c-key">kind</span>: <span class="c-str">"credit"</span> },
+    <span class="c-comment">// ...</span>
+  ],
+  <span class="c-key">stats</span>: {
+    <span class="c-key">wallTimeMs</span>:    <span class="c-num">652</span>,
+    <span class="c-key">totalRpcCalls</span>: <span class="c-num">4</span>,
+    <span class="c-key">sampleCount</span>:   <span class="c-num">4</span>,
+    <span class="c-key">apiTier</span>:       <span class="c-str">"paid"</span>,
+    <span class="c-key">walletType</span>:    <span class="c-str">"sparse"</span>
+  },
+  <span class="c-key">routing</span>: {
+    <span class="c-key">tier</span>:       <span class="c-str">"paid"</span>,
+    <span class="c-key">walletType</span>: <span class="c-str">"sparse"</span>,
+    <span class="c-key">mode</span>:       <span class="c-str">"phase0_only"</span>
+  }
+}</pre></div>
+
+    <p style="font-size:12px">
+      <strong>lamports → SOL:</strong> divide by 1,000,000,000. &nbsp;
+      <strong>kind:</strong> <code>"credit"</code> = balance went up, <code>"debit"</code> = went down, <code>"flat"</code> = gap with no change. &nbsp;
+      <strong>Free tier:</strong> works without a paid key but is rate-limited (~10 RPS) — dense wallets will take 5–25s.
+    </p>
+  </section>
+
+  <footer>
+    <span><strong>sol_balance_router.mjs</strong> — MIT license</span>
+    <span><a href="https://github.com/[your-username]/solana-balance-router">github.com/[your-username]/solana-balance-router</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

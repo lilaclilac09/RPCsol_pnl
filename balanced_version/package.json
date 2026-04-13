@@ -1,0 +1,17 @@
+{
+  "name": "sol-balance-router",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Fastest SOL balance history router — Developer plan, undici HTTP/1.1, dynamic bands, recursive bisection",
+  "main": "sol_balance_router.mjs",
+  "dependencies": {
+    "undici": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node sol_balance_router.mjs 54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs $HELIUS_API_KEY"
+  },
+  "license": "MIT"
+}

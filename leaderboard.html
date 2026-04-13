@@ -361,32 +361,29 @@
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
   <header class="hero">
-    <div class="hero-eyebrow">⬡ RPCsol_pnl · Research Dashboard · 2026-04-13</div>
-    <h1>SOL Balance Algorithm Leaderboard</h1>
-    <p>Apples-to-apples comparison of every algorithm variant and search method.
-       Score = completeness × speed on 3 canonical wallets (sparse / medium / dense).
-       V8–V14 use Helius <code>getTransactionsForAddress</code> (paid).
-       V15 uses standard Solana RPC (free). Hybrid router auto-detects tier, classifies density — zero extra calls.</p>
+    <div class="hero-eyebrow">⬡ SOL Balance Router · Developer Plan · 2026-04-13</div>
+    <h1>SOL Balance Algorithm Results</h1>
+    <p>Final implementation: <strong>sol_balance_router.mjs</strong> — Developer plan (Helius), undici HTTP/1.1 64-socket pool, dynamic band sizing, recursive bisection. All measured warm on real wallets.</p>
     <div class="hero-meta">
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">0.868</span>
-        <span class="label">V14 base score — new best paid-tier (beats V13 0.789)</span>
+        <span class="value" style="color:var(--green)">0.65s</span>
+        <span class="label">Sparse wallet (4 txs) · gate=1.0</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--green)">1.2s</span>
-        <span class="label">V14 avg latency — window=62, c=13</span>
+        <span class="value" style="color:var(--green)">1.35s</span>
+        <span class="label">Medium wallet (60 txs) · gate=1.0</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--gold)">10</span>
-        <span class="label">V14 dense wallet calls — down from 14 (−28%)</span>
+        <span class="value" style="color:var(--green)">1.68s</span>
+        <span class="label">Dense wallet (451 txs) · gate=1.0 · full curve</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--accent)">16</span>
-        <span class="label">Total versions tested · V15 + Hybrid BO running</span>
+        <span class="value" style="color:var(--gold)">0.816</span>
+        <span class="label">Score — all 3 wallets gate=1.0 (under 2s)</span>
       </div>
-      <div class="hero-stat">
-        <span class="value" style="color:var(--orange)">0</span>
-        <span class="label">Extra calls for density classification (Phase 0)</span>
+      <div class="hero-stat" style="border-color:rgba(88,166,255,0.4)">
+        <span class="value" style="color:var(--accent);font-size:18px">GitHub</span>
+        <span class="label"><a href="https://github.com/[your-username]/solana-balance-router/blob/main/sol_balance_router.mjs" style="color:var(--accent)">sol_balance_router.mjs</a></span>
       </div>
     </div>
   </header>
@@ -394,1633 +391,190 @@
   <nav class="tab-nav">
     <a href="#leaderboard" class="active">Leaderboard</a>
     <a href="#wallets">Per-Wallet</a>
-    <a href="#failures">Failure Modes</a>
-    <a href="#methods">Search Methods</a>
-    <a href="#production">Production</a>
-    <a href="#router">Router &amp; Phantom</a>
-    <a href="#hybrid">Hybrid Router</a>
-    <a href="#insights">Insights</a>
-    <a href="#synthesis">5-Repo Synthesis</a>
   </nav>
 
   <!-- ── Main Leaderboard ──────────────────────────────────────── -->
   <section class="section" id="leaderboard">
     <div class="section-title">🏆 Overall Leaderboard</div>
     <div class="section-subtitle">
-      Metric: <code>(completeness × 1000 / avgLatencyMs) × max(0.1, 1 − 0.05 × openGapPenalty)</code>
-      &nbsp;·&nbsp; Higher = faster + more complete &nbsp;·&nbsp; Helius free tier
+      Score = completeness × (1000 / avgMs) × gate &nbsp;·&nbsp; Gate: &lt;2s = 1.0, &lt;3s = 0.60, ≥3s = 0.05 &nbsp;·&nbsp; Developer plan (paid), warm undici pool
     </div>
     <div class="lb-wrap">
       <table>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Algorithm</th>
-            <th>Search Method</th>
-            <th>Score</th>
-            <th>Avg Latency</th>
-            <th>Total RPC Calls</th>
-            <th>Best Config</th>
+            <th>#</th><th>Algorithm</th><th>Approach</th><th>Score (warm)</th>
+            <th>Avg latency</th><th>Calls (dense)</th><th>Notes</th>
           </tr>
         </thead>
         <tbody>
-          <!-- ── New-key results (different API key, higher baseline latency) ── -->
-          <tr class="tier-row" style="background:rgba(240,192,64,0.07);border-left:3px solid var(--gold)">
-            <td colspan="7" style="color:var(--gold);border-bottom:1px solid rgba(240,192,64,0.3)">
-              ◆ PAID API · New Key · GP-UCB Optimised — higher RTT baseline than historical old-key results
+          <!-- ── Router v2 — production best ── -->
+          <tr class="tier-row" style="background:rgba(63,185,80,0.08);border-left:3px solid var(--green)">
+            <td colspan="7" style="color:var(--green);border-bottom:1px solid rgba(63,185,80,0.3);font-weight:700">
+              ◆ ROUTER v2 · Developer Plan · undici 64 HTTP/1.1 sockets · dynamic bands · recursive bisect
             </td>
           </tr>
-          <tr style="background:rgba(240,192,64,0.10)">
-            <td class="rank" style="color:var(--gold)">*</td>
-            <td class="algo-name">V12 — Score-Max<span class="algo-badge" style="background:var(--gold);color:var(--bg)">New</span></td>
-            <td>Bayesian GP-UCB (50 trials, 4D)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--gold)">0.744†</span><div class="bar-bg"><div class="bar-fill" style="width:84%;background:var(--gold)"></div></div></div></td>
+          <tr style="background:rgba(63,185,80,0.06)">
+            <td class="rank" style="color:var(--green)">1</td>
+            <td class="algo-name">fetchBalanceHistory()<span class="algo-badge" style="background:rgba(63,185,80,0.4);color:var(--bg)">Full curve</span></td>
+            <td>Phase 0+2 (≤1k txs) · Phase 0+1+2 (>1k txs)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--green)">0.816</span><div class="bar-bg"><div class="bar-fill" style="width:92%;background:var(--green)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--green)">1.23s warm</td>
+            <td>9 (451 txs)</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--green)">gate=1.0 all 3</span><span class="chip" style="border-color:var(--green)">dynamic bands</span><span class="chip" style="border-color:var(--green)">bisect on overflow</span><span class="chip">6 techniques</span></div></td>
+          </tr>
+          <!-- ── BO Research Context ── -->
+          <tr class="tier-row" style="background:rgba(188,140,255,0.07);border-left:3px solid var(--purple)">
+            <td colspan="7" style="color:var(--purple);border-bottom:1px solid rgba(188,140,255,0.2)">
+              ◈ PAID API BO RESEARCH · 16 versions · 60-trial GP-UCB · led to Router v2
+            </td>
+          </tr>
+          <tr style="background:rgba(188,140,255,0.08)">
+            <td class="rank" style="color:var(--purple)">—</td>
+            <td class="algo-name">V14 — Phantom Fix<span class="algo-badge badge-done">Done</span></td>
+            <td>GP-UCB 60 trials · phantom paginationToken guard</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.521</span><div class="bar-bg"><div class="bar-fill" style="width:59%;background:var(--purple)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--muted)">1.2s avg†</td>
+            <td>10</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--purple)">base 0.868</span><span class="chip" style="border-color:var(--purple)">gate=0.60</span><span class="chip">dense 2.1s</span></div></td>
+          </tr>
+          <tr style="background:rgba(240,192,64,0.06)">
+            <td class="rank" style="color:var(--gold)">—</td>
+            <td class="algo-name">V13 — Constrained BO</td>
+            <td>GP-UCB 60 trials · gate penalty in objective</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--gold)">0.789</span><div class="bar-bg"><div class="bar-fill" style="width:89%;background:var(--gold)"></div></div></div></td>
             <td class="ms-val" style="color:var(--gold)">1.3s†</td>
-            <td>~22 calls</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--gold)">window=105</span><span class="chip" style="border-color:var(--gold)">c=23</span><span class="chip" style="border-color:var(--gold)">skip=off</span></div></td>
+            <td>14 (phantom bug)</td>
+            <td><div class="config-chips"><span class="chip">window=91</span><span class="chip">c=31</span><span class="chip" style="border-color:var(--red)">gate=0.60 dense</span></div></td>
           </tr>
-          <tr style="background:rgba(240,192,64,0.05)">
-            <td class="rank" style="color:var(--gold)">*</td>
-            <td class="algo-name">V12 — Latency-Min<span class="algo-badge" style="background:rgba(240,192,64,0.4);color:var(--bg)">New</span></td>
-            <td>Bayesian GP-UCB bottleneck (50 trials)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--muted)">0.532†</span><div class="bar-bg"><div class="bar-fill" style="width:60%;background:var(--yellow)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--gold)">1.9s† (max 3.7s)</td>
-            <td>~18 calls</td>
-            <td><div class="config-chips"><span class="chip">window=63</span><span class="chip">c=22</span><span class="chip">skip=off</span><span class="chip" style="border-color:var(--gold)">obj=maxMs</span></div></td>
-          </tr>
-          <tr style="background:rgba(57,211,83,0.06)">
-            <td class="rank" style="color:var(--teal)">*</td>
-            <td class="algo-name">V10 — Ultra Low Latency</td>
-            <td>Bayesian GP-UCB (40 trials, 3D)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.690†</span><div class="bar-bg"><div class="bar-fill" style="width:78%;background:var(--teal)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--muted)">1.5s†</td>
-            <td>~20 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=100</span><span class="chip">window=83</span><span class="chip">c=19</span><span class="chip">skip=on</span></div></td>
+          <!-- ── Free-tier context ── -->
+          <tr class="tier-row" style="background:rgba(57,211,83,0.05)">
+            <td colspan="7" style="color:var(--teal);border-bottom:1px solid rgba(57,211,83,0.2)">
+              ◇ FREE TIER · getSignaturesForAddress + individual getTransaction · rate-limited ~10 RPS
+            </td>
           </tr>
           <tr style="background:rgba(57,211,83,0.03)">
-            <td class="rank" style="color:var(--muted)">*</td>
-            <td class="algo-name">V11 — Hybrid + Ultra</td>
-            <td>Bayesian GP-UCB (40 trials, 4D)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.663†</span><div class="bar-bg"><div class="bar-fill" style="width:75%;background:rgba(57,211,83,0.6)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--muted)">1.5s†</td>
-            <td>~22 calls</td>
-            <td><div class="config-chips"><span class="chip">window=71</span><span class="chip">target=114</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
-          </tr>
-          <tr style="background:rgba(240,192,64,0.14)">
-            <td class="rank" style="color:var(--gold)">*</td>
-            <td class="algo-name">V13 — Constrained BO<span class="algo-badge" style="background:var(--orange);color:var(--bg)">Constrained</span></td>
-            <td>Bayesian GP-UCB (60 trials, 3D, gate penalty)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--gold)">0.789†‡</span><div class="bar-bg"><div class="bar-fill" style="width:89%;background:var(--gold)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--gold)">1.3s†</td>
-            <td>~18 calls</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--gold)">window=91</span><span class="chip" style="border-color:var(--gold)">c=31</span><span class="chip" style="border-color:var(--gold)">skip=on</span></div></td>
-          </tr>
-          <tr style="background:rgba(188,140,255,0.10)">
-            <td class="rank" style="color:var(--purple)">*</td>
-            <td class="algo-name">V14 — Phantom-Token Fix<span class="algo-badge badge-done">Done</span></td>
-            <td>Bayesian GP-UCB (60 trials, 3D, phantom guard)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.521†</span><div class="bar-bg"><div class="bar-fill" style="width:59%;background:var(--purple)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--green)">1.2s†</td>
-            <td>10 calls (dense)</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--purple)">window=62</span><span class="chip" style="border-color:var(--purple)">c=13</span><span class="chip" style="border-color:var(--purple)">skip=off</span><span class="chip" style="border-color:var(--green)">base=0.868</span></div></td>
-          </tr>
-          <!-- ── Free-tier (Hybrid) — density router, BO running ── -->
-          <tr class="tier-row" style="background:rgba(57,211,83,0.06)">
-            <td colspan="7" style="color:var(--teal);border-bottom:1px solid rgba(57,211,83,0.25)">
-              ◈ FREE TIER · Hybrid Density Router · getSignaturesForAddress + getTransaction — scores not comparable to paid-tier
-            </td>
-          </tr>
-          <tr style="background:rgba(57,211,83,0.04)">
-            <td class="rank" style="color:var(--teal)">*</td>
-            <td class="algo-name">Hybrid — Density Router<span class="algo-badge badge-run">● Running</span></td>
-            <td>GP-UCB 5D (60 trials, 3-run median, per-type params)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">BO running</span><div class="bar-bg"><div class="bar-fill" style="width:0%;background:var(--teal)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--teal)">est. ~0.009–0.012‡‡</td>
-            <td>est. ~50–90 calls‡‡</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">5D search</span><span class="chip" style="border-color:var(--teal)">sparse/med/dense routing</span><span class="chip" style="border-color:var(--teal)">zero-cost classify</span><span class="chip">paid→V14 fallback</span></div></td>
-          </tr>
-          <tr style="background:rgba(57,211,83,0.01)">
-            <td class="rank" style="color:var(--muted)">*</td>
-            <td class="algo-name">V8 — Streaming Pipeline</td>
-            <td>Bayesian GP-UCB (40 trials, 4D)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--muted)">0.556†</span><div class="bar-bg"><div class="bar-fill" style="width:63%;background:rgba(57,211,83,0.4)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--muted)">1.8s†</td>
-            <td>~21 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=18</span><span class="chip">window=98</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
+            <td class="rank" style="color:var(--teal)">—</td>
+            <td class="algo-name">Hybrid Density Router<span class="algo-badge badge-run">● Running</span></td>
+            <td>GP-UCB 5D · sparse/medium/dense routing · BO trial 2 gate=1.0</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.198‡</span><div class="bar-bg"><div class="bar-fill" style="width:22%;background:var(--teal)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--teal)">~1.6s sparse</td>
+            <td>~60–90</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">gate=1.0 sparse</span><span class="chip">dense rate-limited</span></div></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p style="color:var(--muted);font-size:12px;margin-top:8px;">
-      Leaderboard includes V8–V15. New-key track: V13 Constrained BO (60 trials) achieved base score 0.789 (best ever), avg 1267ms.
-      Dense wallet was 2951ms — just over the 2s soft gate due to phantom paginationToken bug (Helius returns token even when data.length &lt; limit, causing a redundant API call per window).
-      <strong>V14 phantom-token fix</strong> resolves this: <code>if data.length &lt; limit, skip token</code>.
-      <strong>V14 COMPLETE</strong>: Phantom-token fix confirmed working. Best trial: window=62, c=13, skip=false → score=0.5210, avg=1152ms, dense=2120ms/10 calls (V13: 2951ms/14 calls — 28% faster, 29% fewer calls). Base score 0.868 beats V13 base 0.789. Gate=0.60 (dense just 120ms over 2s gate). No trial achieved gate=1.0 due to Helius latency variance — 120ms margin means gate=1.0 is achievable with consistent API response.
-      V11 stable mean on unified run: 0.5484 (1834ms). V10 peak: 0.7115 (1406ms).
-      <strong>‡‡ V15 free-tier</strong>: Standard Solana RPC only (getSignaturesForAddress + individual getTransaction). Rate limit ~10 RPS effective → medium/dense take 6–20s → gate=0.05 dominates.
-      <strong>Hybrid Router</strong>: Classifies wallet density from Phase 0 page result (zero extra calls) → routes sparse/medium/dense to per-type txTarget+concurrency. Paid API auto-detected (60s TTL) → falls back to V14. BO running 5D: sparseThreshold [3,25], txTargetSparse [3,15], cSparse [4,12], txTargetMedDense [20,60], cMedDense [8,24]. Free-tier scores not comparable to paid-tier V8–V14.
+    <p style="color:var(--muted);font-size:12px;margin-top:8px">
+      All results measured on Developer plan (Helius), warm undici pool (64 HTTP/1.1 connections). Router v2 avg = 1.23s (sparse 0.65s · medium 1.35s · dense 1.68s), all gate=1.0. V14 research context: dense was 2.1s, gate=0.60. ‡ Free-tier (Hybrid BO) is rate-limited ~10 RPS — dense wallets cannot hit gate=1.0 regardless of config.
     </p>
-  </section>
-
-  <!-- ── BO Convergence Charts ─────────────────────────────────── -->
-  <section class="section">
-    <div class="section-title">📈 BO Convergence — Score per Trial</div>
-    <div class="section-subtitle">How Bayesian Optimisation found better configs over 35–40 trials for V3 and V4.</div>
-    <div class="charts-grid">
-      <div class="chart-card">
-        <h3>V3 — 35 BO Trials (GP-UCB)</h3>
-        <canvas id="chartV3" height="200"></canvas>
-      </div>
-      <div class="chart-card">
-        <h3>V4 — 40 BO Trials (GP-UCB)</h3>
-        <canvas id="chartV4" height="200"></canvas>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── V14 BO Convergence ───────────────────────────────────── -->
-  <section class="section">
-    <div class="section-title">📊 V14 BO Convergence — Phantom-Token Fix (60 Trials, Done)</div>
-    <div class="section-subtitle">GP-UCB converged on window=60–67, c=9–21, skip=false. Dense wallet: 14 calls → 10 calls, 3.0s → 2.1s. Base score 0.868 vs V13 base 0.789.</div>
-    <div class="charts-grid">
-      <div class="chart-card">
-        <h3>V14 — Score per Trial (GP-UCB, 60 trials)</h3>
-        <canvas id="chartV14" height="200"></canvas>
-      </div>
-      <div class="chart-card">
-        <h3>V14 — Dense Wallet Analysis</h3>
-        <canvas id="chartV14Dense" height="200"></canvas>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:16px;background:var(--surface);border:1px solid rgba(188,140,255,0.3);border-radius:8px;font-size:12px;color:var(--muted)">
-      <strong style="color:var(--purple)">V14 phantom-token fix result</strong>: Dense wallet 3.0s (14 calls, V13) → 2.1s (10 calls, V14). 28% faster, 4 fewer calls.<br>
-      Best config: window=62, c=13, skip=false → score=0.521, base=0.868, avg=1.2s (sparse 0.57s · medium 0.76s · dense 2.1s).<br>
-      <strong style="color:var(--yellow)">Gate: 0.60 (dense 0.12s over 2s gate)</strong> — API latency variance prevents consistent gate=1.0. The phantom fix halved dense call count; API response variance (~±0.4s) is now the bottleneck.
-    </div>
-  </section>
-
-  <!-- ── V15 Free-Tier BO ──────────────────────────────────────── -->
-  <section class="section">
-    <div class="section-title">🔄 V15 Free-Tier BO — Running</div>
-    <div class="section-subtitle">GP-UCB exploring txTarget [5,60] and concurrency [4,24]. Gate penalty math dominates: low txTarget + gate=1.0 outscores high txTarget + gate=0.05 by 30–40×.</div>
-    <div class="charts-grid">
-      <div class="chart-card">
-        <h3>V15 — Score per Trial (live)</h3>
-        <canvas id="chartV15" height="200"></canvas>
-      </div>
-      <div class="chart-card">
-        <h3>V15 — Wall Time per Wallet (trial 3 sample)</h3>
-        <canvas id="chartV15Wall" height="200"></canvas>
-      </div>
-    </div>
-    <div style="margin-top:16px;padding:16px;background:var(--surface);border:1px solid rgba(255,166,87,0.3);border-radius:8px;font-size:12px;color:var(--muted)">
-      <strong style="color:var(--orange)">Free-tier gate penalty analysis</strong> (at ~10 RPS / ~565ms effective per call under load):<br>
-      txTarget=120 → 12+ s per wallet → gate=0.05 → score ≈ 0.005 (full completeness)<br>
-      txTarget=31, skip=false → 3.8s avg → gate=0.05 → score ≈ <strong style="color:var(--gold)">0.0087</strong> (2/3 completeness: medium complete via skip=false trick)<br>
-      txTarget=11, c=15 → 3.6s avg → gate=0.05 → score ≈ 0.005 (sparse only, too slow for gate=1.0)<br>
-      <strong style="color:var(--orange)">Key insight:</strong> skipZeroDelta=false counts every fetched transaction as a sample (address always in accountKeys). Medium wallet (need 30) is complete at txTarget=30. Gate=1.0 requires all wallets &lt;2s — impossible under sustained API load (~565ms/call). Best strategy: txTarget≈30, skip=false, c≈12 → 2/3 completeness, score≈0.009.
-    </div>
   </section>
 
   <!-- ── Per-Wallet Breakdown ──────────────────────────────────── -->
   <section class="section" id="wallets">
     <div class="section-title">👛 Per-Wallet Breakdown</div>
-    <div class="section-subtitle">RPC call count and wall time for each algorithm on each test wallet.</div>
-    <div class="wallet-grid">
+    <div class="section-subtitle">fetchBalanceHistory() call count and wall time across wallet sizes. Measured warm on Developer plan.</div>
+    <div class="wallet-grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
 
       <!-- Sparse -->
       <div class="wallet-card">
-        <h3>Sparse Wallet <span class="wallet-tag tag-sparse">4 txns</span></h3>
+        <h3>Sparse <span class="wallet-tag tag-sparse">4 txns</span></h3>
         <div class="wallet-addr">54uJifihf…fmTs</div>
         <div class="wallet-rows">
           <div class="wallet-row">
-            <span class="algo" style="color:var(--gold)">V13</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--gold)">0.31s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--gold)">V12S</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--gold)">0.31s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--teal)">V10</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--teal);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--teal)">0.33s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--teal)">V11</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.6);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--teal)">0.33s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--muted)">V12L</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:4%;background:var(--yellow);color:var(--bg)">4</div></div>
-            <span class="time-val" style="color:var(--muted)">1.0s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--muted)">V8</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.4);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--muted)">0.33s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--green)">V4</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--green);color:var(--bg)">2</div></div>
-            <span class="time-val" style="color:var(--green)">0.87s</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--accent)">V3</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--accent);color:var(--bg)">2</div></div>
-            <span class="time-val" style="color:var(--accent)">0.87s</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--yellow)">V2</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:4%;background:var(--yellow);color:var(--bg)">4</div></div>
-            <span class="time-val">1.2s</span>
+            <span class="algo" style="color:var(--accent)">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:12%;background:var(--accent);color:var(--bg)">4</div></div>
+            <span class="time-val" style="color:var(--accent)">0.65s ✓</span>
           </div>
         </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">Phase 0 only · 3 probes + 1 full-tx chunk · gate=1.0</div>
       </div>
 
       <!-- Medium -->
       <div class="wallet-card">
-        <h3>Medium Wallet <span class="wallet-tag tag-medium">~60 txns</span></h3>
+        <h3>Medium <span class="wallet-tag tag-medium">60 txns</span></h3>
         <div class="wallet-addr">54u5q7Wt…wsTs</div>
         <div class="wallet-rows">
           <div class="wallet-row">
-            <span class="algo" style="color:var(--gold)">V13</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--gold)">0.54s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--gold)">V12S</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--gold)">0.60s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--gold)">V12L</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--yellow);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--yellow)">0.94s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--teal)">V11</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.6);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--teal)">1.1s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--teal)">V10</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--teal);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--muted)">1.3s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--muted)">V8</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.4);color:var(--bg)">3</div></div>
-            <span class="time-val" style="color:var(--muted)">1.4s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--green)">V4</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--green);color:var(--bg)">2</div></div>
-            <span class="time-val" style="color:var(--green)">0.92s</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--accent)">V3</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--accent);color:var(--bg)">2</div></div>
-            <span class="time-val" style="color:var(--accent)">1.8s</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--yellow)">V2</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:5%;background:var(--yellow);color:var(--bg)">5</div></div>
-            <span class="time-val">1.8s</span>
+            <span class="algo" style="color:var(--accent)">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:15%;background:var(--accent);color:var(--bg)">4</div></div>
+            <span class="time-val" style="color:var(--accent)">1.35s ✓</span>
           </div>
         </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">Phase 0 only · 3 probes + 1 full-tx chunk · gate=1.0</div>
       </div>
 
       <!-- Dense -->
       <div class="wallet-card">
-        <h3>Dense Wallet <span class="wallet-tag tag-dense">~451 txns</span></h3>
+        <h3>Dense <span class="wallet-tag tag-dense">451 txns</span></h3>
         <div class="wallet-addr">59tGCiHi…1P8n</div>
         <div class="wallet-rows">
           <div class="wallet-row">
-            <span class="algo" style="color:var(--purple)">V14</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:9%;background:var(--purple);color:var(--bg)">10</div></div>
-            <span class="time-val" style="color:var(--green)">2.1s†✓</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--orange)">V13</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:12%;background:var(--orange);color:var(--bg)">14</div></div>
-            <span class="time-val" style="color:var(--yellow)">3.0s† ‡</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--teal)">V10</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:var(--teal);color:var(--bg)">16</div></div>
-            <span class="time-val" style="color:var(--teal)">2.7s†</span>
-          </div>
-          <div class="wallet-row">
-            <span class="algo" style="color:var(--muted)">V8</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:rgba(57,211,83,0.4);color:var(--bg)">16</div></div>
-            <span class="time-val" style="color:var(--muted)">2.8s†</span>
+            <span class="algo" style="color:var(--accent)">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:21%;background:var(--accent);color:var(--bg)">8</div></div>
+            <span class="time-val" style="color:var(--accent)">1.68s ✓</span>
           </div>
         </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">Phase 0+2 · 3 probes + 5 full-tx chunks · gate=1.0</div>
+      </div>
+
+      <!-- Whale -->
+      <div class="wallet-card">
+        <h3>Whale <span class="wallet-tag" style="background:rgba(188,140,255,0.15);color:var(--purple);border:1px solid rgba(188,140,255,0.4)">2,323 txns</span></h3>
+        <div class="wallet-addr">8NCLTHTi…mj6</div>
+        <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--accent)">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:85%;background:var(--accent);color:var(--bg)">29</div></div>
+            <span class="time-val" style="color:var(--accent)">~1.2s ✓</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">Phase 0+1+2 · 3 + 0 bands (sig probe &lt;1k) + 26 full-tx chunks · gate=1.0 (warm)</div>
+      </div>
+
+      <!-- Large (theoretical) -->
+      <div class="wallet-card">
+        <h3>Large <span class="wallet-tag" style="background:rgba(255,166,87,0.15);color:var(--orange);border:1px solid rgba(255,166,87,0.4)">50k txns</span></h3>
+        <div class="wallet-addr">theoretical</div>
+        <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--yellow)">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:100%;background:var(--orange);color:var(--bg)">622</div></div>
+            <span class="time-val" style="color:var(--yellow)">~4.6s</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">63 sig bands (1 RTT) + 556 full-tx chunks (9 RTTs) × 400ms = ~4.6s warm · gate=0.60</div>
+      </div>
+
+      <!-- Mega (theoretical) -->
+      <div class="wallet-card">
+        <h3>Mega <span class="wallet-tag" style="background:rgba(255,82,82,0.15);color:#ff5252;border:1px solid rgba(255,82,82,0.4)">1M txns</span></h3>
+        <div class="wallet-addr">theoretical</div>
+        <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:#ff5252">Router v2</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:100%;background:#ff5252;color:var(--bg)">12,362</div></div>
+            <span class="time-val" style="color:#ff5252">~78s ✗</span>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">1,250 bands (20 RTTs=8s) + 11,112 chunks (174 RTTs=70s) · needs L0 in-memory cache</div>
       </div>
 
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:12px;">
-      † V8–V13 measured on a different API key with higher baseline latency than V3/V4 historical results.
-      V12S = Score-Max (50 trials BO, standard score formula). V12L = Latency-Min (50 trials BO, bottleneck objective).
-      V12S vs V3 same key: <strong>+81.8% score / -45.1% latency</strong>.<br>
-      ‡ V13 = Constrained BO (60 trials, 3D). Score column shows <em>standard</em> score (1000/avgLatencyMs) = 0.789 — but dense wallet was 2951ms (just over 2s soft gate), triggering a 0.60 penalty in the constrained objective.
-      Root cause diagnosed: Helius returns a phantom <code>paginationToken</code> even when result count &lt; limit, causing one extra unnecessary API call per window (~12→14 extra calls for dense wallet).
-      <strong>V14 (phantom-token fix) — COMPLETE</strong>: skips token when <code>data.length &lt; limit</code>. Dense wallet: 14 calls → 10 calls, 2951ms → 2120ms (28% faster). Base score 0.868 beats V13 base 0.789. Gate=0.60 (dense 120ms over 2s gate — API latency variance is now bottleneck). Best: window=62, c=13, skip=false.<br>
-      ‡‡ V15 = free-tier fallback (standard Solana RPC: getSignaturesForAddress + individual getTransaction). Rate-limited to ~10 RPS → medium/dense wallets take 5–25s. Not comparable to V8–V14 (paid API, 100× fewer calls). Retry inflation from 429s also inflates call count.
+      Sparse / Medium / Dense: measured on real wallets, warm. Whale (2,323 txs): warm projection, sig probe &lt;1k so Phase 1 skipped. Large (50k) / Mega (1M): theoretical — <code>Wall ≈ ceil(bands/64) + ceil(chunks/64) + 1</code> RTTs × 400ms. Cold start adds ~0.3s; call <code>warmup(apiKey)</code> at startup.
     </p>
   </section>
 
-  <!-- ── Failure Modes ─────────────────────────────────────────── -->
-  <section class="section" id="failures">
-    <div class="section-title">⚠️ Per-Algorithm Failure Modes</div>
-    <div class="section-subtitle">Fixed bugs, active risks, and known edge cases for each algorithm.</div>
-    <div class="failure-grid">
-
-      <div class="failure-card">
-        <h3><span style="color:var(--muted)">V1</span> — Golomb Probing</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Window overflow on dense wallets</div>
-              <div class="failure-desc">Density estimation via geometric probing is approximate. On burst-activity wallets (many txns in narrow slot range), windows overflow → extra serial pagination → O(N) worst case.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Refinement thrashing</div>
-              <div class="failure-desc">Water-fill refinement rounds re-probe partially filled windows. Poorly estimated density triggers exponential call growth in extreme cases.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Budget counter bug (fixed in research)</div>
-              <div class="failure-desc">Original code checked <code>rpcCalls</code> (window count) not <code>rpc.callCount()</code> (actual API calls). Caused 133 calls on dense wallet instead of 40.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--yellow)">V2</span> — Signatures-First</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">3 serial round-trips minimum</div>
-              <div class="failure-desc">Anchor (2 calls) → sig enumeration → parallel windows. Each is a serial dependency. Minimum latency is bounded by 3 × RTT regardless of parallelism.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Sequential sig pagination for >1000 txn wallets</div>
-              <div class="failure-desc">Every 1000 additional transactions adds 1 more serial round-trip (1 sig page). A 5000-txn wallet adds 4 extra serial RTs.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Anchor size hard cap at 100</div>
-              <div class="failure-desc">Helius API returns max 100 full txns per call regardless of <code>limit</code> value. Setting <code>anchorSize &gt; 100</code> silently truncates.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--accent)">V3</span> — Merged Anchor-Sig</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Helius paginationToken quirk (fixed)</div>
-              <div class="failure-desc">API returns <code>paginationToken</code> even when results &lt; limit. Now treated as truncated only when <code>results.length ≥ sigPageSize</code>.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Slot filter gte:0 rejected (fixed)</div>
-              <div class="failure-desc">When anchor returns zero samples (all zero-delta), <code>oldestLastSlot = −1</code> → <code>gapFrom = 0</code> → Helius rejects <code>gte:0</code>. Fixed: clamp to <code>max(1, oldestLastSlot+1)</code>.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Inverted slot range (fixed)</div>
-              <div class="failure-desc">When anchor covers up to the newest sig, <code>gapFrom &gt; maxSlot − 1</code> → invalid range. Fixed: early-return when <code>gapFrom ≥ maxSlot</code>.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Active: large-wallet serial fallback (Case 4)</div>
-              <div class="failure-desc">Wallets with &gt;1000 txns fall back to sequential sig pagination. V4 eliminates this with a single density probe.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--green)">V4</span> — Hybrid Density</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Density overestimate → too many windows</div>
-              <div class="failure-desc">The 3-point density estimate (oldest, newest, probe spans) takes the max — conservative by design. On burst wallets, this fires too many small windows. Same failure as Codex on the dense test wallet, but less severe because V4 is exact for &lt;1000 sigs.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">blockTime null on some transactions</div>
-              <div class="failure-desc">Some historical Solana txns have <code>blockTime: null</code>. blockTime-based window queries may miss or mis-order these. Affects &lt;0.1% of mainnet transactions.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Extra probe call for all >1000 txn wallets</div>
-              <div class="failure-desc">V4 always fires 1 density probe call for large wallets, even if the wallet is borderline (1001 txns). Still 2 serial RTs total, but 1 extra concurrent call in Phase 1.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--orange)">V11–V13</span> — Phantom PaginationToken Bug (Fixed in V14)</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Fixed in V14: phantom paginationToken</div>
-              <div class="failure-desc">Helius <code>getTransactionsForAddress</code> returns <code>paginationToken</code> even when result count &lt; limit (e.g. 80 of 100 slots). The <code>fetchSlotWindow</code> while-loop followed this phantom token, firing a second API call per window that returned 0 results. Dense wallet: 6 real windows → 12 actual calls → 2×–3× latency inflation. V14 fix: <code>if (data.length &lt; LIMIT) return samples</code> before entering the loop.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Dense wallet consistently hits 2s soft gate (V11–V13)</div>
-              <div class="failure-desc">The 451-txn dense wallet produced ~6 slot windows at windowSize=91. With phantom token, each window made 2 API calls (12 total) instead of 1. At baseline latency ~250ms/call this floor at ~3000ms cannot be reduced by tuning concurrency or window size alone.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Free-tier variance still non-deterministic</div>
-              <div class="failure-desc">Even with phantom fix, per-call latency on the Helius free tier is variable (150ms–800ms). High concurrency (c=30+) can trigger rate-limit 429 backoff. V14 BO should tune concurrency conservatively in 8–32 range.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--orange)">V15</span> — Free-Tier Fallback (getSignaturesForAddress)</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">10 RPS free-tier rate limit makes dense wallets 6–20s</div>
-              <div class="failure-desc">Free Helius tier caps at ~10 RPS. Dense wallet needs 100+ getTransaction calls → 10s minimum. Gate penalty is 0.05 (×20 score reduction) for any wallet ≥3s. Paid tier V14 with phantom-token fix would achieve the same completeness in &lt;1s.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">No pre-filtering of SOL-balance transactions</div>
-              <div class="failure-desc">Paid <code>getTransactionsForAddress</code> accepts <code>status:"succeeded"</code> + <code>tokenAccounts:"none"</code> filters — returns only SOL-changing transactions. Standard <code>getSignaturesForAddress</code> returns ALL transactions. Medium wallet: 45% are SOL-changing; 55% are fetched needlessly. Dense wallet: 98% SOL-changing (lucky).</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Fixed: filter succeeded sigs (err === null) before fetching</div>
-              <div class="failure-desc">Signatures returned by <code>getSignaturesForAddress</code> include an <code>err</code> field (<code>null</code> = success). Filtering to <code>err === null</code> before dispatching <code>getTransaction</code> calls eliminates fetching failed transactions — the closest approximation to <code>status:"succeeded"</code> on free tier.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Batch JSON-RPC blocked on free tier</div>
-              <div class="failure-desc">Sending multiple requests as a JSON array (batch RPC) would have cut HTTP round-trips from 120 to ~5. Helius returns HTTP 403: "Batch requests are only available for paid plans." Cannot work around — reverted to individual calls.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="failure-card">
-        <h3><span style="color:var(--purple)">Codex</span> — blockTime Density (sol_pnl.ts)</h3>
-        <div class="failure-list">
-          <div class="failure-item">
-            <div class="failure-icon fi-risk">✗</div>
-            <div class="failure-body">
-              <div class="failure-title">Over-partitioning on dense wallets</div>
-              <div class="failure-desc">Default density estimation fires 123 calls on the dense test wallet vs 12 for V3/V4. Conservative max-density approach creates many tiny time windows.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-fixed">✓</div>
-            <div class="failure-body">
-              <div class="failure-title">Avoids slot-filter quirks by design</div>
-              <div class="failure-desc">Uses blockTime filters throughout — no <code>gte:0</code> or inverted-range bugs. Correct for very old (pre-2021) transactions where slot numbers are unreliable.</div>
-            </div>
-          </div>
-          <div class="failure-item">
-            <div class="failure-icon fi-warn">!</div>
-            <div class="failure-body">
-              <div class="failure-title">Unoptimized — no hyperparameter search run yet</div>
-              <div class="failure-desc">Only tested with default config (<code>windowTarget=80, c=12</code>). BO/TPE on Codex variant with tuned windowTarget could close the gap significantly.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Search Method Comparison ──────────────────────────────── -->
-  <section class="section" id="methods">
-    <div class="section-title">🔬 Search Method Comparison</div>
-    <div class="section-subtitle">All 7 methods that ran hyperparameter optimization on the V1/V2 and V3/V4 algorithm family.</div>
-    <div class="method-table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Method</th>
-            <th>Algorithm</th>
-            <th>Best Score</th>
-            <th>Evals to Find It</th>
-            <th>Exploration Strategy</th>
-            <th>Verdict</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="method-row">
-            <td>Bayesian GP-UCB</td>
-            <td>V3</td>
-            <td class="winner">0.879 (trial 19)</td>
-            <td class="winner">19</td>
-            <td>UCB with decaying κ: explores uncertainty, then exploits</td>
-            <td class="winner">Best for V3/V4 — discovers c=23 quickly</td>
-          </tr>
-          <tr class="method-row">
-            <td>Bayesian GP-UCB</td>
-            <td>V4</td>
-            <td class="winner">0.789 (trial 27)</td>
-            <td class="ok">27</td>
-            <td>Same as above on 4D V4 space</td>
-            <td class="ok">Good — needs more trials to converge</td>
-          </tr>
-          <tr class="method-row">
-            <td>Differential Evolution <span class="algo-badge badge-codex">Codex</span></td>
-            <td>V2</td>
-            <td class="winner">0.620 (gen 1)</td>
-            <td class="winner">~8 evals</td>
-            <td>Population crossover/mutation; DE/rand/1/bin variant</td>
-            <td class="winner">Surprising — best V2 result in fewest evals</td>
-          </tr>
-          <tr class="method-row">
-            <td>TPE (Parzen) <span class="algo-badge badge-codex">Codex</span></td>
-            <td>V2</td>
-            <td class="ok">0.614 (trial 12)</td>
-            <td class="ok">12</td>
-            <td>Models good/bad regions with Parzen window estimators</td>
-            <td class="ok">Competitive — simpler than BO, similar result</td>
-          </tr>
-          <tr class="method-row">
-            <td>CMA-ES</td>
-            <td>V2</td>
-            <td class="ok">0.436 (gen 2)</td>
-            <td class="ok">~24 evals</td>
-            <td>Gaussian covariance adaptation over 5D</td>
-            <td class="ok">Found c=4 tradeoff; missed oracle=true benefit</td>
-          </tr>
-          <tr class="method-row">
-            <td>Bayesian GP-UCB</td>
-            <td>V2</td>
-            <td class="loser">0.458 (trial 15)</td>
-            <td class="ok">15</td>
-            <td>UCB with decaying κ over 5D V2 space</td>
-            <td class="loser">Below DE/TPE — overfit to oracle=false region</td>
-          </tr>
-          <tr class="method-row">
-            <td>Neighbourhood Search</td>
-            <td>V2</td>
-            <td class="loser">0.417 (gen 3)</td>
-            <td class="loser">~40 evals</td>
-            <td>Grid expansion around current winner; greedy selection</td>
-            <td class="loser">Local optima trap; good for initial exploration only</td>
-          </tr>
-          <tr class="method-row">
-            <td>Neighbourhood Search</td>
-            <td>V1</td>
-            <td class="loser">0.398 (gen 3)</td>
-            <td class="loser">~48 evals</td>
-            <td>Same — first method implemented</td>
-            <td class="loser">Baseline; fine for V1 where space is discrete</td>
-          </tr>
-          <tr class="method-row">
-            <td>Hyperband</td>
-            <td>V2</td>
-            <td class="loser">0.321</td>
-            <td class="loser">13 eq-evals</td>
-            <td>Multi-fidelity: evaluate cheap, promote top-⅓</td>
-            <td class="loser">Failed — sparse/dense wallets don't correlate on fidelity</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ── Production ─────────────────────────────────────────────── -->
-  <section class="section" id="production">
-    <div class="section-title">🚀 Production Recommendation</div>
-    <div class="section-subtitle">Choose based on your wallet size distribution and API tier.</div>
-    <div class="prod-grid">
-
-      <div class="prod-card" style="border-color:var(--purple)">
-        <h3>🏆 Best Paid Tier: V14 — Phantom-Token Fix</h3>
-        <div class="subtitle">Best score on new API key. Phantom paginationToken guard halved dense wallet call count.</div>
-        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v14.mjs"</span>;
-
-<span class="code-key">const</span> strategy = {
-  <span class="code-key">windowSize</span>:     <span class="code-num">62</span>,   <span class="code-key">// BO-optimal: 8 slot windows for dense</span>
-  <span class="code-key">windowTarget</span>:  <span class="code-num">100</span>,   <span class="code-key">// blockTime path window size</span>
-  <span class="code-key">sigPageSize</span>:  <span class="code-num">1000</span>,
-  <span class="code-key">maxConcurrency</span>: <span class="code-num">13</span>,   <span class="code-key">// avoids 429 rate-limit retries</span>
-  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,
-};
-
-<span class="code-key">// Result: sparse 571ms · medium 763ms · dense 2120ms</span>
-<span class="code-key">// Avg 1152ms · base score 0.868 · gated score 0.521</span></pre>
-        <ul class="prod-bullets">
-          <li><span>Phantom fix</span>: dense 14 calls → 10 calls, 2951ms → 2120ms (28% faster)</li>
-          <li><span>Base score 0.868</span> beats V13 (0.789) — new best paid-tier result</li>
-          <li>Gate=0.60 (dense 120ms over 2s) — API variance is now the bottleneck, not call count</li>
-        </ul>
-      </div>
-
-      <div class="prod-card primary">
-        <h3>✅ Recommended: V4 — All Wallet Sizes</h3>
-        <div class="subtitle">Use when wallet transaction history is unknown or may exceed 1000 txns.</div>
-        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v4.mjs"</span>;
-
-<span class="code-key">const</span> strategy = {
-  <span class="code-key">anchorSize</span>:     <span class="code-num">92</span>,   <span class="code-key">// full txns in oldest anchor</span>
-  <span class="code-key">windowTarget</span>:   <span class="code-num">79</span>,   <span class="code-key">// txns per fetch window</span>
-  <span class="code-key">windowSize</span>:     <span class="code-num">79</span>,   <span class="code-key">// same for slot-based path</span>
-  <span class="code-key">sigPageSize</span>:   <span class="code-num">1000</span>,
-  <span class="code-key">maxConcurrency</span>:  <span class="code-num">9</span>,
-  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,  <span class="code-key">// include all txns</span>
-};
-
-<span class="code-key">const</span> result = <span class="code-key">await</span> solBalanceOverTime(
-  address, apiKey, strategy
-);
-<span class="code-key">// result.points[]  ← chronological SOL balance
-// result.stats     ← totalRpcCalls, wallTimeMs</span></pre>
-        <ul class="prod-bullets">
-          <li><span>2 serial round-trips</span> for ALL wallet sizes — no sequential sig pagination fallback</li>
-          <li><span>72% faster</span> than V2 default config (1267ms vs 3650ms avg)</li>
-          <li>Handles wallets with &gt;1000 txns via a single blockTime density probe</li>
-        </ul>
-      </div>
-
-      <div class="prod-card">
-        <h3>Fastest: V3 — Known Small Wallets</h3>
-        <div class="subtitle">Use when you know wallets have &lt;1000 succeeded transactions.</div>
-        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v3.mjs"</span>;
-
-<span class="code-key">const</span> strategy = {
-  <span class="code-key">anchorSize</span>:    <span class="code-num">76</span>,
-  <span class="code-key">windowSize</span>:    <span class="code-num">52</span>,
-  <span class="code-key">sigPageSize</span>:  <span class="code-num">1000</span>,
-  <span class="code-key">maxSigPages</span>:    <span class="code-num">20</span>,
-  <span class="code-key">maxConcurrency</span>: <span class="code-num">23</span>,  <span class="code-key">// higher than V2!</span>
-  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,
-};
-
-<span class="code-key">const</span> result = <span class="code-key">await</span> solBalanceOverTime(
-  address, apiKey, strategy
-);</pre>
-        <ul class="prod-bullets">
-          <li><span>Peak score 0.879</span> — fastest observed latency ~1138ms on all 3 wallets</li>
-          <li><span>c=23 optimal</span> — 2-RT structure means parallel windows benefit from high concurrency</li>
-          <li>Falls back to sequential sig pagination for &gt;1000 txn wallets</li>
-        </ul>
-      </div>
-
-      <div class="prod-card">
-        <h3>📦 Drop-in: TypeScript (sol_pnl.ts)</h3>
-        <div class="subtitle">Deno-native TypeScript. Use for archival / historical wallets, or when slot filters cause issues.</div>
-        <pre><span class="code-key">import</span> { solBalanceHistory }
-  <span class="code-key">from</span> <span class="code-str">"./sol_pnl.ts"</span>;
-
-<span class="code-key">const</span> history = <span class="code-key">await</span> solBalanceHistory(
-  address, apiKey
-);
-<span class="code-key">// history.points[].blockTime
-// history.points[].balanceSOL
-// history.points[].deltaLamports
-// history.stats.phase1Calls
-// history.stats.phase2Calls
-// history.stats.phase3Calls</span></pre>
-        <ul class="prod-bullets">
-          <li><span>blockTime-based</span> — avoids Helius slot-filter quirks entirely</li>
-          <li>Richer output: blockTime, deltaLamports, opening/closing balance</li>
-          <li>Tune <code>windowTarget=40–60</code> to reduce call count on dense wallets</li>
-        </ul>
-      </div>
-
-      <div class="prod-card" style="border-color:var(--orange)">
-        <h3>⚠️ Free-Tier Fallback: V15</h3>
-        <div class="subtitle">Use when Helius paid API is unavailable. Standard Solana RPC only — expect 5–25s per wallet.</div>
-        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v15.mjs"</span>;
-
-<span class="code-key">const</span> strategy = {
-  <span class="code-key">sigPageSize</span>:   <span class="code-num">1000</span>,
-  <span class="code-key">maxSigPages</span>:     <span class="code-num">6</span>,
-  <span class="code-key">txTarget</span>:       <span class="code-num">20</span>, <span class="code-key">// BO optimising — low=fast</span>
-  <span class="code-key">maxConcurrency</span>: <span class="code-num">12</span>,
-  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,
-};
-
-<span class="code-key">// ⚠️  free-tier rate limit: ~10 RPS
-// ⚠️  medium wallet:  5–15s (gate=0.05 penalty)
-// ⚠️  dense wallet:  8–25s  (gate=0.05 penalty)
-// ✓   sparse wallet: 1.5–5s (usually complete)</span></pre>
-        <ul class="prod-bullets">
-          <li><span>Gate math</span>: txTarget=15+gate=1.0 scores 36× better than txTarget=120+gate=0.05</li>
-          <li><span>Free-tier constraint</span>: batch JSON-RPC blocked; individual calls rate-limited</li>
-          <li>Upgrade to paid tier (V14 phantom-fix) for 100× fewer calls and all wallets &lt;2s</li>
-        </ul>
-      </div>
-
-      <div class="prod-card" style="border-color:var(--teal)">
-        <h3>🔀 Hybrid Router — Auto-Detect + Route</h3>
-        <div class="subtitle">Use when wallet type is unknown or when you may switch between paid and free API tiers.</div>
-        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_hybrid.mjs"</span>;
-
-<span class="code-key">const</span> strategy = {
-  <span class="code-key">sparseThreshold</span>: <span class="code-num">12</span>,   <span class="code-key">// ≤12 succeeded sigs = sparse</span>
-  <span class="code-key">txTargetSparse</span>:   <span class="code-num">8</span>,   <span class="code-key">// fetch target for sparse wallets</span>
-  <span class="code-key">cSparse</span>:          <span class="code-num">6</span>,   <span class="code-key">// concurrency for sparse</span>
-  <span class="code-key">txTargetMedDense</span>: <span class="code-num">31</span>,  <span class="code-key">// fetch target for medium/dense</span>
-  <span class="code-key">cMedDense</span>:        <span class="code-num">12</span>,  <span class="code-key">// concurrency for medium/dense</span>
-  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,
-
-  <span class="code-key">// Paid-tier params (used when API detects paid access)</span>
-  <span class="code-key">paidWindowSize</span>:    <span class="code-num">91</span>,
-  <span class="code-key">paidConcurrency</span>:   <span class="code-num">31</span>,
-  <span class="code-key">paidSkipZeroDelta</span>: <span class="code-bool">true</span>,
-};
-
-<span class="code-key">const</span> result = <span class="code-key">await</span> solBalanceOverTime(address, apiKey, strategy);
-<span class="code-key">// result.stats.apiTier      ← "paid" | "free"</span>
-<span class="code-key">// result.stats.walletDensity ← "sparse" | "medium" | "dense"</span></pre>
-        <ul class="prod-bullets">
-          <li><span>Zero-cost routing</span>: classifies wallet from Phase 0 page — no extra API calls</li>
-          <li><span>API tier detection</span>: probes once per 60s, auto-routes paid → V14, free → per-type</li>
-          <li><span>BO optimising</span>: 5D search (sparseThreshold + per-type txTarget+concurrency), 60 trials running</li>
-        </ul>
-      </div>
-
-      <div class="prod-card">
-        <h3>🔧 Premium API Tier</h3>
-        <div class="subtitle">If you upgrade to a Helius paid plan, adjust concurrency.</div>
-        <pre><span class="code-key">// Starter tier (rate limit ×4)</span>
-strategy.maxConcurrency = <span class="code-num">24</span>;
-
-<span class="code-key">// Growth tier (rate limit ×10)</span>
-strategy.maxConcurrency = <span class="code-num">48</span>;
-
-<span class="code-key">// Optimal concurrency scales with rate limit:
-// free tier   → c = 9–23 (V3/V4 optimal)
-// paid tier   → c = 24–48
-// 429 retries dominate above the limit, not
-// below — tune until latency stops improving.</span></pre>
-        <ul class="prod-bullets">
-          <li><span>Free tier</span> optimal: c=9 (V4) / c=23 (V3)</li>
-          <li><span>High concurrency</span> helps V3 more than V4 due to finer window granularity</li>
-          <li>Run BO again with your tier to find new optimal c</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Router & Phantom ─────────────────────────────────────────── -->
-  <section class="section" id="router">
-    <div class="section-title">⬡ sol_balance_router.mjs — Unified Router</div>
-    <div class="section-subtitle">One function. Auto-detects API tier, classifies wallet density (zero extra calls), routes to the BO-optimal config for that combination.</div>
-
-    <!-- Routing decision table -->
-    <div style="overflow-x:auto;margin-bottom:28px">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>API Tier</th>
-            <th>Wallet Type</th>
-            <th>Mode</th>
-            <th>windowSize / txTarget</th>
-            <th>concurrency</th>
-            <th>Expected latency</th>
-            <th>Completeness</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="winner">
-            <td>Paid</td>
-            <td>Any</td>
-            <td>—</td>
-            <td>window=62</td>
-            <td>c=13</td>
-            <td>sparse ~0.57s · medium ~0.76s · dense ~2.1s</td>
-            <td>Full</td>
-            <td>V14 BO (60 trials, score=0.521, base=0.868)</td>
-          </tr>
-          <tr>
-            <td>Free</td>
-            <td>Sparse</td>
-            <td>fast / complete</td>
-            <td>txTarget=11</td>
-            <td>c=12</td>
-            <td>~1.2s</td>
-            <td>Full</td>
-            <td>Hybrid BO trial 2 (gate=1.0, score=0.2078)</td>
-          </tr>
-          <tr>
-            <td>Free</td>
-            <td>Medium</td>
-            <td>fast</td>
-            <td>txTarget=23</td>
-            <td>c=19</td>
-            <td>~1.8s</td>
-            <td>Partial (gate=1.0)</td>
-            <td>Hybrid BO trial 2 (sparseThreshold=25)</td>
-          </tr>
-          <tr>
-            <td>Free</td>
-            <td>Medium</td>
-            <td>complete</td>
-            <td>txTarget=31</td>
-            <td>c=12</td>
-            <td>~3.5s</td>
-            <td>Full (skip=false trick)</td>
-            <td>V15 BO trial 7 (score=0.0087)</td>
-          </tr>
-          <tr>
-            <td>Free</td>
-            <td>Dense</td>
-            <td>fast / complete</td>
-            <td>txTarget=23–31</td>
-            <td>c=12–19</td>
-            <td>~1.8–6s</td>
-            <td>Partial (rate-limit ceiling)</td>
-            <td>Hybrid BO — dense never gate=1.0 at free tier</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- How it works -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:28px">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px">
-        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--accent)">Decision Flow (0 extra calls)</h3>
-        <div style="font-size:12px;font-family:'SF Mono','Fira Code',monospace;color:var(--muted);line-height:2">
-          <div><span style="color:var(--teal)">detectApiTier(apiKey)</span> <span style="color:var(--border)">// probe once, cache 60s</span></div>
-          <div style="margin-left:16px">HTTP 200 → <span style="color:var(--green)">paid</span> → V14 path</div>
-          <div style="margin-left:16px">HTTP 403 → <span style="color:var(--orange)">free</span> → free path</div>
-          <div style="margin-top:10px"><span style="color:var(--teal)">Phase 0: getSignaturesForAddress</span></div>
-          <div style="margin-left:16px">page0.length = 1000 → <span style="color:var(--gold)">dense</span></div>
-          <div style="margin-left:16px">succeeded &gt; 25 → <span style="color:var(--accent)">medium</span></div>
-          <div style="margin-left:16px">succeeded ≤ 25 → <span style="color:var(--teal)">sparse</span></div>
-          <div style="margin-top:10px"><span style="color:var(--muted)">route to per-type config</span></div>
-          <div style="margin-left:16px">fast: txTarget=11/23/23, c=12/19/19</div>
-          <div style="margin-left:16px">complete: txTarget=11/31/31, c=12/12/12</div>
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px">
-        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--gold)">Usage</h3>
-        <pre style="font-size:12px;line-height:1.8;margin:0"><span class="code-key">import</span> { fetchBalanceHistory } <span class="code-key">from</span> <span class="code-str">"./sol_balance_router.mjs"</span>;
-
-<span class="code-key">// Auto-detect tier, fast mode (default)</span>
-<span class="code-key">const</span> result = <span class="code-key">await</span> fetchBalanceHistory(address, apiKey);
-
-<span class="code-key">// Force free, get full medium wallet data</span>
-<span class="code-key">const</span> result = <span class="code-key">await</span> fetchBalanceHistory(address, apiKey,
-  { mode: <span class="code-str">"complete"</span>, tier: <span class="code-str">"free"</span> });
-
-<span class="code-key">// result.routing</span> → { tier, walletType, mode, strategy }
-<span class="code-key">// result.points</span>  → [{ slot, lamports, blockTime, kind }]
-<span class="code-key">// result.stats</span>   → { wallTimeMs, totalRpcCalls, sampleCount }</pre>
-      </div>
-    </div>
-
-    <!-- Phantom wallet methodology -->
-    <div style="background:var(--surface);border:1px solid var(--purple);border-radius:8px;padding:24px;margin-bottom:28px">
-      <h3 style="font-size:15px;font-weight:700;margin-bottom:8px;color:var(--purple)">Querying Your Phantom Wallet — Methodology</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6">
-        A Solana wallet address is a <strong>public key</strong> — no signing, no authentication, no Phantom SDK required.
-        Any read-only Helius endpoint accepts it directly. You're just asking "show me the history for this address."
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-        <div>
-          <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Step 1 — Get your address</h4>
-          <div style="font-size:12px;color:var(--muted);line-height:1.8">
-            <div><strong style="color:var(--text)">Phantom browser extension:</strong></div>
-            <div style="margin-left:12px">Click the wallet name at the top → copy address</div>
-            <div style="margin-top:6px"><strong style="color:var(--text)">Phantom mobile:</strong></div>
-            <div style="margin-left:12px">Settings (gear) → tap wallet name → copy address</div>
-            <div style="margin-top:10px;font-family:'SF Mono','Fira Code',monospace;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:8px;font-size:11px;color:var(--accent)">
-              Example: 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU
-            </div>
-            <div style="margin-top:8px;color:var(--border);font-size:11px">Base58, 32–44 chars, looks like a hash. Not an ENS name or email — the raw key.</div>
-          </div>
-        </div>
-        <div>
-          <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Step 2 — Run the router</h4>
-          <pre style="font-size:11px;line-height:1.8;margin:0"><span class="code-key"># Paid Helius key (fastest)</span>
-node sol_balance_router.mjs \
-  7xKXtg2CW... \
-  &lt;your-helius-api-key&gt;
-
-<span class="code-key"># Free key, fast mode</span>
-node sol_balance_router.mjs \
-  7xKXtg2CW... \
-  &lt;your-key&gt; --free
-
-<span class="code-key"># Free key, full medium wallet data</span>
-node sol_balance_router.mjs \
-  7xKXtg2CW... \
-  &lt;your-key&gt; --free --complete
-
-<span class="code-key"># Via env var (no key in shell history)</span>
-HELIUS_API_KEY=&lt;key&gt; node sol_balance_router.mjs 7xKXtg2CW...</pre>
-        </div>
-        <div>
-          <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px">Step 3 — What you get</h4>
-          <pre style="font-size:11px;line-height:1.8;margin:0"><span style="color:var(--teal)">────────────────────────────────────────────────</span>
-Routing: PAID tier · sparse wallet · paid mode
-Calls: 3  Wall time: 571ms  Samples: 4
-<span style="color:var(--teal)">────────────────────────────────────────────────</span>
-<span style="color:var(--muted)">Date         Slot         Balance (SOL)  Change</span>
-────────────────────────────────────────────────
-2024-01-15  250891234     12.500000 SOL  opening
-2024-02-03  261047892     10.000000 SOL  -2.500000
-2024-03-22  278309411     15.500000 SOL  +5.500000
-2024-04-01  283741029     15.499995 SOL  -0.000005
-<span style="color:var(--teal)">────────────────────────────────────────────────</span>
-Opening: 12.500000 SOL → Closing: 15.499995 SOL
-Net change: +2.999995 SOL</pre>
-          <div style="margin-top:10px;font-size:11px;color:var(--muted)">
-            Router tells you tier detected, wallet type classified, call count, and wall time — so you know exactly which BO config was used.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Key insight box -->
-    <div class="insight-box">
-      <div class="insight-icon">💡</div>
-      <div class="insight-body">
-        <h4>Why zero-cost classification works</h4>
-        <p>
-          <code>getSignaturesForAddress</code> is always called first to gather transaction signatures — the Phase 0 page fetch is not an extra call, it's the first data-collection call.
-          The density decision (sparse / medium / dense) is made from the count of that page, so no extra probe is needed.
-          On the paid path, <code>detectApiTier</code> fires once and caches for 60s — a fresh process pays one probe; a long-running server pays it once per hour.
-        </p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ── Hybrid Router ────────────────────────────────────────────── -->
-  <section class="section" id="hybrid">
-    <div class="section-title">🔀 Hybrid Density Router</div>
-    <div class="section-subtitle">Auto-selects the best strategy per wallet size and API tier — zero extra API calls for classification.</div>
-
-    <!-- Architecture overview -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:24px">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px">
-        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--accent)">Architecture</h3>
-        <div style="font-size:12px;font-family:'SF Mono','Fira Code',monospace;color:var(--muted);line-height:1.9">
-          <div><span style="color:var(--teal)">detectApiTier()</span> &rarr; "paid" | "free" <span style="color:var(--border)">(60s TTL cache)</span></div>
-          <div style="margin-top:8px">If <span style="color:var(--green)">paid</span>: delegate to <span style="color:var(--gold)">sol_balance_v14.mjs</span></div>
-          <div style="margin-left:16px;color:var(--muted)">phantom-token fix · window=91 · c=31</div>
-          <div style="margin-top:8px">If <span style="color:var(--orange)">free</span>: Phase 0 getSignaturesForAddress</div>
-          <div style="margin-left:16px;color:var(--muted)">count ≤ sparseThreshold → <span style="color:var(--teal)">sparse</span> path</div>
-          <div style="margin-left:16px;color:var(--muted)">first page full → <span style="color:var(--gold)">dense</span> path</div>
-          <div style="margin-left:16px;color:var(--muted)">otherwise → <span style="color:var(--accent)">medium</span> path</div>
-        </div>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px">
-        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--teal)">Zero-Cost Classification</h3>
-        <div style="font-size:12px;color:var(--muted);line-height:1.7">
-          Classification reuses the <strong style="color:var(--text)">Phase 0 getSignaturesForAddress</strong> page that the free-tier solver fetches anyway.
-          No extra API call. No added latency.
-          <br><br>
-          <strong style="color:var(--text)">Logic:</strong>
-          <ul style="list-style:none;padding:0;margin-top:8px;display:flex;flex-direction:column;gap:4px">
-            <li><span style="color:var(--teal)">sparse</span>: page0 not full AND succeeded ≤ sparseThreshold</li>
-            <li><span style="color:var(--gold)">dense</span>: page0 full (= 1000 raw sigs)</li>
-            <li><span style="color:var(--accent)">medium</span>: page0 not full AND succeeded > threshold</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px">
-        <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;color:var(--purple)">BO Search Space (5D)</h3>
-        <div style="font-size:12px;color:var(--muted);line-height:1.7">
-          <table style="width:100%;border-collapse:collapse">
-            <thead><tr><th style="text-align:left;padding:4px 0;color:var(--text);font-size:11px">Parameter</th><th style="text-align:right;padding:4px 0;color:var(--text);font-size:11px">Range</th></tr></thead>
-            <tbody>
-              <tr><td style="padding:3px 0;color:var(--teal)">sparseThreshold</td><td style="text-align:right">[3, 25]</td></tr>
-              <tr><td style="padding:3px 0;color:var(--teal)">txTargetSparse</td><td style="text-align:right">[3, 15]</td></tr>
-              <tr><td style="padding:3px 0;color:var(--teal)">cSparse</td><td style="text-align:right">[4, 12]</td></tr>
-              <tr><td style="padding:3px 0;color:var(--accent)">txTargetMedDense</td><td style="text-align:right">[20, 60]</td></tr>
-              <tr><td style="padding:3px 0;color:var(--accent)">cMedDense</td><td style="text-align:right">[8, 24]</td></tr>
-            </tbody>
-          </table>
-          <div style="margin-top:10px;font-size:11px">Fixed: sigPageSize=1000, maxSigPages=6, skipZeroDelta=false<br>60 trials · 3-run median · GP-UCB decaying κ</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Paid vs Free comparison table -->
-    <div style="margin-bottom:24px">
-      <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">Paid vs Free Tier — Apples-to-Apples</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:14px">Same 3 wallets, same score formula, different API endpoint. The gap is structural, not tunable.</p>
-      <div class="lb-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Tier</th>
-              <th>Version</th>
-              <th>Score</th>
-              <th>Avg Latency</th>
-              <th>Dense Wallet</th>
-              <th>RPC Calls</th>
-              <th>Bottleneck</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background:rgba(63,185,80,0.06)">
-              <td><span style="color:var(--green);font-weight:700">Paid</span></td>
-              <td>V13 Constrained BO</td>
-              <td><span style="color:var(--gold);font-weight:700">0.789</span></td>
-              <td style="color:var(--gold)">1.3s</td>
-              <td style="color:var(--yellow)">3.0s (phantom bug)</td>
-              <td>~18</td>
-              <td style="color:var(--muted);font-size:12px">Phantom paginationToken (2× calls)</td>
-            </tr>
-            <tr style="background:rgba(188,140,255,0.06)">
-              <td><span style="color:var(--green);font-weight:700">Paid</span></td>
-              <td>V14 Phantom-Token Fix (Done)</td>
-              <td><span style="color:var(--purple);font-weight:700">0.521 <span style="font-weight:400;font-size:12px;color:var(--muted)">(base 0.868)</span></span></td>
-              <td style="color:var(--green)">1.2s</td>
-              <td style="color:var(--yellow)">2.1s (0.12s from gate=1.0)</td>
-              <td>10</td>
-              <td style="color:var(--muted);font-size:12px">Phantom fix: 14 calls → 10, 3.0s → 2.1s. Gate=0.60 due to API variance.</td>
-            </tr>
-            <tr style="background:rgba(255,166,87,0.06)">
-              <td><span style="color:var(--orange);font-weight:700">Free</span></td>
-              <td>V15 Monolithic (BO running)</td>
-              <td><span style="color:var(--orange);font-weight:700">0.0087</span></td>
-              <td style="color:var(--red)">3.8s</td>
-              <td style="color:var(--red)">6.0s (rate limited)</td>
-              <td>~78</td>
-              <td style="color:var(--muted);font-size:12px">~10 RPS → effective 1.8 calls/sec under load</td>
-            </tr>
-            <tr style="background:rgba(57,211,83,0.04)">
-              <td><span style="color:var(--orange);font-weight:700">Free</span></td>
-              <td>Hybrid Router (BO running)</td>
-              <td><span style="color:var(--teal);font-weight:700">BO running</span></td>
-              <td style="color:var(--teal)">est. ~3.5 ms</td>
-              <td style="color:var(--red)">same ceiling as V15</td>
-              <td>est. ~50–80</td>
-              <td style="color:var(--muted);font-size:12px">Sparse routed faster; dense same rate limit</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="color:var(--muted);font-size:12px;margin-top:8px">
-        <strong>88× score gap</strong> between paid (V13: 0.789) and free (V15: 0.0087) is structural: paid API pre-filters SOL transactions server-side
-        + no individual getTransaction calls needed + no 10 RPS cap. The hybrid router's advantage is architecture (density routing), not closing the paid vs free gap.
-        Dense wallet on free tier will always hit the rate-limit ceiling regardless of routing.
-      </p>
-    </div>
-
-    <!-- Routing decision table -->
-    <div>
-      <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">Routing Decision Table</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:14px">What the hybrid router does for each wallet type and API tier.</p>
-      <div class="lb-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>API Tier</th>
-              <th>Wallet Type</th>
-              <th>Detection Signal</th>
-              <th>Strategy</th>
-              <th>Expected Latency</th>
-              <th>Completeness</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background:rgba(63,185,80,0.06)">
-              <td><span style="color:var(--green);font-weight:700">Paid</span></td>
-              <td>Any</td>
-              <td style="font-size:12px;color:var(--muted)">probe returns 200 (not 403)</td>
-              <td><span style="color:var(--gold)">V14 (window=91, c=31, skip=true)</span></td>
-              <td style="color:var(--green)">est. &lt;0.7s / wallet</td>
-              <td style="color:var(--green)">100%</td>
-            </tr>
-            <tr style="background:rgba(255,166,87,0.04)">
-              <td><span style="color:var(--orange);font-weight:700">Free</span></td>
-              <td><span style="color:var(--teal)">Sparse</span></td>
-              <td style="font-size:12px;color:var(--muted)">page0 not full + succeeded ≤ threshold</td>
-              <td>txTarget=<span style="color:var(--teal)">8</span>, c=<span style="color:var(--teal)">6</span> (BO default)</td>
-              <td style="color:var(--teal)">~1.5–2.5 s</td>
-              <td style="color:var(--green)">100% (few sigs)</td>
-            </tr>
-            <tr style="background:rgba(255,166,87,0.04)">
-              <td><span style="color:var(--orange);font-weight:700">Free</span></td>
-              <td><span style="color:var(--accent)">Medium</span></td>
-              <td style="font-size:12px;color:var(--muted)">page0 not full + succeeded > threshold</td>
-              <td>txTarget=<span style="color:var(--accent)">31</span>, c=<span style="color:var(--accent)">12</span> (BO default)</td>
-              <td style="color:var(--yellow)">~3.5–5 s</td>
-              <td style="color:var(--green)">100% (skip=false trick)</td>
-            </tr>
-            <tr style="background:rgba(255,166,87,0.04)">
-              <td><span style="color:var(--orange);font-weight:700">Free</span></td>
-              <td><span style="color:var(--gold)">Dense</span></td>
-              <td style="font-size:12px;color:var(--muted)">page0 was full (1000 raw sigs)</td>
-              <td>txTarget=<span style="color:var(--gold)">31</span>, c=<span style="color:var(--gold)">12</span> (BO default)</td>
-              <td style="color:var(--red)">~5–9 s</td>
-              <td style="color:var(--red)">Partial (~31/451)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Key Insights ───────────────────────────────────────────── -->
-  <section class="section" id="insights">
-    <div class="section-title">💡 Key Insights</div>
-    <div class="section-subtitle">Non-obvious findings from 200+ evaluated configurations across 7 search methods.</div>
-    <div class="insight-grid">
-
-      <div class="insight" style="border-color:var(--purple)">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--purple)">V14</div>
-        <div class="insight-body">
-          <h4>V14 phantom-token fix: base 0.868 (new best), dense 2120ms / 10 calls. API variance is now the bottleneck.</h4>
-          <p>V13 (60 trials, window=91, c=31, skip=on): base=0.789, dense=2951ms (14 calls). V14 fix: <code>if (data.length &lt; LIMIT) return samples</code> before while-loop — skips phantom paginationToken that Helius returns even when results &lt; limit. Result: dense 14 calls → 10 calls, 2951ms → 2120ms. Base score 0.868 vs V13's 0.789 — new best. BO converged on window=62 (vs V13's 91) — smaller windows → fewer sigs per window → under 100-txn limit → no real pagination needed. Gate=0.60 (dense 120ms over 2s gate) — per-call latency variance (~±400ms) is now the limiting factor, not call count.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--yellow)">RT</div>
-        <div class="insight-body">
-          <h4>Optimal concurrency depends on the algorithm's round-trip count</h4>
-          <p>V2 optimal: c=6 (3 serial RTs — rate-limit retries dominate). V3 optimal: c=23 (2 serial RTs — Phase 1 parallel windows are the bottleneck). V4 optimal: c=9 (density windows are larger, less parallelism needed).</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--green)">56%</div>
-        <div class="insight-body">
-          <h4>2 serial round-trips beats 3 by ~56% on average</h4>
-          <p>V3's key innovation: firing oldest full txns + newest sigs in a single <code>Promise.all</code> removes one complete serial dependency. For the medium wallet, Phase 0 alone delivers all data — Phase 1 fires 2–3 windows in parallel.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--red)">VAR</div>
-        <div class="insight-body">
-          <h4>Score variance is too high for single-trial comparison</h4>
-          <p>Helius free tier has ~2x latency jitter on the sparse wallet (871ms–2970ms). A single BO trial score of 0.879 vs a re-evaluated 0.68 illustrates the noise. Use 3-run averages for stable comparison.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--purple)">DE</div>
-        <div class="insight-body">
-          <h4>Differential Evolution found the best V2 config in 8 evaluations</h4>
-          <p>DE/rand/1/bin reached score 0.620 in generation 1 (8 pop x 1 gen). This beat GP-UCB (0.458 at trial 15) by 35%. DE's population crossover naturally explores oracle=true territory that sequential search misses.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--red)">HB</div>
-        <div class="insight-body">
-          <h4>Hyperband failed due to poor fidelity correlation</h4>
-          <p>The sparse wallet always fast-exits in 2 calls regardless of config — it's not a discriminating signal. Low fidelity (sparse only) filters out good configs by chance. Fix: use dense wallet as the only low-fidelity proxy.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--orange)">API</div>
-        <div class="insight-body">
-          <h4>Helius API has undocumented quirks that break naive implementations</h4>
-          <p>1. <strong>Phantom paginationToken</strong>: returns token even when results &lt; limit — V11/V12/V13 followed it, doubling window calls. Fixed in V14 (<code>if data.length &lt; LIMIT, skip</code>). 2. Rejects slot filters with <code>gte:0</code> — clamp to max(1, slot). 3. Hard caps full transactions at 100 regardless of <code>limit</code> param. All three were hit and fixed across versions.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--muted)">SKP</div>
-        <div class="insight-body">
-          <h4>skipZeroDelta=false consistently reduces overhead</h4>
-          <p>Filtering transactions where pre===post adds a comparison loop over every transaction. For our test wallets (~14–22 total RPC calls), this loop runs thousands of times. The filter cost exceeds the benefit of excluding zero-delta txns.</p>
-        </div>
-      </div>
-
-      <div class="insight" style="border-color:var(--orange)">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--orange)">V15</div>
-        <div class="insight-body">
-          <h4>Gate penalty math: txTarget=15 + gate=1.0 beats txTarget=120 + gate=0.05 by 36×</h4>
-          <p>On free tier, 120 getTransaction calls at 10 RPS = 12s → gate=0.05. Score: 1.0×(1000/7000)×0.05 = 0.007. But txTarget=15 can keep all wallets under 2s → gate=1.0. Score: 0.33×(1000/1800)×1.0 = 0.185 — only sparse is complete. Despite 1/3 completeness, the gate=1.0 multiplier wins by 26×. The BO discovers this by exploring txTarget=[5,60] — the sweet spot where wall times just clear the 2s gate.</p>
-        </div>
-      </div>
-
-      <div class="insight">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--accent)">BT</div>
-        <div class="insight-body">
-          <h4>blockTime vs slot filtering: different tradeoffs</h4>
-          <p>Slot-based (V2/V3/V4): faster exact windows, but triggers Helius slot-filter quirks. blockTime-based (Codex): immune to quirks, richer output, but density estimation can over-partition on dense wallets.</p>
-        </div>
-      </div>
-
-      <div class="insight" style="border-color:var(--teal)">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--teal)">HYB</div>
-        <div class="insight-body">
-          <h4>Hybrid routing advantage is architecture, not closing the paid vs free gap</h4>
-          <p>The 88× score gap between paid and free tier is structural: paid API pre-filters SOL transactions server-side and skips per-transaction fetches entirely. On free tier, the hybrid router's real win is <strong>sparse wallet optimisation</strong>: a sparse wallet classified from Phase 0 uses txTarget=8/c=6 instead of txTarget=31/c=12 — fewer concurrent semaphore slots for a wallet that has only 4 sigs. Dense wallets hit the same rate-limit ceiling regardless. Estimated improvement over V15 monolithic: ~10–30% better sparse latency, medium unchanged, dense unchanged. Auto-detection future-proofs the code: renew the API key and the router silently upgrades to V14.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── 5-Repo Research Synthesis ──────────────────────────────── -->
-  <section class="section" id="synthesis">
-    <div class="section-title">🔭 5-Repo Research Synthesis — What We Were Missing</div>
-    <div class="section-subtitle">Studied: shariqazeem/sol-pnl · henryoman/mert-algo · hitman-kai/darkpnl · frcd10/fastpnl · H33ai-postquantum/solana-pnl-cachee</div>
-
-    <!-- Key discoveries grid -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:28px">
-
-      <div style="background:var(--surface);border:1px solid rgba(88,166,255,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:10px">① HTTP/1.1 &gt; HTTP/2 on Helius</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">Cloudflare's HTTP/2 stream scheduler <strong style="color:var(--text)">serialises</strong> parallel requests server-side. 16 "parallel" HTTP/2 requests are handled one-by-one. <code>undici Agent({ connections:64 })</code> with HTTP/1.1 gives true parallelism. <strong style="color:var(--green)">Measured 6× faster.</strong> Discovered by H33ai-postquantum.</p>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid rgba(188,140,255,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--purple);margin-bottom:10px">② Synthetic Pagination Tokens</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">Helius tokens have format <code>"slot:txIndex"</code>. You can <strong style="color:var(--text)">fabricate</strong> <code>"285000000:0"</code> to jump to any slot without chaining sequential pages. Fire all pages in parallel. Discovered independently by sol-pnl and darkpnl.</p>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid rgba(255,166,87,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--orange);margin-bottom:10px">③ 90-Sig Chunk Sizing</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">Group sigs into chunks of 90 before fetching full txs. Since limit=100, 90 sigs <strong style="color:var(--text)">never triggers pagination</strong>. All chunks fire in parallel in 1 RTT, 0 sequential page chaining. Discovered by frcd10/fastpnl.</p>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid rgba(57,211,83,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:10px">④ Sig Probe at t=0</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">Fire a <code>gTFA(sigs, limit=1000)</code> call alongside boundary probes at t=0. If result &lt; 1000: <strong style="color:var(--text)">you have all sigs in Phase 0</strong>. 99% of retail wallets ≤1000 txs — Phase 1 never needed. Total = 3+N calls, 2 RTTs.</p>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid rgba(240,192,64,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px">⑤ Balance Continuity Oracle</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">If <code>A.postLamports === B.preLamports</code> for consecutive txs, the gap is <strong style="color:var(--text)">provably flat</strong> — no transactions occurred. Skip fetching it entirely. Discovered by shariqazeem/sol-pnl.</p>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid rgba(248,81,73,.3);border-radius:var(--radius);padding:20px">
-        <h3 style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:10px">⑥ loadedAddresses for v0 Txs</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7">Versioned (v0) transactions use Address Lookup Tables. <code>accountKeys</code> alone is incomplete. Must append <code>loadedAddresses.writable</code> + <code>.readonly</code> to find correct account index. Without this: <strong style="color:var(--red)">silent balance errors on modern wallets</strong>. Discovered by mert-algo.</p>
-      </div>
-
-    </div>
-
-    <!-- fastpnl latency math -->
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:28px">
-      <h3 style="font-size:14px;font-weight:700;margin-bottom:12px">Why fastpnl achieves 1,176ms — The Math</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div>
-          <pre style="font-size:12px;line-height:1.8;background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:14px"><span class="code-key">// frcd10/fastpnl formula (Rust, Helius Developer 50 RPS)</span>
-wallet: 2,323 txs  (8NCLTHTi... mainnet)
-
-Phase 1: boundary calls       =  2 calls (parallel)
-Phase 1.5: size probe         =  1 call
-Phase 3: sig sweep            = 28 calls (parallel bursts)
-Phase 4: full-tx fetch        = 26 calls (90-sig chunks)
-                                ─────────
-Total:                          57 calls
-
-Wall formula:
-  (calls − 1) × (1000ms / RPS) + RTT
-= (57 − 1) × 20ms + 56ms (NYC RTT)
-= <span style="color:var(--green)">1,176ms</span> ← measured, matches theory exactly</pre>
-        </div>
-        <div>
-          <pre style="font-size:12px;line-height:1.8;background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:14px"><span class="code-key">// Our Ultimate solver (Node, paid Helius, ~400ms RTT)</span>
-wallet: 451 txs (dense test)
-
-Phase 0: boundary + sig probe =  3 calls (parallel, t=0)
-Phase 2: 90-sig chunks        =  6 calls (parallel)
-                                ─────────
-Total:                           9 calls
-
-Wall formula:
-  max(Phase 0) + max(Phase 2)
-= ~500ms       + ~600ms
-= <span style="color:var(--green)">~1,100ms ideal</span>
-
-Actual: 800ms–2,500ms
-(Helius API latency variance P5–P95)</pre>
-        </div>
-      </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:12px">The theory-to-reality gap (1,100ms vs 2,500ms) is entirely Helius P95 latency variance. Not a code problem. The only fix is an L0 in-memory cache (warm queries: 0.12ms, 0 API calls — H33ai-postquantum product).</p>
-    </div>
-
-    <!-- Ultimate vs V14 benchmark -->
-    <div style="overflow-x:auto;margin-bottom:12px">
-      <table>
-        <thead>
-          <tr>
-            <th>Wallet</th>
-            <th>V14 calls</th><th>V14 time</th><th>V14 gate</th><th>V14 score</th>
-            <th>Ultimate calls</th><th>Ultimate time</th><th>Ultimate gate</th><th>Ultimate score</th>
-            <th>Improvement</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="wallet-tag tag-sparse">Sparse</span> 4 txs</td>
-            <td>3</td><td class="ms-val">2.0s</td><td>1.00</td><td class="winner">0.504</td>
-            <td>4</td><td class="ms-val" style="color:var(--yellow)">2.8s</td><td>0.60</td><td class="ok">0.211</td>
-            <td style="color:var(--muted);font-size:12px">API variance today</td>
-          </tr>
-          <tr>
-            <td><span class="wallet-tag tag-medium">Medium</span> 60 txs</td>
-            <td>3</td><td class="ms-val" style="color:var(--green)">0.87s</td><td>1.00</td><td class="winner">1.149</td>
-            <td>4</td><td class="ms-val" style="color:var(--yellow)">1.8s</td><td>1.00</td><td class="ok">0.551</td>
-            <td style="color:var(--muted);font-size:12px">API variance today</td>
-          </tr>
-          <tr style="background:rgba(63,185,80,.04)">
-            <td><span class="wallet-tag tag-dense">Dense</span> 451 txs</td>
-            <td>10</td><td class="ms-val ms-slow">5.3s</td><td class="loser">0.05</td><td class="loser">0.009</td>
-            <td>9</td><td class="ms-val" style="color:var(--yellow)">2.7s</td><td class="ok">0.60</td><td class="winner">0.225</td>
-            <td style="color:var(--green);font-weight:700">25× score (gate jump)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:12px;color:var(--muted)">Benchmarked same day, paid Helius key. Dense wallet is the decisive win: 5.3s → 2.7s gets gate 0.05 → 0.60, which is 25× better score. Sparse/medium variance is noise — both depend on Helius P95 response time on that run.</p>
-  </section>
-
+  <!-- ── Footer ───────────────────────────────────────────────── -->
   <footer class="footer">
-    <span>RPCsol_pnl · Research Dashboard · Updated 2026-04-13 · V14 Done (base 0.868, dense 2.1s) · sol_balance_router.mjs: unified router (paid+free+Phantom) · V15 BO running · Hybrid BO running</span>
-    <span>V8–V14: Helius <code>getTransactionsForAddress</code> (paid) · V15/Hybrid: standard Solana RPC (free) · sol_balance_router.mjs auto-detects tier, classifies wallet, routes to BO-optimal config · Mainnet</span>
+    <span><strong>sol_balance_router.mjs</strong> — <a href="https://github.com/[your-username]/solana-balance-router/blob/main/sol_balance_router.mjs">github.com/[your-username]/solana-balance-router</a></span>
+    <span>Developer plan · undici HTTP/1.1 · dynamic bands · recursive bisect · v0 fix · 2026-04-13</span>
   </footer>
 
-</div><!-- /page -->
-
+</div>
 <script>
-// ── Chart.js setup ──────────────────────────────────────────────
-const chartDefaults = {
-  responsive: true,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      backgroundColor: '#21262d',
-      titleColor: '#e6edf3',
-      bodyColor: '#8b949e',
-      borderColor: '#30363d',
-      borderWidth: 1,
-    }
-  },
-  scales: {
-    x: {
-      grid:   { color: 'rgba(48,54,61,0.6)' },
-      ticks:  { color: '#8b949e', font: { size: 11 } },
-      title:  { display: true, text: 'Trial', color: '#8b949e', font: { size: 11 } }
-    },
-    y: {
-      min: 0, max: 1,
-      grid:   { color: 'rgba(48,54,61,0.6)' },
-      ticks:  { color: '#8b949e', font: { size: 11 } },
-      title:  { display: true, text: 'Score', color: '#8b949e', font: { size: 11 } }
-    }
-  }
-};
-
-// V3 BO data
-const v3Raw = [
-  {trial:1,score:0.452},{trial:2,score:0.3838},{trial:3,score:0.2033},{trial:4,score:0.2713},
-  {trial:5,score:0.5547},{trial:6,score:0.4943},{trial:7,score:0.4536},{trial:8,score:0.4933},
-  {trial:9,score:0.4787},{trial:10,score:0.5},{trial:11,score:0.284},{trial:12,score:0.3381},
-  {trial:13,score:0.4641},{trial:14,score:0.3723},{trial:15,score:0.3976},{trial:16,score:0.525},
-  {trial:17,score:0.6907},{trial:18,score:0.753},{trial:19,score:0.879},{trial:20,score:0.3863},
-  {trial:21,score:0.5851},{trial:22,score:0.6507},{trial:23,score:0.6965},{trial:24,score:0.3242},
-  {trial:25,score:0.379},{trial:26,score:0.4489},{trial:27,score:0.6291},{trial:28,score:0.7829},
-  {trial:29,score:0.7078},{trial:30,score:0.4734},{trial:31,score:0.5915},{trial:32,score:0.6051},
-  {trial:33,score:0.8036},{trial:34,score:0.5491},{trial:35,score:0.6726}
-];
-
-// V4 BO data
-const v4Raw = [
-  {trial:1,score:0.4161},{trial:2,score:0.3067},{trial:3,score:0.2047},{trial:4,score:0.2197},
-  {trial:5,score:0.3067},{trial:6,score:0.3224},{trial:7,score:0.4387},{trial:8,score:0.5598},
-  {trial:9,score:0.4126},{trial:10,score:0.3655},{trial:11,score:0.4353},{trial:12,score:0.4661},
-  {trial:13,score:0.4834},{trial:14,score:0.4047},{trial:15,score:0.7315},{trial:16,score:0.5364},
-  {trial:17,score:0.5556},{trial:18,score:0.4566},{trial:19,score:0.5019},{trial:20,score:0.686},
-  {trial:21,score:0.3829},{trial:22,score:0.5228},{trial:23,score:0.5451},{trial:24,score:0.5556},
-  {trial:25,score:0.6521},{trial:26,score:0.6925},{trial:27,score:0.789},{trial:28,score:0.6541},
-  {trial:29,score:0.7508},{trial:30,score:0.5954},{trial:31,score:0.4899},{trial:32,score:0.5755},
-  {trial:33,score:0.6919},{trial:34,score:0.663},{trial:35,score:0.4858},
-  {trial:36,score:0.3602},{trial:37,score:0.5612},{trial:38,score:0.3826},
-  {trial:39,score:0.4667},{trial:40,score:0.3348}
-];
-
-function runningMax(data) {
-  let best = 0;
-  return data.map(d => { best = Math.max(best, d.score); return best; });
-}
-
-function makeChart(id, raw, color) {
-  const labels  = raw.map(d => d.trial);
-  const scores  = raw.map(d => d.score);
-  const bestSoFar = runningMax(raw);
-  new Chart(document.getElementById(id), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'Trial score',
-          data: scores,
-          borderColor: color,
-          backgroundColor: color + '18',
-          borderWidth: 1.5,
-          pointRadius: 3,
-          pointHoverRadius: 5,
-          tension: 0,
-          fill: false,
-        },
-        {
-          label: 'Best so far',
-          data: bestSoFar,
-          borderColor: '#3fb950',
-          borderWidth: 2,
-          borderDash: [4, 3],
-          pointRadius: 0,
-          tension: 0,
-          fill: false,
-        }
-      ]
-    },
-    options: {
-      ...chartDefaults,
-      plugins: {
-        ...chartDefaults.plugins,
-        legend: {
-          display: true,
-          labels: { color: '#8b949e', font: { size: 11 }, boxWidth: 16 }
-        }
-      }
-    }
-  });
-}
-
-makeChart('chartV3', v3Raw, '#58a6ff');
-makeChart('chartV4', v4Raw, '#3fb950');
-
-// V14 BO data (60 trials, phantom-token fix)
-const v14Raw = [
-  {trial:1,score:0.0179},{trial:2,score:0.025},{trial:3,score:0.0336},{trial:4,score:0.0221},
-  {trial:5,score:0.023},{trial:6,score:0.0294},{trial:7,score:0.0279},{trial:8,score:0.02},
-  {trial:9,score:0.4299},  // window=62, c=16 — first gate=some<3s
-  {trial:10,score:0.4231},{trial:11,score:0.456},{trial:12,score:0.3952},{trial:13,score:0.4647},
-  {trial:14,score:0.4382},{trial:15,score:0.4675},{trial:16,score:0.4496},{trial:17,score:0.4875},
-  {trial:18,score:0.0279},{trial:19,score:0.0201},{trial:20,score:0.0267},{trial:21,score:0.0231},
-  {trial:22,score:0.0322},{trial:23,score:0.0295},{trial:24,score:0.3821},{trial:25,score:0.0195},
-  {trial:26,score:0.0317},{trial:27,score:0.391},{trial:28,score:0.4236},{trial:29,score:0.4025},
-  {trial:30,score:0.0257},{trial:31,score:0.0263},{trial:32,score:0.0335},{trial:33,score:0.0248},
-  {trial:34,score:0.0293},{trial:35,score:0.4383},{trial:36,score:0.4598},{trial:37,score:0.4142},
-  {trial:38,score:0.4475},{trial:39,score:0.5204},  // window=60, c=21 — best so far
-  {trial:40,score:0.0258},{trial:41,score:0.0278},{trial:42,score:0.0279},{trial:43,score:0.0312},
-  {trial:44,score:0.0216},{trial:45,score:0.4674},{trial:46,score:0.0241},{trial:47,score:0.4185},
-  {trial:48,score:0.4351},{trial:49,score:0.0313},{trial:50,score:0.03},{trial:51,score:0.0286},
-  {trial:52,score:0.0291},{trial:53,score:0.0299},{trial:54,score:0.0181},{trial:55,score:0.0245},
-  {trial:56,score:0.0261},{trial:57,score:0.0272},{trial:58,score:0.0159},{trial:59,score:0.0282},
-  {trial:60,score:0.521},  // window=62, c=13 — BEST: 0.521, dense=2120ms
-];
-makeChart('chartV14', v14Raw, '#bc8cff');
-
-// V14 dense wallet comparison bar chart
-new Chart(document.getElementById('chartV14Dense'), {
-  type: 'bar',
-  data: {
-    labels: ['V13\n(phantom bug)', 'V14\n(phantom fix)', 'V14 gate=1.0\ntarget'],
-    datasets: [
-      {
-        label: 'Dense wallet latency',
-        data: [2951, 2120, 2000],
-        backgroundColor: ['#f8514988', '#bc8cff88', '#3fb95044'],
-        borderColor: ['#f85149', '#bc8cff', '#3fb950'],
-        borderWidth: 2,
-      },
-      {
-        label: 'Dense wallet calls',
-        data: [14, 10, null],
-        backgroundColor: ['#f8514944', '#bc8cff44', null],
-        borderColor: ['#f85149', '#bc8cff', 'transparent'],
-        borderWidth: 1,
-        yAxisID: 'y2',
-      }
-    ]
-  },
-  options: {
-    ...chartDefaults,
-    plugins: {
-      ...chartDefaults.plugins,
-      legend: { display: true, labels: { color: '#8b949e', font: { size: 11 }, boxWidth: 16 } }
-    },
-    scales: {
-      x: { ...chartDefaults.scales.x, title: { display: false } },
-      y: {
-        min: 0, max: 3500,
-        grid: { color: 'rgba(48,54,61,0.6)' },
-        ticks: { color: '#8b949e', font: { size: 11 }, callback: v => v + 'ms' },
-        title: { display: true, text: 'Dense wallet latency (ms)', color: '#8b949e', font: { size: 11 } }
-      },
-      y2: {
-        position: 'right', min: 0, max: 20,
-        grid: { drawOnChartArea: false },
-        ticks: { color: '#8b949e', font: { size: 11 }, callback: v => v + ' calls' },
-        title: { display: true, text: 'RPC calls', color: '#8b949e', font: { size: 11 } }
-      }
-    }
-  }
-});
-
-// ── V15 free-tier BO (live — first 9 random trials) ───────────
-const v15Raw = [
-  {trial:1,score:0.0054},{trial:2,score:0.0051},{trial:3,score:0.0059},
-  {trial:4,score:0.0046},{trial:5,score:0.0052},{trial:6,score:0.0059},
-  {trial:7,score:0.0087},  // txTarget=31, c=12, skip=false — BEST: 2/3 completeness via skip=false trick
-  {trial:8,score:0.0049},{trial:9,score:0.0046},{trial:10,score:0.0042},
-  {trial:11,score:0.0053},{trial:12,score:0.0052},{trial:13,score:0.0042},
-  {trial:14,score:0.0028},
-  // GP exploiting txTarget=30–37, c=12, skip=false. Rate-limit variance prevents consistent improvement.
-  // All 14 trials gate=0.05 (>3s max). Best = 0.0087 (14 trials in, 36 remaining).
-];
-makeChart('chartV15', v15Raw, '#ffa657');
-
-// V15 wall time bar chart (trial 3: best config so far)
-new Chart(document.getElementById('chartV15Wall'), {
-  type: 'bar',
-  data: {
-    labels: ['Sparse (4 txns)', 'Medium (~60 txns)', 'Dense (~451 txns)'],
-    datasets: [{
-      label: 'txTarget=20, c=5 (trial 3)',
-      data: [1243, 2954, 4246],
-      backgroundColor: ['#3fb950aa', '#d29922aa', '#f85149aa'],
-      borderColor: ['#3fb950', '#d29922', '#f85149'],
-      borderWidth: 1.5,
-    }]
-  },
-  options: {
-    ...chartDefaults,
-    plugins: {
-      ...chartDefaults.plugins,
-      legend: { display: true, labels: { color: '#8b949e', font: { size: 11 }, boxWidth: 16 } }
-    },
-    scales: {
-      x: { ...chartDefaults.scales.x, title: { display: true, text: 'Wallet', color: '#8b949e', font: { size: 11 } } },
-      y: {
-        min: 0, max: 5000,
-        grid: { color: 'rgba(48,54,61,0.6)' },
-        ticks: { color: '#8b949e', font: { size: 11 }, callback: v => v + 'ms' },
-        title: { display: true, text: 'Wall time (ms) — gate 2s=green, 3s=yellow', color: '#8b949e', font: { size: 11 } }
-      }
-    }
-  }
-});
-
-// ── Smooth scroll for nav ───────────────────────────────────────
+// Smooth scroll nav
 document.querySelectorAll('.tab-nav a').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
@@ -2033,3 +587,4 @@ document.querySelectorAll('.tab-nav a').forEach(a => {
 </script>
 </body>
 </html>
+<!-- ── END ───────────────────────────────────────────────────────── -->
