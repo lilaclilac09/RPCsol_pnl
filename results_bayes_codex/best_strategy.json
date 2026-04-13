@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-codex",
+    "trial": 17,
+    "score": 0.3544329569739298,
+    "avgMs": 2821.4080556666595
+  },
+  "windowTarget": 44,
+  "maxConcurrency": 31
+}

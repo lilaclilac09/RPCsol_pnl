@@ -1,0 +1,4 @@
+rank,method,meanScore,stdScore,p50Score,meanAvgMs,p90AvgMs,meanRpc,meanCompleteness,anchorSize,windowSize,maxConcurrency,useContinuityOracle,skipZeroDelta
+1,Simulated Annealing,0.4613,0.0589,0.4712,2205.7,2345.7,18,1,80,70,6,true,false
+2,Differential Evolution,0.4009,0.0427,0.3956,2522.7,2753.9,24,1,54,45,10,true,false
+3,TPE-style,0.3493,0.0572,0.3581,2942.6,3433.9,18,1,66,72,16,true,false

@@ -1,0 +1,1179 @@
+[
+  {
+    "trial": 1,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.8878512826178391,
+      0.4839429015974077
+    ],
+    "strategy": {
+      "windowTarget": 89,
+      "maxConcurrency": 18
+    },
+    "score": 0.27891333382625316,
+    "aggregate": {
+      "avgLatencyMs": 3585.343111,
+      "totalRpc": 116,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.27891333382625316
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1904.777125,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1956.475041,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 6894.777167,
+        "rpcCalls": 112,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 2,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.7519476827410387,
+      0.009337154216585875
+    ],
+    "strategy": {
+      "windowTarget": 81,
+      "maxConcurrency": 4
+    },
+    "score": 0.11327000257796599,
+    "aggregate": {
+      "avgLatencyMs": 8828.462763666666,
+      "totalRpc": 125,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.11327000257796599
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 349.2855410000011,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 4425.8825,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 21710.22025,
+        "rpcCalls": 121,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 3,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.7046911076077729,
+      0.587117806208489
+    ],
+    "strategy": {
+      "windowTarget": 79,
+      "maxConcurrency": 20
+    },
+    "score": 0.10432786076082202,
+    "aggregate": {
+      "avgLatencyMs": 9585.167305333336,
+      "totalRpc": 130,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.10432786076082202
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 791.104041000006,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 4635.323292000001,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 23329.074583,
+        "rpcCalls": 126,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 4,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.6267147671233644,
+      0.49231246495958825
+    ],
+    "strategy": {
+      "windowTarget": 74,
+      "maxConcurrency": 18
+    },
+    "score": 0.14905826139688652,
+    "aggregate": {
+      "avgLatencyMs": 6708.786152666663,
+      "totalRpc": 137,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.14905826139688652
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1496.297624999992,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1874.2243749999907,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 16755.836458000005,
+        "rpcCalls": 133,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 5,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.35119706744481305,
+      0.2587634799392382
+    ],
+    "strategy": {
+      "windowTarget": 59,
+      "maxConcurrency": 11
+    },
+    "score": 0.2040260511822321,
+    "aggregate": {
+      "avgLatencyMs": 4901.334874666664,
+      "totalRpc": 165,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2040260511822321
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 2106.127833000006,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1090.5315409999894,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 11507.345249999998,
+        "rpcCalls": 161,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 6,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.9809667130146351,
+      0.46845329579547434
+    ],
+    "strategy": {
+      "windowTarget": 94,
+      "maxConcurrency": 17
+    },
+    "score": 0.1477378582360323,
+    "aggregate": {
+      "avgLatencyMs": 6768.745749666666,
+      "totalRpc": 112,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.1477378582360323
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 597.9022499999992,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 4197.878082999989,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 15510.45691600001,
+        "rpcCalls": 108,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 7,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.006965656410730103,
+      0.04234663150142848
+    ],
+    "strategy": {
+      "windowTarget": 40,
+      "maxConcurrency": 5
+    },
+    "score": 0.09051604281932267,
+    "aggregate": {
+      "avgLatencyMs": 11047.76533366666,
+      "totalRpc": 233,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.09051604281932267
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 387.6062499999971,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1897.9925839999923,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 30857.69716699999,
+        "rpcCalls": 229,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 8,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.7252247768763598,
+      0.3270232874793839
+    ],
+    "strategy": {
+      "windowTarget": 80,
+      "maxConcurrency": 13
+    },
+    "score": 0.11789490261971254,
+    "aggregate": {
+      "avgLatencyMs": 8482.130929999985,
+      "totalRpc": 127,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.11789490261971254
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 462.2414159999753,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 3338.426582999993,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 21645.724790999986,
+        "rpcCalls": 123,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 9,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.9986726525844101,
+      0.5793000813572524
+    ],
+    "strategy": {
+      "windowTarget": 95,
+      "maxConcurrency": 20
+    },
+    "score": 0.13905424756495147,
+    "aggregate": {
+      "avgLatencyMs": 7191.438000000005,
+      "totalRpc": 108,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.13905424756495147
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1273.3187920000055,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 3256.0328750000044,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 17044.962333000003,
+        "rpcCalls": 104,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 10,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.06584802303614934,
+      0.5025945898094963
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 18
+    },
+    "score": 0.2026545745279624,
+    "aggregate": {
+      "avgLatencyMs": 4934.504944333341,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2026545745279624
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 996.5462920000136,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 2099.2278330000117,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 11707.740707999998,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 11,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.12954107164985973,
+      0.3793499856951037
+    ],
+    "strategy": {
+      "windowTarget": 47,
+      "maxConcurrency": 15
+    },
+    "score": 0.24139735271593168,
+    "aggregate": {
+      "avgLatencyMs": 4142.547499999996,
+      "totalRpc": 200,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.24139735271593168
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 360.2171249999956,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1706.0734999999986,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 10361.351874999993,
+        "rpcCalls": 196,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 12,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.06061409442521337,
+      0.41360766381739644
+    ],
+    "strategy": {
+      "windowTarget": 43,
+      "maxConcurrency": 16
+    },
+    "score": 0.20514594529390243,
+    "aggregate": {
+      "avgLatencyMs": 4874.578430333339,
+      "totalRpc": 220,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.20514594529390243
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 358.23754200001713,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1286.744915999996,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 12978.752833000006,
+        "rpcCalls": 216,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 13,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.13204551726955627,
+      0.4125752884430569
+    ],
+    "strategy": {
+      "windowTarget": 47,
+      "maxConcurrency": 16
+    },
+    "score": 0.10280388428037743,
+    "aggregate": {
+      "avgLatencyMs": 9727.258916333318,
+      "totalRpc": 200,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.10280388428037743
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1342.3085829999764,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 8996.702290999994,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 18842.765874999983,
+        "rpcCalls": 196,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 14,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.03901424452082858,
+      0.4058535403522838
+    ],
+    "strategy": {
+      "windowTarget": 42,
+      "maxConcurrency": 15
+    },
+    "score": 0.0016410858040728006,
+    "aggregate": {
+      "avgLatencyMs": 40623.51066666667,
+      "totalRpc": 64,
+      "openGapPenalty": 99,
+      "completeness": 0.6666666666666666,
+      "score": 0.0016410858040728006
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1020.1379580000066,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 850.3940419999999,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 120000,
+        "rpcCalls": 60,
+        "sampleCount": 0,
+        "openGaps": 99,
+        "complete": false,
+        "error": "HTTP 502: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <!"
+      }
+    ]
+  },
+  {
+    "trial": 15,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.007474437930061528,
+      0.9717017539872368
+    ],
+    "strategy": {
+      "windowTarget": 40,
+      "maxConcurrency": 31
+    },
+    "score": 0.32956139032794407,
+    "aggregate": {
+      "avgLatencyMs": 3034.336027666674,
+      "totalRpc": 233,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.32956139032794407
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 794.2484159999876,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 656.8001670000376,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 7651.959499999997,
+        "rpcCalls": 229,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 16,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.07378937936658181,
+      0.9449975412951523
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 30
+    },
+    "score": 0.34796469624238713,
+    "aggregate": {
+      "avgLatencyMs": 2873.8547640000083,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.34796469624238713
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 342.71454200003063,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 878.233917000005,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 7400.615832999989,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 17,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.06688774309247125,
+      0.9591033073031019
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 31
+    },
+    "score": 0.3544329569739298,
+    "aggregate": {
+      "avgLatencyMs": 2821.4080556666595,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3544329569739298
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 339.51612499996554,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 925.0005419999943,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 7199.707500000019,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 18,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.19317812898629017,
+      0.9847126196856653
+    ],
+    "strategy": {
+      "windowTarget": 51,
+      "maxConcurrency": 32
+    },
+    "score": 0.282474666701825,
+    "aggregate": {
+      "avgLatencyMs": 3540.140472333335,
+      "totalRpc": 187,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.282474666701825
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 613.525250000006,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 838.2934999999707,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9168.602667000028,
+        "rpcCalls": 183,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 19,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.008237984727698766,
+      0.9775583985859984
+    ],
+    "strategy": {
+      "windowTarget": 40,
+      "maxConcurrency": 31
+    },
+    "score": 0.2544272560091145,
+    "aggregate": {
+      "avgLatencyMs": 3930.3965136666666,
+      "totalRpc": 233,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2544272560091145
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1576.3337499999907,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1026.4675830000197,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9188.38820799999,
+        "rpcCalls": 229,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 20,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.08139298718816534,
+      0.9962888557868463
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 32
+    },
+    "score": 0.26223288929051064,
+    "aggregate": {
+      "avgLatencyMs": 3813.4041946666935,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.26223288929051064
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 365.7373750000261,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1808.457584000018,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9266.017625000037,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 21,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.0704514031692356,
+      0.9347167551252253
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 30
+    },
+    "score": 0.23330059834312894,
+    "aggregate": {
+      "avgLatencyMs": 4286.315624999988,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.23330059834312894
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 659.6771670000162,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 940.4084579999908,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 11258.861249999958,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 22,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.0772822646913569,
+      0.9935683896121987
+    ],
+    "strategy": {
+      "windowTarget": 44,
+      "maxConcurrency": 32
+    },
+    "score": 0.2610945028767273,
+    "aggregate": {
+      "avgLatencyMs": 3830.0308470000164,
+      "totalRpc": 214,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2610945028767273
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 597.9246249999851,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1609.8974160000216,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9282.270500000042,
+        "rpcCalls": 210,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 23,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.02459017728888857,
+      0.9817532293044455
+    ],
+    "strategy": {
+      "windowTarget": 41,
+      "maxConcurrency": 31
+    },
+    "score": 0.2255023897214732,
+    "aggregate": {
+      "avgLatencyMs": 4434.542805666667,
+      "totalRpc": 227,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2255023897214732
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 338.4959169999929,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1041.1310829999857,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 11924.001417000021,
+        "rpcCalls": 223,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 24,
+    "method": "bayesian-gp-ucb-codex",
+    "x": [
+      0.13773994174306714,
+      0.8859942052387122
+    ],
+    "strategy": {
+      "windowTarget": 48,
+      "maxConcurrency": 29
+    },
+    "score": 0.24807693175055023,
+    "aggregate": {
+      "avgLatencyMs": 4031.0076110000177,
+      "totalRpc": 199,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.24807693175055023
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 340.5252919999766,
+        "rpcCalls": 2,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1073.44650000002,
+        "rpcCalls": 2,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 10679.051041000057,
+        "rpcCalls": 195,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  }
+]

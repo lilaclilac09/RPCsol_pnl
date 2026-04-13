@@ -1,0 +1,626 @@
+[
+  {
+    "idx": 1,
+    "phase": "explore",
+    "x": [
+      0.6111724138277994,
+      0.8275208799699065,
+      0.36884809367132343,
+      0.12471408506412196
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 86,
+      "anchorSize": 65,
+      "windowTarget": 86,
+      "maxConcurrency": 14,
+      "skipZeroDelta": false
+    },
+    "score": 0.6822716406389466,
+    "aggregate": {
+      "avgLatencyMs": 1465.6918746666668,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6822716406389466
+    }
+  },
+  {
+    "idx": 2,
+    "phase": "explore",
+    "x": [
+      0.34599341129559447,
+      0.8193646179270755,
+      0.14708383984892381,
+      0.1894648991985246
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 86,
+      "anchorSize": 41,
+      "windowTarget": 86,
+      "maxConcurrency": 8,
+      "skipZeroDelta": false
+    },
+    "score": 0.3523635265458916,
+    "aggregate": {
+      "avgLatencyMs": 2837.9781806666665,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3523635265458916
+    }
+  },
+  {
+    "idx": 3,
+    "phase": "explore",
+    "x": [
+      0.11182690110438176,
+      0.6142763725389735,
+      0.698988580641851,
+      0.44181935427121943
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 69,
+      "anchorSize": 20,
+      "windowTarget": 69,
+      "maxConcurrency": 24,
+      "skipZeroDelta": false
+    },
+    "score": 0.30720683946825833,
+    "aggregate": {
+      "avgLatencyMs": 3255.1358613333327,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.30720683946825833
+    }
+  },
+  {
+    "idx": 4,
+    "phase": "explore",
+    "x": [
+      0.9069558585867652,
+      0.2748263922660068,
+      0.5834962404716371,
+      0.43363913717910685
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 42,
+      "anchorSize": 92,
+      "windowTarget": 42,
+      "maxConcurrency": 20,
+      "skipZeroDelta": false
+    },
+    "score": 0.33080750318281604,
+    "aggregate": {
+      "avgLatencyMs": 3022.9060416666675,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.33080750318281604
+    }
+  },
+  {
+    "idx": 5,
+    "phase": "explore",
+    "x": [
+      0.2298673096703654,
+      0.01614896299736812,
+      0.1621896137942147,
+      0.8610297375334119
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 21,
+      "anchorSize": 31,
+      "windowTarget": 21,
+      "maxConcurrency": 9,
+      "skipZeroDelta": true
+    },
+    "score": 0.20879599345694408,
+    "aggregate": {
+      "avgLatencyMs": 4789.363931,
+      "totalRpc": 52,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.20879599345694408
+    }
+  },
+  {
+    "idx": 6,
+    "phase": "explore",
+    "x": [
+      0.3349786550541032,
+      0.8369170874014944,
+      0.7008028258106436,
+      0.17659894007788735
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 87,
+      "anchorSize": 40,
+      "windowTarget": 87,
+      "maxConcurrency": 24,
+      "skipZeroDelta": false
+    },
+    "score": 0.37085857399981487,
+    "aggregate": {
+      "avgLatencyMs": 2696.4456806666662,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.37085857399981487
+    }
+  },
+  {
+    "idx": 7,
+    "phase": "explore",
+    "x": [
+      0.15525075510330044,
+      0.6935410178284076,
+      0.6308881303790297,
+      0.4366268514655458
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 75,
+      "anchorSize": 24,
+      "windowTarget": 75,
+      "maxConcurrency": 22,
+      "skipZeroDelta": false
+    },
+    "score": 0.3948900698442063,
+    "aggregate": {
+      "avgLatencyMs": 2532.3503333333356,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3948900698442063
+    }
+  },
+  {
+    "idx": 8,
+    "phase": "explore",
+    "x": [
+      0.16422222754991633,
+      0.4703076172928009,
+      0.7735422348679868,
+      0.020550338148262348
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 58,
+      "anchorSize": 25,
+      "windowTarget": 58,
+      "maxConcurrency": 26,
+      "skipZeroDelta": false
+    },
+    "score": 0.2593844333000954,
+    "aggregate": {
+      "avgLatencyMs": 3855.2814726666643,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2593844333000954
+    }
+  },
+  {
+    "idx": 9,
+    "phase": "explore",
+    "x": [
+      0.36795206249813894,
+      0.5141252097333386,
+      0.4541443185536107,
+      0.02407228293051089
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 61,
+      "anchorSize": 43,
+      "windowTarget": 61,
+      "maxConcurrency": 17,
+      "skipZeroDelta": false
+    },
+    "score": 0.2577485561091493,
+    "aggregate": {
+      "avgLatencyMs": 3879.750152999996,
+      "totalRpc": 22,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.2577485561091493
+    }
+  },
+  {
+    "idx": 10,
+    "phase": "explore",
+    "x": [
+      0.25553753366970877,
+      0.8130548705358869,
+      0.6457373146003511,
+      0.18483750253460163
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 85,
+      "anchorSize": 33,
+      "windowTarget": 85,
+      "maxConcurrency": 22,
+      "skipZeroDelta": false
+    },
+    "score": 0.33033421824834613,
+    "aggregate": {
+      "avgLatencyMs": 3027.237097333336,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.33033421824834613
+    }
+  },
+  {
+    "idx": 11,
+    "phase": "explore",
+    "x": [
+      0.23190804629233752,
+      0.8676733719476906,
+      0.9356159021944026,
+      0.03523209347566336
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 89,
+      "anchorSize": 31,
+      "windowTarget": 89,
+      "maxConcurrency": 30,
+      "skipZeroDelta": false
+    },
+    "score": 0.3851183178847097,
+    "aggregate": {
+      "avgLatencyMs": 2596.6046109999975,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3851183178847097
+    }
+  },
+  {
+    "idx": 12,
+    "phase": "explore",
+    "x": [
+      0.5856415570826226,
+      0.8900857564085827,
+      0.5698510295802133,
+      0.4358924765473815
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 91,
+      "anchorSize": 63,
+      "windowTarget": 91,
+      "maxConcurrency": 20,
+      "skipZeroDelta": false
+    },
+    "score": 0.305380511974852,
+    "aggregate": {
+      "avgLatencyMs": 3274.6031943333364,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.305380511974852
+    }
+  },
+  {
+    "idx": 13,
+    "phase": "explore",
+    "x": [
+      0.030972000958848334,
+      0.8783031146216222,
+      0.138517471147088,
+      0.5723584076257415
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 90,
+      "anchorSize": 13,
+      "windowTarget": 90,
+      "maxConcurrency": 8,
+      "skipZeroDelta": true
+    },
+    "score": 0.44192103441929614,
+    "aggregate": {
+      "avgLatencyMs": 2262.8477083333323,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44192103441929614
+    }
+  },
+  {
+    "idx": 14,
+    "phase": "explore",
+    "x": [
+      0.3859951287217762,
+      0.44030684273647713,
+      0.8364414890646543,
+      0.7978492279826179
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 55,
+      "anchorSize": 45,
+      "windowTarget": 55,
+      "maxConcurrency": 27,
+      "skipZeroDelta": true
+    },
+    "score": 0.4103877296156896,
+    "aggregate": {
+      "avgLatencyMs": 2436.720028000001,
+      "totalRpc": 24,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4103877296156896
+    }
+  },
+  {
+    "idx": 15,
+    "phase": "guided",
+    "x": [
+      0.8564041053541864,
+      0.6553848832356948,
+      0.3076689477190593,
+      0.06563341328186367
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 72,
+      "anchorSize": 87,
+      "windowTarget": 72,
+      "maxConcurrency": 13,
+      "skipZeroDelta": false
+    },
+    "score": 0.5050695089284919,
+    "aggregate": {
+      "avgLatencyMs": 1979.9255000000023,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5050695089284919
+    }
+  },
+  {
+    "idx": 16,
+    "phase": "guided",
+    "x": [
+      0.8720958934850613,
+      0.936984110945267,
+      0.08662726296951284,
+      0.09523592962450511
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 95,
+      "anchorSize": 88,
+      "windowTarget": 95,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.44807948093576794,
+    "aggregate": {
+      "avgLatencyMs": 2231.7469166666656,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.44807948093576794
+    }
+  },
+  {
+    "idx": 17,
+    "phase": "guided",
+    "x": [
+      0.6369432739583523,
+      0.9290508159004216,
+      0.4736316464390875,
+      0.04133315314026498
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 94,
+      "anchorSize": 67,
+      "windowTarget": 94,
+      "maxConcurrency": 17,
+      "skipZeroDelta": false
+    },
+    "score": 0.5290136236381217,
+    "aggregate": {
+      "avgLatencyMs": 1890.3104860000021,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5290136236381217
+    }
+  },
+  {
+    "idx": 18,
+    "phase": "guided",
+    "x": [
+      0.11219957966672989,
+      0.7663280520185982,
+      0.19184743312424124,
+      0.9329055677524578
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 81,
+      "anchorSize": 20,
+      "windowTarget": 81,
+      "maxConcurrency": 9,
+      "skipZeroDelta": true
+    },
+    "score": 0.40008029168698767,
+    "aggregate": {
+      "avgLatencyMs": 2499.4982776666584,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.40008029168698767
+    }
+  },
+  {
+    "idx": 19,
+    "phase": "guided",
+    "x": [
+      0.6169675653367517,
+      0.9705277063570039,
+      0.3003331615610012,
+      0.27410053589309125
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 98,
+      "anchorSize": 66,
+      "windowTarget": 98,
+      "maxConcurrency": 12,
+      "skipZeroDelta": false
+    },
+    "score": 0.5336865231843925,
+    "aggregate": {
+      "avgLatencyMs": 1873.7591386666754,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5336865231843925
+    }
+  },
+  {
+    "idx": 20,
+    "phase": "guided",
+    "x": [
+      0.6593833952299888,
+      0.8078170630803421,
+      0.17159072213176296,
+      0.22970949110101113
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 85,
+      "anchorSize": 69,
+      "windowTarget": 85,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
+    },
+    "score": 0.3208008958443726,
+    "aggregate": {
+      "avgLatencyMs": 3117.1982776666605,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3208008958443726
+    }
+  },
+  {
+    "idx": 21,
+    "phase": "guided",
+    "x": [
+      0.7914121275230472,
+      0.9556294527244236,
+      0.42046670132269526,
+      0.0038779526839767264
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 96,
+      "anchorSize": 81,
+      "windowTarget": 96,
+      "maxConcurrency": 16,
+      "skipZeroDelta": false
+    },
+    "score": 0.4499646214866386,
+    "aggregate": {
+      "avgLatencyMs": 2222.3969446666692,
+      "totalRpc": 14,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4499646214866386
+    }
+  },
+  {
+    "idx": 22,
+    "phase": "guided",
+    "x": [
+      0.6010574066068652,
+      0.8998435226513661,
+      0.3260332555293348,
+      0.051477994782974656
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 92,
+      "anchorSize": 64,
+      "windowTarget": 92,
+      "maxConcurrency": 13,
+      "skipZeroDelta": false
+    },
+    "score": 0.46026031566786335,
+    "aggregate": {
+      "avgLatencyMs": 2172.6835139999944,
+      "totalRpc": 16,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46026031566786335
+    }
+  },
+  {
+    "idx": 23,
+    "phase": "guided",
+    "x": [
+      0.2115228387800936,
+      0.3041946854855788,
+      0.9609032338559256,
+      0.9742843216674562
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 44,
+      "anchorSize": 29,
+      "windowTarget": 44,
+      "maxConcurrency": 31,
+      "skipZeroDelta": true
+    },
+    "score": 0.17694662279049098,
+    "aggregate": {
+      "avgLatencyMs": 5651.421791666653,
+      "totalRpc": 28,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.17694662279049098
+    }
+  },
+  {
+    "idx": 24,
+    "phase": "guided",
+    "x": [
+      0.7557635127987066,
+      0.4861761541873548,
+      0.7849623514278619,
+      0.08114428830007725
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "windowSize": 59,
+      "anchorSize": 78,
+      "windowTarget": 59,
+      "maxConcurrency": 26,
+      "skipZeroDelta": false
+    },
+    "score": 0.48188456696333565,
+    "aggregate": {
+      "avgLatencyMs": 2075.185777999994,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.48188456696333565
+    }
+  }
+]
