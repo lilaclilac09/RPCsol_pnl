@@ -279,24 +279,24 @@
        using the Helius <code>getTransactionsForAddress</code> API.</p>
     <div class="hero-meta">
       <div class="hero-stat">
-        <span class="value">0.879</span>
-        <span class="label">Peak score (V3 BO trial 19)</span>
+        <span class="value" style="color:var(--gold)">0.744</span>
+        <span class="label">V12 Score-Max — best score (+81.8% vs V3)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--accent)">0.789</span>
-        <span class="label">Best stable score (V4)</span>
+        <span class="value" style="color:var(--teal)">1344 ms</span>
+        <span class="label">V12 Score-Max avg latency</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--teal)">0.690</span>
-        <span class="label">V10 score (+68.6% vs V3, same key)</span>
+        <span class="value" style="color:var(--accent)">0.573</span>
+        <span class="label">Best stable mean score (6-repeat unified run)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">9</span>
-        <span class="label">Algorithms (V8 streaming + V9 cache)</span>
+        <span class="value" style="color:var(--purple)">12</span>
+        <span class="label">Total versions benchmarked</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--orange)">7</span>
-        <span class="label">Search methods compared</span>
+        <span class="value" style="color:var(--orange)">314 ms</span>
+        <span class="label">V12 sparse wallet (fast-exit, 1 RT)</span>
       </div>
     </div>
   </header>
@@ -331,124 +331,151 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="background:rgba(57,211,83,0.12)">
-            <td class="rank" style="color:var(--teal)">*</td>
-            <td class="algo-name">V11 — Hybrid + Ultra Low<span class="algo-badge" style="background:var(--teal);color:var(--bg)">New</span></td>
-            <td>Bayesian GP-UCB</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.663†</span><div class="bar-bg"><div class="bar-fill" style="width:75%;background:var(--teal)"></div></div></div></td>
-            <td class="ms-val" style="color:var(--teal)">1509 ms†</td>
+          <!-- ── New-key results (different API key, higher baseline latency) ── -->
+          <tr>
+            <td colspan="7" style="background:rgba(240,192,64,0.06);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(240,192,64,0.3)">
+              SAME NEW KEY — Bayesian GP-UCB optimised (higher base latency than historical results)
+            </td>
+          </tr>
+          <tr style="background:rgba(240,192,64,0.10)">
+            <td class="rank" style="color:var(--gold)">*</td>
+            <td class="algo-name">V12 — Score-Max<span class="algo-badge" style="background:var(--gold);color:var(--bg)">New</span></td>
+            <td>Bayesian GP-UCB (50 trials, 4D)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--gold)">0.744†</span><div class="bar-bg"><div class="bar-fill" style="width:84%;background:var(--gold)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--gold)">1344 ms†</td>
             <td>~22 calls</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">anchor=100</span><span class="chip" style="border-color:var(--teal)">window=71</span><span class="chip" style="border-color:var(--teal)">c=17</span><span class="chip" style="border-color:var(--teal)">skip=on</span></div></td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--gold)">window=105</span><span class="chip" style="border-color:var(--gold)">c=23</span><span class="chip" style="border-color:var(--gold)">skip=off</span></div></td>
+          </tr>
+          <tr style="background:rgba(240,192,64,0.05)">
+            <td class="rank" style="color:var(--gold)">*</td>
+            <td class="algo-name">V12 — Latency-Min<span class="algo-badge" style="background:rgba(240,192,64,0.4);color:var(--bg)">New</span></td>
+            <td>Bayesian GP-UCB bottleneck (50 trials)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--muted)">0.532†</span><div class="bar-bg"><div class="bar-fill" style="width:60%;background:var(--yellow)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--gold)">1881 ms† (max 3673)</td>
+            <td>~18 calls</td>
+            <td><div class="config-chips"><span class="chip">window=63</span><span class="chip">c=22</span><span class="chip">skip=off</span><span class="chip" style="border-color:var(--gold)">obj=maxMs</span></div></td>
           </tr>
           <tr style="background:rgba(57,211,83,0.06)">
-            <td class="rank" style="color:var(--muted)">*</td>
+            <td class="rank" style="color:var(--teal)">*</td>
             <td class="algo-name">V10 — Ultra Low Latency</td>
-            <td>Bayesian GP-UCB</td>
+            <td>Bayesian GP-UCB (40 trials, 3D)</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.690†</span><div class="bar-bg"><div class="bar-fill" style="width:78%;background:var(--teal)"></div></div></div></td>
             <td class="ms-val" style="color:var(--muted)">1450 ms†</td>
             <td>~20 calls</td>
             <td><div class="config-chips"><span class="chip">anchor=100</span><span class="chip">window=83</span><span class="chip">c=19</span><span class="chip">skip=on</span></div></td>
           </tr>
-          <tr style="background:rgba(57,211,83,0.02)">
+          <tr style="background:rgba(57,211,83,0.03)">
+            <td class="rank" style="color:var(--muted)">*</td>
+            <td class="algo-name">V11 — Hybrid + Ultra</td>
+            <td>Bayesian GP-UCB (40 trials, 4D)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.663†</span><div class="bar-bg"><div class="bar-fill" style="width:75%;background:rgba(57,211,83,0.6)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--muted)">1509 ms†</td>
+            <td>~22 calls</td>
+            <td><div class="config-chips"><span class="chip">window=71</span><span class="chip">target=114</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
+          </tr>
+          <tr style="background:rgba(57,211,83,0.01)">
             <td class="rank" style="color:var(--muted)">*</td>
             <td class="algo-name">V8 — Streaming Pipeline</td>
-            <td>Bayesian GP-UCB</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.556†</span><div class="bar-bg"><div class="bar-fill" style="width:63%;background:rgba(57,211,83,0.5)"></div></div></div></td>
+            <td>Bayesian GP-UCB (40 trials, 4D)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--muted)">0.556†</span><div class="bar-bg"><div class="bar-fill" style="width:63%;background:rgba(57,211,83,0.4)"></div></div></div></td>
             <td class="ms-val" style="color:var(--muted)">1799 ms†</td>
             <td>~21 calls</td>
             <td><div class="config-chips"><span class="chip">anchor=18</span><span class="chip">window=98</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
           </tr>
+          <!-- ── Historical same-key unified run ── -->
+          <tr>
+            <td colspan="7" style="background:rgba(88,166,255,0.04);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(88,166,255,0.2)">
+              SAME OLD KEY — Unified benchmark (6 repeats per candidate, mean score)
+            </td>
+          </tr>
           <tr>
             <td class="rank gold">1</td>
-            <td class="algo-name">V4 — Hybrid Density<span class="algo-badge badge-new">New</span></td>
-            <td>Bayesian GP-UCB</td>
-            <td><div class="score-bar"><span class="score-val top">0.789</span><div class="bar-bg"><div class="bar-fill bar-v4" style="width:90%"></div></div></div></td>
-            <td class="ms-val ms-fast">1267 ms</td>
-            <td>~22 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=92</span><span class="chip">window=79</span><span class="chip">c=9</span><span class="chip">skip=off</span></div></td>
+            <td class="algo-name">Copilot PRIME — V4 Hybrid Density<span class="algo-badge badge-codex">Copilot</span></td>
+            <td>PRIME (explore + GP-UCB + refine)</td>
+            <td><div class="score-bar"><span class="score-val top">0.573</span><div class="bar-bg"><div class="bar-fill bar-v4" style="width:65%"></div></div></div></td>
+            <td class="ms-val ms-fast">1756 ms</td>
+            <td>16 calls</td>
+            <td><div class="config-chips"><span class="chip">anchor=65</span><span class="chip">window=86</span><span class="chip">c=14</span><span class="chip">skip=off</span></div></td>
           </tr>
           <tr>
             <td class="rank silver">2</td>
-            <td class="algo-name">V3 — Merged Anchor-Sig<span class="algo-badge badge-new">New</span></td>
+            <td class="algo-name">V3 — Merged Anchor-Sig</td>
             <td>Bayesian GP-UCB</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--accent)">0.716*</span><div class="bar-bg"><div class="bar-fill bar-v3" style="width:81%"></div></div></div></td>
-            <td class="ms-val ms-fast">1530 ms</td>
-            <td>~22 calls</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--accent)">0.555</span><div class="bar-bg"><div class="bar-fill bar-v3" style="width:63%"></div></div></div></td>
+            <td class="ms-val ms-fast">1843 ms</td>
+            <td>22 calls</td>
             <td><div class="config-chips"><span class="chip">anchor=76</span><span class="chip">window=52</span><span class="chip">c=23</span><span class="chip">skip=off</span></div></td>
           </tr>
           <tr>
             <td class="rank bronze">3</td>
-            <td class="algo-name">V2 — Signatures-First<span class="algo-badge badge-codex">Codex</span></td>
-            <td>Differential Evolution</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.620</span><div class="bar-bg"><div class="bar-fill bar-v2de" style="width:70%"></div></div></div></td>
-            <td class="ms-val">1612 ms</td>
-            <td>~14 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=54</span><span class="chip">window=45</span><span class="chip">c=10</span><span class="chip">oracle=on</span></div></td>
+            <td class="algo-name">V4 — Hybrid Density</td>
+            <td>Bayesian GP-UCB</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--yellow)">0.410</span><div class="bar-bg"><div class="bar-fill bar-v2bo" style="width:47%"></div></div></div></td>
+            <td class="ms-val">2503 ms</td>
+            <td>16 calls</td>
+            <td><div class="config-chips"><span class="chip">anchor=92</span><span class="chip">window=79</span><span class="chip">c=9</span><span class="chip">skip=off</span></div></td>
           </tr>
           <tr>
             <td class="rank">4</td>
-            <td class="algo-name">V2 — Signatures-First<span class="algo-badge badge-codex">Codex</span></td>
-            <td>TPE (Parzen Estimator)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.614</span><div class="bar-bg"><div class="bar-fill bar-v2tp" style="width:70%"></div></div></div></td>
-            <td class="ms-val">1628 ms</td>
-            <td>~14 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=66</span><span class="chip">window=72</span><span class="chip">c=16</span><span class="chip">oracle=on</span></div></td>
-          </tr>
-          <tr>
-            <td class="rank">5</td>
             <td class="algo-name">V2 — Signatures-First</td>
             <td>Bayesian GP-UCB</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--yellow)">0.458</span><div class="bar-bg"><div class="bar-fill bar-v2bo" style="width:52%"></div></div></div></td>
-            <td class="ms-val">2181 ms</td>
-            <td>~14 calls</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--yellow)">0.355</span><div class="bar-bg"><div class="bar-fill bar-v2bo" style="width:40%"></div></div></div></td>
+            <td class="ms-val">2914 ms</td>
+            <td>16 calls</td>
             <td><div class="config-chips"><span class="chip">anchor=85</span><span class="chip">window=80</span><span class="chip">c=6</span><span class="chip">oracle=off</span></div></td>
           </tr>
           <tr>
+            <td class="rank">5</td>
+            <td class="algo-name">V2 — Signatures-First<span class="algo-badge badge-codex">Codex</span></td>
+            <td>Simulated Annealing</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.331</span><div class="bar-bg"><div class="bar-fill bar-v2tp" style="width:38%"></div></div></div></td>
+            <td class="ms-val">3052 ms</td>
+            <td>18 calls</td>
+            <td><div class="config-chips"><span class="chip">anchor=80</span><span class="chip">window=70</span><span class="chip">c=6</span><span class="chip">oracle=on</span></div></td>
+          </tr>
+          <tr>
             <td class="rank">6</td>
-            <td class="algo-name">V2 — Signatures-First</td>
-            <td>CMA-ES</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--orange)">0.436</span><div class="bar-bg"><div class="bar-fill bar-v2cm" style="width:50%"></div></div></div></td>
-            <td class="ms-val">2300 ms</td>
-            <td>~16 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=55</span><span class="chip">window=100</span><span class="chip">c=4</span></div></td>
+            <td class="algo-name">V3 — Merged Anchor-Sig<span class="algo-badge badge-codex">Copilot</span></td>
+            <td>PRIME</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.325</span><div class="bar-bg"><div class="bar-fill bar-v2tp" style="width:37%"></div></div></div></td>
+            <td class="ms-val">3535 ms</td>
+            <td>26 calls</td>
+            <td><div class="config-chips"><span class="chip">anchor=77</span><span class="chip">window=41</span><span class="chip">c=14</span><span class="chip">skip=off</span></div></td>
           </tr>
           <tr>
             <td class="rank">7</td>
-            <td class="algo-name">V2 — Signatures-First</td>
-            <td>Neighbourhood Search</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--orange)">0.417</span><div class="bar-bg"><div class="bar-fill bar-v2nb" style="width:47%"></div></div></div></td>
-            <td class="ms-val">2400 ms</td>
-            <td>~16 calls</td>
-            <td><div class="config-chips"><span class="chip">anchor=50</span><span class="chip">window=100</span><span class="chip">c=16</span><span class="chip">oracle=on</span></div></td>
+            <td class="algo-name">V8 — Streaming Pipeline</td>
+            <td>Bayesian GP-UCB</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--orange)">0.308</span><div class="bar-bg"><div class="bar-fill bar-v2nb" style="width:35%"></div></div></div></td>
+            <td class="ms-val">3993 ms</td>
+            <td>21 calls</td>
+            <td><div class="config-chips"><span class="chip">anchor=30</span><span class="chip">window=73</span><span class="chip">c=16</span><span class="chip">skip=off</span></div></td>
           </tr>
           <tr>
             <td class="rank">8</td>
-            <td class="algo-name">V1 — Golomb Probing</td>
-            <td>Neighbourhood Search</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--muted)">0.398</span><div class="bar-bg"><div class="bar-fill bar-v1" style="width:45%"></div></div></div></td>
-            <td class="ms-val">2387 ms</td>
-            <td>~40 calls</td>
-            <td><div class="config-chips"><span class="chip">golomb=6</span><span class="chip">window=300</span><span class="chip">c=12</span></div></td>
+            <td class="algo-name">Codex — blockTime Density<span class="algo-badge badge-codex">Codex</span></td>
+            <td>Bayesian GP-UCB</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--red)">0.150</span><div class="bar-bg"><div class="bar-fill bar-cx" style="width:17%"></div></div></div></td>
+            <td class="ms-val ms-slow">7647 ms</td>
+            <td>214 calls</td>
+            <td><div class="config-chips"><span class="chip">windowTarget=44</span><span class="chip">c=31</span></div></td>
           </tr>
           <tr>
             <td class="rank">9</td>
             <td class="algo-name">Codex — blockTime Density<span class="algo-badge badge-codex">Codex</span></td>
             <td>Default (unoptimized)</td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--red)">0.282</span><div class="bar-bg"><div class="bar-fill bar-cx" style="width:32%"></div></div></div></td>
-            <td class="ms-val ms-slow">3547 ms</td>
-            <td>127 calls (!)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--red)">0.129</span><div class="bar-bg"><div class="bar-fill bar-cx" style="width:15%"></div></div></div></td>
+            <td class="ms-val ms-slow">8560 ms</td>
+            <td>127 calls</td>
             <td><div class="config-chips"><span class="chip">windowTarget=80</span><span class="chip">c=12</span></div></td>
           </tr>
         </tbody>
       </table>
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:8px;">
-      * V3 stable avg over 3 repeated evals. Single-trial peak: <strong>0.879</strong>.
-      Score variance is high on the Helius free tier — sparse wallet latency jitter ±2×.<br>
-      † V8/V10/V11 measured on a different API key with higher baseline latency than V3/V4 historical results.
-      Head-to-head on the same key — V10 vs V3: <strong>+68.6% score / -40.7% latency</strong>.
-      V11 (V4 density + V10 fast-exit): sparse <strong>333ms</strong>, medium <strong>1053ms</strong>, dense <strong>3141ms</strong>, score <strong>0.663</strong>.
-      V10: sparse <strong>330ms</strong>, medium <strong>1301ms</strong>, dense <strong>2718ms</strong>, score <strong>0.690</strong>.
+      Unified leaderboard above is from the latest same-key run with 6 repeats per candidate.
+      Current winner: <strong>Copilot PRIME V4</strong> (mean score 0.5733, mean latency 1756ms).
+      Source artifact: <code>results_unified/leaderboard_unified.json</code>.
     </p>
   </section>
 
@@ -480,6 +507,31 @@
         <div class="wallet-addr">54uJifihf…fmTs</div>
         <div class="wallet-rows">
           <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V12S</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--gold)">314 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V10</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--teal);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--teal)">330 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V11</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.6);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--teal)">333 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--muted)">V12L</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:4%;background:var(--yellow);color:var(--bg)">4</div></div>
+            <span class="time-val" style="color:var(--muted)">1032 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--muted)">V8</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.4);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--muted)">~330 ms†</span>
+          </div>
+          <div class="wallet-row">
             <span class="algo" style="color:var(--green)">V4</span>
             <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--green);color:var(--bg)">2</div></div>
             <span class="time-val" style="color:var(--green)">872 ms</span>
@@ -495,11 +547,6 @@
             <span class="time-val">~1200 ms</span>
           </div>
           <div class="wallet-row">
-            <span class="algo" style="color:var(--purple)">Codex</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--purple)">2</div></div>
-            <span class="time-val" style="color:var(--muted)">1614 ms</span>
-          </div>
-          <div class="wallet-row">
             <span class="algo" style="color:var(--muted)">V1</span>
             <div class="calls-bar"><div class="calls-fill" style="width:12%;background:var(--muted);color:var(--bg)">12</div></div>
             <span class="time-val" style="color:var(--muted)">~3500 ms</span>
@@ -512,6 +559,31 @@
         <h3>Medium Wallet <span class="wallet-tag tag-medium">~60 txns</span></h3>
         <div class="wallet-addr">54u5q7Wt…wsTs</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V12S</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--gold)">602 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V12L</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--yellow);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--yellow)">940 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V11</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.6);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--teal)">1053 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V10</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--teal);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--muted)">1301 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--muted)">V8</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:rgba(57,211,83,0.4);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--muted)">~1400 ms†</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--green)">V4</span>
             <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--green);color:var(--bg)">2</div></div>
@@ -528,11 +600,6 @@
             <span class="time-val">~1800 ms</span>
           </div>
           <div class="wallet-row">
-            <span class="algo" style="color:var(--purple)">Codex</span>
-            <div class="calls-bar"><div class="calls-fill" style="width:2%;background:var(--purple)">2</div></div>
-            <span class="time-val" style="color:var(--green)">949 ms</span>
-          </div>
-          <div class="wallet-row">
             <span class="algo" style="color:var(--muted)">V1</span>
             <div class="calls-bar"><div class="calls-fill" style="width:20%;background:var(--muted);color:var(--bg)">20</div></div>
             <span class="time-val" style="color:var(--muted)">~5000 ms</span>
@@ -542,9 +609,34 @@
 
       <!-- Dense -->
       <div class="wallet-card">
-        <h3>Dense Wallet <span class="wallet-tag tag-dense">~286–451 txns</span></h3>
+        <h3>Dense Wallet <span class="wallet-tag tag-dense">~451 txns</span></h3>
         <div class="wallet-addr">59tGCiHi…1P8n</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V12S</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:var(--gold);color:var(--bg)">16</div></div>
+            <span class="time-val" style="color:var(--gold)">3117 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V10</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:var(--teal);color:var(--bg)">16</div></div>
+            <span class="time-val" style="color:var(--teal)">2718 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--teal)">V11</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:rgba(57,211,83,0.6);color:var(--bg)">16</div></div>
+            <span class="time-val" style="color:var(--muted)">3141 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--muted)">V12L</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:16%;background:var(--yellow);color:var(--bg)">18</div></div>
+            <span class="time-val" style="color:var(--muted)">3673 ms†</span>
+          </div>
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--muted)">V8</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:14%;background:rgba(57,211,83,0.4);color:var(--bg)">16</div></div>
+            <span class="time-val" style="color:var(--muted)">~2800 ms†</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--green)">V4</span>
             <div class="calls-bar"><div class="calls-fill" style="width:10%;background:var(--green);color:var(--bg)">12</div></div>
@@ -575,9 +667,11 @@
 
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:12px;">
-      Codex variant returns more samples on the dense wallet (451 vs 286) because it captures
-      zero-delta fee transactions that V3/V4 skip with <code>skipZeroDelta=true</code> in some configs.
-      With <code>skipZeroDelta=false</code> all algorithms return ~451 samples.
+      † V8–V12 measured on a different API key with higher baseline latency than V3/V4 historical results.
+      V12S = Score-Max (50 trials BO, standard score formula). V12L = Latency-Min (50 trials BO, bottleneck objective = minimize worst-case per-wallet time).
+      V12S vs V3 same key: <strong>+81.8% score / -45.1% latency</strong>.
+      All V8–V12 wallets complete under 4 seconds each. Total 3-wallet eval under 8 seconds.
+      Dense wallet sample count: ~451 (includes zero-delta fee txns when skipZeroDelta=false).
     </p>
   </section>
 
@@ -937,8 +1031,8 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       <div class="insight" style="border-color:var(--teal)">
         <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--teal)">V8</div>
         <div class="insight-body">
-          <h4>V10 fast-exit: sparse 330ms, +68.6% score vs V3 (same key)</h4>
-          <p>V10's key innovation: anchor=100 always. If anchor's newest slot >= sigs' newest slot, return immediately — no Phase 1. Sparse (4 txns) and medium (60 txns) wallets complete in 1 serial RT. Window promises fire speculatively but are ignored on fast-exit. V8 added streaming; V10 adds the early-return that makes 1-RT possible. Dense wallet still 2 RTs (streaming). Score 0.690 vs V3's 0.409 on same key.</p>
+          <h4>V12 Score-Max: 0.744 score, +81.8% vs V3. Window=105 eliminates per-window pagination.</h4>
+          <p>V10 fast-exit (anchor=100 always): sparse 330ms / 1 RT. V12 Score-Max (50-trial BO, window=105): sparse 314ms, medium 602ms, dense 3117ms, avg 1344ms. Key insight: window&gt;100 fits all dense-wallet transactions in one fullTxns page — no serial pagination within each window. V12 Latency-Min (bottleneck objective) minimizes worst-case per-wallet time (maxMs=3673ms). V8 added streaming; V10 added fast-exit; V12 expanded search to window [50,200] and found the no-pagination sweet spot at 105.</p>
         </div>
       </div>
 

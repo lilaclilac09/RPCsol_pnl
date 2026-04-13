@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v12-latency-min",
+    "trial": 2,
+    "score": 0.8168334396634921,
+    "maxWalletMs": 3672.7193749999988
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "windowSize": 63,
+  "windowTarget": 58,
+  "maxConcurrency": 22,
+  "skipZeroDelta": false
+}
