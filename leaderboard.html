@@ -6,13 +6,17 @@
 <title>SOL Balance Algorithm Leaderboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
+  /* ── Tokens ── */
   :root {
     --bg:       #0d1117;
     --surface:  #161b22;
     --surface2: #21262d;
+    --surface3: #1c2128;
     --border:   #30363d;
+    --border2:  #3d444d;
     --text:     #e6edf3;
     --muted:    #8b949e;
+    --muted2:   #6e7681;
     --accent:   #58a6ff;
     --green:    #3fb950;
     --yellow:   #d29922;
@@ -21,9 +25,12 @@
     --orange:   #ffa657;
     --teal:     #39d353;
     --gold:     #f0c040;
+    --radius:   10px;
+    --shadow:   0 2px 12px rgba(0,0,0,0.45);
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     background: var(--bg);
@@ -31,238 +38,320 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
     font-size: 14px;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
+  code { font-family: "SF Mono","Fira Code",monospace; font-size: .9em;
+         background: rgba(110,118,129,.15); border-radius: 4px; padding: 1px 5px; }
+
+  /* ── Top accent stripe ── */
+  body::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 40%, var(--teal) 100%);
+  }
 
   /* ── Layout ── */
-  .page { max-width: 1200px; margin: 0 auto; padding: 32px 20px 80px; }
+  .page { max-width: 1240px; margin: 0 auto; padding: 40px 24px 100px; }
+
+  /* ── Sticky Nav ── */
+  .tab-nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; gap: 2px; margin-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,23,.88);
+    backdrop-filter: blur(12px);
+    padding: 0 0 0 0;
+    margin-left: -24px; margin-right: -24px;
+    padding-left: 24px;
+  }
+  .tab-nav a {
+    padding: 10px 16px; font-size: 13px; font-weight: 600;
+    color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color .15s;
+    white-space: nowrap;
+  }
+  .tab-nav a:hover { color: var(--text); text-decoration: none; }
+  .tab-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* ── Hero ── */
   .hero {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 32px;
-    margin-bottom: 40px;
+    padding: 48px 0 40px;
+    margin-bottom: 8px;
+    position: relative;
   }
   .hero-eyebrow {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .08em;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em;
     color: var(--accent);
-    margin-bottom: 8px;
+    background: rgba(88,166,255,.1); border: 1px solid rgba(88,166,255,.25);
+    border-radius: 20px; padding: 3px 12px;
+    margin-bottom: 20px;
   }
   .hero h1 {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -.5px;
-    line-height: 1.2;
-    margin-bottom: 12px;
+    font-size: 38px; font-weight: 800; letter-spacing: -.8px; line-height: 1.15;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, var(--text) 0%, #a0b4cc 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .hero p { color: var(--muted); max-width: 680px; font-size: 15px; }
+  .hero p { color: var(--muted); max-width: 700px; font-size: 14px; line-height: 1.7; }
+
   .hero-meta {
-    display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 28px;
   }
-  .hero-stat { display: flex; flex-direction: column; }
+  .hero-stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .hero-stat:hover {
+    border-color: var(--border2);
+    box-shadow: 0 0 0 1px var(--border2), var(--shadow);
+  }
   .hero-stat .value {
-    font-size: 28px; font-weight: 700; color: var(--green); line-height: 1;
+    font-size: 26px; font-weight: 800; color: var(--green); line-height: 1; display: block;
+    font-variant-numeric: tabular-nums;
   }
-  .hero-stat .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .hero-stat .label { font-size: 11px; color: var(--muted); margin-top: 4px; display: block; line-height: 1.4; }
 
   /* ── Section ── */
-  .section { margin-bottom: 56px; }
+  .section { margin-bottom: 64px; scroll-margin-top: 60px; }
   .section-title {
-    font-size: 18px; font-weight: 700; margin-bottom: 4px;
-    display: flex; align-items: center; gap: 8px;
+    font-size: 20px; font-weight: 700; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 10px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
   }
-  .section-subtitle { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .section-subtitle { color: var(--muted); font-size: 13px; margin-bottom: 20px; padding-left: 17px; }
 
   /* ── Leaderboard Table ── */
-  .lb-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+  .lb-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
   table { width: 100%; border-collapse: collapse; }
-  thead { background: var(--surface2); }
+  thead { background: linear-gradient(180deg, var(--surface2) 0%, var(--surface) 100%); }
   th {
-    padding: 10px 14px; text-align: left;
-    font-size: 12px; font-weight: 600; text-transform: uppercase;
-    letter-spacing: .06em; color: var(--muted); border-bottom: 1px solid var(--border);
+    padding: 11px 14px; text-align: left;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: var(--muted2); border-bottom: 1px solid var(--border);
     white-space: nowrap;
   }
-  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  td { padding: 11px 14px; border-bottom: 1px solid rgba(48,54,61,.6); vertical-align: middle; }
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(88,166,255,.04); }
-  .rank { font-weight: 700; color: var(--muted); width: 36px; text-align: center; }
+  tbody tr { transition: background .12s; }
+  tbody tr:hover td { background: rgba(88,166,255,.06) !important; }
+
+  /* Tier separator rows */
+  .tier-row td {
+    font-size: 11px; font-weight: 700; letter-spacing: .09em;
+    padding: 7px 14px; text-transform: uppercase;
+  }
+
+  .rank { font-weight: 800; width: 40px; text-align: center; font-size: 13px; }
   .rank.gold   { color: #f0c040; }
   .rank.silver { color: #b0b8c4; }
   .rank.bronze { color: #cd7f32; }
+  .rank-medal { font-size: 16px; }
 
-  .algo-name { font-weight: 600; }
+  .algo-name { font-weight: 600; font-size: 13px; }
   .algo-badge {
-    display: inline-block; font-size: 10px; font-weight: 700;
-    padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle;
-    letter-spacing: .04em; text-transform: uppercase;
+    display: inline-block; font-size: 9px; font-weight: 800;
+    padding: 2px 7px; border-radius: 20px; margin-left: 7px; vertical-align: middle;
+    letter-spacing: .05em; text-transform: uppercase;
   }
-  .badge-new  { background: rgba(63,185,80,.18); color: var(--green); }
-  .badge-codex{ background: rgba(188,140,255,.18); color: var(--purple); }
-  .badge-base { background: rgba(139,148,158,.12); color: var(--muted); }
+  .badge-new   { background: rgba(63,185,80,.18); color: var(--green); }
+  .badge-codex { background: rgba(188,140,255,.18); color: var(--purple); }
+  .badge-base  { background: rgba(139,148,158,.12); color: var(--muted); }
+  .badge-run   { background: rgba(57,211,83,.15); color: var(--teal); animation: pulse-run 2s ease-in-out infinite; }
+  .badge-done  { background: rgba(88,166,255,.15); color: var(--accent); }
 
-  .score-bar {
-    display: flex; align-items: center; gap: 8px; min-width: 180px;
+  @keyframes pulse-run {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .45; }
   }
-  .score-val { font-weight: 700; font-size: 15px; width: 52px; text-align: right; }
+
+  .score-bar { display: flex; align-items: center; gap: 10px; min-width: 190px; }
+  .score-val { font-weight: 800; font-size: 15px; width: 58px; text-align: right; font-variant-numeric: tabular-nums; }
   .score-val.top { color: var(--green); }
   .bar-bg {
-    flex: 1; height: 6px; background: var(--surface2);
-    border-radius: 3px; overflow: hidden;
+    flex: 1; height: 8px; background: rgba(48,54,61,.8);
+    border-radius: 4px; overflow: hidden;
   }
-  .bar-fill { height: 100%; border-radius: 3px; }
-  .bar-v4   { background: var(--green); }
-  .bar-v3   { background: var(--accent); }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-v4   { background: linear-gradient(90deg, #2ea043, var(--green)); }
+  .bar-v3   { background: linear-gradient(90deg, #2f7acc, var(--accent)); }
   .bar-v2de { background: var(--purple); }
-  .bar-v2tp { background: var(--purple); opacity:.8; }
+  .bar-v2tp { background: var(--purple); opacity: .8; }
   .bar-v2bo { background: var(--yellow); }
-  .bar-v2cm { background: var(--orange); opacity:.8; }
+  .bar-v2cm { background: var(--orange); opacity: .8; }
   .bar-v2nb { background: var(--orange); }
-  .bar-v1   { background: var(--muted); }
-  .bar-cx   { background: var(--red); opacity:.7; }
+  .bar-v1   { background: var(--muted2); }
+  .bar-cx   { background: var(--red); opacity: .7; }
 
-  .ms-val { color: var(--muted); white-space: nowrap; }
-  .ms-fast { color: var(--green); font-weight: 600; }
+  .ms-val  { color: var(--muted); white-space: nowrap; font-size: 13px; }
+  .ms-fast { color: var(--green); font-weight: 700; }
   .ms-slow { color: var(--red); }
 
   .config-chips { display: flex; gap: 4px; flex-wrap: wrap; }
   .chip {
-    font-size: 11px; padding: 2px 6px; border-radius: 4px;
-    background: var(--surface2); border: 1px solid var(--border); white-space: nowrap;
+    font-size: 10px; padding: 2px 7px; border-radius: 5px;
+    background: rgba(48,54,61,.5); border: 1px solid var(--border);
+    white-space: nowrap; font-family: "SF Mono","Fira Code",monospace;
+    color: var(--muted);
   }
 
   /* ── Per-Wallet Breakdown ── */
   .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
   .wallet-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 20px;
+    border-radius: var(--radius); padding: 22px;
+    transition: border-color .2s, box-shadow .2s;
   }
+  .wallet-card:hover { border-color: var(--border2); box-shadow: var(--shadow); }
   .wallet-card h3 {
     font-size: 14px; font-weight: 700; margin-bottom: 2px;
     display: flex; align-items: center; gap: 8px;
   }
   .wallet-tag {
-    font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;
-    text-transform: uppercase; letter-spacing: .06em;
+    font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: .07em;
   }
   .tag-sparse { background: rgba(57,211,83,.15); color: var(--teal); }
   .tag-medium { background: rgba(88,166,255,.15); color: var(--accent); }
   .tag-dense  { background: rgba(240,192,64,.15); color: var(--gold); }
-  .wallet-addr { font-size: 11px; color: var(--muted); font-family: monospace; margin-bottom: 16px; }
-  .wallet-rows { display: flex; flex-direction: column; gap: 6px; }
+  .wallet-addr { font-size: 10px; color: var(--muted2); font-family: "SF Mono","Fira Code",monospace; margin-bottom: 16px; }
+  .wallet-rows { display: flex; flex-direction: column; gap: 7px; }
   .wallet-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
-  .wallet-row .algo { width: 56px; font-weight: 600; color: var(--muted); }
+  .wallet-row .algo { width: 56px; font-weight: 700; color: var(--muted); font-size: 11px; }
   .wallet-row .calls-bar {
-    flex: 1; height: 14px; background: var(--surface2);
-    border-radius: 3px; overflow: hidden; position: relative;
+    flex: 1; height: 16px; background: var(--surface2);
+    border-radius: 4px; overflow: hidden; position: relative;
   }
   .wallet-row .calls-fill {
-    height: 100%; border-radius: 3px; display: flex; align-items: center;
-    padding-left: 6px; font-size: 10px; font-weight: 700; white-space: nowrap;
-    min-width: 40px;
+    height: 100%; border-radius: 4px; display: flex; align-items: center;
+    padding-left: 7px; font-size: 10px; font-weight: 700; white-space: nowrap;
+    min-width: 36px;
   }
-  .wallet-row .time-val { color: var(--muted); width: 54px; text-align: right; white-space: nowrap; }
+  .wallet-row .time-val { color: var(--muted); width: 60px; text-align: right; white-space: nowrap; font-size: 11px; }
 
   /* ── Failure Mode Cards ── */
   .failure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
   .failure-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 20px;
+    border-radius: var(--radius); padding: 22px;
+    transition: border-color .2s;
   }
+  .failure-card:hover { border-color: var(--border2); }
   .failure-card h3 {
-    font-size: 14px; font-weight: 700; margin-bottom: 12px;
+    font-size: 14px; font-weight: 700; margin-bottom: 14px;
     display: flex; align-items: center; gap: 8px;
   }
-  .failure-list { display: flex; flex-direction: column; gap: 10px; }
+  .failure-list { display: flex; flex-direction: column; gap: 12px; }
   .failure-item { display: flex; gap: 10px; }
   .failure-icon {
-    width: 20px; height: 20px; border-radius: 50%;
+    width: 22px; height: 22px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    font-size: 10px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
   }
-  .fi-fixed  { background: rgba(63,185,80,.2);  color: var(--green);  }
-  .fi-risk   { background: rgba(248,81,73,.18); color: var(--red);    }
-  .fi-warn   { background: rgba(210,153,34,.2); color: var(--yellow); }
+  .fi-fixed { background: rgba(63,185,80,.18); color: var(--green); }
+  .fi-risk  { background: rgba(248,81,73,.16); color: var(--red); }
+  .fi-warn  { background: rgba(210,153,34,.18); color: var(--yellow); }
   .failure-body { flex: 1; }
-  .failure-title { font-weight: 600; font-size: 12px; margin-bottom: 2px; }
+  .failure-title { font-weight: 700; font-size: 12px; margin-bottom: 3px; }
   .failure-desc  { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
   /* ── Method Table ── */
-  .method-table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
-  .method-row td:first-child { font-weight: 600; white-space: nowrap; }
+  .method-table-wrap {
+    overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .method-row td:first-child { font-weight: 700; white-space: nowrap; }
   td.winner { color: var(--green); font-weight: 700; }
   td.loser  { color: var(--red); }
   td.ok     { color: var(--yellow); }
 
-  /* ── Production Card ── */
+  /* ── Production Cards ── */
   .prod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 640px) { .prod-grid { grid-template-columns: 1fr; } }
   .prod-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+    transition: border-color .2s, box-shadow .2s;
   }
-  .prod-card.primary { border-color: var(--green); }
-  .prod-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-  .prod-card .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 16px; }
+  .prod-card:hover { border-color: var(--border2); box-shadow: var(--shadow); }
+  .prod-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .prod-card .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 16px; line-height: 1.5; }
   .prod-card pre {
     background: var(--bg); border: 1px solid var(--border);
-    border-radius: 6px; padding: 14px; font-size: 12px; line-height: 1.6;
-    overflow-x: auto; font-family: "SF Mono", "Fira Code", monospace;
+    border-radius: 7px; padding: 16px; font-size: 12px; line-height: 1.7;
+    overflow-x: auto; font-family: "SF Mono","Fira Code",monospace;
     color: var(--text);
   }
-  .code-key   { color: var(--accent); }
-  .code-num   { color: var(--orange); }
-  .code-bool  { color: var(--green); }
-  .code-str   { color: var(--yellow); }
+  .code-key  { color: var(--accent); }
+  .code-num  { color: var(--orange); }
+  .code-bool { color: var(--green); }
+  .code-str  { color: var(--yellow); }
 
-  .prod-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .prod-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
   .prod-bullets li {
-    font-size: 13px; padding: 8px 12px; background: var(--surface2);
-    border-radius: 6px; border-left: 3px solid var(--green);
-    line-height: 1.5;
+    font-size: 13px; padding: 9px 14px;
+    background: var(--surface2); border-radius: 7px;
+    border-left: 3px solid var(--green); line-height: 1.5;
   }
-  .prod-bullets li span { color: var(--green); font-weight: 600; }
+  .prod-bullets li span { color: var(--green); font-weight: 700; }
 
-  /* ── BO Convergence Chart ── */
+  /* ── Charts ── */
   .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 700px) { .charts-grid { grid-template-columns: 1fr; } }
   .chart-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px;
+    box-shadow: var(--shadow);
   }
-  .chart-card h3 { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 12px; }
+  .chart-card h3 {
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    margin-bottom: 16px; text-transform: uppercase; letter-spacing: .06em;
+  }
 
   /* ── Insight Boxes ── */
   .insight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
   .insight {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-    padding: 16px; display: flex; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; display: flex; gap: 14px;
+    transition: border-color .2s;
   }
-  .insight-icon { font-size: 11px; line-height: 1; flex-shrink: 0; width: 32px; text-align: center; padding-top: 3px; }
-  .insight-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-  .insight-body p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .insight:hover { border-color: var(--border2); }
+  .insight-icon { font-size: 20px; line-height: 1; flex-shrink: 0; width: 28px; text-align: center; padding-top: 2px; }
+  .insight-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+  .insight-body p  { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* ── Insight single box ── */
+  .insight-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; display: flex; gap: 14px;
+    margin-top: 16px;
+  }
 
   /* ── Footer ── */
   .footer {
-    border-top: 1px solid var(--border); padding-top: 24px; margin-top: 56px;
-    color: var(--muted); font-size: 12px; display: flex; justify-content: space-between;
-    flex-wrap: wrap; gap: 8px;
+    border-top: 1px solid var(--border); padding-top: 28px; margin-top: 64px;
+    color: var(--muted2); font-size: 11px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    line-height: 1.6;
   }
-
-  /* ── Scroll anchor ── */
-  .tab-nav {
-    display: flex; gap: 4px; margin-bottom: 32px;
-    border-bottom: 1px solid var(--border); padding-bottom: 0;
-  }
-  .tab-nav a {
-    padding: 8px 16px; font-size: 13px; font-weight: 600;
-    color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px;
-  }
-  .tab-nav a:hover { color: var(--text); text-decoration: none; }
-  .tab-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .footer strong { color: var(--muted); }
 
   .trophy::before { content: "#1"; }
 </style>
@@ -272,33 +361,32 @@
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
   <header class="hero">
-    <div class="hero-eyebrow">RPCsol_pnl · Research Dashboard</div>
+    <div class="hero-eyebrow">⬡ RPCsol_pnl · Research Dashboard · 2026-04-13</div>
     <h1>SOL Balance Algorithm Leaderboard</h1>
-    <p>Apples-to-apples comparison of every algorithm variant, every search method.
-       Scores reflect completeness × speed on 3 canonical test wallets (sparse, medium, dense).
-       V8–V14 use Helius <code>getTransactionsForAddress</code> (paid API).
-       V15 uses standard Solana RPC <code>getSignaturesForAddress + getTransaction</code> (free tier).
-       Hybrid router auto-detects API tier and routes per wallet density (zero extra calls).</p>
+    <p>Apples-to-apples comparison of every algorithm variant and search method.
+       Score = completeness × speed on 3 canonical wallets (sparse / medium / dense).
+       V8–V14 use Helius <code>getTransactionsForAddress</code> (paid).
+       V15 uses standard Solana RPC (free). Hybrid router auto-detects tier, classifies density — zero extra calls.</p>
     <div class="hero-meta">
       <div class="hero-stat">
-        <span class="value" style="color:var(--gold)">0.789</span>
-        <span class="label">V13 Constrained — best paid-tier score (+100% vs V3)</span>
-      </div>
-      <div class="hero-stat">
-        <span class="value" style="color:var(--teal)">1267 ms</span>
-        <span class="label">V13 avg latency (window=91, c=31, skip=on)</span>
-      </div>
-      <div class="hero-stat">
         <span class="value" style="color:var(--purple)">0.868</span>
-        <span class="label">V14 base score — beats V13 (0.789), dense 2120ms / 10 calls</span>
+        <span class="label">V14 base score — new best paid-tier (beats V13 0.789)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">16</span>
-        <span class="label">Total versions (V15 BO + Hybrid BO running)</span>
+        <span class="value" style="color:var(--green)">1152 ms</span>
+        <span class="label">V14 avg latency — window=62, c=13</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--orange)">0 extra calls</span>
-        <span class="label">Hybrid: density classification from Phase 0 (zero-cost)</span>
+        <span class="value" style="color:var(--gold)">10</span>
+        <span class="label">V14 dense wallet calls — down from 14 (−28%)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value" style="color:var(--accent)">16</span>
+        <span class="label">Total versions tested · V15 + Hybrid BO running</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value" style="color:var(--orange)">0</span>
+        <span class="label">Extra calls for density classification (Phase 0)</span>
       </div>
     </div>
   </header>
@@ -316,7 +404,7 @@
 
   <!-- ── Main Leaderboard ──────────────────────────────────────── -->
   <section class="section" id="leaderboard">
-    <div class="section-title">Overall Leaderboard</div>
+    <div class="section-title">🏆 Overall Leaderboard</div>
     <div class="section-subtitle">
       Metric: <code>(completeness × 1000 / avgLatencyMs) × max(0.1, 1 − 0.05 × openGapPenalty)</code>
       &nbsp;·&nbsp; Higher = faster + more complete &nbsp;·&nbsp; Helius free tier
@@ -336,9 +424,9 @@
         </thead>
         <tbody>
           <!-- ── New-key results (different API key, higher baseline latency) ── -->
-          <tr>
-            <td colspan="7" style="background:rgba(240,192,64,0.06);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(240,192,64,0.3)">
-              SAME NEW KEY — Bayesian GP-UCB optimised (higher base latency than historical results)
+          <tr class="tier-row" style="background:rgba(240,192,64,0.07);border-left:3px solid var(--gold)">
+            <td colspan="7" style="color:var(--gold);border-bottom:1px solid rgba(240,192,64,0.3)">
+              ◆ PAID API · New Key · GP-UCB Optimised — higher RTT baseline than historical old-key results
             </td>
           </tr>
           <tr style="background:rgba(240,192,64,0.10)">
@@ -388,7 +476,7 @@
           </tr>
           <tr style="background:rgba(188,140,255,0.10)">
             <td class="rank" style="color:var(--purple)">*</td>
-            <td class="algo-name">V14 — Phantom-Token Fix<span class="algo-badge" style="background:var(--purple);color:var(--bg)">Done</span></td>
+            <td class="algo-name">V14 — Phantom-Token Fix<span class="algo-badge badge-done">Done</span></td>
             <td>Bayesian GP-UCB (60 trials, 3D, phantom guard)</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">0.521†</span><div class="bar-bg"><div class="bar-fill" style="width:59%;background:var(--purple)"></div></div></div></td>
             <td class="ms-val" style="color:var(--green)">1152 ms†</td>
@@ -396,14 +484,14 @@
             <td><div class="config-chips"><span class="chip" style="border-color:var(--purple)">window=62</span><span class="chip" style="border-color:var(--purple)">c=13</span><span class="chip" style="border-color:var(--purple)">skip=off</span><span class="chip" style="border-color:var(--green)">base=0.868</span></div></td>
           </tr>
           <!-- ── Free-tier (V15) — different solver, incomparable to paid-tier ── -->
-          <tr>
-            <td colspan="7" style="background:rgba(255,166,87,0.06);color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(255,166,87,0.25)">
-              FREE TIER — getSignaturesForAddress + getTransaction (standard Solana RPC, no paid Helius endpoint)
+          <tr class="tier-row" style="background:rgba(255,166,87,0.07)">
+            <td colspan="7" style="color:var(--orange);border-bottom:1px solid rgba(255,166,87,0.25)">
+              ◈ FREE TIER · getSignaturesForAddress + getTransaction · Standard Solana RPC — scores not comparable to paid-tier V8–V14
             </td>
           </tr>
           <tr style="background:rgba(255,166,87,0.07)">
             <td class="rank" style="color:var(--orange)">*</td>
-            <td class="algo-name">V15 — Free-Tier Monolithic<span class="algo-badge" style="background:var(--orange);color:var(--bg)">Running</span></td>
+            <td class="algo-name">V15 — Free-Tier Monolithic<span class="algo-badge badge-run">● Running</span></td>
             <td>Bayesian GP-UCB (50 trials, 3D, 3-run median)</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--orange)">0.0087‡‡</span><div class="bar-bg"><div class="bar-fill" style="width:1%;background:var(--orange)"></div></div></div></td>
             <td class="ms-val" style="color:var(--red)">3833 ms‡‡ (max 5977)</td>
@@ -412,7 +500,7 @@
           </tr>
           <tr style="background:rgba(57,211,83,0.04)">
             <td class="rank" style="color:var(--teal)">*</td>
-            <td class="algo-name">Hybrid — Density Router<span class="algo-badge" style="background:var(--teal);color:var(--bg)">Running</span></td>
+            <td class="algo-name">Hybrid — Density Router<span class="algo-badge badge-run">● Running</span></td>
             <td>GP-UCB 5D (60 trials, 3-run median, per-type params)</td>
             <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">BO running</span><div class="bar-bg"><div class="bar-fill" style="width:0%;background:var(--teal)"></div></div></div></td>
             <td class="ms-val" style="color:var(--teal)">est. ~0.009–0.012‡‡</td>
@@ -429,9 +517,9 @@
             <td><div class="config-chips"><span class="chip">anchor=18</span><span class="chip">window=98</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
           </tr>
           <!-- ── Historical same-key unified run ── -->
-          <tr>
-            <td colspan="7" style="background:rgba(88,166,255,0.04);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(88,166,255,0.2)">
-              SAME OLD KEY — Unified benchmark (6 repeats per candidate, mean score)
+          <tr class="tier-row" style="background:rgba(88,166,255,0.06)">
+            <td colspan="7" style="color:var(--accent);border-bottom:1px solid rgba(88,166,255,0.2)">
+              ◇ HISTORICAL · Old Key · Unified Benchmark — 6 repeats per candidate, mean score
             </td>
           </tr>
           <tr>
@@ -531,7 +619,7 @@
 
   <!-- ── BO Convergence Charts ─────────────────────────────────── -->
   <section class="section">
-    <div class="section-title">BO Convergence — Score per Trial</div>
+    <div class="section-title">📈 BO Convergence — Score per Trial</div>
     <div class="section-subtitle">How Bayesian Optimisation found better configs over 35–40 trials for V3 and V4.</div>
     <div class="charts-grid">
       <div class="chart-card">
@@ -547,7 +635,7 @@
 
   <!-- ── V14 BO Convergence ───────────────────────────────────── -->
   <section class="section">
-    <div class="section-title">V14 BO Convergence — Phantom-Token Fix (60 Trials, Done)</div>
+    <div class="section-title">📊 V14 BO Convergence — Phantom-Token Fix (60 Trials, Done)</div>
     <div class="section-subtitle">GP-UCB converged on window=60–67, c=9–21, skip=false. Dense wallet: 14 calls → 10 calls, 2951ms → 2120ms. Base score 0.868 vs V13 base 0.789.</div>
     <div class="charts-grid">
       <div class="chart-card">
@@ -568,7 +656,7 @@
 
   <!-- ── V15 Free-Tier BO ──────────────────────────────────────── -->
   <section class="section">
-    <div class="section-title">V15 Free-Tier BO — Running</div>
+    <div class="section-title">🔄 V15 Free-Tier BO — Running</div>
     <div class="section-subtitle">GP-UCB exploring txTarget [5,60] and concurrency [4,24]. Gate penalty math dominates: low txTarget + gate=1.0 outscores high txTarget + gate=0.05 by 30–40×.</div>
     <div class="charts-grid">
       <div class="chart-card">
@@ -591,7 +679,7 @@
 
   <!-- ── Per-Wallet Breakdown ──────────────────────────────────── -->
   <section class="section" id="wallets">
-    <div class="section-title">Per-Wallet Breakdown</div>
+    <div class="section-title">👛 Per-Wallet Breakdown</div>
     <div class="section-subtitle">RPC call count and wall time for each algorithm on each test wallet.</div>
     <div class="wallet-grid">
 
@@ -808,7 +896,7 @@
 
   <!-- ── Failure Modes ─────────────────────────────────────────── -->
   <section class="section" id="failures">
-    <div class="section-title">Per-Algorithm Failure Modes</div>
+    <div class="section-title">⚠️ Per-Algorithm Failure Modes</div>
     <div class="section-subtitle">Fixed bugs, active risks, and known edge cases for each algorithm.</div>
     <div class="failure-grid">
 
@@ -1020,7 +1108,7 @@
 
   <!-- ── Search Method Comparison ──────────────────────────────── -->
   <section class="section" id="methods">
-    <div class="section-title">Search Method Comparison</div>
+    <div class="section-title">🔬 Search Method Comparison</div>
     <div class="section-subtitle">All 7 methods that ran hyperparameter optimization on the V1/V2 and V3/V4 algorithm family.</div>
     <div class="method-table-wrap">
       <table>
@@ -1114,7 +1202,7 @@
 
   <!-- ── Production ─────────────────────────────────────────────── -->
   <section class="section" id="production">
-    <div class="section-title">Production Recommendation</div>
+    <div class="section-title">🚀 Production Recommendation</div>
     <div class="section-subtitle">Choose based on your wallet size distribution and API tier.</div>
     <div class="prod-grid">
 
@@ -1291,7 +1379,7 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
 
   <!-- ── Router & Phantom ─────────────────────────────────────────── -->
   <section class="section" id="router">
-    <div class="section-title">sol_balance_router.mjs — Unified Router</div>
+    <div class="section-title">⬡ sol_balance_router.mjs — Unified Router</div>
     <div class="section-subtitle">One function. Auto-detects API tier, classifies wallet density (zero extra calls), routes to the BO-optimal config for that combination.</div>
 
     <!-- Routing decision table -->
@@ -1478,7 +1566,7 @@ Net change: +2.999995 SOL</pre>
 
   <!-- ── Hybrid Router ────────────────────────────────────────────── -->
   <section class="section" id="hybrid">
-    <div class="section-title">Hybrid Density Router</div>
+    <div class="section-title">🔀 Hybrid Density Router</div>
     <div class="section-subtitle">Auto-selects the best strategy per wallet size and API tier — zero extra API calls for classification.</div>
 
     <!-- Architecture overview -->
@@ -1650,7 +1738,7 @@ Net change: +2.999995 SOL</pre>
 
   <!-- ── Key Insights ───────────────────────────────────────────── -->
   <section class="section" id="insights">
-    <div class="section-title">Key Insights</div>
+    <div class="section-title">💡 Key Insights</div>
     <div class="section-subtitle">Non-obvious findings from 200+ evaluated configurations across 7 search methods.</div>
     <div class="insight-grid">
 
