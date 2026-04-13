@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "method": "cmaes",
+    "gen": 1,
+    "score": 0.43570948071843146
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 55,
+  "windowSize": 100,
+  "maxConcurrency": 4,
+  "useContinuityOracle": false,
+  "skipZeroDelta": true
+}

@@ -65,8 +65,8 @@ function decode(z) {
 // Linear algebra helpers (pure JS, no deps)
 // ─────────────────────────────────────────────────────────────────────────────
 
-const zeros = n => new Float64Array(n);
-const eye   = n => Array.from({ length: n }, (_, i) => { const r = new Float64Array(n); r[i] = 1; return r; });
+const zeros = n => Array.from({ length: n }, () => 0);
+const eye   = n => Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => i === j ? 1 : 0));
 const dot   = (a, b) => a.reduce((s, ai, i) => s + ai * b[i], 0);
 const scale = (v, c) => v.map(x => x * c);
 const add   = (a, b) => a.map((x, i) => x + b[i]);
@@ -129,8 +129,8 @@ const c_mu = Math.min(1 - c_1, 2 * (muEff - 2 + 1 / muEff) / ((N + 2) ** 2 + muE
 let mean  = PARAMS.map(() => 0.5);                          // start at centre
 let sigma = 0.4;                                            // initial step size
 let C     = eye(N);                                         // identity covariance
-let p_c   = zeros(N);                                       // evolution path (cov)
-let p_s   = zeros(N);                                       // evolution path (step)
+let p_c   = Array.from({ length: N }, () => 0);             // evolution path (cov)
+let p_s   = Array.from({ length: N }, () => 0);             // evolution path (step)
 let eigenAge = 0;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -227,7 +227,7 @@ for (let gen = 0; gen < GENERATIONS; gen++) {
 
   // Rank-μ update to covariance
   const rank1 = outer(p_c, p_c);
-  const rankMu = Array.from({ length: N }, () => new Float64Array(N));
+  const rankMu = Array.from({ length: N }, () => zeros(N));
   for (let k = 0; k < MU; k++) {
     const step = sub(topMu[k].x, oldMean).map(v => v / sigma);
     for (let i = 0; i < N; i++) for (let j = 0; j < N; j++)

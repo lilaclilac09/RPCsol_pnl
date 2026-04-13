@@ -1,0 +1,16 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb",
+    "trial": 15,
+    "score": 0.4585,
+    "avgMs": 2181,
+    "notes": "Best config found by Bayesian Optimisation (GP-UCB), trial 15/40. Score 0.4585, 2.18s avg across all 3 test wallets. Beats V2 neighbourhood search winner (0.417) by 10%."
+  },
+  "anchorSize": 85,
+  "windowSize": 80,
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "maxConcurrency": 6,
+  "useContinuityOracle": false,
+  "skipZeroDelta": false
+}
