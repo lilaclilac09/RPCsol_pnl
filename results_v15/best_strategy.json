@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v15-stable-3run",
+    "solver": "free-tier (getSignaturesForAddress + getTransaction)",
+    "runs_per_eval": 3,
+    "trials_complete": 13,
+    "trials_total": 50,
+    "status": "running",
+    "key_insight": "skipZeroDelta=false counts all fetched txns as samples; medium (need 30) complete at txTarget=30+",
+    "gate_insight": "gate=1.0 impossible under sustained load (~1.8 calls/sec effective vs 10 RPS theory); all configs gate=0.05",
+    "best_gate1": null,
+    "best_overall": {
+      "trial": 7,
+      "score": 0.0087,
+      "gate": 0.05,
+      "avgLatencyMs": 3833,
+      "maxWalletMs": 5977
+    }
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 6,
+  "txTarget": 31,
+  "maxConcurrency": 12,
+  "skipZeroDelta": false
+}

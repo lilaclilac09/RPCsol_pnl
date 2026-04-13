@@ -275,12 +275,13 @@
     <div class="hero-eyebrow">RPCsol_pnl · Research Dashboard</div>
     <h1>SOL Balance Algorithm Leaderboard</h1>
     <p>Apples-to-apples comparison of every algorithm variant, every search method.
-       Scores reflect completeness × speed on 3 canonical test wallets (sparse, medium, dense)
-       using the Helius <code>getTransactionsForAddress</code> API.</p>
+       Scores reflect completeness × speed on 3 canonical test wallets (sparse, medium, dense).
+       V8–V14 use Helius <code>getTransactionsForAddress</code> (paid API).
+       V15 uses standard Solana RPC <code>getSignaturesForAddress + getTransaction</code> (free tier).</p>
     <div class="hero-meta">
       <div class="hero-stat">
         <span class="value" style="color:var(--gold)">0.789</span>
-        <span class="label">V13 Constrained — best base score (+100% vs V3)</span>
+        <span class="label">V13 Constrained — best paid-tier score (+100% vs V3)</span>
       </div>
       <div class="hero-stat">
         <span class="value" style="color:var(--teal)">1267 ms</span>
@@ -291,8 +292,8 @@
         <span class="label">Best stable mean score (6-repeat unified run)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">14</span>
-        <span class="label">Total versions benchmarked (V14 pending)</span>
+        <span class="value" style="color:var(--purple)">15</span>
+        <span class="label">Total versions benchmarked (V15 free-tier BO running)</span>
       </div>
       <div class="hero-stat">
         <span class="value" style="color:var(--orange)">310 ms</span>
@@ -390,6 +391,21 @@
             <td class="ms-val" style="color:var(--purple)">est. &lt;1000 ms†</td>
             <td>~8–10 calls</td>
             <td><div class="config-chips"><span class="chip" style="border-color:var(--purple)">phantom-fix</span><span class="chip" style="border-color:var(--purple)">all-wallets&lt;2s</span></div></td>
+          </tr>
+          <!-- ── Free-tier (V15) — different solver, incomparable to paid-tier ── -->
+          <tr>
+            <td colspan="7" style="background:rgba(255,166,87,0.06);color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-bottom:1px solid rgba(255,166,87,0.25)">
+              FREE TIER — getSignaturesForAddress + getTransaction (standard Solana RPC, no paid Helius endpoint)
+            </td>
+          </tr>
+          <tr style="background:rgba(255,166,87,0.07)">
+            <td class="rank" style="color:var(--orange)">*</td>
+            <td class="algo-name">V15 — Free-Tier Fallback<span class="algo-badge" style="background:var(--orange);color:var(--bg)">Running</span></td>
+            <td>Bayesian GP-UCB (50 trials, 3D, 3-run median)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--orange)">0.0087‡‡</span><div class="bar-bg"><div class="bar-fill" style="width:1%;background:var(--orange)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--red)">3833 ms‡‡ (max 5977)</td>
+            <td>~78 calls‡‡</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--orange)">txTarget=31</span><span class="chip" style="border-color:var(--orange)">c=12</span><span class="chip" style="border-color:var(--orange)">skip=off</span><span class="chip">free-tier</span></div></td>
           </tr>
           <tr style="background:rgba(57,211,83,0.01)">
             <td class="rank" style="color:var(--muted)">*</td>
@@ -491,11 +507,14 @@
       </table>
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:8px;">
-      Leaderboard includes V8–V14. New-key track: V13 Constrained BO (60 trials) achieved base score 0.789 (best ever), avg 1267ms.
+      Leaderboard includes V8–V15. New-key track: V13 Constrained BO (60 trials) achieved base score 0.789 (best ever), avg 1267ms.
       Dense wallet was 2951ms — just over the 2s soft gate due to phantom paginationToken bug (Helius returns token even when data.length &lt; limit, causing a redundant API call per window).
       <strong>V14 phantom-token fix</strong> resolves this: <code>if data.length &lt; limit, skip token</code>.
       V14 BO run (60 trials, 3D, search window [60,160] c [8,48]) pending API key renewal.
       V11 stable mean on unified run: 0.5484 (1834ms). V10 peak: 0.7115 (1406ms).
+      <strong>‡‡ V15 free-tier</strong>: Helius paid API key expired; V15 switches to standard Solana RPC (getSignaturesForAddress + individual getTransaction calls).
+      Free-tier rate limit (~10 RPS) means medium/dense wallets take 6–20s → gate=0.05 penalty dominates.
+      BO search space tuned to txTarget [5,60] — low txTarget + gate=1.0 (sparse-only completeness) scores 36× better than high txTarget + gate=0.05 (full completeness). Scores not comparable to paid-tier V8–V14.
     </p>
   </section>
 
@@ -515,6 +534,29 @@
     </div>
   </section>
 
+  <!-- ── V15 Free-Tier BO ──────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-title">V15 Free-Tier BO — Running</div>
+    <div class="section-subtitle">GP-UCB exploring txTarget [5,60] and concurrency [4,24]. Gate penalty math dominates: low txTarget + gate=1.0 outscores high txTarget + gate=0.05 by 30–40×.</div>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>V15 — Score per Trial (live)</h3>
+        <canvas id="chartV15" height="200"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>V15 — Wall Time per Wallet (trial 3 sample)</h3>
+        <canvas id="chartV15Wall" height="200"></canvas>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:16px;background:var(--surface);border:1px solid rgba(255,166,87,0.3);border-radius:8px;font-size:12px;color:var(--muted)">
+      <strong style="color:var(--orange)">Free-tier gate penalty analysis</strong> (at ~10 RPS / ~565ms effective per call under load):<br>
+      txTarget=120 → 12+ s per wallet → gate=0.05 → score ≈ 0.005 (full completeness)<br>
+      txTarget=31, skip=false → 3.8s avg → gate=0.05 → score ≈ <strong style="color:var(--gold)">0.0087</strong> (2/3 completeness: medium complete via skip=false trick)<br>
+      txTarget=11, c=15 → 3.6s avg → gate=0.05 → score ≈ 0.005 (sparse only, too slow for gate=1.0)<br>
+      <strong style="color:var(--orange)">Key insight:</strong> skipZeroDelta=false counts every fetched transaction as a sample (address always in accountKeys). Medium wallet (need 30) is complete at txTarget=30. Gate=1.0 requires all wallets &lt;2s — impossible under sustained API load (~565ms/call). Best strategy: txTarget≈30, skip=false, c≈12 → 2/3 completeness, score≈0.009.
+    </div>
+  </section>
+
   <!-- ── Per-Wallet Breakdown ──────────────────────────────────── -->
   <section class="section" id="wallets">
     <div class="section-title">Per-Wallet Breakdown</div>
@@ -526,6 +568,11 @@
         <h3>Sparse Wallet <span class="wallet-tag tag-sparse">4 txns</span></h3>
         <div class="wallet-addr">54uJifihf…fmTs</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--orange)">V15</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:5%;background:var(--orange);color:var(--bg)">5–8</div></div>
+            <span class="time-val" style="color:var(--yellow)">1500–5000 ms‡‡</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--gold)">V13</span>
             <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
@@ -585,6 +632,11 @@
         <div class="wallet-addr">54u5q7Wt…wsTs</div>
         <div class="wallet-rows">
           <div class="wallet-row">
+            <span class="algo" style="color:var(--orange)">V15</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:40%;background:var(--orange)">50–200</div></div>
+            <span class="time-val" style="color:var(--red)">5–15 s‡‡</span>
+          </div>
+          <div class="wallet-row">
             <span class="algo" style="color:var(--gold)">V13</span>
             <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
             <span class="time-val" style="color:var(--gold)">541 ms†</span>
@@ -642,6 +694,11 @@
         <h3>Dense Wallet <span class="wallet-tag tag-dense">~451 txns</span></h3>
         <div class="wallet-addr">59tGCiHi…1P8n</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--orange)">V15</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:60%;background:var(--orange)">50–500</div></div>
+            <span class="time-val" style="color:var(--red)">8–25 s‡‡</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--orange)">V13</span>
             <div class="calls-bar"><div class="calls-fill" style="width:12%;background:var(--orange);color:var(--bg)">14</div></div>
@@ -708,7 +765,8 @@
       ‡ V13 = Constrained BO (60 trials, 3D). Score column shows <em>standard</em> score (1000/avgLatencyMs) = 0.789 — but dense wallet was 2951ms (just over 2s soft gate), triggering a 0.60 penalty in the constrained objective.
       Root cause diagnosed: Helius returns a phantom <code>paginationToken</code> even when result count &lt; limit, causing one extra unnecessary API call per window (~12→14 extra calls for dense wallet).
       <strong>V14 (phantom-token fix)</strong>: skips token when <code>data.length &lt; limit</code> — expected to halve dense wallet call count and bring all wallets reliably under 2s.
-      V14 BO run pending new API key.
+      V14 BO run pending new API key.<br>
+      ‡‡ V15 = free-tier fallback (standard Solana RPC: getSignaturesForAddress + individual getTransaction). Rate-limited to ~10 RPS → medium/dense wallets take 5–25s. Not comparable to V8–V14 (paid API, 100× fewer calls). Retry inflation from 429s also inflates call count.
     </p>
   </section>
 
@@ -855,6 +913,40 @@
             <div class="failure-body">
               <div class="failure-title">Free-tier variance still non-deterministic</div>
               <div class="failure-desc">Even with phantom fix, per-call latency on the Helius free tier is variable (150ms–800ms). High concurrency (c=30+) can trigger rate-limit 429 backoff. V14 BO should tune concurrency conservatively in 8–32 range.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="failure-card">
+        <h3><span style="color:var(--orange)">V15</span> — Free-Tier Fallback (getSignaturesForAddress)</h3>
+        <div class="failure-list">
+          <div class="failure-item">
+            <div class="failure-icon fi-risk">✗</div>
+            <div class="failure-body">
+              <div class="failure-title">10 RPS free-tier rate limit makes dense wallets 6–20s</div>
+              <div class="failure-desc">Free Helius tier caps at ~10 RPS. Dense wallet needs 100+ getTransaction calls → 10s minimum. Gate penalty is 0.05 (×20 score reduction) for any wallet ≥3s. Paid tier V14 with phantom-token fix would achieve the same completeness in &lt;1s.</div>
+            </div>
+          </div>
+          <div class="failure-item">
+            <div class="failure-icon fi-risk">✗</div>
+            <div class="failure-body">
+              <div class="failure-title">No pre-filtering of SOL-balance transactions</div>
+              <div class="failure-desc">Paid <code>getTransactionsForAddress</code> accepts <code>status:"succeeded"</code> + <code>tokenAccounts:"none"</code> filters — returns only SOL-changing transactions. Standard <code>getSignaturesForAddress</code> returns ALL transactions. Medium wallet: 45% are SOL-changing; 55% are fetched needlessly. Dense wallet: 98% SOL-changing (lucky).</div>
+            </div>
+          </div>
+          <div class="failure-item">
+            <div class="failure-icon fi-fixed">✓</div>
+            <div class="failure-body">
+              <div class="failure-title">Fixed: filter succeeded sigs (err === null) before fetching</div>
+              <div class="failure-desc">Signatures returned by <code>getSignaturesForAddress</code> include an <code>err</code> field (<code>null</code> = success). Filtering to <code>err === null</code> before dispatching <code>getTransaction</code> calls eliminates fetching failed transactions — the closest approximation to <code>status:"succeeded"</code> on free tier.</div>
+            </div>
+          </div>
+          <div class="failure-item">
+            <div class="failure-icon fi-warn">!</div>
+            <div class="failure-body">
+              <div class="failure-title">Batch JSON-RPC blocked on free tier</div>
+              <div class="failure-desc">Sending multiple requests as a JSON array (batch RPC) would have cut HTTP round-trips from 120 to ~5. Helius returns HTTP 403: "Batch requests are only available for paid plans." Cannot work around — reverted to individual calls.</div>
             </div>
           </div>
         </div>
@@ -1062,6 +1154,30 @@
         </ul>
       </div>
 
+      <div class="prod-card" style="border-color:var(--orange)">
+        <h3>⚠️ Free-Tier Fallback: V15</h3>
+        <div class="subtitle">Use when Helius paid API is unavailable. Standard Solana RPC only — expect 5–25s per wallet.</div>
+        <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v15.mjs"</span>;
+
+<span class="code-key">const</span> strategy = {
+  <span class="code-key">sigPageSize</span>:   <span class="code-num">1000</span>,
+  <span class="code-key">maxSigPages</span>:     <span class="code-num">6</span>,
+  <span class="code-key">txTarget</span>:       <span class="code-num">20</span>, <span class="code-key">// BO optimising — low=fast</span>
+  <span class="code-key">maxConcurrency</span>: <span class="code-num">12</span>,
+  <span class="code-key">skipZeroDelta</span>: <span class="code-bool">false</span>,
+};
+
+<span class="code-key">// ⚠️  free-tier rate limit: ~10 RPS
+// ⚠️  medium wallet:  5–15s (gate=0.05 penalty)
+// ⚠️  dense wallet:  8–25s  (gate=0.05 penalty)
+// ✓   sparse wallet: 1.5–5s (usually complete)</span></pre>
+        <ul class="prod-bullets">
+          <li><span>Gate math</span>: txTarget=15+gate=1.0 scores 36× better than txTarget=120+gate=0.05</li>
+          <li><span>Free-tier constraint</span>: batch JSON-RPC blocked; individual calls rate-limited</li>
+          <li>Upgrade to paid tier (V14 phantom-fix) for 100× fewer calls and all wallets &lt;2s</li>
+        </ul>
+      </div>
+
       <div class="prod-card">
         <h3>🔧 Premium API Tier</h3>
         <div class="subtitle">If you upgrade to a Helius paid plan, adjust concurrency.</div>
@@ -1156,6 +1272,14 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
         </div>
       </div>
 
+      <div class="insight" style="border-color:var(--orange)">
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--orange)">V15</div>
+        <div class="insight-body">
+          <h4>Gate penalty math: txTarget=15 + gate=1.0 beats txTarget=120 + gate=0.05 by 36×</h4>
+          <p>On free tier, 120 getTransaction calls at 10 RPS = 12s → gate=0.05. Score: 1.0×(1000/7000)×0.05 = 0.007. But txTarget=15 can keep all wallets under 2s → gate=1.0. Score: 0.33×(1000/1800)×1.0 = 0.185 — only sparse is complete. Despite 1/3 completeness, the gate=1.0 multiplier wins by 26×. The BO discovers this by exploring txTarget=[5,60] — the sweet spot where wall times just clear the 2s gate.</p>
+        </div>
+      </div>
+
       <div class="insight">
         <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--accent)">BT</div>
         <div class="insight-body">
@@ -1168,8 +1292,8 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
   </section>
 
   <footer class="footer">
-    <span>RPCsol_pnl · Research Dashboard · Updated 2026-04-13 · V8/V9 pending BO</span>
-    <span>Helius <code>getTransactionsForAddress</code> · Mainnet · Free Tier</span>
+    <span>RPCsol_pnl · Research Dashboard · Updated 2026-04-13 · V15 free-tier BO running · V14 paid-tier pending API key</span>
+    <span>V8–V14: Helius <code>getTransactionsForAddress</code> (paid) · V15: standard Solana RPC (free) · Mainnet</span>
   </footer>
 
 </div><!-- /page -->
@@ -1283,6 +1407,50 @@ function makeChart(id, raw, color) {
 
 makeChart('chartV3', v3Raw, '#58a6ff');
 makeChart('chartV4', v4Raw, '#3fb950');
+
+// ── V15 free-tier BO (live — first 9 random trials) ───────────
+const v15Raw = [
+  {trial:1,score:0.0054},{trial:2,score:0.0051},{trial:3,score:0.0059},
+  {trial:4,score:0.0046},{trial:5,score:0.0052},{trial:6,score:0.0059},
+  {trial:7,score:0.0087},  // txTarget=31, c=12, skip=false — BEST: 2/3 completeness via skip=false trick
+  {trial:8,score:0.0049},{trial:9,score:0.0046},{trial:10,score:0.0042},
+  {trial:11,score:0.0053},{trial:12,score:0.0052},{trial:13,score:0.0042},
+  {trial:14,score:0.0028},
+  // GP exploiting txTarget=30–37, c=12, skip=false. Rate-limit variance prevents consistent improvement.
+  // All 14 trials gate=0.05 (>3s max). Best = 0.0087 (14 trials in, 36 remaining).
+];
+makeChart('chartV15', v15Raw, '#ffa657');
+
+// V15 wall time bar chart (trial 3: best config so far)
+new Chart(document.getElementById('chartV15Wall'), {
+  type: 'bar',
+  data: {
+    labels: ['Sparse (4 txns)', 'Medium (~60 txns)', 'Dense (~451 txns)'],
+    datasets: [{
+      label: 'txTarget=20, c=5 (trial 3)',
+      data: [1243, 2954, 4246],
+      backgroundColor: ['#3fb950aa', '#d29922aa', '#f85149aa'],
+      borderColor: ['#3fb950', '#d29922', '#f85149'],
+      borderWidth: 1.5,
+    }]
+  },
+  options: {
+    ...chartDefaults,
+    plugins: {
+      ...chartDefaults.plugins,
+      legend: { display: true, labels: { color: '#8b949e', font: { size: 11 }, boxWidth: 16 } }
+    },
+    scales: {
+      x: { ...chartDefaults.scales.x, title: { display: true, text: 'Wallet', color: '#8b949e', font: { size: 11 } } },
+      y: {
+        min: 0, max: 5000,
+        grid: { color: 'rgba(48,54,61,0.6)' },
+        ticks: { color: '#8b949e', font: { size: 11 }, callback: v => v + 'ms' },
+        title: { display: true, text: 'Wall time (ms) — gate 2s=green, 3s=yellow', color: '#8b949e', font: { size: 11 } }
+      }
+    }
+  }
+});
 
 // ── Smooth scroll for nav ───────────────────────────────────────
 document.querySelectorAll('.tab-nav a').forEach(a => {

@@ -214,11 +214,23 @@ for (const c of candidates) {
   }
   const strategy = c.extract(raw || {});
   const runs = [];
+  let candidateError = null;
 
   for (let i = 1; i <= REPEATS; i++) {
-    const res = await c.evalFn(strategy, apiKey);
-    runs.push({ repeat: i, aggregate: res.aggregate, wallets: res.results });
-    console.log(`[${c.label}] ${i}/${REPEATS} score=${res.aggregate.score.toFixed(4)} avgMs=${res.aggregate.avgLatencyMs.toFixed(0)} rpc=${res.aggregate.totalRpc}`);
+    try {
+      const res = await c.evalFn(strategy, apiKey);
+      runs.push({ repeat: i, aggregate: res.aggregate, wallets: res.results });
+      console.log(`[${c.label}] ${i}/${REPEATS} score=${res.aggregate.score.toFixed(4)} avgMs=${res.aggregate.avgLatencyMs.toFixed(0)} rpc=${res.aggregate.totalRpc}`);
+    } catch (err) {
+      candidateError = (err && err.message) ? err.message : String(err);
+      console.log(`[error] ${c.label} failed on repeat ${i}: ${candidateError}`);
+      break;
+    }
+  }
+
+  if (runs.length === 0) {
+    console.log(`[skip] ${c.label} no successful runs`);
+    continue;
   }
 
   const scores = runs.map(r => r.aggregate.score);
@@ -246,6 +258,7 @@ for (const c of candidates) {
       maxAvgMs: round(Math.max(...ms), 1),
     },
     failureModes: [],
+    candidateError,
     runs,
   });
 }
