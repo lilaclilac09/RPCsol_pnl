@@ -241,7 +241,7 @@
     background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
     padding: 16px; display: flex; gap: 12px;
   }
-  .insight-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+  .insight-icon { font-size: 11px; line-height: 1; flex-shrink: 0; width: 32px; text-align: center; padding-top: 3px; }
   .insight-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
   .insight-body p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
@@ -264,7 +264,7 @@
   .tab-nav a:hover { color: var(--text); text-decoration: none; }
   .tab-nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-  .trophy::before { content: "🏆"; }
+  .trophy::before { content: "#1"; }
 </style>
 </head>
 <body>
@@ -837,7 +837,7 @@
       </div>
 
       <div class="prod-card">
-        <h3>⚡ Fastest: V3 — Known Small Wallets</h3>
+        <h3>Fastest: V3 — Known Small Wallets</h3>
         <div class="subtitle">Use when you know wallets have &lt;1000 succeeded transactions.</div>
         <pre><span class="code-key">import</span> { solBalanceOverTime } <span class="code-key">from</span> <span class="code-str">"./sol_balance_v3.mjs"</span>;
 
@@ -913,7 +913,7 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
     <div class="insight-grid">
 
       <div class="insight" style="border-color:var(--teal)">
-        <div class="insight-icon">🌊</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--teal)">V8</div>
         <div class="insight-body">
           <h4>V8: Streaming pipeline breaks the 2-serial-RT ceiling</h4>
           <p>V3 fires <code>Promise.all([oldestFull, newestSigs])</code> and waits for BOTH. V8 awaits sigs first (small payload = fast), immediately starts Phase 1 windows, then merges the anchor when it arrives. Sigs arrive ~150–250ms before fullTxns — that's free latency savings. Projected score: ~1.1+ (BO not yet run — Helius free tier quota exhausted).</p>
@@ -921,15 +921,15 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       </div>
 
       <div class="insight">
-        <div class="insight-icon">⚡</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--yellow)">RT</div>
         <div class="insight-body">
           <h4>Optimal concurrency depends on the algorithm's round-trip count</h4>
-          <p>V2 optimal: c=6 (3 serial RTs → rate-limit retries dominate). V3 optimal: c=23 (2 serial RTs → Phase 1 parallel windows are the bottleneck). V4 optimal: c=9 (density windows are larger, less parallelism needed).</p>
+          <p>V2 optimal: c=6 (3 serial RTs — rate-limit retries dominate). V3 optimal: c=23 (2 serial RTs — Phase 1 parallel windows are the bottleneck). V4 optimal: c=9 (density windows are larger, less parallelism needed).</p>
         </div>
       </div>
 
       <div class="insight">
-        <div class="insight-icon">🔁</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--green)">56%</div>
         <div class="insight-body">
           <h4>2 serial round-trips beats 3 by ~56% on average</h4>
           <p>V3's key innovation: firing oldest full txns + newest sigs in a single <code>Promise.all</code> removes one complete serial dependency. For the medium wallet, Phase 0 alone delivers all data — Phase 1 fires 2–3 windows in parallel.</p>
@@ -937,23 +937,23 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       </div>
 
       <div class="insight">
-        <div class="insight-icon">📊</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--red)">VAR</div>
         <div class="insight-body">
           <h4>Score variance is too high for single-trial comparison</h4>
-          <p>Helius free tier has ~2× latency jitter on the sparse wallet (871ms–2970ms). A single BO trial score of 0.879 vs a re-evaluated 0.68 illustrates the noise. Use 3-run averages for stable comparison.</p>
+          <p>Helius free tier has ~2x latency jitter on the sparse wallet (871ms–2970ms). A single BO trial score of 0.879 vs a re-evaluated 0.68 illustrates the noise. Use 3-run averages for stable comparison.</p>
         </div>
       </div>
 
       <div class="insight">
-        <div class="insight-icon">🧬</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--purple)">DE</div>
         <div class="insight-body">
           <h4>Differential Evolution found the best V2 config in 8 evaluations</h4>
-          <p>DE/rand/1/bin (Codex) reached score 0.620 in generation 1 (8 pop × 1 gen). This beat our GP-UCB (0.458 at trial 15) by 35%. DE's population crossover naturally explores oracle=true territory that sequential search misses.</p>
+          <p>DE/rand/1/bin reached score 0.620 in generation 1 (8 pop x 1 gen). This beat GP-UCB (0.458 at trial 15) by 35%. DE's population crossover naturally explores oracle=true territory that sequential search misses.</p>
         </div>
       </div>
 
       <div class="insight">
-        <div class="insight-icon">🚫</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--red)">HB</div>
         <div class="insight-body">
           <h4>Hyperband failed due to poor fidelity correlation</h4>
           <p>The sparse wallet always fast-exits in 2 calls regardless of config — it's not a discriminating signal. Low fidelity (sparse only) filters out good configs by chance. Fix: use dense wallet as the only low-fidelity proxy.</p>
@@ -961,15 +961,15 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       </div>
 
       <div class="insight">
-        <div class="insight-icon">🐛</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--orange)">API</div>
         <div class="insight-body">
-          <h4>Helius API has undocumented quirks that break naïve implementations</h4>
+          <h4>Helius API has undocumented quirks that break naive implementations</h4>
           <p>1. Returns <code>paginationToken</code> even when results &lt; limit. 2. Rejects slot filters with <code>gte:0</code>. 3. Hard caps full transaction responses at 100 regardless of <code>limit</code> param. All three were hit and fixed.</p>
         </div>
       </div>
 
       <div class="insight">
-        <div class="insight-icon">📉</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--muted)">SKP</div>
         <div class="insight-body">
           <h4>skipZeroDelta=false consistently reduces overhead</h4>
           <p>Filtering transactions where pre===post adds a comparison loop over every transaction. For our test wallets (~14–22 total RPC calls), this loop runs thousands of times. The filter cost exceeds the benefit of excluding zero-delta txns.</p>
@@ -977,7 +977,7 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       </div>
 
       <div class="insight">
-        <div class="insight-icon">🎯</div>
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--accent)">BT</div>
         <div class="insight-body">
           <h4>blockTime vs slot filtering: different tradeoffs</h4>
           <p>Slot-based (V2/V3/V4): faster exact windows, but triggers Helius slot-filter quirks. blockTime-based (Codex): immune to quirks, richer output, but density estimation can over-partition on dense wallets.</p>
