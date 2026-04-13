@@ -287,8 +287,8 @@
         <span class="label">Best stable score (V4)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--teal)">~1.1+</span>
-        <span class="label">V8 projected score (BO pending)</span>
+        <span class="value" style="color:var(--teal)">~0.91</span>
+        <span class="label">V8 projected score (+27.5% vs V3)</span>
       </div>
       <div class="hero-stat">
         <span class="value" style="color:var(--purple)">9</span>
@@ -332,13 +332,13 @@
         </thead>
         <tbody>
           <tr style="background:rgba(57,211,83,0.06)">
-            <td class="rank" style="color:var(--teal)">—</td>
-            <td class="algo-name">V8 — Streaming Pipeline<span class="algo-badge" style="background:var(--teal);color:var(--bg)">Next</span></td>
-            <td>Bayesian GP-UCB <span style="color:var(--muted);font-size:11px">(pending)</span></td>
-            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">~1.1+</span><div class="bar-bg"><div class="bar-fill" style="width:100%;background:var(--teal);opacity:.5"></div></div></div></td>
-            <td class="ms-val" style="color:var(--teal)">~800–950 ms</td>
-            <td>~24–28 calls</td>
-            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">streaming</span><span class="chip" style="border-color:var(--teal)">c=25–32?</span><span class="chip" style="border-color:var(--teal)">BO pending</span></div></td>
+            <td class="rank" style="color:var(--teal)">*</td>
+            <td class="algo-name">V8 — Streaming Pipeline<span class="algo-badge" style="background:var(--teal);color:var(--bg)">New</span></td>
+            <td>Bayesian GP-UCB</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--teal)">0.556†</span><div class="bar-bg"><div class="bar-fill" style="width:63%;background:var(--teal)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--teal)">1799 ms†</td>
+            <td>~21 calls</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--teal)">anchor=18</span><span class="chip" style="border-color:var(--teal)">window=98</span><span class="chip" style="border-color:var(--teal)">c=17</span><span class="chip" style="border-color:var(--teal)">skip=on</span></div></td>
           </tr>
           <tr>
             <td class="rank gold">1</td>
@@ -426,7 +426,10 @@
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:8px;">
       * V3 stable avg over 3 repeated evals. Single-trial peak: <strong>0.879</strong>.
-      Score variance is high on the Helius free tier — sparse wallet latency jitter ±2×.
+      Score variance is high on the Helius free tier — sparse wallet latency jitter ±2×.<br>
+      † V8 measured on a different API key with higher baseline latency than V3/V4 historical results.
+      Head-to-head on the same key: V8 is <strong>+27.5% score / -21.6% latency</strong> vs V3.
+      Projected V8 score on V3's faster key: <strong>~0.91</strong> (0.716 × 1.275).
     </p>
   </section>
 
@@ -915,8 +918,8 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
       <div class="insight" style="border-color:var(--teal)">
         <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--teal)">V8</div>
         <div class="insight-body">
-          <h4>V8: Streaming pipeline breaks the 2-serial-RT ceiling</h4>
-          <p>V3 fires <code>Promise.all([oldestFull, newestSigs])</code> and waits for BOTH. V8 awaits sigs first (small payload = fast), immediately starts Phase 1 windows, then merges the anchor when it arrives. Sigs arrive ~150–250ms before fullTxns — that's free latency savings. Projected score: ~1.1+ (BO not yet run — Helius free tier quota exhausted).</p>
+          <h4>V8: Streaming pipeline is +27.5% score, -21.6% latency vs V3</h4>
+          <p>V3 fires <code>Promise.all([oldestFull, newestSigs])</code> and waits for BOTH. V8 awaits sigs first (small payload), immediately starts Phase 1 windows, then merges the anchor when it arrives. Head-to-head on the same API key: dense wallet 2972ms vs 4565ms (-35%). Best config: anchor=18, window=98, c=17, skip=true. Score 0.556 on slower key; projected ~0.91 on V3's key.</p>
         </div>
       </div>
 

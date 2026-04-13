@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v8-streaming",
+    "trial": 2,
+    "score_bo_trial": 0.5559,
+    "score_head_to_head": 0.5216,
+    "avgMs_bo_trial": 1799,
+    "vs_v3_same_key": "+27.5% score, -21.6% latency",
+    "note": "Measured on slower API key than V3/V4 historical results. V8 relative gain implies ~0.91 on the faster key V3 used (0.716 × 1.275)."
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "anchorSize": 18,
+  "windowSize": 98,
+  "maxConcurrency": 17,
+  "skipZeroDelta": true
+}
