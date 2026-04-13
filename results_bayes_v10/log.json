@@ -2,30 +2,30 @@
   {
     "trial": 1,
     "x": [
-      0.650483985784333,
-      0.9132956274066915,
-      0.047480256959128164
+      0.7401389432695762,
+      0.822479317370765,
+      0.6790525625145529
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 72,
-      "maxConcurrency": 30,
-      "skipZeroDelta": false
+      "windowSize": 79,
+      "maxConcurrency": 27,
+      "skipZeroDelta": true
     },
-    "score": 0.4306853011854006,
+    "score": 0.3638651410872682,
     "aggregate": {
-      "avgLatencyMs": 2321.8809586666666,
-      "totalRpc": 22,
+      "avgLatencyMs": 2748.270958333333,
+      "totalRpc": 20,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.4306853011854006
+      "score": 0.3638651410872682
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1645.122709,
+        "wallMs": 2375.200833,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -34,18 +34,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 2297.227,
+        "wallMs": 1808.1166670000002,
         "rpcCalls": 3,
-        "sampleCount": 60,
+        "sampleCount": 59,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 3023.293167,
-        "rpcCalls": 16,
-        "sampleCount": 451,
+        "wallMs": 4061.4953750000004,
+        "rpcCalls": 14,
+        "sampleCount": 286,
         "openGaps": 0,
         "complete": true
       }
@@ -54,30 +54,30 @@
   {
     "trial": 2,
     "x": [
-      0.21942447022290268,
-      0.019320510782018463,
-      0.15210438993799968
+      0.33289756364066725,
+      0.41953069881222804,
+      0.9514199261589471
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 38,
-      "maxConcurrency": 5,
-      "skipZeroDelta": false
+      "windowSize": 47,
+      "maxConcurrency": 16,
+      "skipZeroDelta": true
     },
-    "score": 0.4915426536679237,
+    "score": 0.42868761822623996,
     "aggregate": {
-      "avgLatencyMs": 2034.411444333333,
-      "totalRpc": 35,
+      "avgLatencyMs": 2332.7009166666667,
+      "totalRpc": 30,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.4915426536679237
+      "score": 0.42868761822623996
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 332.4055840000001,
+        "wallMs": 334.3962499999998,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -86,59 +86,7 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1009.4469579999995,
-        "rpcCalls": 6,
-        "sampleCount": 60,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 4761.381791,
-        "rpcCalls": 26,
-        "sampleCount": 451,
-        "openGaps": 0,
-        "complete": true
-      }
-    ]
-  },
-  {
-    "trial": 3,
-    "x": [
-      0.2539798482441966,
-      0.7623178534339723,
-      0.8358804396695092
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 20,
-      "windowSize": 40,
-      "maxConcurrency": 25,
-      "skipZeroDelta": true
-    },
-    "score": 0.5546558019524637,
-    "aggregate": {
-      "avgLatencyMs": 1802.9199306666662,
-      "totalRpc": 34,
-      "openGapPenalty": 0,
-      "completeness": 1,
-      "score": 0.5546558019524637
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 944.4440840000007,
-        "rpcCalls": 4,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 1297.429791999999,
+        "wallMs": 809.6822080000002,
         "rpcCalls": 4,
         "sampleCount": 59,
         "openGaps": 0,
@@ -147,8 +95,60 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 3166.8859159999993,
-        "rpcCalls": 26,
+        "wallMs": 5854.024292,
+        "rpcCalls": 23,
+        "sampleCount": 286,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 3,
+    "x": [
+      0.8539482475277775,
+      0.49064583693597763,
+      0.5632115859341191
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 88,
+      "maxConcurrency": 18,
+      "skipZeroDelta": true
+    },
+    "score": 0.5501123677767813,
+    "aggregate": {
+      "avgLatencyMs": 1817.8104303333337,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5501123677767813
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 449.12791599999946,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 449.7122080000008,
+        "rpcCalls": 3,
+        "sampleCount": 59,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4554.5911670000005,
+        "rpcCalls": 14,
         "sampleCount": 286,
         "openGaps": 0,
         "complete": true
@@ -158,82 +158,30 @@
   {
     "trial": 4,
     "x": [
-      0.5915153630604075,
-      0.07716337652724103,
-      0.2988284566330348
+      0.1917722060531446,
+      0.21830959192114396,
+      0.6219437838361643
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 67,
-      "maxConcurrency": 6,
-      "skipZeroDelta": false
-    },
-    "score": 0.6845686112456086,
-    "aggregate": {
-      "avgLatencyMs": 1460.7739583333325,
-      "totalRpc": 22,
-      "openGapPenalty": 0,
-      "completeness": 1,
-      "score": 0.6845686112456086
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 325.0004999999983,
-        "rpcCalls": 3,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 399.03512500000215,
-        "rpcCalls": 3,
-        "sampleCount": 60,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 3658.2862499999974,
-        "rpcCalls": 16,
-        "sampleCount": 451,
-        "openGaps": 0,
-        "complete": true
-      }
-    ]
-  },
-  {
-    "trial": 5,
-    "x": [
-      0.44063689538828643,
-      0.4189827847585217,
-      0.5061277868780543
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 20,
-      "windowSize": 55,
-      "maxConcurrency": 16,
+      "windowSize": 35,
+      "maxConcurrency": 10,
       "skipZeroDelta": true
     },
-    "score": 0.5646840832620175,
+    "score": 0.45697336211928574,
     "aggregate": {
-      "avgLatencyMs": 1770.901694666667,
-      "totalRpc": 27,
+      "avgLatencyMs": 2188.311361,
+      "totalRpc": 35,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.5646840832620175
+      "score": 0.45697336211928574
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 589.4789170000004,
+        "wallMs": 1511.8140829999975,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -242,7 +190,7 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1348.033041999999,
+        "wallMs": 734.4375419999997,
         "rpcCalls": 4,
         "sampleCount": 59,
         "openGaps": 0,
@@ -251,8 +199,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 3375.1931250000016,
-        "rpcCalls": 20,
+        "wallMs": 4318.682458000003,
+        "rpcCalls": 28,
         "sampleCount": 286,
         "openGaps": 0,
         "complete": true
@@ -260,32 +208,32 @@
     ]
   },
   {
-    "trial": 6,
+    "trial": 5,
     "x": [
-      0.9250105058955309,
-      0.017325993833787967,
-      0.3894154481000365
+      0.9869864380451003,
+      0.28783931313130195,
+      0.06371458121282902
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 94,
-      "maxConcurrency": 4,
+      "windowSize": 99,
+      "maxConcurrency": 12,
       "skipZeroDelta": false
     },
-    "score": 0.45627304719857065,
+    "score": 0.5484486972108695,
     "aggregate": {
-      "avgLatencyMs": 2191.670111000001,
-      "totalRpc": 18,
+      "avgLatencyMs": 1823.3245973333335,
+      "totalRpc": 21,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.45627304719857065
+      "score": 0.5484486972108695
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 940.859708,
+        "wallMs": 346.1032919999998,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -294,7 +242,59 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1220.399125,
+        "wallMs": 1520.201083,
+        "rpcCalls": 4,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3603.669417000001,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 6,
+    "x": [
+      0.9860724799252303,
+      0.08787118447831133,
+      0.4907586088878093
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 99,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.6106208490026493,
+    "aggregate": {
+      "avgLatencyMs": 1637.6774583333317,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6106208490026493
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 412.0897079999995,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 478.5463749999981,
         "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
@@ -303,8 +303,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4413.751500000002,
-        "rpcCalls": 12,
+        "wallMs": 4022.3962919999976,
+        "rpcCalls": 14,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -314,30 +314,30 @@
   {
     "trial": 7,
     "x": [
-      0.5839422564536323,
-      0.06690065174573778,
-      0.1398695295563681
+      0.9438022573944178,
+      0.07647563222846876,
+      0.7830631930706544
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 67,
+      "windowSize": 96,
       "maxConcurrency": 6,
-      "skipZeroDelta": false
+      "skipZeroDelta": true
     },
-    "score": 0.3412334080587102,
+    "score": 0.19869000149307392,
     "aggregate": {
-      "avgLatencyMs": 2930.5454166666677,
-      "totalRpc": 22,
+      "avgLatencyMs": 5032.965888999999,
+      "totalRpc": 19,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.3412334080587102
+      "score": 0.19869000149307392
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 329.97541600000113,
+        "wallMs": 633.3116659999941,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -346,18 +346,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1321.8574169999993,
-        "rpcCalls": 3,
-        "sampleCount": 60,
+        "wallMs": 3863.137084000002,
+        "rpcCalls": 4,
+        "sampleCount": 59,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7139.803417000003,
-        "rpcCalls": 16,
-        "sampleCount": 451,
+        "wallMs": 10602.448917000002,
+        "rpcCalls": 12,
+        "sampleCount": 286,
         "openGaps": 0,
         "complete": true
       }
@@ -366,82 +366,30 @@
   {
     "trial": 8,
     "x": [
-      0.4732047989360435,
-      0.013638027164091682,
-      0.5335901914065455
+      0.8937379268043746,
+      0.21885184897372167,
+      0.3409990721874576
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 58,
-      "maxConcurrency": 4,
-      "skipZeroDelta": true
-    },
-    "score": 0.24345248736623604,
-    "aggregate": {
-      "avgLatencyMs": 4107.577666666667,
-      "totalRpc": 27,
-      "openGapPenalty": 0,
-      "completeness": 1,
-      "score": 0.24345248736623604
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 928.9396249999991,
-        "rpcCalls": 3,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 4602.904291999999,
-        "rpcCalls": 6,
-        "sampleCount": 59,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 6790.889083000002,
-        "rpcCalls": 18,
-        "sampleCount": 286,
-        "openGaps": 0,
-        "complete": true
-      }
-    ]
-  },
-  {
-    "trial": 9,
-    "x": [
-      0.7314671632875063,
-      0.3835216588106314,
-      0.38946065067428703
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 20,
-      "windowSize": 79,
-      "maxConcurrency": 15,
+      "windowSize": 91,
+      "maxConcurrency": 10,
       "skipZeroDelta": false
     },
-    "score": 0.378179230687773,
+    "score": 0.6461868630815562,
     "aggregate": {
-      "avgLatencyMs": 2644.248861,
-      "totalRpc": 20,
+      "avgLatencyMs": 1547.5399720000012,
+      "totalRpc": 18,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.378179230687773
+      "score": 0.6461868630815562
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 965.5054579999996,
+        "wallMs": 579.6412500000006,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -450,7 +398,7 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 990.9369999999981,
+        "wallMs": 1060.2108330000046,
         "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
@@ -459,8 +407,60 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5976.304125000002,
-        "rpcCalls": 14,
+        "wallMs": 3002.767832999998,
+        "rpcCalls": 12,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 9,
+    "x": [
+      0.9590946294418572,
+      0.03915506867600871,
+      0.2909534824916191
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 97,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
+    },
+    "score": 0.4765650272541246,
+    "aggregate": {
+      "avgLatencyMs": 2098.349528000001,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4765650272541246
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 947.8469590000022,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1025.4523750000008,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4321.749250000001,
+        "rpcCalls": 12,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -470,30 +470,30 @@
   {
     "trial": 10,
     "x": [
-      0.10251068690991572,
-      0.6731194741282223,
-      0.20720774093279615
+      0.9399927429771029,
+      0.5323785269698766,
+      0.286894702169739
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 28,
-      "maxConcurrency": 23,
+      "windowSize": 95,
+      "maxConcurrency": 19,
       "skipZeroDelta": false
     },
-    "score": 0.519996126028861,
+    "score": 0.5350439799409958,
     "aggregate": {
-      "avgLatencyMs": 1923.0912500000002,
-      "totalRpc": 44,
+      "avgLatencyMs": 1869.0052359999997,
+      "totalRpc": 18,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.519996126028861
+      "score": 0.5350439799409958
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 944.6865420000031,
+        "wallMs": 1205.2813749999987,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -502,8 +502,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1037.7550000000047,
-        "rpcCalls": 5,
+        "wallMs": 848.885208000007,
+        "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -511,8 +511,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 3786.8322079999925,
-        "rpcCalls": 36,
+        "wallMs": 3552.8491249999934,
+        "rpcCalls": 12,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -522,31 +522,31 @@
   {
     "trial": 11,
     "x": [
-      0.2393174790600432,
-      0.5293632605846903,
-      0.43712852388905876
+      0.990052956915993,
+      0.282964657686827,
+      0.28688180281650966
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 39,
-      "maxConcurrency": 19,
+      "windowSize": 99,
+      "maxConcurrency": 12,
       "skipZeroDelta": false
     },
-    "score": 0.36009980524761775,
+    "score": 0.16206183821046297,
     "aggregate": {
-      "avgLatencyMs": 2777.0078890000054,
-      "totalRpc": 34,
+      "avgLatencyMs": 6170.484125333329,
+      "totalRpc": 20,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.36009980524761775
+      "score": 0.16206183821046297
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 2237.7211670000106,
-        "rpcCalls": 4,
+        "wallMs": 579.0962089999957,
+        "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -554,8 +554,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 941.8115830000024,
-        "rpcCalls": 4,
+        "wallMs": 399.5782499999914,
+        "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -563,8 +563,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5151.490917000003,
-        "rpcCalls": 26,
+        "wallMs": 17532.777917,
+        "rpcCalls": 14,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -574,30 +574,30 @@
   {
     "trial": 12,
     "x": [
-      0.619040109688745,
-      0.8304891465401429,
-      0.9674362825649347
+      0.5297872414419424,
+      0.47805603425019716,
+      0.019653078529292545
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 70,
-      "maxConcurrency": 27,
-      "skipZeroDelta": true
+      "windowSize": 62,
+      "maxConcurrency": 17,
+      "skipZeroDelta": false
     },
-    "score": 0.5144024506320684,
+    "score": 0.154828469694022,
     "aggregate": {
-      "avgLatencyMs": 1944.0031803333306,
-      "totalRpc": 22,
+      "avgLatencyMs": 6458.7604720000045,
+      "totalRpc": 24,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.5144024506320684
+      "score": 0.154828469694022
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 339.6722909999953,
+        "wallMs": 1046.9448330000014,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -606,18 +606,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1112.2513340000005,
+        "wallMs": 767.1882080000069,
         "rpcCalls": 3,
-        "sampleCount": 59,
+        "sampleCount": 60,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4380.085915999996,
-        "rpcCalls": 16,
-        "sampleCount": 286,
+        "wallMs": 17562.148375000004,
+        "rpcCalls": 18,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }
@@ -626,30 +626,30 @@
   {
     "trial": 13,
     "x": [
-      0.11179024490751188,
-      0.9962352860818848,
-      0.08970939618359064
+      0.6671221165797128,
+      0.04479104412461754,
+      0.38178226352424005
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 29,
-      "maxConcurrency": 32,
+      "windowSize": 73,
+      "maxConcurrency": 5,
       "skipZeroDelta": false
     },
-    "score": 0.3736108564589888,
+    "score": 0.5274465145059665,
     "aggregate": {
-      "avgLatencyMs": 2676.5817500000026,
-      "totalRpc": 44,
+      "avgLatencyMs": 1895.9268333333312,
+      "totalRpc": 22,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.3736108564589888
+      "score": 0.5274465145059665
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1206.0354999999981,
+        "wallMs": 1152.820749999999,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -658,8 +658,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1760.288625000001,
-        "rpcCalls": 7,
+        "wallMs": 717.9668329999986,
+        "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -667,8 +667,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5063.421125000008,
-        "rpcCalls": 34,
+        "wallMs": 3816.992916999996,
+        "rpcCalls": 16,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -678,31 +678,31 @@
   {
     "trial": 14,
     "x": [
-      0.3188808160952765,
-      0.8901127947026735,
-      0.9403989625896492
+      0.8710609804297307,
+      0.74156041401393,
+      0.09724598927653183
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 46,
-      "maxConcurrency": 29,
-      "skipZeroDelta": true
+      "windowSize": 90,
+      "maxConcurrency": 25,
+      "skipZeroDelta": false
     },
-    "score": 0.4179492944804775,
+    "score": 0.2197281322847697,
     "aggregate": {
-      "avgLatencyMs": 2392.6347363333334,
-      "totalRpc": 29,
+      "avgLatencyMs": 4551.078597,
+      "totalRpc": 21,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.4179492944804775
+      "score": 0.2197281322847697
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 617.0705420000013,
-        "rpcCalls": 3,
+        "wallMs": 790.2438330000004,
+        "rpcCalls": 4,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -710,18 +710,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 610.7584999999963,
-        "rpcCalls": 4,
-        "sampleCount": 59,
+        "wallMs": 1245.585625000007,
+        "rpcCalls": 3,
+        "sampleCount": 60,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5950.075167000003,
-        "rpcCalls": 22,
-        "sampleCount": 286,
+        "wallMs": 11617.406332999992,
+        "rpcCalls": 14,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }
@@ -730,30 +730,30 @@
   {
     "trial": 15,
     "x": [
-      0.4823599310225184,
-      0.6145954364129373,
-      0.975104704291579
+      0.6592223281659146,
+      0.45236196813763985,
+      0.5301288798107051
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 59,
-      "maxConcurrency": 21,
+      "windowSize": 73,
+      "maxConcurrency": 17,
       "skipZeroDelta": true
     },
-    "score": 0.20176089793594004,
+    "score": 0.5525735811732837,
     "aggregate": {
-      "avgLatencyMs": 4956.361764000001,
-      "totalRpc": 26,
+      "avgLatencyMs": 1809.7137359999954,
+      "totalRpc": 22,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.20176089793594004
+      "score": 0.5525735811732837
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 348.28091700001096,
+        "wallMs": 797.1089589999901,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -762,8 +762,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1109.7933749999938,
-        "rpcCalls": 5,
+        "wallMs": 680.3847079999978,
+        "rpcCalls": 3,
         "sampleCount": 59,
         "openGaps": 0,
         "complete": true
@@ -771,8 +771,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 13411.010999999999,
-        "rpcCalls": 18,
+        "wallMs": 3951.6475409999985,
+        "rpcCalls": 16,
         "sampleCount": 286,
         "openGaps": 0,
         "complete": true
@@ -782,30 +782,30 @@
   {
     "trial": 16,
     "x": [
-      0.6299461946255567,
-      0.9772391965625198,
-      0.7076812899955067
+      0.729577295274872,
+      0.3625638696913902,
+      0.5098913184431262
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 70,
-      "maxConcurrency": 31,
+      "windowSize": 78,
+      "maxConcurrency": 14,
       "skipZeroDelta": true
     },
-    "score": 0.1649212504747955,
+    "score": 0.276750749570481,
     "aggregate": {
-      "avgLatencyMs": 6063.4999863333405,
-      "totalRpc": 22,
+      "avgLatencyMs": 3613.3596803333203,
+      "totalRpc": 20,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.1649212504747955
+      "score": 0.276750749570481
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1101.880250000002,
+        "wallMs": 1426.1072079999722,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -814,7 +814,7 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 681.6472090000025,
+        "wallMs": 979.4819999999891,
         "rpcCalls": 3,
         "sampleCount": 59,
         "openGaps": 0,
@@ -823,8 +823,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 16406.972500000018,
-        "rpcCalls": 16,
+        "wallMs": 8434.489833,
+        "rpcCalls": 14,
         "sampleCount": 286,
         "openGaps": 0,
         "complete": true
@@ -834,82 +834,30 @@
   {
     "trial": 17,
     "x": [
-      0.530835753610259,
-      0.24876063691236894,
-      0.29564654263456536
+      0.021820272808719343,
+      0.5625917911798295,
+      0.9996011752911138
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 62,
-      "maxConcurrency": 11,
-      "skipZeroDelta": false
-    },
-    "score": 0.16975104711589775,
-    "aggregate": {
-      "avgLatencyMs": 5890.979861333336,
-      "totalRpc": 24,
-      "openGapPenalty": 0,
-      "completeness": 1,
-      "score": 0.16975104711589775
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 998.1519580000022,
-        "rpcCalls": 3,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 1103.861292000016,
-        "rpcCalls": 3,
-        "sampleCount": 60,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 15570.926333999989,
-        "rpcCalls": 18,
-        "sampleCount": 451,
-        "openGaps": 0,
-        "complete": true
-      }
-    ]
-  },
-  {
-    "trial": 18,
-    "x": [
-      0.04680833941634677,
-      0.6693181694958732,
-      0.6247160729526093
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 20,
-      "windowSize": 24,
-      "maxConcurrency": 23,
+      "windowSize": 22,
+      "maxConcurrency": 20,
       "skipZeroDelta": true
     },
-    "score": 0.36887829178993603,
+    "score": 0.3899531010073623,
     "aggregate": {
-      "avgLatencyMs": 2710.92125033334,
-      "totalRpc": 48,
+      "avgLatencyMs": 2564.410944333329,
+      "totalRpc": 52,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.36887829178993603
+      "score": 0.3899531010073623
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1055.7729169999948,
+        "wallMs": 1782.3349579999922,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -918,7 +866,7 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1035.0893750000105,
+        "wallMs": 1040.8762909999932,
         "rpcCalls": 5,
         "sampleCount": 59,
         "openGaps": 0,
@@ -927,9 +875,61 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 6041.901459000015,
-        "rpcCalls": 40,
+        "wallMs": 4870.021584000002,
+        "rpcCalls": 44,
         "sampleCount": 286,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 18,
+    "x": [
+      0.7423978139840834,
+      0.03251102639629866,
+      0.17637248126545213
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 79,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
+    },
+    "score": 0.5275056772741362,
+    "aggregate": {
+      "avgLatencyMs": 1895.714194333336,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5275056772741362
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 1019.6136249999981,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 942.715750000003,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3724.813208000007,
+        "rpcCalls": 14,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }
@@ -938,30 +938,30 @@
   {
     "trial": 19,
     "x": [
-      0.5549964169217132,
-      0.5789546649624235,
-      0.5743764085495511
+      0.9185053419404987,
+      0.07151387036539814,
+      0.029840826432123935
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 64,
-      "maxConcurrency": 20,
-      "skipZeroDelta": true
+      "windowSize": 93,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
     },
-    "score": 0.1885024634640788,
+    "score": 0.5302071573745492,
     "aggregate": {
-      "avgLatencyMs": 5304.970458333351,
-      "totalRpc": 24,
+      "avgLatencyMs": 1886.0552636666496,
+      "totalRpc": 18,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.1885024634640788
+      "score": 0.5302071573745492
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 983.3591250000172,
+        "wallMs": 1361.80891599998,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -970,18 +970,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1312.988250000024,
+        "wallMs": 562.883749999979,
         "rpcCalls": 3,
-        "sampleCount": 59,
+        "sampleCount": 60,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 13618.564000000013,
-        "rpcCalls": 18,
-        "sampleCount": 286,
+        "wallMs": 3733.4731249999895,
+        "rpcCalls": 12,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }
@@ -990,82 +990,30 @@
   {
     "trial": 20,
     "x": [
-      0.9985829106846089,
-      0.8782414574185109,
-      0.9908576328299421
+      0.8006581489386329,
+      0.016704686563837834,
+      0.019578433454393807
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 100,
-      "maxConcurrency": 29,
-      "skipZeroDelta": true
-    },
-    "score": 0.2939348359013937,
-    "aggregate": {
-      "avgLatencyMs": 3402.114611333343,
-      "totalRpc": 22,
-      "openGapPenalty": 0,
-      "completeness": 1,
-      "score": 0.2939348359013937
-    },
-    "results": [
-      {
-        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
-        "type": "sparse",
-        "wallMs": 1898.8119590000133,
-        "rpcCalls": 4,
-        "sampleCount": 4,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
-        "type": "medium",
-        "wallMs": 2236.9564170000085,
-        "rpcCalls": 4,
-        "sampleCount": 59,
-        "openGaps": 0,
-        "complete": true
-      },
-      {
-        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
-        "type": "dense",
-        "wallMs": 6070.575458000007,
-        "rpcCalls": 14,
-        "sampleCount": 286,
-        "openGaps": 0,
-        "complete": true
-      }
-    ]
-  },
-  {
-    "trial": 21,
-    "x": [
-      0.038634194088353224,
-      0.46835484101809377,
-      0.07029240577575746
-    ],
-    "strategy": {
-      "sigPageSize": 1000,
-      "maxSigPages": 20,
-      "windowSize": 23,
-      "maxConcurrency": 17,
+      "windowSize": 84,
+      "maxConcurrency": 4,
       "skipZeroDelta": false
     },
-    "score": 0.40753358892824804,
+    "score": 0.39727106996267847,
     "aggregate": {
-      "avgLatencyMs": 2453.7854723333344,
-      "totalRpc": 51,
+      "avgLatencyMs": 2517.172972333336,
+      "totalRpc": 21,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.40753358892824804
+      "score": 0.39727106996267847
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 610.1533749999944,
+        "wallMs": 759.517125000013,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1074,8 +1022,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1462.892749999999,
-        "rpcCalls": 6,
+        "wallMs": 971.3196250000037,
+        "rpcCalls": 4,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -1083,8 +1031,60 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5288.310292000009,
-        "rpcCalls": 42,
+        "wallMs": 5820.682166999992,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 21,
+    "x": [
+      0.8908366348238552,
+      0.07087046937378716,
+      0.30121442452462976
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 91,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.5854159661790584,
+    "aggregate": {
+      "avgLatencyMs": 1708.1870973333425,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5854159661790584
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 402.8915830000187,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 585.1340840000194,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4136.5356249999895,
+        "rpcCalls": 12,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -1094,30 +1094,30 @@
   {
     "trial": 22,
     "x": [
-      0.9391408695782959,
-      0.941847282427754,
-      0.02277052618436648
+      0.9512804231035557,
+      0.001042792614021959,
+      0.48673982142970074
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 95,
-      "maxConcurrency": 30,
+      "windowSize": 96,
+      "maxConcurrency": 4,
       "skipZeroDelta": false
     },
-    "score": 0.3437759314947854,
+    "score": 0.3538458075889774,
     "aggregate": {
-      "avgLatencyMs": 2908.8714723333346,
-      "totalRpc": 18,
+      "avgLatencyMs": 2826.0897220000043,
+      "totalRpc": 19,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.3437759314947854
+      "score": 0.3538458075889774
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 347.42554100000416,
+        "wallMs": 365.27566600000137,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1126,8 +1126,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1366.3743339999928,
-        "rpcCalls": 3,
+        "wallMs": 1548.8297500000044,
+        "rpcCalls": 4,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -1135,7 +1135,7 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 7012.814542000007,
+        "wallMs": 6564.163750000007,
         "rpcCalls": 12,
         "sampleCount": 451,
         "openGaps": 0,
@@ -1146,30 +1146,30 @@
   {
     "trial": 23,
     "x": [
-      0.4233817158002302,
-      0.9725159178928495,
-      0.9687529115836446
+      0.7200642024022808,
+      0.049779421854135864,
+      0.3338292695661309
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 54,
-      "maxConcurrency": 31,
-      "skipZeroDelta": true
+      "windowSize": 78,
+      "maxConcurrency": 5,
+      "skipZeroDelta": false
     },
-    "score": 0.1276207297916953,
+    "score": 0.5242590460920683,
     "aggregate": {
-      "avgLatencyMs": 7835.717611333336,
-      "totalRpc": 27,
+      "avgLatencyMs": 1907.453972333334,
+      "totalRpc": 20,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.1276207297916953
+      "score": 0.5242590460920683
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 581.066542000015,
+        "wallMs": 535.4519579999906,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1178,18 +1178,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1176.282124999998,
-        "rpcCalls": 4,
-        "sampleCount": 59,
+        "wallMs": 646.6600420000032,
+        "rpcCalls": 3,
+        "sampleCount": 60,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 21749.804166999995,
-        "rpcCalls": 20,
-        "sampleCount": 286,
+        "wallMs": 4540.249917000008,
+        "rpcCalls": 14,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }
@@ -1198,31 +1198,31 @@
   {
     "trial": 24,
     "x": [
-      0.21130279980765,
-      0.008197320228326976,
-      0.19700372515947984
+      0.8535699305687625,
+      0.01385662296581347,
+      0.3239340241465172
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 37,
+      "windowSize": 88,
       "maxConcurrency": 4,
       "skipZeroDelta": false
     },
-    "score": 0.13204764217501103,
+    "score": 0.3827277761791019,
     "aggregate": {
-      "avgLatencyMs": 7573.024277666671,
-      "totalRpc": 35,
+      "avgLatencyMs": 2612.8231663333427,
+      "totalRpc": 21,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.13204764217501103
+      "score": 0.3827277761791019
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1801.3575000000128,
-        "rpcCalls": 3,
+        "wallMs": 1349.3970419999969,
+        "rpcCalls": 4,
         "sampleCount": 4,
         "openGaps": 0,
         "complete": true
@@ -1230,8 +1230,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1158.942875000008,
-        "rpcCalls": 4,
+        "wallMs": 612.9221660000039,
+        "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -1239,8 +1239,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 19758.772457999992,
-        "rpcCalls": 28,
+        "wallMs": 5876.150291000027,
+        "rpcCalls": 14,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -1250,30 +1250,30 @@
   {
     "trial": 25,
     "x": [
-      0.7976205799218379,
-      0.054499378065808735,
-      0.35004932823314583
+      0.9966897129852059,
+      0.7821213855385516,
+      0.6111861073454683
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 84,
-      "maxConcurrency": 6,
-      "skipZeroDelta": false
+      "windowSize": 100,
+      "maxConcurrency": 26,
+      "skipZeroDelta": true
     },
-    "score": 0.21310069114590638,
+    "score": 0.38625670950983226,
     "aggregate": {
-      "avgLatencyMs": 4692.617347333318,
+      "avgLatencyMs": 2588.951791333335,
       "totalRpc": 20,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.21310069114590638
+      "score": 0.38625670950983226
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1047.4229589999886,
+        "wallMs": 441.3569580000185,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1282,18 +1282,18 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1071.326624999987,
+        "wallMs": 1263.3015409999934,
         "rpcCalls": 3,
-        "sampleCount": 60,
+        "sampleCount": 59,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 11959.10245799998,
+        "wallMs": 6062.196874999994,
         "rpcCalls": 14,
-        "sampleCount": 451,
+        "sampleCount": 286,
         "openGaps": 0,
         "complete": true
       }
@@ -1302,30 +1302,30 @@
   {
     "trial": 26,
     "x": [
-      0.11141799549106879,
-      0.6624392382738724,
-      0.0011850247930036417
+      0.7136263916618564,
+      0.11089146386052517,
+      0.32548761065146814
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 29,
-      "maxConcurrency": 23,
+      "windowSize": 77,
+      "maxConcurrency": 7,
       "skipZeroDelta": false
     },
-    "score": 0.3836131685072794,
+    "score": 0.5262838699876488,
     "aggregate": {
-      "avgLatencyMs": 2606.7926810000113,
-      "totalRpc": 42,
+      "avgLatencyMs": 1900.1152363333288,
+      "totalRpc": 21,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.3836131685072794
+      "score": 0.5262838699876488
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 1052.6460840000072,
+        "wallMs": 530.8854169999831,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1334,8 +1334,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 969.2106249999779,
-        "rpcCalls": 5,
+        "wallMs": 1454.6510830000043,
+        "rpcCalls": 4,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -1343,8 +1343,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 5798.521334000048,
-        "rpcCalls": 34,
+        "wallMs": 3714.809208999999,
+        "rpcCalls": 14,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -1354,30 +1354,30 @@
   {
     "trial": 27,
     "x": [
-      0.14830365592627825,
-      0.7843613661925892,
-      0.30021639256733224
+      0.6675597173907482,
+      0.07299893052388695,
+      0.29217314097099156
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 32,
-      "maxConcurrency": 26,
+      "windowSize": 73,
+      "maxConcurrency": 6,
       "skipZeroDelta": false
     },
-    "score": 0.4376211925155481,
+    "score": 0.5682553568824461,
     "aggregate": {
-      "avgLatencyMs": 2285.0812919999785,
-      "totalRpc": 39,
+      "avgLatencyMs": 1759.7722359999996,
+      "totalRpc": 22,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.4376211925155481
+      "score": 0.5682553568824461
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 970.0996670000022,
+        "wallMs": 484.78337499999907,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1386,8 +1386,8 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 1058.349208999949,
-        "rpcCalls": 4,
+        "wallMs": 1091.3550830000022,
+        "rpcCalls": 3,
         "sampleCount": 60,
         "openGaps": 0,
         "complete": true
@@ -1395,8 +1395,8 @@
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4826.794999999984,
-        "rpcCalls": 32,
+        "wallMs": 3703.178249999997,
+        "rpcCalls": 16,
         "sampleCount": 451,
         "openGaps": 0,
         "complete": true
@@ -1406,30 +1406,30 @@
   {
     "trial": 28,
     "x": [
-      0.1491472349308134,
-      0.7387186875285083,
-      0.5818624569921282
+      0.5701237815109028,
+      0.005970261258102294,
+      0.26041922851885646
     ],
     "strategy": {
       "sigPageSize": 1000,
       "maxSigPages": 20,
-      "windowSize": 32,
-      "maxConcurrency": 25,
-      "skipZeroDelta": true
+      "windowSize": 66,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
     },
-    "score": 0.5421255373452352,
+    "score": 0.4755858970550724,
     "aggregate": {
-      "avgLatencyMs": 1844.5912083333242,
-      "totalRpc": 39,
+      "avgLatencyMs": 2102.669583333336,
+      "totalRpc": 22,
       "openGapPenalty": 0,
       "completeness": 1,
-      "score": 0.5421255373452352
+      "score": 0.4755858970550724
     },
     "results": [
       {
         "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
         "type": "sparse",
-        "wallMs": 334.5460000000312,
+        "wallMs": 590.1672079999989,
         "rpcCalls": 3,
         "sampleCount": 4,
         "openGaps": 0,
@@ -1438,18 +1438,642 @@
       {
         "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
         "type": "medium",
-        "wallMs": 891.0540419999743,
-        "rpcCalls": 4,
-        "sampleCount": 59,
+        "wallMs": 637.8502089999965,
+        "rpcCalls": 3,
+        "sampleCount": 60,
         "openGaps": 0,
         "complete": true
       },
       {
         "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
         "type": "dense",
-        "wallMs": 4308.173582999967,
-        "rpcCalls": 32,
-        "sampleCount": 286,
+        "wallMs": 5079.991333000013,
+        "rpcCalls": 16,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 29,
+    "x": [
+      0.7998729956018582,
+      0.27518241921364783,
+      0.3347599352795645
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 84,
+      "maxConcurrency": 12,
+      "skipZeroDelta": false
+    },
+    "score": 0.43581692916075415,
+    "aggregate": {
+      "avgLatencyMs": 2294.541430333338,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.43581692916075415
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 490.8256249999977,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1058.209750000009,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5334.588916000008,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 30,
+    "x": [
+      0.708626723231303,
+      0.19466480664479202,
+      0.38446377535268184
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 77,
+      "maxConcurrency": 9,
+      "skipZeroDelta": false
+    },
+    "score": 0.5592352805159568,
+    "aggregate": {
+      "avgLatencyMs": 1788.1561390000086,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5592352805159568
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 439.44483300001593,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1214.4247920000053,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3710.5987920000043,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 31,
+    "x": [
+      0.7330253131866282,
+      0.13440933123156262,
+      0.3394338857220096
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 79,
+      "maxConcurrency": 8,
+      "skipZeroDelta": false
+    },
+    "score": 0.4697508475592805,
+    "aggregate": {
+      "avgLatencyMs": 2128.788069666664,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4697508475592805
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 617.6630420000001,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1080.4991670000018,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4688.20199999999,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 32,
+    "x": [
+      0.7086951626388702,
+      0.0992762702138037,
+      0.3790359259856553
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 77,
+      "maxConcurrency": 7,
+      "skipZeroDelta": false
+    },
+    "score": 0.32932471062443613,
+    "aggregate": {
+      "avgLatencyMs": 3036.51674999999,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.32932471062443613
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 610.3317919999827,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 659.396624999994,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 7839.8218329999945,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 33,
+    "x": [
+      0.07994997258896763,
+      0.015237219304256922,
+      0.37792437858049355
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 26,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
+    },
+    "score": 0.27576555525592295,
+    "aggregate": {
+      "avgLatencyMs": 3626.2686943333247,
+      "totalRpc": 46,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.27576555525592295
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 656.0600829999894,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 719.426999999996,
+        "rpcCalls": 5,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 9503.318999999989,
+        "rpcCalls": 38,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 34,
+    "x": [
+      0.7266408347418976,
+      0.1507111497360114,
+      0.3357833369619272
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 78,
+      "maxConcurrency": 8,
+      "skipZeroDelta": false
+    },
+    "score": 0.3591871325655994,
+    "aggregate": {
+      "avgLatencyMs": 2784.06409733335,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.3591871325655994
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 935.1520420000015,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 957.343583000038,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 6459.696667000011,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 35,
+    "x": [
+      0.8090581400906098,
+      0.013486544660474165,
+      0.18800973719899816
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 85,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
+    },
+    "score": 0.46957103703423986,
+    "aggregate": {
+      "avgLatencyMs": 2129.603236000015,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.46957103703423986
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 330.0190409999923,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 847.3428750000312,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5211.447792000021,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 36,
+    "x": [
+      0.954786914581303,
+      0.0624559504943063,
+      0.022275208558031778
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 96,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.69092119942455,
+    "aggregate": {
+      "avgLatencyMs": 1447.3430556666572,
+      "totalRpc": 18,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.69092119942455
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 427.81166700000176,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 716.9120419999817,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3197.305457999988,
+        "rpcCalls": 12,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 37,
+    "x": [
+      0.8803209418291749,
+      0.0007277249729686908,
+      0.03249703773109602
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 90,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
+    },
+    "score": 0.6123762776656954,
+    "aggregate": {
+      "avgLatencyMs": 1632.9829166666605,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.6123762776656954
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 455.22179199999664,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 869.0352500000154,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3574.6917079999694,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 38,
+    "x": [
+      0.8221762915238031,
+      0.015183366325016268,
+      0.11646268343836352
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 86,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
+    },
+    "score": 0.5986122075084506,
+    "aggregate": {
+      "avgLatencyMs": 1670.5305829999852,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5986122075084506
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 433.9757910000044,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 706.2367499999818,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 3871.3792079999694,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 39,
+    "x": [
+      0.8146029941696238,
+      0.0013034259760196232,
+      0.24768935875226838
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 85,
+      "maxConcurrency": 4,
+      "skipZeroDelta": false
+    },
+    "score": 0.4574226342515899,
+    "aggregate": {
+      "avgLatencyMs": 2186.162041666665,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.4574226342515899
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 387.4654580000206,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 1105.4942499999888,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 5065.526416999986,
+        "rpcCalls": 14,
+        "sampleCount": 451,
+        "openGaps": 0,
+        "complete": true
+      }
+    ]
+  },
+  {
+    "trial": 40,
+    "x": [
+      0.9971937120481038,
+      0.07867970403280977,
+      0.011479605739469045
+    ],
+    "strategy": {
+      "sigPageSize": 1000,
+      "maxSigPages": 20,
+      "windowSize": 100,
+      "maxConcurrency": 6,
+      "skipZeroDelta": false
+    },
+    "score": 0.5235961019825609,
+    "aggregate": {
+      "avgLatencyMs": 1909.8690693333435,
+      "totalRpc": 20,
+      "openGapPenalty": 0,
+      "completeness": 1,
+      "score": 0.5235961019825609
+    },
+    "results": [
+      {
+        "wallet": "54uJifihfpmTjCGperSxWaZmEHzGFpsaKKEiiGL1fmTs",
+        "type": "sparse",
+        "wallMs": 453.6134580000071,
+        "rpcCalls": 3,
+        "sampleCount": 4,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "54u5q7Wto6vgyhAgh8xN1AxgkuKo2mPFzohSNu8vwsTs",
+        "type": "medium",
+        "wallMs": 739.1990000000224,
+        "rpcCalls": 3,
+        "sampleCount": 60,
+        "openGaps": 0,
+        "complete": true
+      },
+      {
+        "wallet": "59tGCiHiqPZTkA18SpKVxBrwRMsKRdRCS8HeFz9J1P8n",
+        "type": "dense",
+        "wallMs": 4536.794750000001,
+        "rpcCalls": 14,
+        "sampleCount": 451,
         "openGaps": 0,
         "complete": true
       }

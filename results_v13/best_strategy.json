@@ -1,0 +1,16 @@
+{
+  "_meta": {
+    "method": "bayesian-gp-ucb-v13-constrained",
+    "best_all_under_2s": null,
+    "best_overall": {
+      "trial": 2,
+      "score": 0.473380286928142
+    }
+  },
+  "sigPageSize": 1000,
+  "maxSigPages": 20,
+  "windowTarget": 100,
+  "windowSize": 91,
+  "maxConcurrency": 31,
+  "skipZeroDelta": true
+}

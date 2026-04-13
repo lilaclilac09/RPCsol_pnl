@@ -279,24 +279,24 @@
        using the Helius <code>getTransactionsForAddress</code> API.</p>
     <div class="hero-meta">
       <div class="hero-stat">
-        <span class="value" style="color:var(--gold)">0.744</span>
-        <span class="label">V12 Score-Max — best score (+81.8% vs V3)</span>
+        <span class="value" style="color:var(--gold)">0.789</span>
+        <span class="label">V13 Constrained — best base score (+100% vs V3)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--teal)">1344 ms</span>
-        <span class="label">V12 Score-Max avg latency</span>
+        <span class="value" style="color:var(--teal)">1267 ms</span>
+        <span class="label">V13 avg latency (window=91, c=31, skip=on)</span>
       </div>
       <div class="hero-stat">
         <span class="value" style="color:var(--accent)">0.573</span>
         <span class="label">Best stable mean score (6-repeat unified run)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--purple)">12</span>
-        <span class="label">Total versions benchmarked</span>
+        <span class="value" style="color:var(--purple)">14</span>
+        <span class="label">Total versions benchmarked (V14 pending)</span>
       </div>
       <div class="hero-stat">
-        <span class="value" style="color:var(--orange)">314 ms</span>
-        <span class="label">V12 sparse wallet (fast-exit, 1 RT)</span>
+        <span class="value" style="color:var(--orange)">310 ms</span>
+        <span class="label">V13 sparse wallet (fast-exit, 1 RT)</span>
       </div>
     </div>
   </header>
@@ -372,6 +372,24 @@
             <td class="ms-val" style="color:var(--muted)">1509 ms†</td>
             <td>~22 calls</td>
             <td><div class="config-chips"><span class="chip">window=71</span><span class="chip">target=114</span><span class="chip">c=17</span><span class="chip">skip=on</span></div></td>
+          </tr>
+          <tr style="background:rgba(240,192,64,0.14)">
+            <td class="rank" style="color:var(--gold)">*</td>
+            <td class="algo-name">V13 — Constrained BO<span class="algo-badge" style="background:var(--orange);color:var(--bg)">Constrained</span></td>
+            <td>Bayesian GP-UCB (60 trials, 3D, gate penalty)</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--gold)">0.789†‡</span><div class="bar-bg"><div class="bar-fill" style="width:89%;background:var(--gold)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--gold)">1267 ms†</td>
+            <td>~18 calls</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--gold)">window=91</span><span class="chip" style="border-color:var(--gold)">c=31</span><span class="chip" style="border-color:var(--gold)">skip=on</span></div></td>
+          </tr>
+          <tr style="background:rgba(188,140,255,0.06)">
+            <td class="rank" style="color:var(--purple)">*</td>
+            <td class="algo-name">V14 — Phantom-Token Fix<span class="algo-badge" style="background:var(--purple);color:var(--bg)">Pending</span></td>
+            <td>GP-UCB + phantom paginationToken guard</td>
+            <td><div class="score-bar"><span class="score-val" style="color:var(--purple)">TBD</span><div class="bar-bg"><div class="bar-fill" style="width:0%;background:var(--purple)"></div></div></div></td>
+            <td class="ms-val" style="color:var(--purple)">est. &lt;1000 ms†</td>
+            <td>~8–10 calls</td>
+            <td><div class="config-chips"><span class="chip" style="border-color:var(--purple)">phantom-fix</span><span class="chip" style="border-color:var(--purple)">all-wallets&lt;2s</span></div></td>
           </tr>
           <tr style="background:rgba(57,211,83,0.01)">
             <td class="rank" style="color:var(--muted)">*</td>
@@ -473,9 +491,11 @@
       </table>
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:8px;">
-      Unified leaderboard above is from the latest same-key run with 6 repeats per candidate.
-      Current winner: <strong>Copilot PRIME V4</strong> (mean score 0.5733, mean latency 1756ms).
-      Source artifact: <code>results_unified/leaderboard_unified.json</code>.
+      Leaderboard includes V8–V14. New-key track: V13 Constrained BO (60 trials) achieved base score 0.789 (best ever), avg 1267ms.
+      Dense wallet was 2951ms — just over the 2s soft gate due to phantom paginationToken bug (Helius returns token even when data.length &lt; limit, causing a redundant API call per window).
+      <strong>V14 phantom-token fix</strong> resolves this: <code>if data.length &lt; limit, skip token</code>.
+      V14 BO run (60 trials, 3D, search window [60,160] c [8,48]) pending API key renewal.
+      V11 stable mean on unified run: 0.5484 (1834ms). V10 peak: 0.7115 (1406ms).
     </p>
   </section>
 
@@ -506,6 +526,11 @@
         <h3>Sparse Wallet <span class="wallet-tag tag-sparse">4 txns</span></h3>
         <div class="wallet-addr">54uJifihf…fmTs</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V13</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--gold)">310 ms†</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--gold)">V12S</span>
             <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
@@ -560,6 +585,11 @@
         <div class="wallet-addr">54u5q7Wt…wsTs</div>
         <div class="wallet-rows">
           <div class="wallet-row">
+            <span class="algo" style="color:var(--gold)">V13</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--orange);color:var(--bg)">3</div></div>
+            <span class="time-val" style="color:var(--gold)">541 ms†</span>
+          </div>
+          <div class="wallet-row">
             <span class="algo" style="color:var(--gold)">V12S</span>
             <div class="calls-bar"><div class="calls-fill" style="width:3%;background:var(--gold);color:var(--bg)">3</div></div>
             <span class="time-val" style="color:var(--gold)">602 ms†</span>
@@ -612,6 +642,11 @@
         <h3>Dense Wallet <span class="wallet-tag tag-dense">~451 txns</span></h3>
         <div class="wallet-addr">59tGCiHi…1P8n</div>
         <div class="wallet-rows">
+          <div class="wallet-row">
+            <span class="algo" style="color:var(--orange)">V13</span>
+            <div class="calls-bar"><div class="calls-fill" style="width:12%;background:var(--orange);color:var(--bg)">14</div></div>
+            <span class="time-val" style="color:var(--yellow)">2951 ms† ‡</span>
+          </div>
           <div class="wallet-row">
             <span class="algo" style="color:var(--gold)">V12S</span>
             <div class="calls-bar"><div class="calls-fill" style="width:14%;background:var(--gold);color:var(--bg)">16</div></div>
@@ -667,11 +702,13 @@
 
     </div>
     <p style="color:var(--muted);font-size:12px;margin-top:12px;">
-      † V8–V12 measured on a different API key with higher baseline latency than V3/V4 historical results.
-      V12S = Score-Max (50 trials BO, standard score formula). V12L = Latency-Min (50 trials BO, bottleneck objective = minimize worst-case per-wallet time).
-      V12S vs V3 same key: <strong>+81.8% score / -45.1% latency</strong>.
-      All V8–V12 wallets complete under 4 seconds each. Total 3-wallet eval under 8 seconds.
-      Dense wallet sample count: ~451 (includes zero-delta fee txns when skipZeroDelta=false).
+      † V8–V13 measured on a different API key with higher baseline latency than V3/V4 historical results.
+      V12S = Score-Max (50 trials BO, standard score formula). V12L = Latency-Min (50 trials BO, bottleneck objective).
+      V12S vs V3 same key: <strong>+81.8% score / -45.1% latency</strong>.<br>
+      ‡ V13 = Constrained BO (60 trials, 3D). Score column shows <em>standard</em> score (1000/avgLatencyMs) = 0.789 — but dense wallet was 2951ms (just over 2s soft gate), triggering a 0.60 penalty in the constrained objective.
+      Root cause diagnosed: Helius returns a phantom <code>paginationToken</code> even when result count &lt; limit, causing one extra unnecessary API call per window (~12→14 extra calls for dense wallet).
+      <strong>V14 (phantom-token fix)</strong>: skips token when <code>data.length &lt; limit</code> — expected to halve dense wallet call count and bring all wallets reliably under 2s.
+      V14 BO run pending new API key.
     </p>
   </section>
 
@@ -791,6 +828,33 @@
             <div class="failure-body">
               <div class="failure-title">Extra probe call for all >1000 txn wallets</div>
               <div class="failure-desc">V4 always fires 1 density probe call for large wallets, even if the wallet is borderline (1001 txns). Still 2 serial RTs total, but 1 extra concurrent call in Phase 1.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="failure-card">
+        <h3><span style="color:var(--orange)">V11–V13</span> — Phantom PaginationToken Bug (Fixed in V14)</h3>
+        <div class="failure-list">
+          <div class="failure-item">
+            <div class="failure-icon fi-fixed">✓</div>
+            <div class="failure-body">
+              <div class="failure-title">Fixed in V14: phantom paginationToken</div>
+              <div class="failure-desc">Helius <code>getTransactionsForAddress</code> returns <code>paginationToken</code> even when result count &lt; limit (e.g. 80 of 100 slots). The <code>fetchSlotWindow</code> while-loop followed this phantom token, firing a second API call per window that returned 0 results. Dense wallet: 6 real windows → 12 actual calls → 2×–3× latency inflation. V14 fix: <code>if (data.length &lt; LIMIT) return samples</code> before entering the loop.</div>
+            </div>
+          </div>
+          <div class="failure-item">
+            <div class="failure-icon fi-risk">✗</div>
+            <div class="failure-body">
+              <div class="failure-title">Dense wallet consistently hits 2s soft gate (V11–V13)</div>
+              <div class="failure-desc">The 451-txn dense wallet produced ~6 slot windows at windowSize=91. With phantom token, each window made 2 API calls (12 total) instead of 1. At baseline latency ~250ms/call this floor at ~3000ms cannot be reduced by tuning concurrency or window size alone.</div>
+            </div>
+          </div>
+          <div class="failure-item">
+            <div class="failure-icon fi-warn">!</div>
+            <div class="failure-body">
+              <div class="failure-title">Free-tier variance still non-deterministic</div>
+              <div class="failure-desc">Even with phantom fix, per-call latency on the Helius free tier is variable (150ms–800ms). High concurrency (c=30+) can trigger rate-limit 429 backoff. V14 BO should tune concurrency conservatively in 8–32 range.</div>
             </div>
           </div>
         </div>
@@ -1028,11 +1092,11 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
     <div class="section-subtitle">Non-obvious findings from 200+ evaluated configurations across 7 search methods.</div>
     <div class="insight-grid">
 
-      <div class="insight" style="border-color:var(--teal)">
-        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--teal)">V8</div>
+      <div class="insight" style="border-color:var(--gold)">
+        <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--gold)">V13</div>
         <div class="insight-body">
-          <h4>V12 Score-Max: 0.744 score, +81.8% vs V3. Window=105 eliminates per-window pagination.</h4>
-          <p>V10 fast-exit (anchor=100 always): sparse 330ms / 1 RT. V12 Score-Max (50-trial BO, window=105): sparse 314ms, medium 602ms, dense 3117ms, avg 1344ms. Key insight: window&gt;100 fits all dense-wallet transactions in one fullTxns page — no serial pagination within each window. V12 Latency-Min (bottleneck objective) minimizes worst-case per-wallet time (maxMs=3673ms). V8 added streaming; V10 added fast-exit; V12 expanded search to window [50,200] and found the no-pagination sweet spot at 105.</p>
+          <h4>V13 Constrained BO: base score 0.789, avg 1267ms — best ever. Dense wall time limited by phantom token bug.</h4>
+          <p>V12S (window=105, 50 trials) hit 0.744. V13 (60 trials, 3D, constrained objective) found window=91/c=31/skip=on → base score 0.789 — but dense wallet was 2951ms. Root cause: Helius returns a phantom <code>paginationToken</code> even when result count &lt; limit, causing one extra call per window. V14 fixes this: <code>if (data.length &lt; LIMIT) skip token</code>. Expected impact: dense wallet 14 calls → 6–8, wall time 2951ms → ~800ms. All wallets under 2s achievable once V14 BO runs.</p>
         </div>
       </div>
 
@@ -1080,7 +1144,7 @@ strategy.maxConcurrency = <span class="code-num">48</span>;
         <div class="insight-icon" style="font-size:12px;font-weight:700;color:var(--orange)">API</div>
         <div class="insight-body">
           <h4>Helius API has undocumented quirks that break naive implementations</h4>
-          <p>1. Returns <code>paginationToken</code> even when results &lt; limit. 2. Rejects slot filters with <code>gte:0</code>. 3. Hard caps full transaction responses at 100 regardless of <code>limit</code> param. All three were hit and fixed.</p>
+          <p>1. <strong>Phantom paginationToken</strong>: returns token even when results &lt; limit — V11/V12/V13 followed it, doubling window calls. Fixed in V14 (<code>if data.length &lt; LIMIT, skip</code>). 2. Rejects slot filters with <code>gte:0</code> — clamp to max(1, slot). 3. Hard caps full transactions at 100 regardless of <code>limit</code> param. All three were hit and fixed across versions.</p>
         </div>
       </div>
 

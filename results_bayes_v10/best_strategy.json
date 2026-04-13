@@ -1,13 +1,13 @@
 {
   "_meta": {
     "method": "bayesian-gp-ucb-v10-ultra",
-    "trial": 4,
-    "score": 0.6845686112456086,
+    "trial": 36,
+    "score": 0.69092119942455,
     "note": "anchor fixed at 100 for fast-exit"
   },
   "sigPageSize": 1000,
   "maxSigPages": 20,
-  "windowSize": 67,
+  "windowSize": 96,
   "maxConcurrency": 6,
   "skipZeroDelta": false
 }
