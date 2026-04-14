@@ -1,6 +1,4 @@
-// sol_balance_scout_rust/src/algorithm.rs
 use anyhow::Result;
-use futures::future::join_all;
 use std::collections::{HashMap, HashSet};
 
 use crate::rpc::RpcClient;
@@ -144,7 +142,7 @@ pub async fn phase1(
 }
 
 /// Extract balance point from a full transaction
-fn extract_balance_point(
+pub fn extract_balance_point(
     tx: &FullTransaction,
     address: &str,
 ) -> Option<(u64, u64, String, u64, u64)> {
@@ -177,7 +175,7 @@ fn extract_balance_point(
 /// Phase 2: Stream full-transaction fetches in parallel chunks
 pub async fn phase2(
     rpc: &RpcClient,
-    address: &str,
+    _address: &str,
     all_sigs: &[SignatureInfo],
     strategy: &Strategy,
 ) -> Result<Vec<FullTransaction>> {
@@ -189,32 +187,24 @@ pub async fn phase2(
         .map(|chunk| chunk.to_vec())
         .collect();
 
-    // Fetch all chunks in parallel
-    let chunk_futs: Vec<_> = chunks
-        .into_iter()
-        .map(|chunk| {
-            let fetch_futs: Vec<_> = chunk
-                .iter()
-                .map(|sig| {
-                    rpc.get_transaction(
-                        &sig.signature,
-                        strategy.max_retries,
-                        strategy.retry_base_ms,
-                    )
-                })
-                .collect();
-
-            async move {
-                let results = futures::future::join_all(fetch_futs).await;
-                results.into_iter().filter_map(Result::ok).collect::<Vec<_>>()
+    // Fetch all chunks sequentially (simpler, still fast)
+    for chunk in chunks {
+        let mut futs = Vec::new();
+        for sig in chunk.iter() {
+            let fut = rpc.get_transaction(
+                &sig.signature,
+                strategy.max_retries,
+                strategy.retry_base_ms,
+            );
+            futs.push(fut);
+        }
+        
+        let results = futures::future::join_all(futs).await;
+        for result in results {
+            if let Ok(tx) = result {
+                txs.push(tx);
             }
-        })
-        .collect();
-
-    let chunk_results = futures::future::join_all(chunk_futs).await;
-
-    for chunk in chunk_results {
-        txs.extend(chunk);
+        }
     }
 
     Ok(txs)

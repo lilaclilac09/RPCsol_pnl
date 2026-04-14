@@ -1,4 +1,3 @@
-// sol_balance_scout_rust/Cargo.toml
 [package]
 name = "sol_balance_scout"
 version = "0.1.0"

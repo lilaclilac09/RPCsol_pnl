@@ -1,16 +1,10 @@
-// sol_balance_scout_rust/src/main.rs
-mod algorithm;
-mod rpc;
-mod types;
-
 use anyhow::{anyhow, Result};
 use serde_json::json;
 use std::env;
 use std::time::Instant;
 
-use algorithm::{dedup_by_signature, phase0, phase1, phase2, extract_balance_point};
-use rpc::RpcClient;
-use types::{FullTransaction, SolBalance, Strategy};
+use sol_balance_scout::{phase0, phase1, phase2, dedup_by_signature, extract_balance_point, RpcClient, Strategy};
+use sol_balance_scout::types::{FullTransaction, SolBalance};
 
 const LAMPORTS_PER_SOL: u64 = 1_000_000_000;
 
@@ -127,7 +121,7 @@ async fn main() -> Result<()> {
     for (block_time, _slot, sig, balance, delta) in points.iter().rev().take(20) {
         let date = chrono::DateTime::<chrono::Utc>::from_timestamp(*block_time as i64, 0)
             .map(|dt| dt.to_rfc3339())
-            .unwrap_or_else(|_| format!("{}s", block_time));
+            .unwrap_or_else(|| format!("{}s", block_time));
 
         let balance_sol = *balance as f64 / LAMPORTS_PER_SOL as f64;
         let delta_sol = *delta as i64 as f64 / LAMPORTS_PER_SOL as f64;
@@ -172,8 +166,3 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
-
-// For importing as library
-pub use algorithm::{dedup_by_signature, phase0, phase1, phase2};
-pub use rpc::RpcClient;
-pub use types::{SolBalance, Strategy};

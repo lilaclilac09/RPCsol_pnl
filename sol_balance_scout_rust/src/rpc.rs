@@ -7,7 +7,7 @@ use std::sync::Arc;
 use tokio::sync::Semaphore;
 use tokio::time::{sleep, Duration};
 
-use crate::types::{FullTransaction, RpcResponse, SignatureInfo};
+use crate::types::{FullTransaction, SignatureInfo};
 
 pub struct RpcClient {
     client: Client,
@@ -41,11 +41,11 @@ impl RpcClient {
         for attempt in 0..=max_retries {
             match self.client.post(&self.url).json(&body).send().await {
                 Ok(response) => {
-                    if !response.status().is_success() {
+                    let status = response.status();
+                    if !status.is_success() {
                         let err_text = response.text().await.unwrap_or_default();
                         if attempt < max_retries {
-                            let is_transient = response.status().as_u16() == 429
-                                || response.status().as_u16() == 503;
+                            let is_transient = status.as_u16() == 429 || status.as_u16() == 503;
                             if is_transient {
                                 // Back off and retry
                                 let delay_ms = retry_base_ms * 2_u64.pow(attempt as u32);
@@ -55,7 +55,7 @@ impl RpcClient {
                         }
                         return Err(anyhow!(
                             "HTTP {}: {}",
-                            response.status(),
+                            status,
                             err_text.chars().take(120).collect::<String>()
                         ));
                     }
@@ -77,11 +77,12 @@ impl RpcClient {
                         ));
                     }
 
-                    return json
+                    let result = json
                         .get("result")
                         .ok_or_else(|| anyhow!("No result field in RPC response"))?
-                        .clone()
-                        .try_into()
+                        .clone();
+                    
+                    return serde_json::from_value(result)
                         .map_err(|_| anyhow!("Failed to deserialize RPC response"));
                 }
                 Err(e) => {
