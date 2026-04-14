@@ -1,0 +1,26 @@
+{
+  "name": "rpc-sol-pnl-evo",
+  "version": "3.0.0",
+  "type": "module",
+  "description": "SOL balance/PnL router with GBrain + EvoHarness evolution",
+  "main": "sol_balance_router.mjs",
+  "dependencies": {
+    "undici": "^7.0.0",
+    "gbrain": "link:tools/gbrain"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "bun test_all_wallets_enhanced.mjs",
+    "test:node": "node test_all_wallets_enhanced.mjs",
+    "router": "node sol_balance_router.mjs",
+    "gbrain:doctor": "cd tools/gbrain && npx gbrain doctor --json",
+    "gbrain:list": "cd tools/gbrain && npx gbrain list",
+    "evo:run": "python -m meta.run_iteration"
+  },
+  "license": "MIT"
+}

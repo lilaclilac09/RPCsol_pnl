@@ -1,0 +1,3 @@
+[submodule "tools/gbrain"]
+	path = tools/gbrain
+	url = https://github.com/garrytan/gbrain.git

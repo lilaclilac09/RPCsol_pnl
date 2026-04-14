@@ -1,0 +1,114 @@
+{
+  "project": "rpc-sol-pnl",
+  "harness": "router",
+  "version": "2.0",
+  "description": "EvoHarness RPC Balance History Router - 自动进化策略以最小化延迟",
+  "surfaces": {
+    "periodicChunking": {
+      "file": "../harness/router.mjs",
+      "line": 12,
+      "type": "parameter",
+      "range": [4, 24],
+      "default": 12,
+      "risk": "medium",
+      "description": "Periodic wallet 的时间分片数量。较小值 (4-8) 更快但精度低，较大值 (16-24) 精确但 RPC 调用多",
+      "impacts": ["latency", "accuracy"],
+      "proposed_by": ["latency_minimizer", "adaptive_chunker"]
+    },
+    "megaRecursionDepth": {
+      "file": "../harness/router.mjs",
+      "line": 15,
+      "type": "parameter",
+      "range": [1, 5],
+      "default": 3,
+      "risk": "high",
+      "description": "Mega wallet 的递归分层深度。更深 = 更精细的分片 = 更多 RPC 调用但可能更快的总体",
+      "impacts": ["latency", "cost"],
+      "proposed_by": ["cost_minimizer", "recursion_optimizer"]
+    },
+    "megaHierarchical": {
+      "file": "../harness/router.mjs",
+      "line": 14,
+      "type": "boolean",
+      "default": true,
+      "risk": "high",
+      "description": "Mega wallet 是否使用分层递归策略。false = 简单均匀分片；true = 先粗后细递归",
+      "impacts": ["latency", "complexity"],
+      "proposed_by": ["hierarchical_searcher"]
+    },
+    "bandLogic": {
+      "file": "../harness/router.mjs",
+      "line": 17,
+      "type": "enum",
+      "choices": ["dynamic", "fixed", "adaptive"],
+      "default": "dynamic",
+      "risk": "medium",
+      "description": "Band 分片逻辑选择。dynamic = 根据 tx 量自适应选择块数；fixed = 总是 8 块；adaptive = 学习历史数据选最优",
+      "impacts": ["latency", "consistency"],
+      "proposed_by": ["band_optimizer", "ml_proposer"]
+    },
+    "cacheStrategy": {
+      "file": "../harness/router.mjs",
+      "line": 20,
+      "type": "enum",
+      "choices": ["none", "l0", "l0-l1"],
+      "default": "l0",
+      "risk": "low",
+      "description": "缓存策略。none = 无缓存；l0 = pagination token 缓存；l0-l1 = 加入计算结果缓存",
+      "impacts": ["latency", "memory"],
+      "proposed_by": ["cache_optimizer"]
+    },
+    "maxConcurrent": {
+      "file": "../harness/router.mjs",
+      "line": 23,
+      "type": "parameter",
+      "range": [1, 32],
+      "default": 8,
+      "risk": "high",
+      "description": "RPC 并发调用数上限。更高更快但可能触发 rate limit；推荐 Helius 免费层 <= 10，付费层 <= 32",
+      "impacts": ["latency", "rate_limit"],
+      "proposed_by": ["parallelizer", "cost_minimizer"]
+    }
+  },
+  "test_configs": {
+    "quick_eval": {
+      "wallets": ["sparse", "medium", "dense"],
+      "budget": 100,
+      "description": "快速评估：只测试 3 个钱包，预算轻（用于快速迭代）"
+    },
+    "standard_eval": {
+      "wallets": ["sparse", "medium", "dense", "whale"],
+      "budget": 300,
+      "description": "标准评估：完整钱包覆盖"
+    },
+    "comprehensive_eval": {
+      "wallets": ["sparse", "medium", "dense", "whale", "periodic", "mega"],
+      "budget": 500,
+      "description": "综合评估：所有钱包类型，包含边界情况"
+    }
+  },
+  "scoring": {
+    "metric": "latency_inverse_scoring",
+    "formula": "score = 10 / (1 + latency_seconds)",
+    "examples": {
+      "0.5s": 6.67,
+      "1.0s": 5.0,
+      "2.0s": 3.33,
+      "5.0s": 1.67
+    },
+    "target": ">=8.0 (latency <= 0.25s)",
+    "constraints": [
+      "rate_limit_compliance: max 100 RPC calls per test",
+      "confidence: must test >= 2 wallet types",
+      "regression: new config must not be >20% worse than baseline"
+    ]
+  },
+  "proposer_hints": {
+    "latency_minimizer": "Focus on reducing RPC round-trips. Consider: maxConcurrent, bandLogic=fixed, cacheStrategy=l0-l1",
+    "cost_minimizer": "Focus on API quota. Consider: periodicChunking += 2, megaRecursionDepth -= 1, maxConcurrent = 4",
+    "hierarchical_searcher": "Test megaHierarchical + deeper recursion for mega wallets. Risk: may need more API calls.",
+    "band_optimizer": "Experiment with bandLogic adaptive mode. Requires: baseline data in GBrain (search history of results)",
+    "cache_optimizer": "Test l0-l1 strategy on repeated wallet queries. Build cache invalidation logic.",
+    "parallelizer": "Push maxConcurrent up gradually. Start at 10, test 16, 24, 32. Monitor for rate limits."
+  }
+}
