@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOL MEV Recon</title>
+<style>
+:root {
+  --bg:       #0d1117;
+  --surface:  #161b22;
+  --surface2: #21262d;
+  --surface3: #1c2128;
+  --border:   #30363d;
+  --border2:  #3d444d;
+  --text:     #e6edf3;
+  --muted:    #8b949e;
+  --muted2:   #6e7681;
+  --accent:   #58a6ff;
+  --green:    #3fb950;
+  --yellow:   #d29922;
+  --red:      #f85149;
+  --purple:   #bc8cff;
+  --orange:   #ffa657;
+  --teal:     #39d353;
+  --radius:   10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; display: block; height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 40%, var(--teal) 100%);
+}
+code { font-family: "SF Mono","Fira Code",monospace; font-size:.85em;
+       background: rgba(110,118,129,.15); border-radius:4px; padding:1px 5px; }
+.page { max-width:1300px; margin:0 auto; padding:32px 24px 80px; }
+
+/* ── Header ── */
+.header { display:flex; align-items:center; gap:16px; margin-bottom:32px; }
+.header h1 { font-size:22px; font-weight:700; letter-spacing:-.3px; }
+.header h1 span { color:var(--red); }
+.badge { font-size:11px; padding:2px 8px; border-radius:20px; font-weight:600; }
+.badge-mev  { background:rgba(248,81,73,.15); color:var(--red); border:1px solid rgba(248,81,73,.3); }
+.badge-prog { background:rgba(88,166,255,.15); color:var(--accent); border:1px solid rgba(88,166,255,.3); }
+.badge-bot  { background:rgba(255,166,87,.15); color:var(--orange); border:1px solid rgba(255,166,87,.3); }
+
+/* ── Search ── */
+.search-bar { display:flex; gap:8px; margin-bottom:28px; }
+.search-bar input {
+  flex:1; background:var(--surface); border:1px solid var(--border2);
+  color:var(--text); border-radius:var(--radius); padding:10px 14px;
+  font-size:13px; font-family:inherit;
+}
+.search-bar input:focus { outline:none; border-color:var(--accent); }
+.search-bar select {
+  background:var(--surface); border:1px solid var(--border2);
+  color:var(--text); border-radius:var(--radius); padding:10px 12px;
+  font-size:13px; font-family:inherit; cursor:pointer;
+}
+.btn {
+  background:var(--accent); color:#000; border:none; border-radius:var(--radius);
+  padding:10px 20px; font-size:13px; font-weight:600; cursor:pointer;
+}
+.btn:hover { opacity:.85; }
+.btn-ghost {
+  background:var(--surface2); color:var(--text); border:1px solid var(--border);
+  border-radius:var(--radius); padding:10px 16px; font-size:13px; cursor:pointer;
+}
+.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ── Grid ── */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:16px; }
+@media(max-width:900px) { .grid-2,.grid-3 { grid-template-columns:1fr; } }
+
+/* ── Cards ── */
+.card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px;
+}
+.card-title {
+  font-size:12px; font-weight:600; text-transform:uppercase;
+  letter-spacing:.6px; color:var(--muted); margin-bottom:14px;
+  display:flex; align-items:center; gap:8px;
+}
+.card-title .dot { width:6px; height:6px; border-radius:50%; }
+
+/* ── Stat row ── */
+.stat-row { display:flex; justify-content:space-between; align-items:center;
+            padding:7px 0; border-bottom:1px solid var(--border); }
+.stat-row:last-child { border-bottom:none; }
+.stat-key { color:var(--muted); font-size:12px; }
+.stat-val { font-weight:600; font-size:13px; }
+.val-red    { color:var(--red); }
+.val-green  { color:var(--green); }
+.val-yellow { color:var(--yellow); }
+.val-blue   { color:var(--accent); }
+.val-orange { color:var(--orange); }
+.val-purple { color:var(--purple); }
+
+/* ── Verdict chip ── */
+.verdict {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 12px; border-radius:20px; font-size:12px; font-weight:700;
+  margin-top:10px;
+}
+.verdict-mev      { background:rgba(248,81,73,.15);  color:var(--red);    border:1px solid rgba(248,81,73,.3); }
+.verdict-program  { background:rgba(88,166,255,.15); color:var(--accent); border:1px solid rgba(88,166,255,.3); }
+.verdict-dex      { background:rgba(63,185,80,.15);  color:var(--green);  border:1px solid rgba(63,185,80,.3); }
+.verdict-user     { background:rgba(139,148,158,.15);color:var(--muted);  border:1px solid var(--border); }
+
+/* ── Cluster graph ── */
+.cluster-wrap { position:relative; min-height:220px; }
+.cluster-node {
+  position:absolute; border-radius:50%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  font-size:10px; font-weight:600; cursor:pointer; transition:.2s;
+  border:2px solid transparent;
+}
+.cluster-node:hover { transform:scale(1.08); }
+.cluster-node.bot      { background:rgba(248,81,73,.2);  border-color:var(--red);    color:var(--red); }
+.cluster-node.program  { background:rgba(88,166,255,.2); border-color:var(--accent); color:var(--accent); }
+.cluster-node.arb      { background:rgba(255,166,87,.2); border-color:var(--orange); color:var(--orange); }
+.cluster-node.victim   { background:rgba(63,185,80,.2);  border-color:var(--green);  color:var(--green); }
+svg.lines { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; }
+svg.lines line { stroke:var(--border2); stroke-width:1.5; stroke-dasharray:4; }
+
+/* ── Transaction timeline ── */
+.tx-list { display:flex; flex-direction:column; gap:6px; }
+.tx-item {
+  display:grid; grid-template-columns:80px 90px 1fr 100px 80px;
+  gap:8px; align-items:center; padding:10px 12px;
+  background:var(--surface2); border-radius:8px;
+  border-left:3px solid transparent; font-size:12px;
+}
+.tx-item.front { border-color:var(--green); }
+.tx-item.back  { border-color:var(--red); }
+.tx-item.mid   { border-color:var(--border); }
+.tx-item.fail  { opacity:.6; }
+.tx-role { font-weight:700; font-size:11px; }
+.role-front { color:var(--green); }
+.role-back  { color:var(--red); }
+.role-mid   { color:var(--muted); }
+.tx-sig { font-family:monospace; color:var(--accent); font-size:11px; }
+.tx-sig a { color:inherit; }
+.tx-delta.pos { color:var(--green); }
+.tx-delta.neg { color:var(--red); }
+
+/* ── Program bar ── */
+.prog-bar-wrap { display:flex; flex-direction:column; gap:6px; }
+.prog-bar-row { display:flex; align-items:center; gap:8px; }
+.prog-bar-label { width:110px; font-size:11px; color:var(--muted); flex-shrink:0; }
+.prog-bar-track { flex:1; background:var(--surface2); border-radius:4px; height:8px; overflow:hidden; }
+.prog-bar-fill  { height:100%; border-radius:4px; background:var(--accent); }
+.prog-bar-count { font-size:11px; color:var(--muted); width:28px; text-align:right; }
+
+/* ── Loading ── */
+.spinner { display:inline-block; width:16px; height:16px; border:2px solid var(--border);
+           border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.loading-msg { display:flex; align-items:center; gap:10px; color:var(--muted); padding:20px 0; }
+
+/* ── Tabs ── */
+.tabs { display:flex; gap:2px; margin-bottom:16px; border-bottom:1px solid var(--border); }
+.tab {
+  padding:8px 16px; font-size:13px; cursor:pointer; border-bottom:2px solid transparent;
+  color:var(--muted); margin-bottom:-1px;
+}
+.tab.active { color:var(--accent); border-bottom-color:var(--accent); font-weight:600; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ── Watch feed ── */
+.feed-wrap { display:flex; flex-direction:column; gap:4px; max-height:320px; overflow-y:auto; }
+.feed-item { display:flex; gap:10px; align-items:flex-start; padding:8px 10px;
+             background:var(--surface2); border-radius:6px; font-size:12px; }
+.feed-time { color:var(--muted); flex-shrink:0; font-family:monospace; }
+.feed-addr { color:var(--accent); font-family:monospace; }
+.feed-delta.pos { color:var(--green); font-weight:600; }
+.feed-delta.neg { color:var(--red); font-weight:600; }
+
+/* ── Alert chip ── */
+.alert { background:rgba(248,81,73,.1); border:1px solid rgba(248,81,73,.3);
+         color:var(--red); border-radius:8px; padding:10px 14px; font-size:12px;
+         margin-bottom:12px; display:none; }
+.alert.show { display:block; }
+
+/* ── Empty ── */
+.empty { color:var(--muted); text-align:center; padding:40px 0; font-size:13px; }
+
+/* ── API key banner ── */
+.api-banner {
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius); padding:14px 18px; margin-bottom:20px;
+  display:flex; align-items:center; gap:12px;
+}
+.api-banner input {
+  flex:1; background:var(--bg); border:1px solid var(--border2);
+  color:var(--text); border-radius:8px; padding:8px 12px;
+  font-family:monospace; font-size:12px;
+}
+.api-banner input:focus { outline:none; border-color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>SOL MEV <span>Recon</span></h1>
+      <div style="color:var(--muted);font-size:12px;margin-top:2px;">
+        Wallet profiler · Sandwich tracer · Cluster mapper · Live monitor
+      </div>
+    </div>
+    <div id="watchIndicator" style="display:none;align-items:center;gap:6px;margin-left:auto;font-size:12px;color:var(--green);">
+      <span style="width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;animation:pulse 1.5s infinite;"></span>
+      Live
+    </div>
+  </div>
+  <style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}</style>
+
+  <!-- API Key -->
+  <div class="api-banner">
+    <span style="color:var(--muted);font-size:12px;white-space:nowrap;">Helius API Key</span>
+    <input type="password" id="apiKey" placeholder="paste your Helius API key..." />
+    <button class="btn" onclick="saveKey()">Save</button>
+    <span id="keyStatus" style="font-size:11px;color:var(--muted)"></span>
+  </div>
+
+  <!-- Search -->
+  <div class="search-bar">
+    <input type="text" id="addrInput" placeholder="Solana address (wallet, program, bot...)" />
+    <select id="modeSelect">
+      <option value="profile">Profile</option>
+      <option value="sandwich">Sandwich</option>
+      <option value="cluster">Cluster</option>
+      <option value="follow">Follow Money</option>
+    </select>
+    <button class="btn" onclick="runAnalysis()">Analyze</button>
+    <button class="btn-ghost" onclick="addToWatch()">+ Watch</button>
+  </div>
+
+  <!-- Known suspects quick-launch -->
+  <div style="margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px;">
+    <span style="font-size:11px;color:var(--muted);padding:4px 0;margin-right:4px;">Known MEV cluster:</span>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubQzu18FDqJRyNfG8JqHmsdbxhnoQqcKUHBdUkN6tP','profile')">YubQzu18 (main bot)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubozzSnKomEnH3pkmYsdatUUwUTcm7s4mHJVmefEWj','sandwich')">YubozzSnK (flash)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('AEB9dXBoxkrapNd59Kg29JefMMf3M1WLcNA12XjKSf4R','follow')">AEB9dXBox (drained)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P','profile')">6EF8rrecth (PumpFun)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('CUQUKjGUv2bsNTAR9Bh9tF7njVE1Q3bkGWbkmsH2mqKx','cluster')">SandwichProg</button>
+  </div>
+
+  <!-- Alert -->
+  <div class="alert" id="alertBox"></div>
+
+  <!-- Results area -->
+  <div id="results"></div>
+
+  <!-- Watch feed -->
+  <div id="watchSection" style="display:none;margin-top:24px;">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--green)"></span>Live Feed <span id="watchCount" style="color:var(--muted)"></span></div>
+      <div class="feed-wrap" id="feedList"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────────
+const KNOWN = {
+  'CUQUKjGUv2bsNTAR9Bh9tF7njVE1Q3bkGWbkmsH2mqKx': 'SandwichProg',
+  'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4': 'Jupiter',
+  '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8': 'Raydium',
+  'pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA': 'PumpAMM',
+  'cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG': 'CPMM',
+  '6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P': 'PumpFun',
+  'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc': 'Orca',
+  'ComputeBudget111111111111111111111111111111':   'ComputeBudget',
+  '11111111111111111111111111111111':              'System',
+  'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA': 'Token',
+  'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJe1bRS':'AssocToken',
+  'So1endDqwuwiTR43kMiegfNMEAiAVAkq7dza8jfJVe3R': 'Solend',
+  'BPFLoaderUpgradeab1e11111111111111111111111':   'BPFUpgradeable',
+  'pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ': 'PumpFee',
+  'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb': 'Token2022',
+  '8pJy8T4qDDWr8aZMWN1ypWRhMUcbnErEYZUXsYqDbEL5':'BotExecWallet',
+  'DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh':'BotArbWallet',
+};
+const BOT_ADDRS = new Set([
+  'YubQzu18FDqJRyNfG8JqHmsdbxhnoQqcKUHBdUkN6tP',
+  'YubVwWeg1vHFr17Q7HQQETcke7sFvMabqU8wbv8NXQW',
+  'YubozzSnKomEnH3pkmYsdatUUwUTcm7s4mHJVmefEWj',
+  '8pJy8T4qDDWr8aZMWN1ypWRhMUcbnErEYZUXsYqDbEL5',
+  'DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh',
+]);
+const SOL = 1e9;
+let watchList = [], watchTimer = null, lastSeen = {};
+
+function getKey() { return document.getElementById('apiKey').value.trim() || localStorage.getItem('helius_key') || ''; }
+function saveKey() {
+  const k = document.getElementById('apiKey').value.trim();
+  localStorage.setItem('helius_key', k);
+  document.getElementById('keyStatus').textContent = '✓ saved';
+  setTimeout(()=>document.getElementById('keyStatus').textContent='',2000);
+}
+window.addEventListener('load', () => {
+  const k = localStorage.getItem('helius_key');
+  if (k) { document.getElementById('apiKey').value = k; document.getElementById('keyStatus').textContent='✓'; }
+});
+
+function lbl(addr) {
+  if (!addr) return '?';
+  if (BOT_ADDRS.has(addr)) return '🤖 ' + addr.slice(0,8);
+  return KNOWN[addr] ?? addr.slice(0,10)+'…';
+}
+
+// ── RPC ───────────────────────────────────────────────────────────────────────
+const queue = []; let active = 0; const MAX = 4;
+function rpc(method, params) {
+  return new Promise((res, rej) => {
+    queue.push({ method, params, res, rej });
+    drain();
+  });
+}
+async function drain() {
+  if (active >= MAX || !queue.length) return;
+  const { method, params, res, rej } = queue.shift();
+  active++;
+  try {
+    for (let i = 0; i < 4; i++) {
+      const r = await fetch(`https://mainnet.helius-rpc.com/?api-key=${getKey()}`, {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({jsonrpc:'2.0',id:1,method,params})
+      });
+      const j = await r.json();
+      if (j.error?.code === -32429) { await sleep(400*(i+1)); continue; }
+      if (j.error) { rej(new Error(j.error.message)); break; }
+      res(j.result); break;
+    }
+  } catch(e) { rej(e); } finally { active--; drain(); }
+  drain();
+}
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function show(html) { document.getElementById('results').innerHTML = html; }
+function showAlert(msg) {
+  const el = document.getElementById('alertBox');
+  el.textContent = msg; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 4000);
+}
+function loading(msg='Fetching data…') {
+  show(`<div class="loading-msg"><div class="spinner"></div>${msg}</div>`);
+}
+function quickLoad(addr, mode) {
+  document.getElementById('addrInput').value = addr;
+  document.getElementById('modeSelect').value = mode;
+  runAnalysis();
+}
+function solFmt(lam) {
+  const s = lam / SOL;
+  return (s >= 0 ? '+' : '') + s.toFixed(6) + ' SOL';
+}
+function explorer(sig) {
+  return `https://solscan.io/tx/${sig}`;
+}
+function addrLink(addr) {
+  return `https://solscan.io/account/${addr}`;
+}
+
+// ── PROFILE ───────────────────────────────────────────────────────────────────
+async function runProfile(addr) {
+  loading('Loading profile…');
+  const [info, bal, sigs] = await Promise.all([
+    rpc('getAccountInfo', [addr, {encoding:'base64'}]),
+    rpc('getBalance', [addr]),
+    rpc('getSignaturesForAddress', [addr, {limit:1000}]),
+  ]);
+  const isProgram = info?.value?.executable ?? false;
+  const owner     = info?.value?.owner ?? 'unknown';
+  const balance   = (bal?.value ?? 0) / SOL;
+  const failCount = sigs?.filter(s=>s.err)?.length ?? 0;
+  const okCount   = (sigs?.length ?? 0) - failCount;
+  const failRate  = sigs?.length ? (failCount/sigs.length*100).toFixed(1) : '0';
+
+  // Programs from last 30 txs
+  const sample = (sigs ?? []).slice(0, 30);
+  const txs = (await Promise.all(sample.map(s =>
+    rpc('getTransaction',[s.signature,{encoding:'json',maxSupportedTransactionVersion:0}]).catch(()=>null)
+  ))).filter(Boolean);
+
+  const progCount = {};
+  for (const tx of txs) {
+    const keys = tx.transaction?.message?.accountKeys ?? [];
+    for (const ix of tx.transaction?.message?.instructions ?? []) {
+      const p = keys[ix.programIdIndex];
+      if (p) progCount[lbl(p)] = (progCount[lbl(p)] ?? 0) + 1;
+    }
+  }
+  const topProgs = Object.entries(progCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxCount = topProgs[0]?.[1] ?? 1;
+
+  const isMEV = failCount > 5 || (KNOWN[addr] && KNOWN[addr].includes('Sandwich')) ||
+    topProgs.some(([p]) => p.includes('Sandwich'));
+  const isDEX = topProgs.some(([p]) => ['Jupiter','Raydium','Orca','PumpAMM','CPMM'].includes(p));
+  const verdict = isProgram ? ['program','⚙️ Protocol Program'] :
+                  isMEV     ? ['mev',    '🚨 MEV / Sandwich Bot'] :
+                  isDEX     ? ['dex',    '🔄 DeFi Bot / Trader'] :
+                              ['user',   '👤 User Wallet'];
+
+  // Recent txs table
+  const recentTxs = (sigs ?? []).slice(0, 10);
+
+  show(`
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent)"></span>Account Info</div>
+      <div class="stat-row"><span class="stat-key">Address</span>
+        <a href="${addrLink(addr)}" target="_blank" style="font-family:monospace;font-size:11px;color:var(--accent)">${addr.slice(0,16)}…</a></div>
+      <div class="stat-row"><span class="stat-key">Type</span>
+        <span class="stat-val">${isProgram ? '⚙️ Program' : '👛 Wallet'}</span></div>
+      <div class="stat-row"><span class="stat-key">Owner</span>
+        <code>${lbl(owner)}</code></div>
+      <div class="stat-row"><span class="stat-key">Balance</span>
+        <span class="stat-val val-${balance > 1 ? 'green' : 'muted'}">${balance.toFixed(6)} SOL</span></div>
+      <div class="verdict verdict-${verdict[0]}">${verdict[1]}</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--yellow)"></span>Transaction Stats</div>
+      <div class="stat-row"><span class="stat-key">Total (1k sample)</span>
+        <span class="stat-val">${(sigs?.length??0).toLocaleString()}</span></div>
+      <div class="stat-row"><span class="stat-key">Succeeded</span>
+        <span class="stat-val val-green">${okCount.toLocaleString()}</span></div>
+      <div class="stat-row"><span class="stat-key">Failed</span>
+        <span class="stat-val val-${failCount>10?'red':'muted'}">${failCount.toLocaleString()}</span></div>
+      <div class="stat-row"><span class="stat-key">Fail rate</span>
+        <span class="stat-val val-${parseFloat(failRate)>5?'red':'muted'}">${failRate}%</span></div>
+      ${failCount > 5 ? '<div style="font-size:11px;color:var(--red);margin-top:8px;">⚠️ High fail rate = intentional MEV fails</div>' : ''}
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Top Programs Used</div>
+      <div class="prog-bar-wrap">
+        ${topProgs.map(([p,c]) => `
+          <div class="prog-bar-row">
+            <span class="prog-bar-label">${p}</span>
+            <div class="prog-bar-track">
+              <div class="prog-bar-fill" style="width:${(c/maxCount*100).toFixed(0)}%"></div>
+            </div>
+            <span class="prog-bar-count">×${c}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--teal)"></span>Recent Transactions</div>
+    <div class="tx-list">
+      <div class="tx-item" style="background:none;font-size:11px;color:var(--muted);border-left-color:transparent">
+        <span>Time</span><span>Slot</span><span>Signature</span><span></span><span>Status</span>
+      </div>
+      ${recentTxs.map(s => `
+        <div class="tx-item ${s.err ? 'fail' : ''}">
+          <span style="color:var(--muted);font-family:monospace">${new Date(s.blockTime*1000).toISOString().slice(11,19)}</span>
+          <span style="color:var(--muted)">${s.slot.toLocaleString()}</span>
+          <span class="tx-sig"><a href="${explorer(s.signature)}" target="_blank">${s.signature.slice(0,24)}…</a></span>
+          <span></span>
+          <span class="${s.err ? 'val-red' : 'val-green'}">${s.err ? '❌ Failed' : '✅ OK'}</span>
+        </div>`).join('')}
+    </div>
+  </div>
+  `);
+}
+
+// ── SANDWICH ─────────────────────────────────────────────────────────────────
+async function runSandwich(addr) {
+  loading('Scanning for sandwich patterns…');
+  const sigs = await rpc('getSignaturesForAddress', [addr, {limit:500}]) ?? [];
+  const bySlot = {};
+  for (const s of sigs.filter(s=>!s.err)) (bySlot[s.slot]??=[]).push(s);
+  const sandwichSlots = Object.entries(bySlot)
+    .filter(([,v])=>v.length>=2)
+    .sort((a,b)=>Number(b[0])-Number(a[0]))
+    .slice(0, 8);
+
+  if (!sandwichSlots.length) {
+    show(`<div class="card"><div class="empty">No sandwich slots found in last 500 txs for this address.</div></div>`);
+    return;
+  }
+
+  // Fetch all txs for these slots
+  const allSlotData = await Promise.all(sandwichSlots.map(async ([slot, botSigs]) => {
+    const txs = (await Promise.all(botSigs.map(s =>
+      rpc('getTransaction',[s.signature,{encoding:'json',maxSupportedTransactionVersion:0}]).catch(()=>null)
+    ))).filter(Boolean);
+    return { slot, botSigs, txs };
+  }));
+
+  let html = `<div style="margin-bottom:12px;font-size:13px;color:var(--muted)">
+    Found <strong style="color:var(--text)">${sandwichSlots.length}</strong> sandwich slots in last 500 txs
+  </div>`;
+
+  for (const { slot, botSigs, txs } of allSlotData) {
+    const time = new Date(botSigs[0].blockTime*1000).toISOString().slice(0,19).replace('T',' ');
+    let totalProfit = 0;
+
+    const rows = txs.map((tx, i) => {
+      const keys = tx.transaction?.message?.accountKeys ?? [];
+      const bi   = keys.indexOf(addr);
+      const pre  = tx.meta?.preBalances?.[bi]  ?? 0;
+      const post = tx.meta?.postBalances?.[bi] ?? 0;
+      const d    = post - pre;
+      totalProfit += d;
+      const progs = [...new Set((tx.transaction?.message?.instructions??[])
+        .map(ix=>lbl(keys[ix.programIdIndex]))
+        .filter(p=>!['ComputeBudget','System','AssocToken'].includes(p)))].slice(0,3);
+      const role  = i===0 ? ['front','🟢 FRONT-RUN'] : i===txs.length-1 ? ['back','🔴 BACK-RUN'] : ['mid','⚪ MID'];
+      const dStr  = solFmt(d);
+      const dCls  = d >= 0 ? 'pos' : 'neg';
+      const sig   = botSigs[i]?.signature ?? '';
+      return `
+        <div class="tx-item ${role[0]}">
+          <span class="tx-role role-${role[0]}">${role[1]}</span>
+          <span style="color:var(--muted);font-family:monospace">${String(i+1).padStart(2,'0')} / ${txs.length}</span>
+          <span class="tx-sig"><a href="${explorer(sig)}" target="_blank">${sig.slice(0,20)}…</a></span>
+          <span style="font-size:11px;color:var(--muted)">${progs.join(', ')}</span>
+          <span class="tx-delta ${dCls}">${dStr}</span>
+        </div>`;
+    });
+
+    const profitCls = totalProfit >= 0 ? 'val-green' : 'val-red';
+    html += `
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-title">
+        <span class="dot" style="background:var(--orange)"></span>
+        Slot ${parseInt(slot).toLocaleString()} &nbsp;·&nbsp; <span style="color:var(--muted);font-weight:400">${time} UTC</span>
+        &nbsp;·&nbsp; ${txs.length} txs in bundle
+        <span style="margin-left:auto;font-size:12px;" class="${profitCls}">
+          Net: ${solFmt(totalProfit)}
+        </span>
+      </div>
+      <div class="tx-list">${rows.join('')}</div>
+    </div>`;
+  }
+  show(html);
+}
+
+// ── CLUSTER ───────────────────────────────────────────────────────────────────
+async function runCluster(addr) {
+  loading('Mapping cluster…');
+  const sigs = await rpc('getSignaturesForAddress',[addr,{limit:200}]) ?? [];
+  const txs  = (await Promise.all(sigs.slice(0,50).map(s =>
+    rpc('getTransaction',[s.signature,{encoding:'json',maxSupportedTransactionVersion:0}]).catch(()=>null)
+  ))).filter(Boolean);
+
+  const co = {};
+  for (const tx of txs) {
+    const keys = tx.transaction?.message?.accountKeys ?? [];
+    if (!keys.includes(addr)) continue;
+    for (const k of keys) {
+      if (k === addr) continue;
+      co[k] = (co[k]??0) + 1;
+    }
+  }
+  const related = Object.entries(co).filter(([,c])=>c>=3).sort((a,b)=>b[1]-a[1]).slice(0,12);
+
+  // Fetch balances
+  const bals = await Promise.all(related.map(([a]) => rpc('getBalance',[a]).catch(()=>null)));
+
+  // Build visual graph
+  const nodes = [
+    { addr, label: lbl(addr).replace('🤖 ',''), type: BOT_ADDRS.has(addr) ? 'bot' : KNOWN[addr] ? 'program' : 'bot', x:50, y:50, size:70 },
+    ...related.slice(0,8).map(([a, c], i) => {
+      const angle = (i / Math.min(related.length, 8)) * 2 * Math.PI - Math.PI/2;
+      const r = 38;
+      return {
+        addr: a,
+        label: lbl(a).replace('🤖 ',''),
+        type: BOT_ADDRS.has(a) ? 'bot' : KNOWN[a] ? 'program' : 'arb',
+        x: 50 + r * Math.cos(angle),
+        y: 50 + r * Math.sin(angle),
+        size: Math.max(44, Math.min(60, c * 1.2)),
+        count: c,
+      };
+    })
+  ];
+
+  const svgLines = nodes.slice(1).map(n =>
+    `<line x1="${nodes[0].x}%" y1="${nodes[0].y}%" x2="${n.x}%" y2="${n.y}%" />`
+  ).join('');
+
+  const nodeHtml = nodes.map(n => `
+    <div class="cluster-node ${n.type}"
+      style="width:${n.size}px;height:${n.size}px;left:calc(${n.x}% - ${n.size/2}px);top:calc(${n.y}% - ${n.size/2}px)"
+      title="${n.addr}"
+      onclick="quickLoad('${n.addr}','profile')">
+      <span style="font-size:9px;word-break:break-all;padding:2px">${n.label}</span>
+      ${n.count ? `<span style="font-size:8px;opacity:.7">×${n.count}</span>` : ''}
+    </div>`).join('');
+
+  const tableRows = related.map(([a, c], i) => {
+    const sol = ((bals[i]?.value??0)/SOL).toFixed(4);
+    const type = BOT_ADDRS.has(a) ? '<span class="badge badge-mev">bot</span>' :
+                 KNOWN[a] ? '<span class="badge badge-prog">program</span>' :
+                 '<span class="badge badge-bot">unknown</span>';
+    return `
+      <div class="stat-row">
+        <span style="font-family:monospace;font-size:11px;">
+          <a href="${addrLink(a)}" target="_blank" style="color:var(--accent)">${a.slice(0,20)}…</a>
+          &nbsp;${type}
+        </span>
+        <span style="display:flex;gap:12px;align-items:center">
+          <span style="color:var(--muted);font-size:11px">co-appears ×${c}</span>
+          <span class="stat-val" style="font-family:monospace">${sol} SOL</span>
+          <button class="btn-ghost" style="padding:2px 8px;font-size:10px" onclick="quickLoad('${a}','profile')">Profile</button>
+        </span>
+      </div>`;
+  }).join('');
+
+  show(`
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--purple)"></span>Cluster Map
+        <span style="color:var(--muted);font-weight:400;font-size:11px;margin-left:4px">— click a node to profile</span>
+      </div>
+      <div class="cluster-wrap" style="height:280px;">
+        <svg class="lines">${svgLines}</svg>
+        ${nodeHtml}
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--orange)"></span>Co-appearing Addresses (≥3 shared txs)</div>
+      ${tableRows || '<div class="empty">No co-appearing addresses found</div>'}
+    </div>
+  </div>
+  `);
+}
+
+// ── FOLLOW MONEY ─────────────────────────────────────────────────────────────
+async function runFollow(addr) {
+  loading('Tracing outflows…');
+  const sigs = await rpc('getSignaturesForAddress',[addr,{limit:100}]) ?? [];
+  const txs  = (await Promise.all(sigs.slice(0,20).map(s =>
+    rpc('getTransaction',[s.signature,{encoding:'json',maxSupportedTransactionVersion:0}]).catch(()=>null)
+  ))).filter(Boolean);
+
+  const outflows = new Map();
+  let totalOut = 0;
+  for (const tx of txs) {
+    const keys = tx.transaction?.message?.accountKeys ?? [];
+    const pre  = tx.meta?.preBalances  ?? [];
+    const post = tx.meta?.postBalances ?? [];
+    const si   = keys.indexOf(addr);
+    if (si === -1) continue;
+    const delta = (post[si]??0) - (pre[si]??0);
+    if (delta >= 0) continue;
+    totalOut += Math.abs(delta);
+    for (let i = 0; i < keys.length; i++) {
+      if (i === si) continue;
+      const d = (post[i]??0) - (pre[i]??0);
+      if (d > 0.005 * SOL) outflows.set(keys[i], (outflows.get(keys[i])??0) + d);
+    }
+  }
+
+  const sorted = [...outflows.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const bals   = await Promise.all(sorted.map(([a])=>rpc('getBalance',[a]).catch(()=>null)));
+
+  const rows = sorted.map(([dest, lam], i) => {
+    const pct   = totalOut ? (lam/totalOut*100).toFixed(1) : '0';
+    const sol   = (lam/SOL).toFixed(4);
+    const curBal= ((bals[i]?.value??0)/SOL).toFixed(4);
+    const type  = BOT_ADDRS.has(dest) ? 'bot' : KNOWN[dest] ? 'program' : 'unknown';
+    return `
+      <div class="stat-row">
+        <span style="display:flex;flex-direction:column;gap:2px">
+          <a href="${addrLink(dest)}" target="_blank" style="font-family:monospace;font-size:11px;color:var(--accent)">${dest.slice(0,24)}…</a>
+          <span style="font-size:11px;color:var(--muted)">${lbl(dest)} · current balance: ${curBal} SOL</span>
+        </span>
+        <span style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+          <span class="stat-val val-red">−${sol} SOL</span>
+          <span style="font-size:10px;color:var(--muted)">${pct}% of outflows</span>
+        </span>
+      </div>`;
+  }).join('');
+
+  show(`
+  <div class="card">
+    <div class="card-title"><span class="dot" style="background:var(--red)"></span>Money Trail
+      <span style="margin-left:auto;font-size:12px;color:var(--muted)">
+        Total outflows: <strong style="color:var(--red)">${(totalOut/SOL).toFixed(4)} SOL</strong> (last 20 txs)
+      </span>
+    </div>
+    ${rows || '<div class="empty">No significant SOL outflows found</div>'}
+  </div>
+  `);
+}
+
+// ── ROUTER ────────────────────────────────────────────────────────────────────
+async function runAnalysis() {
+  const addr = document.getElementById('addrInput').value.trim();
+  const mode = document.getElementById('modeSelect').value;
+  if (!addr) { showAlert('Enter an address first'); return; }
+  if (!getKey()) { showAlert('Add your Helius API key first'); return; }
+  try {
+    if (mode === 'profile')   await runProfile(addr);
+    else if (mode === 'sandwich') await runSandwich(addr);
+    else if (mode === 'cluster')  await runCluster(addr);
+    else if (mode === 'follow')   await runFollow(addr);
+  } catch(e) {
+    show(`<div class="alert show">Error: ${e.message}</div>`);
+  }
+}
+
+// ── WATCH (live) ──────────────────────────────────────────────────────────────
+async function addToWatch() {
+  const addr = document.getElementById('addrInput').value.trim();
+  if (!addr || watchList.includes(addr)) return;
+  watchList.push(addr);
+  const s = await rpc('getSignaturesForAddress',[addr,{limit:1}]).catch(()=>[]);
+  lastSeen[addr] = s?.[0]?.signature;
+  document.getElementById('watchSection').style.display = 'block';
+  document.getElementById('watchCount').textContent = `(${watchList.length} address${watchList.length>1?'es':''})`;
+  document.getElementById('watchIndicator').style.display = 'flex';
+  addFeedItem('system', addr, `👁 Now watching ${addr.slice(0,16)}…`, null);
+  if (!watchTimer) watchTimer = setInterval(pollWatch, 4000);
+}
+
+async function pollWatch() {
+  for (const addr of watchList) {
+    const sigs = await rpc('getSignaturesForAddress',[addr,{limit:5}]).catch(()=>null);
+    if (!sigs?.length) continue;
+    for (const s of sigs) {
+      if (s.signature === lastSeen[addr]) break;
+      const tx = await rpc('getTransaction',[s.signature,{encoding:'json',maxSupportedTransactionVersion:0}]).catch(()=>null);
+      if (!tx) continue;
+      const keys = tx.transaction?.message?.accountKeys ?? [];
+      const bi   = keys.indexOf(addr);
+      const d    = bi !== -1 ? (tx.meta?.postBalances?.[bi]??0)-(tx.meta?.preBalances?.[bi]??0) : 0;
+      const progs= [...new Set((tx.transaction?.message?.instructions??[])
+        .map(ix=>lbl(keys[ix.programIdIndex])).filter(p=>p!=='ComputeBudget'))].slice(0,2);
+      addFeedItem(s.err?'fail':'ok', addr, progs.join(', '), d, s.signature);
+    }
+    lastSeen[addr] = sigs[0].signature;
+  }
+}
+
+function addFeedItem(type, addr, desc, delta, sig) {
+  const list = document.getElementById('feedList');
+  const time  = new Date().toISOString().slice(11,19);
+  const dHtml = delta != null
+    ? `<span class="feed-delta ${delta>=0?'pos':'neg'}">${solFmt(delta)}</span>` : '';
+  const icon  = type==='fail'?'❌':type==='system'?'ℹ️':'✅';
+  const sigLink = sig ? `<a href="${explorer(sig)}" target="_blank" style="color:var(--muted);font-size:10px">${sig.slice(0,12)}…</a>` : '';
+  const item = document.createElement('div');
+  item.className = 'feed-item';
+  item.innerHTML = `
+    <span class="feed-time">${time}</span>
+    <span class="feed-addr">${addr.slice(0,10)}…</span>
+    <span>${icon} ${desc}</span>
+    ${dHtml}
+    ${sigLink}`;
+  list.prepend(item);
+  if (list.children.length > 50) list.lastChild.remove();
+}
+
+// Enter key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && document.activeElement.id === 'addrInput') runAnalysis();
+});
+</script>
+</body>
+</html>

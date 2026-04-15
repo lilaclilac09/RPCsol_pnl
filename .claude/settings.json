@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"http.server 7823\")",
+      "Bash(ls /Users/aileen/RPCsol_pnl/*.mjs)"
+    ]
+  }
+}

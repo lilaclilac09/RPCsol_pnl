@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana Speed Machine</title>
+
+  <!-- Google Fonts: Bricolage Grotesque · DM Sans · JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --color-accent:       #2A7B9B;
+      --color-accent-hover: #1F6280;
+      --color-accent-light: #E4F2F7;
+      --color-accent-muted: #5A9DB8;
+    }
+  </style>
+
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="nav-inner">
+      <span class="nav-title">Solana Speed Machine</span>
+      <div class="nav-dots" id="nav-dots" role="tablist">
+        <button class="nav-dot" data-target="module-1" data-tooltip="From Zero to Timeline" role="tab" aria-label="Module 1: From Zero to Timeline"></button>
+        <button class="nav-dot" data-target="module-2" data-tooltip="Meet the Cast" role="tab" aria-label="Module 2: Meet the Cast"></button>
+        <button class="nav-dot" data-target="module-3" data-tooltip="The Scout Algorithm" role="tab" aria-label="Module 3: The Scout Algorithm"></button>
+        <button class="nav-dot" data-target="module-4" data-tooltip="The Messenger" role="tab" aria-label="Module 4: The Messenger"></button>
+        <button class="nav-dot" data-target="module-5" data-tooltip="When Things Break" role="tab" aria-label="Module 5: When Things Break"></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- modules/*.html content is assembled here by build.sh -->
+<section class="module" id="module-1" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">01</span>
+      <h1 class="module-title">From Zero to Timeline</h1>
+      <p class="module-subtitle">What this tool does, why it exists, and what happens the moment you run it</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: What is this thing? -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">A wallet's entire financial life — in under a second</h2>
+        <p>Imagine being able to ask: <em>"What was this crypto wallet worth after every single transaction it ever made?"</em> and getting the answer in 300 milliseconds.</p>
+        <p>That's what <strong>sol-pnl-challenge</strong> does. It's a <span class="tooltip" data-tip="A CLI (Command-Line Interface) is a text-based program you run in a terminal by typing commands. No buttons, no windows — just text in, text out. When talking to AI, say: 'add a CLI flag for verbose output.'">CLI</span> tool built in <span class="tooltip" data-tip="Rust is a systems programming language known for being extremely fast and memory-safe. It compiles to native machine code — no interpreter needed. Think of it as C++ but with guardrails.">Rust</span> that pulls the complete <span class="tooltip" data-tip="SOL is the native currency of the Solana blockchain — like ETH on Ethereum. All transaction fees and transfers happen in SOL.">SOL</span> balance history of any Solana wallet as fast as physically possible.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-8)">
+          <div class="pattern-card animate-in">
+            <div class="pattern-card-icon">⚡</div>
+            <h4>Speed-first</h4>
+            <p>Built specifically to minimize <span class="tooltip" data-tip="Latency is the time it takes to get a response. Low latency means fast. It's measured in milliseconds (ms). 300ms is roughly the time it takes to blink.">latency</span> — 256ms to 601ms across all wallet sizes</p>
+          </div>
+          <div class="pattern-card animate-in">
+            <div class="pattern-card-icon">📊</div>
+            <h4>Balance Timeline</h4>
+            <p>Every transaction, every slot, every balance change — assembled into a clean <span class="tooltip" data-tip="JSON (JavaScript Object Notation) is a standard text format for structured data. It looks like: {&quot;key&quot;: &quot;value&quot;}. Every language can read it.">JSON</span> timeline</p>
+          </div>
+          <div class="pattern-card animate-in">
+            <div class="pattern-card-icon">🔗</div>
+            <h4>Helius-powered</h4>
+            <p>Uses <span class="tooltip" data-tip="Helius is a premium Solana RPC provider — they run fast, reliable Solana nodes and offer enhanced APIs beyond standard RPC. You need an API key to use them.">Helius RPC</span> for 10× faster data retrieval than standard Solana <span class="tooltip" data-tip="An RPC (Remote Procedure Call) is a way to ask a remote server to execute a function and return the result. RPC endpoints are how apps talk to blockchain nodes.">RPC</span> endpoints</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: The user journey — trace end to end -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">What actually happens when you run it</h2>
+        <p>You type one command. About 300ms later, JSON appears. Here's what's happening in those 300ms — every step, in order.</p>
+
+        <div class="flow-animation" data-steps='[
+          {"highlight":"flow-actor-1","label":"You run the command with a wallet address and your Helius API key"},
+          {"highlight":"flow-actor-1","label":"main.rs parses your flags and hands the address to the Scout algorithm","packet":true,"from":"actor-1","to":"actor-2"},
+          {"highlight":"flow-actor-2","label":"Scout immediately fires 2 requests to Helius in parallel: oldest 1000 sigs + newest 1000 sigs"},
+          {"highlight":"flow-actor-2","label":"Scout calculates how big the wallet is and plans how many more requests it needs","packet":true,"from":"actor-2","to":"actor-3"},
+          {"highlight":"flow-actor-3","label":"rpc.rs fires up to 100 concurrent HTTP/2 requests to fetch full transaction data"},
+          {"highlight":"flow-actor-3","label":"Each transaction response comes back with pre-balance and post-balance for the wallet","packet":true,"from":"actor-3","to":"actor-2"},
+          {"highlight":"flow-actor-2","label":"algorithm.rs assembles BalancePoints: one data point per transaction, sorted by slot","packet":true,"from":"actor-2","to":"actor-1"},
+          {"highlight":"flow-actor-1","label":"main.rs prints the JSON result: address, latency, transaction count, and full PnL"}
+        ]'>
+          <div class="flow-actors">
+            <div class="flow-actor" id="flow-actor-1">
+              <div class="flow-actor-icon" style="background: var(--color-actor-1)">⌨️</div>
+              <span>You + main.rs</span>
+            </div>
+            <div class="flow-actor" id="flow-actor-2">
+              <div class="flow-actor-icon" style="background: var(--color-actor-2)">🧠</div>
+              <span>Scout Algorithm</span>
+            </div>
+            <div class="flow-actor" id="flow-actor-3">
+              <div class="flow-actor-icon" style="background: var(--color-actor-3)">📡</div>
+              <span>rpc.rs + Helius</span>
+            </div>
+          </div>
+          <div class="flow-packet" id="flow-packet"></div>
+          <div class="flow-step-label" id="flow-label">Click "Next Step" to trace the journey</div>
+          <div class="flow-controls">
+            <button class="btn flow-next-btn">Next Step</button>
+            <button class="btn flow-reset-btn">Restart</button>
+            <span class="flow-progress"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: What is Solana / blockchain basics -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The world this tool lives in</h2>
+        <p>To understand what this tool does, you need to know two things about <span class="tooltip" data-tip="Solana is a high-speed blockchain — a decentralized public ledger that records all transactions permanently. It can handle ~65,000 transactions per second.">Solana</span>.</p>
+
+        <div class="numbered-steps stagger-children" style="margin-top: var(--space-6)">
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-accent)">1</div>
+            <div class="step-content">
+              <h4>Everything is public</h4>
+              <p>Every transaction ever made on Solana is recorded on the <span class="tooltip" data-tip="A blockchain is a public, permanent, tamper-proof record of all transactions. Once written, nothing can be deleted or changed. It's maintained by thousands of computers worldwide.">blockchain</span> — forever, publicly. Anyone with a wallet address can reconstruct the full financial history of that wallet. There's no login required.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-actor-2)">2</div>
+            <div class="step-content">
+              <h4>Wallets have no "balance field"</h4>
+              <p>Your wallet balance isn't stored anywhere. It's <em>calculated</em> by reading every transaction that ever touched your address and summing the changes. This tool does that calculation — for every transaction, in order.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight" style="margin-top: var(--space-8)">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Why this is hard</strong>
+            <p>A popular wallet might have 50,000+ transactions. Each one requires a network request. Fetching them one-by-one would take minutes. This tool&apos;s entire job is to make that fast — and it does it in under a second.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 4: The output explained -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">What you get out</h2>
+        <p>The tool outputs <span class="tooltip" data-tip="JSON is a text format for structured data — like a nested list of labeled boxes. It's the most common format for passing data between programs.">JSON</span> you can pipe into other tools, save to a file, or pass to an AI for analysis.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">OUTPUT</span>
+            <pre><code><span class="code-line">{</span>
+<span class="code-line">  <span class="code-property">"address"</span>: <span class="code-string">"7xK...mNp"</span>,</span>
+<span class="code-line">  <span class="code-property">"latency_ms"</span>: <span class="code-number">312</span>,</span>
+<span class="code-line">  <span class="code-property">"tx_count"</span>: <span class="code-number">4821</span>,</span>
+<span class="code-line">  <span class="code-property">"pnl_lamports"</span>: <span class="code-number">-15420000</span>,</span>
+<span class="code-line">  <span class="code-property">"pnl_sol"</span>: <span class="code-number">-0.01542</span></span>
+<span class="code-line">}</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Opening brace — this is one JSON object</p>
+              <p class="tl">The wallet address you asked about</p>
+              <p class="tl">How long the whole thing took in milliseconds</p>
+              <p class="tl">Total number of transactions ever made by this wallet</p>
+              <p class="tl">Net profit/loss in <span class="tooltip" data-tip="A lamport is the smallest unit of SOL — like cents to a dollar. 1 SOL = 1,000,000,000 lamports (1 billion). Using lamports avoids floating-point math errors.">lamports</span> (negative = net loss)</p>
+              <p class="tl">Same number converted to SOL (divide by 1 billion)</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: var(--space-4)">Add <code style="background: var(--color-bg-code); color: #CDD6F4; padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: var(--text-sm)">--trajectory</code> to get the full per-transaction timeline — every slot, every balance snapshot.</p>
+      </section>
+
+      <!-- Screen 5: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module1">
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Exactly! Because everything on Solana is public, you can reconstruct any wallet&apos;s full history with just an address — no credentials needed."
+               data-explanation-wrong="Not quite. The key insight is that Solana is a public blockchain — all transactions are visible to anyone. The tool reads these public records.">
+            <h3 class="quiz-question">You want to check the balance history of a wallet you&apos;ve never interacted with. What do you need?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The wallet owner&apos;s private key or permission</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>An account on the Solana Foundation website</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Just the wallet&apos;s public address and a Helius API key</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Right — a wallet&apos;s balance is never stored anywhere. It is always calculated by summing all the transaction changes. That&apos;s exactly what this tool does."
+               data-explanation-wrong="Close, but not quite. Solana doesn&apos;t store a running balance anywhere. Every balance you see in a wallet app is freshly computed from the transaction history.">
+            <h3 class="quiz-question">Why doesn&apos;t the tool just read the wallet&apos;s current balance field?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The balance field is private and encrypted</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>There is no "balance field" — balance is always calculated from transaction history</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The tool only works for historical data, not the current balance</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Exactly. The latency challenge is the core problem this codebase solves. More transactions = more RPC requests = higher latency without clever optimization."
+               data-explanation-wrong="Not quite. The core engineering challenge here is speed — fetching potentially thousands of transactions fast enough to matter.">
+            <h3 class="quiz-question">A friend wants to build a similar tool but it takes 45 seconds for large wallets. What is the most likely bottleneck?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Fetching thousands of transactions one at a time, waiting for each before starting the next</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Rust language is slow at parsing JSON</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Solana blockchain limits how fast it can serve data</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module1')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module1')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+<section class="module" id="module-2" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">02</span>
+      <h1 class="module-title">Meet the Cast</h1>
+      <p class="module-subtitle">Four Rust files, four distinct personalities — and how they divide the work</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: The film crew metaphor -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Think of it like a film production</h2>
+        <p>Every professional film has a clear division of labor. Nobody asks the cinematographer to also write the script. The codebase works the same way — each file has one job and stays in its lane.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-8); grid-template-columns: repeat(2, 1fr)">
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-1)">
+            <div class="pattern-card-icon" style="color: var(--color-actor-1)">🎬</div>
+            <h4 style="color: var(--color-actor-1)">main.rs</h4>
+            <p>The <strong>Director</strong> — reads your command, coordinates all the other parts, and delivers the final output</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="pattern-card-icon" style="color: var(--color-actor-2)">🧠</div>
+            <h4 style="color: var(--color-actor-2)">algorithm.rs</h4>
+            <p>The <strong>Strategist</strong> — decides the optimal plan for fetching data and assembles the final timeline</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="pattern-card-icon" style="color: var(--color-actor-3)">📡</div>
+            <h4 style="color: var(--color-actor-3)">rpc.rs</h4>
+            <p>The <strong>Field Reporter</strong> — makes the actual network calls to Helius and returns raw data</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-4)">
+            <div class="pattern-card-icon" style="color: var(--color-actor-4)">📦</div>
+            <h4 style="color: var(--color-actor-4)">types.rs</h4>
+            <p>The <strong>Prop Master</strong> — defines the shapes of all data (the structs that hold each balance point)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: Visual file tree -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The codebase at a glance</h2>
+        <p>The entire project is just four <span class="tooltip" data-tip="In Rust, source files end in .rs. Each file is typically a module — a self-contained unit of code with a clear purpose.">source files</span> plus a <span class="tooltip" data-tip="Cargo.toml is Rust's package manifest — it lists the project name, version, and all external libraries (called crates) the project depends on. Equivalent to package.json in JavaScript.">Cargo.toml</span>. Elegant simplicity.</p>
+
+        <div style="background: var(--color-bg-code); border-radius: var(--radius-md); padding: var(--space-6); font-family: var(--font-mono); font-size: var(--text-sm); margin: var(--space-6) 0; box-shadow: var(--shadow-md)">
+          <div style="color: #CDD6F4; line-height: 2">
+            <div><span style="color: var(--color-actor-4)">📁</span> <span style="color: #F9E2AF">sol-pnl-challenge/</span></div>
+            <div style="padding-left: var(--space-6)"><span style="color: #6C7086">├──</span> <span style="color: #F9E2AF">📁 src/</span></div>
+            <div style="padding-left: calc(var(--space-6) * 2)"><span style="color: #6C7086">├──</span> <span style="color: var(--color-actor-1)">main.rs</span> <span style="color: #6C7086">   — entry point, CLI parsing, output</span></div>
+            <div style="padding-left: calc(var(--space-6) * 2)"><span style="color: #6C7086">├──</span> <span style="color: var(--color-actor-2)">algorithm.rs</span> <span style="color: #6C7086">— Scout algorithm, 3-phase strategy</span></div>
+            <div style="padding-left: calc(var(--space-6) * 2)"><span style="color: #6C7086">├──</span> <span style="color: var(--color-actor-3)">rpc.rs</span> <span style="color: #6C7086">     — HTTP client, Helius API calls</span></div>
+            <div style="padding-left: calc(var(--space-6) * 2)"><span style="color: #6C7086">└──</span> <span style="color: var(--color-actor-4)">types.rs</span> <span style="color: #6C7086">   — BalancePoint struct, data shapes</span></div>
+            <div style="padding-left: var(--space-6)"><span style="color: #6C7086">└──</span> <span style="color: #A6E3A1">Cargo.toml</span> <span style="color: #6C7086"> — dependencies (reqwest, tokio, serde…)</span></div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>The "single responsibility" principle</strong>
+            <p>Each file does exactly one thing. This is a core software engineering principle — and it&apos;s what makes AI good at modifying code. When you tell an AI "update how the HTTP client works," it knows to look in <strong>rpc.rs</strong> and nowhere else.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: types.rs deep dive — the BalancePoint -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The data shape everything revolves around</h2>
+        <p><strong>types.rs</strong> defines <code style="background: var(--color-bg-code); color: #CDD6F4; padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: var(--text-sm)">BalancePoint</code> — the single unit of data representing one transaction&apos;s effect on a wallet&apos;s balance. Every transaction becomes one of these.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">types.rs</span>
+            <pre><code><span class="code-line"><span class="code-keyword">pub struct</span> <span class="code-function">BalancePoint</span> {</span>
+<span class="code-line">    <span class="code-keyword">pub</span> slot: <span class="code-function">u64</span>,</span>
+<span class="code-line">    <span class="code-keyword">pub</span> block_time: <span class="code-function">Option</span>&lt;<span class="code-function">i64</span>&gt;,</span>
+<span class="code-line">    <span class="code-keyword">pub</span> pre_lamports: <span class="code-function">u64</span>,</span>
+<span class="code-line">    <span class="code-keyword">pub</span> post_lamports: <span class="code-function">u64</span>,</span>
+<span class="code-line">    <span class="code-keyword">pub</span> signature: <span class="code-function">String</span>,</span>
+<span class="code-line">}</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">A <span class="tooltip" data-tip="A struct (structure) is a custom data type you define — a named collection of fields. Like a form with labeled boxes. In Rust, structs are the main way to group related data.">struct</span> called BalancePoint — one snapshot of a transaction</p>
+              <p class="tl"><strong>slot</strong>: Solana&apos;s version of a block number — which moment in time this happened</p>
+              <p class="tl"><strong>block_time</strong>: The Unix timestamp (seconds since 1970). <span class="tooltip" data-tip="Option means the value might not exist. Option&lt;i64&gt; means 'a number, or nothing.' Rust forces you to handle the nothing case explicitly — no null crashes.">Option</span> means it might be missing</p>
+              <p class="tl"><strong>pre_lamports</strong>: Balance BEFORE this transaction (in lamports)</p>
+              <p class="tl"><strong>post_lamports</strong>: Balance AFTER this transaction (in lamports)</p>
+              <p class="tl"><strong>signature</strong>: The unique ID of this transaction on the blockchain</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 4: Group chat — how the files talk -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">A day in the life — the files talk it out</h2>
+        <p>Here&apos;s what a real request looks like as a conversation between the four files:</p>
+
+        <div class="chat-window" id="chat-module2">
+          <div class="chat-messages">
+            <div class="chat-message" data-msg="0" data-sender="main" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-1)">M</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-1)">main.rs</span>
+                <p>User ran the command with address <code>7xK...mNp</code>. Algorithm, go get me the balance history.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="1" data-sender="algo" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-2)">A</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-2)">algorithm.rs</span>
+                <p>On it. rpc.rs — I need the oldest 1000 and newest 1000 signatures for this wallet, in parallel. Go.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="2" data-sender="rpc" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-3)">R</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-3)">rpc.rs</span>
+                <p>Firing both requests to Helius simultaneously... Done. Got 1000 + 1000 sigs back. Total wallet: 4821 transactions.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="3" data-sender="algo" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-2)">A</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-2)">algorithm.rs</span>
+                <p>4821 total — that means 2821 more in the middle. I&apos;ll partition the remaining slot range into 6 chunks. rpc.rs, fetch all 6 in parallel with full transaction data.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="4" data-sender="rpc" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-3)">R</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-3)">rpc.rs</span>
+                <p>Sending up to 100 concurrent requests... All 4821 transactions received. Passing raw data back.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="5" data-sender="algo" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-2)">A</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-2)">algorithm.rs</span>
+                <p>Converting each transaction into a BalancePoint using the types.rs struct. Deduplicating, sorting by slot... main.rs, here are 4821 clean BalancePoints.</p>
+              </div>
+            </div>
+            <div class="chat-message" data-msg="6" data-sender="main" style="display:none">
+              <div class="chat-avatar" style="background: var(--color-actor-1)">M</div>
+              <div class="chat-bubble">
+                <span class="chat-sender" style="color: var(--color-actor-1)">main.rs</span>
+                <p>Got it. Calculating PnL (last balance minus first balance), measuring total latency... Printing JSON output. Done in 312ms! ✓</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-typing" style="display:none">
+            <div class="chat-avatar">?</div>
+            <div class="chat-typing-dots">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+            </div>
+          </div>
+
+          <div class="chat-controls">
+            <button class="btn chat-next-btn">Next Message</button>
+            <button class="btn chat-all-btn">Play All</button>
+            <button class="btn chat-reset-btn">Replay</button>
+            <span class="chat-progress"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module2">
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Correct! rpc.rs is the field reporter — it handles all network communication with Helius. algorithm.rs decides what to fetch; rpc.rs actually fetches it."
+               data-explanation-wrong="Not quite. Think about which file is responsible for network communication vs. strategy. The field reporter makes the calls, not the strategist.">
+            <h3 class="quiz-question">You want to add support for a new Helius API endpoint. Which file would you most likely need to change?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>algorithm.rs — because it decides what data to fetch</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>rpc.rs — because it handles all the actual network calls</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>main.rs — because it&apos;s the entry point</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Exactly. types.rs defines the shape of data shared across the whole codebase. Adding a new field to BalancePoint would require updating types.rs and anywhere that reads that struct."
+               data-explanation-wrong="Think about where the data shapes are defined. If you want to add a new piece of information to each transaction record, you&apos;d need to change the struct definition itself.">
+            <h3 class="quiz-question">You want to track the transaction fee for each balance change. Where would you add the new fee field?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>main.rs — because that&apos;s where output is formatted</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>algorithm.rs — because it assembles BalancePoints</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>types.rs — because it defines the BalancePoint struct</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module2')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module2')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+<section class="module" id="module-3" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title">The Scout Algorithm</h1>
+      <p class="module-subtitle">The three-phase strategy that turns a potential 45-second crawl into a 300ms sprint</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: The core insight -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The expensive problem</h2>
+        <p>Fetching a Solana wallet&apos;s full transaction history is expensive. Not in money — in <em>time</em>. Each transaction requires a network request, and a request takes 50–150ms. A wallet with 5000 transactions fetched one-by-one would take <strong>4–12 minutes</strong>.</p>
+
+        <div class="callout callout-warning" style="margin: var(--space-6) 0">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <strong>The naive approach fails completely</strong>
+            <p>Fetch transaction 1, wait. Fetch transaction 2, wait. Fetch transaction 3, wait... 5000 transactions × 100ms = 8 minutes. Useless for any real application.</p>
+          </div>
+        </div>
+
+        <p>The Scout algorithm solves this by asking a smarter question: <em>"What&apos;s the minimum number of requests I need to make, in the most parallelized order possible?"</em></p>
+
+        <div class="callout callout-insight">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>The key insight</strong>
+            <p>Solana&apos;s RPC API offers two modes: <strong>signature-only</strong> (cheap — 10× smaller response, 1000 results per request) and <strong>full transaction</strong> (expensive — complete data). Scout uses signatures to <em>plan</em> before committing to expensive full fetches.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: The three phases animated -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Three phases — each building on the last</h2>
+        <p>Scout doesn&apos;t just "fetch everything." It runs a three-phase reconnaissance mission before committing to expensive work.</p>
+
+        <div class="numbered-steps stagger-children" style="margin-top: var(--space-6)">
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="step-number" style="background: var(--color-actor-2)">0</div>
+            <div class="step-content">
+              <h4>Phase 0 — Anchor (1 round trip)</h4>
+              <p>Fire exactly 2 requests <strong>simultaneously</strong>: oldest 1000 signatures + newest 1000 signatures. This anchors the wallet&apos;s full time range and tells us the total transaction count — all in a single <span class="tooltip" data-tip="RTT (Round-Trip Time) is the time for a request to travel to a server and back. One RTT means you fire a request and wait once for its reply. Minimizing RTTs is key to speed.">RTT</span>.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="step-number" style="background: var(--color-actor-3)">1</div>
+            <div class="step-content">
+              <h4>Phase 1 — Scout (adaptive)</h4>
+              <p>Only runs if the wallet has more than 2000 transactions. Splits the middle slot range into 4–12 adaptive partitions and fires signature-only requests in parallel. This maps the density of transactions across time — cheap, fast reconnaissance.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-1)">
+            <div class="step-number" style="background: var(--color-actor-1)">2</div>
+            <div class="step-content">
+              <h4>Phase 2 — Full Fetch (parallelized)</h4>
+              <p>Now that Scout knows exactly where the transactions are, it fires full-mode requests in ~50-signature chunks, streaming results as each partition completes. Up to 100 requests in flight simultaneously.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: Why signatures first — the 10x trick -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The 10× cheaper trick</h2>
+        <p>The most clever part of Scout is that it <em>never pays full price</em> until it knows exactly what to buy.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin: var(--space-6) 0">
+          <div style="background: var(--color-error-light); border-radius: var(--radius-md); padding: var(--space-5); border: 1px solid var(--color-error)">
+            <h4 style="color: var(--color-error); margin-bottom: var(--space-2)">❌ Full Transaction Request</h4>
+            <ul style="list-style: none; padding: 0; font-size: var(--text-sm); line-height: 2">
+              <li>100 transactions per request</li>
+              <li>Full JSON blob per tx</li>
+              <li>Pre/post balances, logs, instructions</li>
+              <li>~50KB per request</li>
+              <li style="font-weight: 600; color: var(--color-error)">1 API credit per transaction</li>
+            </ul>
+          </div>
+          <div style="background: var(--color-success-light); border-radius: var(--radius-md); padding: var(--space-5); border: 1px solid var(--color-success)">
+            <h4 style="color: var(--color-success); margin-bottom: var(--space-2)">✓ Signature-Only Request</h4>
+            <ul style="list-style: none; padding: 0; font-size: var(--text-sm); line-height: 2">
+              <li><strong>1000</strong> results per request</li>
+              <li>Just the signature + slot</li>
+              <li>Minimal data per entry</li>
+              <li>~5KB per request</li>
+              <li style="font-weight: 600; color: var(--color-success)">Equivalent to 100 full-tx API cost</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>By scouting with signatures first, Scout can survey 1000 transaction positions for the same cost as 100 full fetches. It uses this cheap data to <em>plan</em> the expensive phase precisely.</p>
+      </section>
+
+      <!-- Screen 4: Code translation — the core algorithm -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The algorithm in code</h2>
+        <p>Here&apos;s the heart of Phase 0 — the "anchor" step that fires two parallel requests to bound the wallet&apos;s range:</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">algorithm.rs</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Phase 0: anchor oldest + newest in one RTT</span></span>
+<span class="code-line"><span class="code-keyword">let</span> (oldest, newest) = <span class="code-function">tokio::join!</span>(</span>
+<span class="code-line">    rpc.<span class="code-function">fetch_signatures</span>(address, oldest_params),</span>
+<span class="code-line">    rpc.<span class="code-function">fetch_signatures</span>(address, newest_params),</span>
+<span class="code-line">);</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: Phase 0 — get both ends of the wallet history in one round trip</p>
+              <p class="tl"><span class="tooltip" data-tip="tokio::join! runs multiple async operations at the same time and waits for all of them to finish. Like opening two browser tabs at once instead of loading them one by one.">tokio::join!</span> — start BOTH requests simultaneously, wait for BOTH to finish</p>
+              <p class="tl">Request the oldest 1000 signatures (first-ever transactions)</p>
+              <p class="tl">Request the newest 1000 signatures (most recent transactions)</p>
+              <p class="tl">Both results arrive together — we now know the wallet&apos;s full time span</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight" style="margin-top: var(--space-6)">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Async/await — the secret to concurrency</strong>
+            <p><span class="tooltip" data-tip="Async/await is a programming pattern for running multiple operations without blocking. Instead of waiting for task A to finish before starting task B, you start both at once and wait for whichever finishes first.">Async</span> code lets the program start a request, immediately start another request, and only wait when it actually needs the result. This is how 100 requests run in parallel without 100 threads.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Performance proof -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The results speak for themselves</h2>
+        <p>Scout was tested across four representative wallet types. All 20 test runs returned accurate counts.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin: var(--space-6) 0">
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-md); border-top: 3px solid var(--color-accent)">
+            <div style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-2)">SMALL WALLET</div>
+            <div style="font-size: var(--text-3xl); font-family: var(--font-display); font-weight: 700; color: var(--color-accent)">256ms</div>
+            <div style="color: var(--color-text-secondary); font-size: var(--text-sm)">best case</div>
+          </div>
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-md); border-top: 3px solid var(--color-actor-2)">
+            <div style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-2)">LARGE WALLET</div>
+            <div style="font-size: var(--text-3xl); font-family: var(--font-display); font-weight: 700; color: var(--color-actor-2)">601ms</div>
+            <div style="color: var(--color-text-secondary); font-size: var(--text-sm)">average, 5 runs</div>
+          </div>
+        </div>
+
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary)">The difference between large and small wallets is surprisingly small — that&apos;s the power of parallelism. Adding more transactions doesn&apos;t add proportionally more time, because the requests fly in parallel.</p>
+      </section>
+
+      <!-- Screen 6: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module3">
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Exactly right. Scout uses cheap signature-only requests to map the territory first, then fires targeted full requests only where needed. No wasted full fetches on unknown territory."
+               data-explanation-wrong="Think about what makes Scout different from a naive approach. The key is that it uses a cheap preliminary step to plan the expensive step.">
+            <h3 class="quiz-question">Why does Scout fetch signatures before fetching full transactions?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because signatures are required to authenticate full transaction requests</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because signatures are 10× cheaper — they survey the landscape before committing to expensive full fetches</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because the Helius API requires signatures before it will serve full transaction data</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Spot on. Phase 1 is adaptive — it only runs when the wallet has more than 2000 transactions. A small wallet skips straight from Phase 0 to Phase 2."
+               data-explanation-wrong="Think about when Phase 1 (the middle scouting phase) would be skipped. Scout is adaptive — it adjusts based on what it learned in Phase 0.">
+            <h3 class="quiz-question">A wallet has only 500 transactions. Which phases does Scout run?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>All three phases — Scout always runs the full algorithm</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Phase 0 only — small wallets don&apos;t need full fetches</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Phase 0 and Phase 2 only — Phase 1 scouting is skipped for small wallets</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module3')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module3')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+<section class="module" id="module-4" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">04</span>
+      <h1 class="module-title">The Messenger</h1>
+      <p class="module-subtitle">How rpc.rs talks to Helius — HTTP/2, JSON-RPC, concurrency, and bulletproof retry logic</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: JSON-RPC explained -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The language of blockchain APIs</h2>
+        <p>To get data from Helius, you don&apos;t visit a website — you send carefully formatted messages using a protocol called <span class="tooltip" data-tip="JSON-RPC is a protocol where you call functions on a remote server by sending JSON. You send: {method: 'getFoo', params: [...]}. The server runs the function and sends back the result. It&apos;s like a phone call where you have to speak in a specific structured format.">JSON-RPC</span>.</p>
+
+        <p>Think of it like a postal service with a strict form template. Every letter (request) must follow the same format or it gets returned unread.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">JSON-RPC REQUEST</span>
+            <pre><code><span class="code-line">{</span>
+<span class="code-line">  <span class="code-property">"jsonrpc"</span>: <span class="code-string">"2.0"</span>,</span>
+<span class="code-line">  <span class="code-property">"id"</span>: <span class="code-number">1</span>,</span>
+<span class="code-line">  <span class="code-property">"method"</span>: <span class="code-string">"getSignaturesForAddress"</span>,</span>
+<span class="code-line">  <span class="code-property">"params"</span>: [</span>
+<span class="code-line">    <span class="code-string">"7xK...mNp"</span>,</span>
+<span class="code-line">    { <span class="code-property">"limit"</span>: <span class="code-number">1000</span> }</span>
+<span class="code-line">  ]</span>
+<span class="code-line">}</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Opening the message envelope</p>
+              <p class="tl">Using the standard JSON-RPC version 2.0 format</p>
+              <p class="tl">An ID to match this request with its response later</p>
+              <p class="tl">The function name we want to call on the Helius server</p>
+              <p class="tl">The arguments — starting with...</p>
+              <p class="tl">The wallet address to look up</p>
+              <p class="tl">And optional settings: return up to 1000 results</p>
+              <p class="tl">Close the message</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: HTTP/2 — the highway upgrade -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">HTTP/2 — the highway upgrade</h2>
+        <p>Most web requests use <span class="tooltip" data-tip="HTTP (HyperText Transfer Protocol) is how browsers and servers communicate. HTTP/1.1 opens a new connection for each request. HTTP/2 keeps one connection open and sends many requests through it simultaneously.">HTTP/1.1</span>, which is like a single-lane road: one car at a time. This tool uses <span class="tooltip" data-tip="HTTP/2 is the modern version of HTTP that supports multiplexing — sending multiple requests through a single connection simultaneously. Dramatically faster for APIs that need many parallel requests.">HTTP/2</span>, which is like a multi-lane highway.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin: var(--space-6) 0">
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm)">
+            <h4 style="color: var(--color-error); margin-bottom: var(--space-3)">HTTP/1.1 — Serial</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono)">Request 1 ████████</div>
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); margin-left: 80px">Request 2 ████████</div>
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); margin-left: 160px">Request 3 ████████</div>
+            </div>
+            <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-error)">Total time: 3× per-request time</p>
+          </div>
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm)">
+            <h4 style="color: var(--color-success); margin-bottom: var(--space-3)">HTTP/2 — Parallel</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 1 ████████</div>
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 2 ████████</div>
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 3 ████████</div>
+            </div>
+            <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-success)">Total time: 1× per-request time ⚡</p>
+          </div>
+        </div>
+
+        <p>The tool opens <strong>one</strong> TLS connection to Helius and sends up to 100 requests through it simultaneously. That single connection has a massive flow-control window to avoid <span class="tooltip" data-tip="Flow control is a mechanism that prevents a sender from overwhelming a receiver with too much data at once. HTTP/2 has built-in flow control windows — this tool sets them very large to avoid artificial slowdowns.">bottlenecks</span>.</p>
+      </section>
+
+      <!-- Screen 3: The semaphore — traffic control -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The 100-request speed limit</h2>
+        <p>More parallel requests = more speed, right? Not always. Flood Helius with 5000 simultaneous requests and they&apos;ll <span class="tooltip" data-tip="Rate limiting is when a server limits how many requests you can make in a given time window. Exceed the limit and you get a 429 error: Too Many Requests. It&apos;s the server equivalent of a nightclub with a capacity limit.">rate-limit</span> you. The tool uses a <span class="tooltip" data-tip="A semaphore is a concurrency control tool that limits how many operations can run at the same time. Setting a semaphore to 100 means: maximum 100 requests in flight simultaneously, no matter how many are queued.">semaphore</span> to cap at exactly 100 concurrent requests.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">rpc.rs</span>
+            <pre><code><span class="code-line"><span class="code-comment">// 100-concurrent-request semaphore</span></span>
+<span class="code-line"><span class="code-keyword">let</span> sem = Arc::new(</span>
+<span class="code-line">    Semaphore::new(<span class="code-number">100</span>)</span>
+<span class="code-line">);</span>
+<span class="code-line"><span class="code-comment">// Each request acquires one permit</span></span>
+<span class="code-line"><span class="code-keyword">let</span> _permit = sem.<span class="code-function">acquire</span>().<span class="code-keyword">await</span>;</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: we limit ourselves to 100 requests at once</p>
+              <p class="tl"><span class="tooltip" data-tip="Arc (Atomically Reference Counted) lets multiple parts of the program share the same data safely in concurrent code. It&apos;s Rust&apos;s way of saying: several tasks can look at this, but nobody owns it alone.">Arc::new</span> — create a shared semaphore that all tasks can access safely</p>
+              <p class="tl">Set the capacity to 100 — like a parking lot with 100 spaces</p>
+              <p class="tl">Close the bracket</p>
+              <p class="tl">Comment: before sending a request, grab a permit</p>
+              <p class="tl">Wait for a free slot, then claim it — when this task finishes, the slot is released automatically</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 4: Retry logic — the bulletproof messenger -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Retry logic — never give up (gracefully)</h2>
+        <p>Networks are unreliable. Helius sometimes returns errors. The messenger never crashes on a single failure — it uses <span class="tooltip" data-tip="Exponential backoff is a retry strategy where you wait longer between each retry: 100ms, then 200ms, then 400ms, then 800ms... This avoids hammering a struggling server and gives it time to recover.">exponential backoff</span> to retry up to 5 times.</p>
+
+        <div class="numbered-steps stagger-children" style="margin-top: var(--space-6)">
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-accent)">1</div>
+            <div class="step-content">
+              <h4>Try 1 — immediate</h4>
+              <p>Send the request. If we get a <span class="tooltip" data-tip="A 429 error means Too Many Requests — the server is telling you to slow down. A 5xx error means the server itself had an internal problem.">429 or 5xx error</span>, don&apos;t panic — try again.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-actor-2)">2</div>
+            <div class="step-content">
+              <h4>Try 2 — wait 100ms</h4>
+              <p>Brief pause, then retry. The server might have just been momentarily overloaded.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-actor-3)">3–5</div>
+            <div class="step-content">
+              <h4>Tries 3–5 — growing delays</h4>
+              <p>Each retry waits twice as long: 200ms → 400ms → 800ms. By try 5, we&apos;ve given the server real time to recover. If all 5 fail, then — and only then — return an error.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight" style="margin-top: var(--space-6)">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Why this matters when you extend the tool</strong>
+            <p>If you ask an AI to add a new API call to this codebase, make sure it uses the same retry pattern. A missing retry on a new function will cause flaky failures that are hard to debug — the kind of bug where "it works most of the time."</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module4">
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Exactly. HTTP/2 multiplexes many requests over one connection — that&apos;s the key upgrade that allows 100 parallel requests without opening 100 separate connections."
+               data-explanation-wrong="Think about what makes HTTP/2 fundamentally different from HTTP/1.1. The key word is multiplexing — sending many requests through one connection.">
+            <h3 class="quiz-question">Why does the tool use HTTP/2 instead of HTTP/1.1?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 sends multiple requests simultaneously through one connection (multiplexing), HTTP/1.1 can only do one at a time</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 is required by the Helius API — it won&apos;t accept HTTP/1.1 requests</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 uses less bandwidth — the responses are smaller</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Right. The semaphore is a safety valve — it prevents overwhelming Helius with too many simultaneous requests, which would trigger rate limiting and make things slower, not faster."
+               data-explanation-wrong="Think about why you would limit something that seems like it would make things faster. The limit exists to prevent a specific failure mode.">
+            <h3 class="quiz-question">The semaphore caps requests at 100. Why not 1000?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Rust can only manage 100 async tasks at once</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Sending too many requests at once triggers Helius rate limiting, which slows everything down</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Helius API key is limited to 100 concurrent connections per second</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module4')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module4')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+<section class="module" id="module-5" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">05</span>
+      <h1 class="module-title">When Things Break</h1>
+      <p class="module-subtitle">Debugging intuition, common failure modes, and how to extend this codebase confidently</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: The failure map -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Every failure has a home</h2>
+        <p>When this tool breaks, the error almost always originates in one specific layer. Knowing the map saves you from searching blindly.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-6)">
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-error)">
+            <div class="pattern-card-icon">🔑</div>
+            <h4>Bad API Key / No Key</h4>
+            <p>Error from <strong>rpc.rs</strong> immediately. Helius returns 401 Unauthorized. The retry loop won&apos;t help — a bad key is a bad key.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-4)">
+            <div class="pattern-card-icon">🌐</div>
+            <h4>Network / Timeout</h4>
+            <p>rpc.rs retries up to 5 times with backoff. If all 5 fail, you&apos;ll see an error indicating connection failure. Check your internet connection or Helius status.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="pattern-card-icon">🏷️</div>
+            <h4>Invalid Wallet Address</h4>
+            <p>Helius returns an empty result or an error. The algorithm sees zero transactions and returns zero PnL. Always double-check the address format.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="pattern-card-icon">🚦</div>
+            <h4>Rate Limit (429)</h4>
+            <p>Even with the semaphore, sustained heavy use can trigger rate limits. The retry logic handles brief spikes — but sustained abuse will exhaust all 5 retries.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: The debugging mindset -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Debugging by layer</h2>
+        <p>Like a detective who starts at the scene and works backward, debugging this tool means finding which layer produced the symptom.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">SYMPTOM → LAYER</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Symptom: "tx_count is 0, pnl is 0"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: bad wallet address or empty wallet</span></span>
+<span class="code-line"><span class="code-comment">// Check: algorithm.rs Phase 0 result</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment">// Symptom: "error after a few seconds"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: network or API key issue</span></span>
+<span class="code-line"><span class="code-comment">// Check: rpc.rs fetch_signatures return value</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment">// Symptom: "wrong tx count on large wallet"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: deduplication edge case in Phase 2</span></span>
+<span class="code-line"><span class="code-comment">// Check: algorithm.rs signature dedup logic</span></span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">If you see zero transactions returned...</p>
+              <p class="tl">The wallet address was wrong or it has never transacted</p>
+              <p class="tl">Investigate: add a print statement after Phase 0 to see raw results</p>
+              <p class="tl">&nbsp;</p>
+              <p class="tl">If the tool crashes with an error after trying for a few seconds...</p>
+              <p class="tl">Something is wrong with the connection or authentication</p>
+              <p class="tl">Investigate: look at rpc.rs to see what error code it received</p>
+              <p class="tl">&nbsp;</p>
+              <p class="tl">If the count is slightly off for big wallets...</p>
+              <p class="tl">A transaction may have been counted twice (boundary overlap)</p>
+              <p class="tl">Investigate: the deduplication step in algorithm.rs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: Extending the tool — Address Lookup Tables -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The hardest edge case: Address Lookup Tables</h2>
+        <p>Solana v0 transactions use a compression technique called <span class="tooltip" data-tip="Address Lookup Tables (ALTs) are a Solana optimization where a transaction can reference accounts from a pre-built lookup table instead of listing full addresses inline. This shrinks transaction size but makes parsing harder.">Address Lookup Tables</span> — they compress transaction data by referencing accounts by index rather than full address. rpc.rs handles this explicitly.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">rpc.rs — extract_balance()</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Combine static keys with ALT keys</span></span>
+<span class="code-line"><span class="code-keyword">let</span> all_keys: Vec&lt;String&gt; = tx</span>
+<span class="code-line">    .transaction.message</span>
+<span class="code-line">    .accountKeys</span>
+<span class="code-line">    .<span class="code-function">iter</span>()</span>
+<span class="code-line">    .<span class="code-function">chain</span>(loaded_addresses)</span>
+<span class="code-line">    .<span class="code-function">cloned</span>()</span>
+<span class="code-line">    .<span class="code-function">collect</span>();</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: merge both types of account key into one list</p>
+              <p class="tl">Start with the transaction&apos;s main key list</p>
+              <p class="tl">...which is inside the message part of the transaction</p>
+              <p class="tl">Get the built-in ("static") account keys</p>
+              <p class="tl">Turn it into an iterator so we can chain onto it</p>
+              <p class="tl">Chain on the Address Lookup Table keys (dynamic, loaded separately)</p>
+              <p class="tl">Make copies of each key string</p>
+              <p class="tl">Collect everything into a single combined list</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-secondary)">Without this, v0 transactions would fail to find the wallet address in the account list and silently return no balance data. This is the kind of edge case that only surfaces with real-world wallets.</p>
+      </section>
+
+      <!-- Screen 4: How to extend this tool -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Extending the tool with confidence</h2>
+        <p>Now that you understand the architecture, here&apos;s how to describe changes to an AI coding agent precisely — without ambiguity.</p>
+
+        <div class="numbered-steps stagger-children">
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-4)">
+            <div class="step-number" style="background: var(--color-actor-4)">1</div>
+            <div class="step-content">
+              <h4>Adding a new output field</h4>
+              <p><strong>Say:</strong> "In types.rs, add a <code style="font-family: var(--font-mono); font-size: var(--text-sm)">fee_lamports: u64</code> field to the BalancePoint struct. Then in rpc.rs extract_balance(), read the fee from the transaction&apos;s meta.fee field and populate it."</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="step-number" style="background: var(--color-actor-3)">2</div>
+            <div class="step-content">
+              <h4>Supporting a different wallet standard</h4>
+              <p><strong>Say:</strong> "In rpc.rs, add a new method alongside fetch_page() that calls the getTokenAccountsByOwner endpoint. Keep the same retry and semaphore pattern."</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="step-number" style="background: var(--color-actor-2)">3</div>
+            <div class="step-content">
+              <h4>Changing the output format</h4>
+              <p><strong>Say:</strong> "In main.rs, after we compute the BalancePoints, instead of printing JSON, write the data to a CSV file with columns: slot, signature, pre_sol, post_sol, delta_sol."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Big picture + quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The full picture</h2>
+        <p>You&apos;ve now seen the entire codebase from the outside in. Here&apos;s what you&apos;ve learned — and why it matters for everything you build next.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-6); grid-template-columns: 1fr">
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-accent)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">🏗️</div>
+              <div>
+                <h4>Single responsibility = easy AI prompting</h4>
+                <p>Because each file has one job, you can tell an AI exactly which file to touch. No guessing, no "do it in the right place."</p>
+              </div>
+            </div>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">🔄</div>
+              <div>
+                <h4>Retry logic is load-bearing</h4>
+                <p>Any new network call you add should use the same 5-try exponential backoff pattern. Ask for it explicitly when prompting AI.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">⚡</div>
+              <div>
+                <h4>The speed secret: plan cheaply, execute precisely</h4>
+                <p>Scout&apos;s three phases are a general pattern: survey cheaply, plan precisely, execute in parallel. This pattern applies to any API that has cheap metadata endpoints and expensive full-data endpoints.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 6: Final quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Final check</h2>
+
+        <div class="quiz-container" id="quiz-module5">
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Exactly the right instinct. Add the field to the struct in types.rs first, then update rpc.rs to populate it from the API response. This is the correct layer-by-layer approach."
+               data-explanation-wrong="Think about the layers. Where is the data shape defined? Where is data extracted from API responses? You need to update both, in the right order.">
+            <h3 class="quiz-question">You want to track each transaction&apos;s block time in the output. What&apos;s your first step?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Edit main.rs to add the block_time to the JSON output</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Edit algorithm.rs to pass block_time through the pipeline</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Check types.rs — block_time already exists on BalancePoint! Then confirm rpc.rs populates it, then update main.rs to include it in output.</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Yes — a wrong wallet address causes Helius to return empty results. Phase 0 gets zero signatures, Phase 1 is skipped, and the result is 0 transactions with 0 PnL. Not a crash, just silence."
+               data-explanation-wrong="Think about what happens when Phase 0 asks Helius for signatures of an address that has no transactions. Would it crash? Or quietly return nothing?">
+            <h3 class="quiz-question">The tool returns {tx_count: 0, pnl_sol: 0} for an address you know is active. What&apos;s most likely wrong?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Helius API is down — check their status page</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The wallet address is wrong or mistyped — Helius found nothing for it</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The semaphore limit is too low for this wallet size</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Correct — the Scout pattern (cheap survey first, then targeted full fetch) is applicable any time you have a cheap metadata API and an expensive data API. It&apos;s a general architectural pattern, not a Solana-specific trick."
+               data-explanation-wrong="Think more broadly. The Scout pattern is a general engineering principle — cheap reconnaissance before expensive execution. Where else does that apply?">
+            <h3 class="quiz-question">You&apos;re building a Twitter analytics tool. The API has a cheap &quot;get tweet IDs by search&quot; endpoint and an expensive &quot;get full tweet data&quot; endpoint. What does the Scout pattern suggest?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>First use the cheap ID search to find which tweets match, then fetch full data only for those — exactly like Scout&apos;s signature-first approach</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Scout pattern only applies to blockchain data — it won&apos;t help here</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Fetch all full tweet data in parallel and filter afterward — more data is always better</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module5')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module5')">Try Again</button>
+        </div>
+
+        <div style="margin-top: var(--space-10); padding: var(--space-8); background: linear-gradient(135deg, var(--color-accent-light), var(--color-info-light)); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-accent-muted)">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-4)">🎓</div>
+          <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3)">You&apos;ve got the architecture</h3>
+          <p style="color: var(--color-text-secondary); max-width: 480px; margin: 0 auto; font-size: var(--text-sm)">You can now read the codebase, know exactly where to tell AI to make changes, debug failures by layer, and apply the Scout pattern to any API that has cheap metadata and expensive data endpoints.</p>
+          <div style="margin-top: var(--space-6)">
+            <a href="https://github.com/Oliverpt-1/sol-pnl-challenge" target="_blank" style="display: inline-block; background: var(--color-accent); color: white; padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); font-family: var(--font-mono); font-size: var(--text-sm); text-decoration: none; font-weight: 600">View the source on GitHub →</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+</body>
+</html>

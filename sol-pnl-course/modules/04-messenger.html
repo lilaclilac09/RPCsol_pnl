@@ -1,0 +1,199 @@
+<section class="module" id="module-4" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">04</span>
+      <h1 class="module-title">The Messenger</h1>
+      <p class="module-subtitle">How rpc.rs talks to Helius — HTTP/2, JSON-RPC, concurrency, and bulletproof retry logic</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: JSON-RPC explained -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The language of blockchain APIs</h2>
+        <p>To get data from Helius, you don&apos;t visit a website — you send carefully formatted messages using a protocol called <span class="tooltip" data-tip="JSON-RPC is a protocol where you call functions on a remote server by sending JSON. You send: {method: 'getFoo', params: [...]}. The server runs the function and sends back the result. It&apos;s like a phone call where you have to speak in a specific structured format.">JSON-RPC</span>.</p>
+
+        <p>Think of it like a postal service with a strict form template. Every letter (request) must follow the same format or it gets returned unread.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">JSON-RPC REQUEST</span>
+            <pre><code><span class="code-line">{</span>
+<span class="code-line">  <span class="code-property">"jsonrpc"</span>: <span class="code-string">"2.0"</span>,</span>
+<span class="code-line">  <span class="code-property">"id"</span>: <span class="code-number">1</span>,</span>
+<span class="code-line">  <span class="code-property">"method"</span>: <span class="code-string">"getSignaturesForAddress"</span>,</span>
+<span class="code-line">  <span class="code-property">"params"</span>: [</span>
+<span class="code-line">    <span class="code-string">"7xK...mNp"</span>,</span>
+<span class="code-line">    { <span class="code-property">"limit"</span>: <span class="code-number">1000</span> }</span>
+<span class="code-line">  ]</span>
+<span class="code-line">}</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Opening the message envelope</p>
+              <p class="tl">Using the standard JSON-RPC version 2.0 format</p>
+              <p class="tl">An ID to match this request with its response later</p>
+              <p class="tl">The function name we want to call on the Helius server</p>
+              <p class="tl">The arguments — starting with...</p>
+              <p class="tl">The wallet address to look up</p>
+              <p class="tl">And optional settings: return up to 1000 results</p>
+              <p class="tl">Close the message</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: HTTP/2 — the highway upgrade -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">HTTP/2 — the highway upgrade</h2>
+        <p>Most web requests use <span class="tooltip" data-tip="HTTP (HyperText Transfer Protocol) is how browsers and servers communicate. HTTP/1.1 opens a new connection for each request. HTTP/2 keeps one connection open and sends many requests through it simultaneously.">HTTP/1.1</span>, which is like a single-lane road: one car at a time. This tool uses <span class="tooltip" data-tip="HTTP/2 is the modern version of HTTP that supports multiplexing — sending multiple requests through a single connection simultaneously. Dramatically faster for APIs that need many parallel requests.">HTTP/2</span>, which is like a multi-lane highway.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin: var(--space-6) 0">
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm)">
+            <h4 style="color: var(--color-error); margin-bottom: var(--space-3)">HTTP/1.1 — Serial</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono)">Request 1 ████████</div>
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); margin-left: 80px">Request 2 ████████</div>
+              <div style="height: 24px; background: var(--color-accent-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); margin-left: 160px">Request 3 ████████</div>
+            </div>
+            <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-error)">Total time: 3× per-request time</p>
+          </div>
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-sm)">
+            <h4 style="color: var(--color-success); margin-bottom: var(--space-3)">HTTP/2 — Parallel</h4>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 1 ████████</div>
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 2 ████████</div>
+              <div style="height: 24px; background: var(--color-success-light); border-radius: 4px; display: flex; align-items: center; padding: 0 8px; font-size: var(--text-xs); font-family: var(--font-mono); border: 1px solid var(--color-success)">Request 3 ████████</div>
+            </div>
+            <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--color-success)">Total time: 1× per-request time ⚡</p>
+          </div>
+        </div>
+
+        <p>The tool opens <strong>one</strong> TLS connection to Helius and sends up to 100 requests through it simultaneously. That single connection has a massive flow-control window to avoid <span class="tooltip" data-tip="Flow control is a mechanism that prevents a sender from overwhelming a receiver with too much data at once. HTTP/2 has built-in flow control windows — this tool sets them very large to avoid artificial slowdowns.">bottlenecks</span>.</p>
+      </section>
+
+      <!-- Screen 3: The semaphore — traffic control -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The 100-request speed limit</h2>
+        <p>More parallel requests = more speed, right? Not always. Flood Helius with 5000 simultaneous requests and they&apos;ll <span class="tooltip" data-tip="Rate limiting is when a server limits how many requests you can make in a given time window. Exceed the limit and you get a 429 error: Too Many Requests. It&apos;s the server equivalent of a nightclub with a capacity limit.">rate-limit</span> you. The tool uses a <span class="tooltip" data-tip="A semaphore is a concurrency control tool that limits how many operations can run at the same time. Setting a semaphore to 100 means: maximum 100 requests in flight simultaneously, no matter how many are queued.">semaphore</span> to cap at exactly 100 concurrent requests.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">rpc.rs</span>
+            <pre><code><span class="code-line"><span class="code-comment">// 100-concurrent-request semaphore</span></span>
+<span class="code-line"><span class="code-keyword">let</span> sem = Arc::new(</span>
+<span class="code-line">    Semaphore::new(<span class="code-number">100</span>)</span>
+<span class="code-line">);</span>
+<span class="code-line"><span class="code-comment">// Each request acquires one permit</span></span>
+<span class="code-line"><span class="code-keyword">let</span> _permit = sem.<span class="code-function">acquire</span>().<span class="code-keyword">await</span>;</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: we limit ourselves to 100 requests at once</p>
+              <p class="tl"><span class="tooltip" data-tip="Arc (Atomically Reference Counted) lets multiple parts of the program share the same data safely in concurrent code. It&apos;s Rust&apos;s way of saying: several tasks can look at this, but nobody owns it alone.">Arc::new</span> — create a shared semaphore that all tasks can access safely</p>
+              <p class="tl">Set the capacity to 100 — like a parking lot with 100 spaces</p>
+              <p class="tl">Close the bracket</p>
+              <p class="tl">Comment: before sending a request, grab a permit</p>
+              <p class="tl">Wait for a free slot, then claim it — when this task finishes, the slot is released automatically</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 4: Retry logic — the bulletproof messenger -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Retry logic — never give up (gracefully)</h2>
+        <p>Networks are unreliable. Helius sometimes returns errors. The messenger never crashes on a single failure — it uses <span class="tooltip" data-tip="Exponential backoff is a retry strategy where you wait longer between each retry: 100ms, then 200ms, then 400ms, then 800ms... This avoids hammering a struggling server and gives it time to recover.">exponential backoff</span> to retry up to 5 times.</p>
+
+        <div class="numbered-steps stagger-children" style="margin-top: var(--space-6)">
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-accent)">1</div>
+            <div class="step-content">
+              <h4>Try 1 — immediate</h4>
+              <p>Send the request. If we get a <span class="tooltip" data-tip="A 429 error means Too Many Requests — the server is telling you to slow down. A 5xx error means the server itself had an internal problem.">429 or 5xx error</span>, don&apos;t panic — try again.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-actor-2)">2</div>
+            <div class="step-content">
+              <h4>Try 2 — wait 100ms</h4>
+              <p>Brief pause, then retry. The server might have just been momentarily overloaded.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in">
+            <div class="step-number" style="background: var(--color-actor-3)">3–5</div>
+            <div class="step-content">
+              <h4>Tries 3–5 — growing delays</h4>
+              <p>Each retry waits twice as long: 200ms → 400ms → 800ms. By try 5, we&apos;ve given the server real time to recover. If all 5 fail, then — and only then — return an error.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight" style="margin-top: var(--space-6)">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Why this matters when you extend the tool</strong>
+            <p>If you ask an AI to add a new API call to this codebase, make sure it uses the same retry pattern. A missing retry on a new function will cause flaky failures that are hard to debug — the kind of bug where "it works most of the time."</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module4">
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Exactly. HTTP/2 multiplexes many requests over one connection — that&apos;s the key upgrade that allows 100 parallel requests without opening 100 separate connections."
+               data-explanation-wrong="Think about what makes HTTP/2 fundamentally different from HTTP/1.1. The key word is multiplexing — sending many requests through one connection.">
+            <h3 class="quiz-question">Why does the tool use HTTP/2 instead of HTTP/1.1?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 sends multiple requests simultaneously through one connection (multiplexing), HTTP/1.1 can only do one at a time</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 is required by the Helius API — it won&apos;t accept HTTP/1.1 requests</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>HTTP/2 uses less bandwidth — the responses are smaller</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Right. The semaphore is a safety valve — it prevents overwhelming Helius with too many simultaneous requests, which would trigger rate limiting and make things slower, not faster."
+               data-explanation-wrong="Think about why you would limit something that seems like it would make things faster. The limit exists to prevent a specific failure mode.">
+            <h3 class="quiz-question">The semaphore caps requests at 100. Why not 1000?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Rust can only manage 100 async tasks at once</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Sending too many requests at once triggers Helius rate limiting, which slows everything down</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Helius API key is limited to 100 concurrent connections per second</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module4')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module4')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

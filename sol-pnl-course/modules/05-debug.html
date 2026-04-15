@@ -1,0 +1,267 @@
+<section class="module" id="module-5" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">05</span>
+      <h1 class="module-title">When Things Break</h1>
+      <p class="module-subtitle">Debugging intuition, common failure modes, and how to extend this codebase confidently</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: The failure map -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Every failure has a home</h2>
+        <p>When this tool breaks, the error almost always originates in one specific layer. Knowing the map saves you from searching blindly.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-6)">
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-error)">
+            <div class="pattern-card-icon">🔑</div>
+            <h4>Bad API Key / No Key</h4>
+            <p>Error from <strong>rpc.rs</strong> immediately. Helius returns 401 Unauthorized. The retry loop won&apos;t help — a bad key is a bad key.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-4)">
+            <div class="pattern-card-icon">🌐</div>
+            <h4>Network / Timeout</h4>
+            <p>rpc.rs retries up to 5 times with backoff. If all 5 fail, you&apos;ll see an error indicating connection failure. Check your internet connection or Helius status.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="pattern-card-icon">🏷️</div>
+            <h4>Invalid Wallet Address</h4>
+            <p>Helius returns an empty result or an error. The algorithm sees zero transactions and returns zero PnL. Always double-check the address format.</p>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="pattern-card-icon">🚦</div>
+            <h4>Rate Limit (429)</h4>
+            <p>Even with the semaphore, sustained heavy use can trigger rate limits. The retry logic handles brief spikes — but sustained abuse will exhaust all 5 retries.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: The debugging mindset -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Debugging by layer</h2>
+        <p>Like a detective who starts at the scene and works backward, debugging this tool means finding which layer produced the symptom.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">SYMPTOM → LAYER</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Symptom: "tx_count is 0, pnl is 0"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: bad wallet address or empty wallet</span></span>
+<span class="code-line"><span class="code-comment">// Check: algorithm.rs Phase 0 result</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment">// Symptom: "error after a few seconds"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: network or API key issue</span></span>
+<span class="code-line"><span class="code-comment">// Check: rpc.rs fetch_signatures return value</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-comment">// Symptom: "wrong tx count on large wallet"</span></span>
+<span class="code-line"><span class="code-comment">// Likely: deduplication edge case in Phase 2</span></span>
+<span class="code-line"><span class="code-comment">// Check: algorithm.rs signature dedup logic</span></span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">If you see zero transactions returned...</p>
+              <p class="tl">The wallet address was wrong or it has never transacted</p>
+              <p class="tl">Investigate: add a print statement after Phase 0 to see raw results</p>
+              <p class="tl">&nbsp;</p>
+              <p class="tl">If the tool crashes with an error after trying for a few seconds...</p>
+              <p class="tl">Something is wrong with the connection or authentication</p>
+              <p class="tl">Investigate: look at rpc.rs to see what error code it received</p>
+              <p class="tl">&nbsp;</p>
+              <p class="tl">If the count is slightly off for big wallets...</p>
+              <p class="tl">A transaction may have been counted twice (boundary overlap)</p>
+              <p class="tl">Investigate: the deduplication step in algorithm.rs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: Extending the tool — Address Lookup Tables -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The hardest edge case: Address Lookup Tables</h2>
+        <p>Solana v0 transactions use a compression technique called <span class="tooltip" data-tip="Address Lookup Tables (ALTs) are a Solana optimization where a transaction can reference accounts from a pre-built lookup table instead of listing full addresses inline. This shrinks transaction size but makes parsing harder.">Address Lookup Tables</span> — they compress transaction data by referencing accounts by index rather than full address. rpc.rs handles this explicitly.</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">rpc.rs — extract_balance()</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Combine static keys with ALT keys</span></span>
+<span class="code-line"><span class="code-keyword">let</span> all_keys: Vec&lt;String&gt; = tx</span>
+<span class="code-line">    .transaction.message</span>
+<span class="code-line">    .accountKeys</span>
+<span class="code-line">    .<span class="code-function">iter</span>()</span>
+<span class="code-line">    .<span class="code-function">chain</span>(loaded_addresses)</span>
+<span class="code-line">    .<span class="code-function">cloned</span>()</span>
+<span class="code-line">    .<span class="code-function">collect</span>();</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: merge both types of account key into one list</p>
+              <p class="tl">Start with the transaction&apos;s main key list</p>
+              <p class="tl">...which is inside the message part of the transaction</p>
+              <p class="tl">Get the built-in ("static") account keys</p>
+              <p class="tl">Turn it into an iterator so we can chain onto it</p>
+              <p class="tl">Chain on the Address Lookup Table keys (dynamic, loaded separately)</p>
+              <p class="tl">Make copies of each key string</p>
+              <p class="tl">Collect everything into a single combined list</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-secondary)">Without this, v0 transactions would fail to find the wallet address in the account list and silently return no balance data. This is the kind of edge case that only surfaces with real-world wallets.</p>
+      </section>
+
+      <!-- Screen 4: How to extend this tool -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Extending the tool with confidence</h2>
+        <p>Now that you understand the architecture, here&apos;s how to describe changes to an AI coding agent precisely — without ambiguity.</p>
+
+        <div class="numbered-steps stagger-children">
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-4)">
+            <div class="step-number" style="background: var(--color-actor-4)">1</div>
+            <div class="step-content">
+              <h4>Adding a new output field</h4>
+              <p><strong>Say:</strong> "In types.rs, add a <code style="font-family: var(--font-mono); font-size: var(--text-sm)">fee_lamports: u64</code> field to the BalancePoint struct. Then in rpc.rs extract_balance(), read the fee from the transaction&apos;s meta.fee field and populate it."</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="step-number" style="background: var(--color-actor-3)">2</div>
+            <div class="step-content">
+              <h4>Supporting a different wallet standard</h4>
+              <p><strong>Say:</strong> "In rpc.rs, add a new method alongside fetch_page() that calls the getTokenAccountsByOwner endpoint. Keep the same retry and semaphore pattern."</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="step-number" style="background: var(--color-actor-2)">3</div>
+            <div class="step-content">
+              <h4>Changing the output format</h4>
+              <p><strong>Say:</strong> "In main.rs, after we compute the BalancePoints, instead of printing JSON, write the data to a CSV file with columns: slot, signature, pre_sol, post_sol, delta_sol."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Big picture + quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The full picture</h2>
+        <p>You&apos;ve now seen the entire codebase from the outside in. Here&apos;s what you&apos;ve learned — and why it matters for everything you build next.</p>
+
+        <div class="pattern-cards stagger-children" style="margin-top: var(--space-6); grid-template-columns: 1fr">
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-accent)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">🏗️</div>
+              <div>
+                <h4>Single responsibility = easy AI prompting</h4>
+                <p>Because each file has one job, you can tell an AI exactly which file to touch. No guessing, no "do it in the right place."</p>
+              </div>
+            </div>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">🔄</div>
+              <div>
+                <h4>Retry logic is load-bearing</h4>
+                <p>Any new network call you add should use the same 5-try exponential backoff pattern. Ask for it explicitly when prompting AI.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pattern-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4)">
+              <div style="font-size: 1.5rem">⚡</div>
+              <div>
+                <h4>The speed secret: plan cheaply, execute precisely</h4>
+                <p>Scout&apos;s three phases are a general pattern: survey cheaply, plan precisely, execute in parallel. This pattern applies to any API that has cheap metadata endpoints and expensive full-data endpoints.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 6: Final quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Final check</h2>
+
+        <div class="quiz-container" id="quiz-module5">
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Exactly the right instinct. Add the field to the struct in types.rs first, then update rpc.rs to populate it from the API response. This is the correct layer-by-layer approach."
+               data-explanation-wrong="Think about the layers. Where is the data shape defined? Where is data extracted from API responses? You need to update both, in the right order.">
+            <h3 class="quiz-question">You want to track each transaction&apos;s block time in the output. What&apos;s your first step?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Edit main.rs to add the block_time to the JSON output</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Edit algorithm.rs to pass block_time through the pipeline</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Check types.rs — block_time already exists on BalancePoint! Then confirm rpc.rs populates it, then update main.rs to include it in output.</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Yes — a wrong wallet address causes Helius to return empty results. Phase 0 gets zero signatures, Phase 1 is skipped, and the result is 0 transactions with 0 PnL. Not a crash, just silence."
+               data-explanation-wrong="Think about what happens when Phase 0 asks Helius for signatures of an address that has no transactions. Would it crash? Or quietly return nothing?">
+            <h3 class="quiz-question">The tool returns {tx_count: 0, pnl_sol: 0} for an address you know is active. What&apos;s most likely wrong?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Helius API is down — check their status page</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The wallet address is wrong or mistyped — Helius found nothing for it</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The semaphore limit is too low for this wallet size</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-a"
+               data-explanation-right="Correct — the Scout pattern (cheap survey first, then targeted full fetch) is applicable any time you have a cheap metadata API and an expensive data API. It&apos;s a general architectural pattern, not a Solana-specific trick."
+               data-explanation-wrong="Think more broadly. The Scout pattern is a general engineering principle — cheap reconnaissance before expensive execution. Where else does that apply?">
+            <h3 class="quiz-question">You&apos;re building a Twitter analytics tool. The API has a cheap &quot;get tweet IDs by search&quot; endpoint and an expensive &quot;get full tweet data&quot; endpoint. What does the Scout pattern suggest?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>First use the cheap ID search to find which tweets match, then fetch full data only for those — exactly like Scout&apos;s signature-first approach</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>The Scout pattern only applies to blockchain data — it won&apos;t help here</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Fetch all full tweet data in parallel and filter afterward — more data is always better</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module5')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module5')">Try Again</button>
+        </div>
+
+        <div style="margin-top: var(--space-10); padding: var(--space-8); background: linear-gradient(135deg, var(--color-accent-light), var(--color-info-light)); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-accent-muted)">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-4)">🎓</div>
+          <h3 style="font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; margin-bottom: var(--space-3)">You&apos;ve got the architecture</h3>
+          <p style="color: var(--color-text-secondary); max-width: 480px; margin: 0 auto; font-size: var(--text-sm)">You can now read the codebase, know exactly where to tell AI to make changes, debug failures by layer, and apply the Scout pattern to any API that has cheap metadata and expensive data endpoints.</p>
+          <div style="margin-top: var(--space-6)">
+            <a href="https://github.com/Oliverpt-1/sol-pnl-challenge" target="_blank" style="display: inline-block; background: var(--color-accent); color: white; padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); font-family: var(--font-mono); font-size: var(--text-sm); text-decoration: none; font-weight: 600">View the source on GitHub →</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>

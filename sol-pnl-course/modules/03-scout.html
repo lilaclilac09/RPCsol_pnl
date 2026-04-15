@@ -1,0 +1,208 @@
+<section class="module" id="module-3" style="background: var(--color-bg)">
+  <div class="module-content">
+    <header class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title">The Scout Algorithm</h1>
+      <p class="module-subtitle">The three-phase strategy that turns a potential 45-second crawl into a 300ms sprint</p>
+    </header>
+
+    <div class="module-body">
+
+      <!-- Screen 1: The core insight -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The expensive problem</h2>
+        <p>Fetching a Solana wallet&apos;s full transaction history is expensive. Not in money — in <em>time</em>. Each transaction requires a network request, and a request takes 50–150ms. A wallet with 5000 transactions fetched one-by-one would take <strong>4–12 minutes</strong>.</p>
+
+        <div class="callout callout-warning" style="margin: var(--space-6) 0">
+          <span class="callout-icon">⚠️</span>
+          <div>
+            <strong>The naive approach fails completely</strong>
+            <p>Fetch transaction 1, wait. Fetch transaction 2, wait. Fetch transaction 3, wait... 5000 transactions × 100ms = 8 minutes. Useless for any real application.</p>
+          </div>
+        </div>
+
+        <p>The Scout algorithm solves this by asking a smarter question: <em>"What&apos;s the minimum number of requests I need to make, in the most parallelized order possible?"</em></p>
+
+        <div class="callout callout-insight">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>The key insight</strong>
+            <p>Solana&apos;s RPC API offers two modes: <strong>signature-only</strong> (cheap — 10× smaller response, 1000 results per request) and <strong>full transaction</strong> (expensive — complete data). Scout uses signatures to <em>plan</em> before committing to expensive full fetches.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 2: The three phases animated -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Three phases — each building on the last</h2>
+        <p>Scout doesn&apos;t just "fetch everything." It runs a three-phase reconnaissance mission before committing to expensive work.</p>
+
+        <div class="numbered-steps stagger-children" style="margin-top: var(--space-6)">
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-2)">
+            <div class="step-number" style="background: var(--color-actor-2)">0</div>
+            <div class="step-content">
+              <h4>Phase 0 — Anchor (1 round trip)</h4>
+              <p>Fire exactly 2 requests <strong>simultaneously</strong>: oldest 1000 signatures + newest 1000 signatures. This anchors the wallet&apos;s full time range and tells us the total transaction count — all in a single <span class="tooltip" data-tip="RTT (Round-Trip Time) is the time for a request to travel to a server and back. One RTT means you fire a request and wait once for its reply. Minimizing RTTs is key to speed.">RTT</span>.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-3)">
+            <div class="step-number" style="background: var(--color-actor-3)">1</div>
+            <div class="step-content">
+              <h4>Phase 1 — Scout (adaptive)</h4>
+              <p>Only runs if the wallet has more than 2000 transactions. Splits the middle slot range into 4–12 adaptive partitions and fires signature-only requests in parallel. This maps the density of transactions across time — cheap, fast reconnaissance.</p>
+            </div>
+          </div>
+          <div class="step-card animate-in" style="border-left: 4px solid var(--color-actor-1)">
+            <div class="step-number" style="background: var(--color-actor-1)">2</div>
+            <div class="step-content">
+              <h4>Phase 2 — Full Fetch (parallelized)</h4>
+              <p>Now that Scout knows exactly where the transactions are, it fires full-mode requests in ~50-signature chunks, streaming results as each partition completes. Up to 100 requests in flight simultaneously.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 3: Why signatures first — the 10x trick -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The 10× cheaper trick</h2>
+        <p>The most clever part of Scout is that it <em>never pays full price</em> until it knows exactly what to buy.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin: var(--space-6) 0">
+          <div style="background: var(--color-error-light); border-radius: var(--radius-md); padding: var(--space-5); border: 1px solid var(--color-error)">
+            <h4 style="color: var(--color-error); margin-bottom: var(--space-2)">❌ Full Transaction Request</h4>
+            <ul style="list-style: none; padding: 0; font-size: var(--text-sm); line-height: 2">
+              <li>100 transactions per request</li>
+              <li>Full JSON blob per tx</li>
+              <li>Pre/post balances, logs, instructions</li>
+              <li>~50KB per request</li>
+              <li style="font-weight: 600; color: var(--color-error)">1 API credit per transaction</li>
+            </ul>
+          </div>
+          <div style="background: var(--color-success-light); border-radius: var(--radius-md); padding: var(--space-5); border: 1px solid var(--color-success)">
+            <h4 style="color: var(--color-success); margin-bottom: var(--space-2)">✓ Signature-Only Request</h4>
+            <ul style="list-style: none; padding: 0; font-size: var(--text-sm); line-height: 2">
+              <li><strong>1000</strong> results per request</li>
+              <li>Just the signature + slot</li>
+              <li>Minimal data per entry</li>
+              <li>~5KB per request</li>
+              <li style="font-weight: 600; color: var(--color-success)">Equivalent to 100 full-tx API cost</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>By scouting with signatures first, Scout can survey 1000 transaction positions for the same cost as 100 full fetches. It uses this cheap data to <em>plan</em> the expensive phase precisely.</p>
+      </section>
+
+      <!-- Screen 4: Code translation — the core algorithm -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The algorithm in code</h2>
+        <p>Here&apos;s the heart of Phase 0 — the "anchor" step that fires two parallel requests to bound the wallet&apos;s range:</p>
+
+        <div class="translation-block animate-in">
+          <div class="translation-code">
+            <span class="translation-label">algorithm.rs</span>
+            <pre><code><span class="code-line"><span class="code-comment">// Phase 0: anchor oldest + newest in one RTT</span></span>
+<span class="code-line"><span class="code-keyword">let</span> (oldest, newest) = <span class="code-function">tokio::join!</span>(</span>
+<span class="code-line">    rpc.<span class="code-function">fetch_signatures</span>(address, oldest_params),</span>
+<span class="code-line">    rpc.<span class="code-function">fetch_signatures</span>(address, newest_params),</span>
+<span class="code-line">);</span></code></pre>
+          </div>
+          <div class="translation-english">
+            <span class="translation-label">PLAIN ENGLISH</span>
+            <div class="translation-lines">
+              <p class="tl">Comment: Phase 0 — get both ends of the wallet history in one round trip</p>
+              <p class="tl"><span class="tooltip" data-tip="tokio::join! runs multiple async operations at the same time and waits for all of them to finish. Like opening two browser tabs at once instead of loading them one by one.">tokio::join!</span> — start BOTH requests simultaneously, wait for BOTH to finish</p>
+              <p class="tl">Request the oldest 1000 signatures (first-ever transactions)</p>
+              <p class="tl">Request the newest 1000 signatures (most recent transactions)</p>
+              <p class="tl">Both results arrive together — we now know the wallet&apos;s full time span</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-insight" style="margin-top: var(--space-6)">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Async/await — the secret to concurrency</strong>
+            <p><span class="tooltip" data-tip="Async/await is a programming pattern for running multiple operations without blocking. Instead of waiting for task A to finish before starting task B, you start both at once and wait for whichever finishes first.">Async</span> code lets the program start a request, immediately start another request, and only wait when it actually needs the result. This is how 100 requests run in parallel without 100 threads.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screen 5: Performance proof -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">The results speak for themselves</h2>
+        <p>Scout was tested across four representative wallet types. All 20 test runs returned accurate counts.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin: var(--space-6) 0">
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-md); border-top: 3px solid var(--color-accent)">
+            <div style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-2)">SMALL WALLET</div>
+            <div style="font-size: var(--text-3xl); font-family: var(--font-display); font-weight: 700; color: var(--color-accent)">256ms</div>
+            <div style="color: var(--color-text-secondary); font-size: var(--text-sm)">best case</div>
+          </div>
+          <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-md); border-top: 3px solid var(--color-actor-2)">
+            <div style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: var(--space-2)">LARGE WALLET</div>
+            <div style="font-size: var(--text-3xl); font-family: var(--font-display); font-weight: 700; color: var(--color-actor-2)">601ms</div>
+            <div style="color: var(--color-text-secondary); font-size: var(--text-sm)">average, 5 runs</div>
+          </div>
+        </div>
+
+        <p style="font-size: var(--text-sm); color: var(--color-text-secondary)">The difference between large and small wallets is surprisingly small — that&apos;s the power of parallelism. Adding more transactions doesn&apos;t add proportionally more time, because the requests fly in parallel.</p>
+      </section>
+
+      <!-- Screen 6: Quiz -->
+      <section class="screen animate-in">
+        <h2 class="screen-heading">Check your understanding</h2>
+
+        <div class="quiz-container" id="quiz-module3">
+          <div class="quiz-question-block"
+               data-correct="option-b"
+               data-explanation-right="Exactly right. Scout uses cheap signature-only requests to map the territory first, then fires targeted full requests only where needed. No wasted full fetches on unknown territory."
+               data-explanation-wrong="Think about what makes Scout different from a naive approach. The key is that it uses a cheap preliminary step to plan the expensive step.">
+            <h3 class="quiz-question">Why does Scout fetch signatures before fetching full transactions?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because signatures are required to authenticate full transaction requests</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because signatures are 10× cheaper — they survey the landscape before committing to expensive full fetches</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Because the Helius API requires signatures before it will serve full transaction data</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question-block"
+               data-correct="option-c"
+               data-explanation-right="Spot on. Phase 1 is adaptive — it only runs when the wallet has more than 2000 transactions. A small wallet skips straight from Phase 0 to Phase 2."
+               data-explanation-wrong="Think about when Phase 1 (the middle scouting phase) would be skipped. Scout is adaptive — it adjusts based on what it learned in Phase 0.">
+            <h3 class="quiz-question">A wallet has only 500 transactions. Which phases does Scout run?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>All three phases — Scout always runs the full algorithm</span>
+              </button>
+              <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Phase 0 only — small wallets don&apos;t need full fetches</span>
+              </button>
+              <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+                <div class="quiz-option-radio"></div>
+                <span>Phase 0 and Phase 2 only — Phase 1 scouting is skipped for small wallets</span>
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-check-btn" onclick="checkQuiz('quiz-module3')">Check Answers</button>
+          <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module3')">Try Again</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
