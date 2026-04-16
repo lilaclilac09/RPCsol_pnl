@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(pkill -f \"http.server 7823\")",
-      "Bash(ls /Users/aileen/RPCsol_pnl/*.mjs)"
+      "Bash(ls /Users/aileen/RPCsol_pnl/*.mjs)",
+      "Bash(unset http_proxy https_proxy)",
+      "Bash(bun -e ' *)",
+      "Bash(cargo init *)"
     ]
   }
 }

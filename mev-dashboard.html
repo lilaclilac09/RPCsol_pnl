@@ -245,13 +245,26 @@ svg.lines line { stroke:var(--border2); stroke-width:1.5; stroke-dasharray:4; }
   </div>
 
   <!-- Known suspects quick-launch -->
-  <div style="margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px;">
-    <span style="font-size:11px;color:var(--muted);padding:4px 0;margin-right:4px;">Known MEV cluster:</span>
-    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubQzu18FDqJRyNfG8JqHmsdbxhnoQqcKUHBdUkN6tP','profile')">YubQzu18 (main bot)</button>
+  <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+    <span style="font-size:11px;color:var(--muted);padding:4px 0;margin-right:2px;">🤖 Execution:</span>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubQzu18FDqJRyNfG8JqHmsdbxhnoQqcKUHBdUkN6tP','sandwich')">YubQzu18</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubVwWeg1vHFr17Q7HQQETcke7sFvMabqU8wbv8NXQW','profile')">YubVwWeg1</button>
     <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('YubozzSnKomEnH3pkmYsdatUUwUTcm7s4mHJVmefEWj','sandwich')">YubozzSnK (flash)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('8pJy8T4qDDWr8aZMWN1ypWRhMUcbnErEYZUXsYqDbEL5','profile')">8pJy8T4q (burner)</button>
+  </div>
+  <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+    <span style="font-size:11px;color:var(--muted);padding:4px 0;margin-right:2px;">💰 Settlement:</span>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;border-color:var(--green);color:var(--green);" onclick="quickLoad('GSyXx6WRm2o6Qu4RWxTH17swLZKpTKQdQTS2uGcus1NF','follow')">GSyXx6WR (33 SOL profit)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh','follow')">DfXygSm4 (arb)</button>
     <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('AEB9dXBoxkrapNd59Kg29JefMMf3M1WLcNA12XjKSf4R','follow')">AEB9dXBox (drained)</button>
-    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P','profile')">6EF8rrecth (PumpFun)</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="addToWatchAddr('GSyXx6WRm2o6Qu4RWxTH17swLZKpTKQdQTS2uGcus1NF')">👁 Watch profit wallet</button>
+  </div>
+  <div style="margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+    <span style="font-size:11px;color:var(--muted);padding:4px 0;margin-right:2px;">⚙️ Programs:</span>
     <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('CUQUKjGUv2bsNTAR9Bh9tF7njVE1Q3bkGWbkmsH2mqKx','cluster')">SandwichProg</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('T1pyyaTNZsKv2WcRAB8oVnk93mLJw2XzjtVYqCsaHqt','cluster')">SettlementProg</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P','profile')">PumpFun</button>
+    <button class="btn-ghost" style="padding:4px 10px;font-size:11px;" onclick="quickLoad('8Rs3qKaVGBndwNdeDqHcayatonVzdBrdYoq27CKyjuE7','sandwich')">OrcaBot (96% fail)</button>
   </div>
 
   <!-- Alert -->
@@ -273,23 +286,35 @@ svg.lines line { stroke:var(--border2); stroke-width:1.5; stroke-dasharray:4; }
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
 const KNOWN = {
+  // ── Programs ──────────────────────────────────────────────────────────────
   'CUQUKjGUv2bsNTAR9Bh9tF7njVE1Q3bkGWbkmsH2mqKx': 'SandwichProg',
+  'T1pyyaTNZsKv2WcRAB8oVnk93mLJw2XzjtVYqCsaHqt':  'SettlementProg',
+  'AsfLsreShYN25exRRLC86hFY5Z1h6Ct9WqoqgYzTe1gm':  'SettlementHelper',
   'JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4': 'Jupiter',
   '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8': 'Raydium',
   'pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA': 'PumpAMM',
   'cpamdpZCGKUy5JxQXB4dcpGPiikHawvSWAd6mEn1sGG': 'CPMM',
   '6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P': 'PumpFun',
+  'pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ': 'PumpFee',
+  'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb': 'Token2022',
   'whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc': 'Orca',
+  'So1endDqwuwiTR43kMiegfNMEAiAVAkq7dza8jfJVe3R': 'Solend',
+  '33ySWW2846CRpnCDnY3jEqSi5CNKG8SxPKD6mvavJks':  'JitoBundle',
+  'MemoSq4gqABAUEQ1mVBBnVznMaHDFeSFVLMnJCRBBP':    'Memo',
   'ComputeBudget111111111111111111111111111111':   'ComputeBudget',
   '11111111111111111111111111111111':              'System',
   'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA': 'Token',
   'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJe1bRS':'AssocToken',
-  'So1endDqwuwiTR43kMiegfNMEAiAVAkq7dza8jfJVe3R': 'Solend',
   'BPFLoaderUpgradeab1e11111111111111111111111':   'BPFUpgradeable',
-  'pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ': 'PumpFee',
-  'TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb': 'Token2022',
+  'SysvarC1ock11111111111111111111111111111111':   'SysvarClock',
+  // ── Bot wallets ───────────────────────────────────────────────────────────
   '8pJy8T4qDDWr8aZMWN1ypWRhMUcbnErEYZUXsYqDbEL5':'BotExecWallet',
   'DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh':'BotArbWallet',
+  '9cLaPCwV47i75raEmsNmkp9q7RiJgAxdQucfC9PSd97N': 'BotBurner1',
+  'dQAttBbQ6WocAd2x4XSLc5oj9as3VeQeUTR2nxTnbpt':  'FlashLoanExec',
+  '8Rs3qKaVGBndwNdeDqHcayatonVzdBrdYoq27CKyjuE7': 'OrcaBotWallet',
+  // ── Profit / settlement ───────────────────────────────────────────────────
+  'GSyXx6WRm2o6Qu4RWxTH17swLZKpTKQdQTS2uGcus1NF': '💰 ProfitWallet',
 };
 const BOT_ADDRS = new Set([
   'YubQzu18FDqJRyNfG8JqHmsdbxhnoQqcKUHBdUkN6tP',
@@ -297,6 +322,10 @@ const BOT_ADDRS = new Set([
   'YubozzSnKomEnH3pkmYsdatUUwUTcm7s4mHJVmefEWj',
   '8pJy8T4qDDWr8aZMWN1ypWRhMUcbnErEYZUXsYqDbEL5',
   'DfXygSm4jCyNCybVYYK6DwvWqjKee8pbDmJGcLWNDXjh',
+  '9cLaPCwV47i75raEmsNmkp9q7RiJgAxdQucfC9PSd97N',
+  'dQAttBbQ6WocAd2x4XSLc5oj9as3VeQeUTR2nxTnbpt',
+  '8Rs3qKaVGBndwNdeDqHcayatonVzdBrdYoq27CKyjuE7',
+  'GSyXx6WRm2o6Qu4RWxTH17swLZKpTKQdQTS2uGcus1NF',
 ]);
 const SOL = 1e9;
 let watchList = [], watchTimer = null, lastSeen = {};
@@ -718,6 +747,10 @@ async function runAnalysis() {
 }
 
 // ── WATCH (live) ──────────────────────────────────────────────────────────────
+async function addToWatchAddr(addr) {
+  document.getElementById('addrInput').value = addr;
+  await addToWatch();
+}
 async function addToWatch() {
   const addr = document.getElementById('addrInput').value.trim();
   if (!addr || watchList.includes(addr)) return;
