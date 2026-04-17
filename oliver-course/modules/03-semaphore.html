@@ -1,0 +1,125 @@
+<section class="module" id="module-3">
+  <div class="module-content">
+    <div class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title">The Semaphore</h1>
+      <p class="module-subtitle">12 callers, one bottleneck, zero crashes. How makeSemaphore keeps you off the Helius ban list.</p>
+    </div>
+
+    <!-- Screen 1: The metaphor -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">A highway on-ramp, not a traffic jam</h2>
+      <p>Imagine a highway where only 12 cars are allowed on at a time. When a 13th car arrives, it waits at the on-ramp signal. The moment one car exits, the signal turns green for the next waiting car.</p>
+      <p>That is a <span class="term" data-definition="A semaphore is a counter that controls access to a shared resource. When the counter is above zero, you can proceed. When it hits zero, you wait. When someone finishes, they increment it back, letting the next waiter through. The name comes from railway signal flags used in the 1800s.">semaphore</span>. In oliver.mjs, the highway is the Helius API, the 12-car limit is the <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#FAB387;padding:2px 6px;border-radius:4px;">MAX_CONCURRENCY = 12</code> constant, and every API call must take its place in the queue.</p>
+
+      <div class="callout callout-warning animate-in">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-content">
+          <strong class="callout-title">Why this matters on Helius free tier</strong>
+          <p>Helius rate-limits aggressive clients. If you fire 50 simultaneous requests, you will get a 429 error and potentially a temporary ban. The semaphore caps you at 12 in-flight at any moment — fast enough to feel instant, safe enough to avoid the ban.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 2: Code translation -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The 6 lines that make it work</h2>
+      <p>Here is the complete semaphore from <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#A6E3A1;padding:2px 6px;border-radius:4px;">oliver.mjs</code>. It is 6 lines of code, but it contains one genuinely clever trick:</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">oliver.mjs</span>
+          <pre><code><span class="code-line"><span class="code-keyword">export function</span> <span class="code-function">makeSemaphore</span>(limit) {</span>
+<span class="code-line">  <span class="code-keyword">let</span> active = <span class="code-number">0</span>;</span>
+<span class="code-line">  <span class="code-keyword">const</span> queue = [];</span>
+<span class="code-line">  <span class="code-keyword">return</span> () => <span class="code-keyword">new</span> <span class="code-function">Promise</span>(resolve => {</span>
+<span class="code-line">    <span class="code-keyword">const</span> go = () => { active++; <span class="code-function">resolve</span>(() => { active--; queue.<span class="code-function">shift</span>()?.(); }); };</span>
+<span class="code-line">    active &lt; limit ? <span class="code-function">go</span>() : queue.<span class="code-function">push</span>(go);</span>
+<span class="code-line">  });</span>
+<span class="code-line">}</span></code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl"><strong>makeSemaphore(limit)</strong> — create a gate that allows at most <em>limit</em> things through at once.</p>
+            <p class="tl"><strong>active</strong> — a counter: how many requests are currently in-flight right now.</p>
+            <p class="tl"><strong>queue</strong> — a waiting room. Requests that cannot go yet sit here until a slot opens.</p>
+            <p class="tl"><strong>return () =&gt; new Promise</strong> — the function you call to "ask permission". It gives you back a promise that resolves when it is your turn.</p>
+            <p class="tl"><strong>go()</strong> — the green light. Increment active (occupy a slot), then hand you a "release" function to call when done. The release function decrements active and lets the next queued request in.</p>
+            <p class="tl"><strong>active &lt; limit ? go() : queue.push(go)</strong> — if there is room, go immediately. Otherwise, get in line.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: How acquire/release works in practice -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Acquire and release in action</h2>
+      <p>Every single Helius call in oliver.mjs follows this exact pattern. Notice how the <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#CBA6F7;padding:2px 6px;border-radius:4px;">finally</code> block guarantees the slot is always released — even if the network call crashes.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">oliver.mjs — rpcPost()</span>
+          <pre><code><span class="code-line"><span class="code-keyword">async function</span> <span class="code-function">rpcPost</span>(method, params) {</span>
+<span class="code-line">  <span class="code-keyword">return</span> <span class="code-function">withRetry</span>(<span class="code-keyword">async</span> () => {</span>
+<span class="code-line">    <span class="code-keyword">const</span> release = <span class="code-keyword">await</span> <span class="code-function">acquire</span>();</span>
+<span class="code-line">    <span class="code-keyword">try</span> {</span>
+<span class="code-line">      <span class="code-keyword">const</span> r = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(RPC_URL, { ... });</span>
+<span class="code-line">      <span class="code-keyword">return</span> <span class="code-keyword">await</span> r.<span class="code-function">json</span>();</span>
+<span class="code-line">    } <span class="code-keyword">finally</span> { <span class="code-function">release</span>(); }</span>
+<span class="code-line">  });</span>
+<span class="code-line">}</span></code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl">This function makes one Solana RPC call and returns the result.</p>
+            <p class="tl">Wrap the whole thing in withRetry so network glitches are handled automatically.</p>
+            <p class="tl"><strong>await acquire()</strong> — wait at the on-ramp until a slot is available. When you get the green light, acquire() gives you back a "release" function.</p>
+            <p class="tl">Now inside the slot — make the actual HTTP request to Helius.</p>
+            <p class="tl">Get the response JSON and return it.</p>
+            <p class="tl"><strong>finally { release() }</strong> — ALWAYS free up the slot when done, whether the call succeeded or crashed. This is critical — without it, slots would leak and the semaphore would eventually block everything.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong class="callout-title">The try/finally pattern is everywhere in production code</strong>
+          <p>Any time you "take" a resource (a database connection, a file lock, a semaphore slot), you must return it when done — even if something goes wrong. The <code style="font-family:var(--font-mono)">try/finally</code> block guarantees this. This is one of those patterns engineers use instinctively. Now you know why.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 4: Spot the bug -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Spot the bug: what breaks without finally?</h2>
+      <p>Here is a version of the same function with one line removed. Can you find which line — if missing — would cause the semaphore to slowly freeze all requests?</p>
+
+      <div class="bug-challenge">
+        <h3>Which missing line causes a semaphore freeze?</h3>
+        <div class="bug-code">
+          <div class="bug-line" data-line="1" onclick="checkBugLine(this, false)" data-hint="acquire() is correct — you do need to wait for a slot.">
+            <span class="line-num">1</span>
+            <code>const release = await acquire();</code>
+          </div>
+          <div class="bug-line" data-line="2" onclick="checkBugLine(this, false)" data-hint="The fetch itself is not the problem — the network call is fine.">
+            <span class="line-num">2</span>
+            <code>const r = await fetch(RPC_URL, {...});</code>
+          </div>
+          <div class="bug-line" data-line="3" onclick="checkBugLine(this, false)" data-hint="Returning the JSON is fine — that is not the leak.">
+            <span class="line-num">3</span>
+            <code>return await r.json();</code>
+          </div>
+          <div class="bug-line" data-line="4" onclick="checkBugLine(this, true)" data-explanation="Without release(), the semaphore slot is never freed. After 12 requests, all future requests wait forever — the app freezes. The finally block guarantees release() runs even if the network call throws an error.">
+            <span class="line-num">4</span>
+            <code>// finally { release(); }  ← this line is missing</code>
+          </div>
+        </div>
+        <div class="bug-feedback"></div>
+      </div>
+    </div>
+
+  </div>
+</section>

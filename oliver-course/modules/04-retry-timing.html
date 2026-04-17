@@ -1,0 +1,122 @@
+<section class="module" id="module-4" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+    <div class="module-header animate-in">
+      <span class="module-number">04</span>
+      <h1 class="module-title">Retry & Timing</h1>
+      <p class="module-subtitle">withRetry makes your code resilient. timed() makes it transparent. Together they turn silent failures into observable, recoverable events.</p>
+    </div>
+
+    <!-- Screen 1: withRetry — the metaphor -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Exponential backoff — the polite insistence</h2>
+      <p>Imagine calling a busy government office. First try: busy. You wait 5 seconds and try again. Still busy. You wait 10 seconds. Then 20. Then 40. You do not hang up the moment it is busy, but you also do not keep redialing every millisecond and jam the lines.</p>
+      <p>That is <span class="term" data-definition="Exponential backoff means doubling your wait time between retries: try, wait 250ms, try, wait 500ms, try, wait 1000ms, try, wait 2000ms. The jitter (random addition) prevents a thundering herd — if 100 clients all retry at exactly the same moment, they overwhelm the server again.">exponential backoff with jitter</span>. withRetry does this automatically for every Helius call.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">oliver.mjs — withRetry</span>
+          <pre><code><span class="code-line"><span class="code-keyword">export async function</span> <span class="code-function">withRetry</span>(fn, {</span>
+<span class="code-line">  maxRetries = <span class="code-number">4</span>,</span>
+<span class="code-line">  retryBaseMs = <span class="code-number">250</span></span>
+<span class="code-line">} = {}) {</span>
+<span class="code-line">  <span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-number">0</span>; i &lt;= maxRetries; i++) {</span>
+<span class="code-line">    <span class="code-keyword">try</span> { <span class="code-keyword">return await</span> <span class="code-function">fn</span>(); }</span>
+<span class="code-line">    <span class="code-keyword">catch</span> (err) {</span>
+<span class="code-line">      <span class="code-keyword">const</span> transient =</span>
+<span class="code-line">        <span class="code-regexp">/429|503|ECONNRESET|fetch failed/i</span></span>
+<span class="code-line">        .<span class="code-function">test</span>(err?.message);</span>
+<span class="code-line">      <span class="code-keyword">if</span> (!transient || i === maxRetries) <span class="code-keyword">throw</span> err;</span>
+<span class="code-line">      <span class="code-keyword">await new</span> <span class="code-function">Promise</span>(r =></span>
+<span class="code-line">        <span class="code-function">setTimeout</span>(r, retryBaseMs * <span class="code-number">2</span> ** i</span>
+<span class="code-line">          + Math.<span class="code-function">random</span>() * <span class="code-number">100</span>));</span>
+<span class="code-line">    }</span>
+<span class="code-line">  }</span>
+<span class="code-line">}</span></code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl">Run this function, and if it fails, retry it. Max retries defaults to 4, initial wait to 250ms.</p>
+            <p class="tl">Loop up to (maxRetries + 1) total attempts.</p>
+            <p class="tl">Try to run the function. If it works, return the result immediately.</p>
+            <p class="tl">If it threw an error — check if the error is a temporary ("transient") network problem.</p>
+            <p class="tl">429 = rate limited, 503 = server overloaded, ECONNRESET = connection dropped. These are all recoverable.</p>
+            <p class="tl">If it is NOT a transient error (e.g., bad API key), or we have run out of retries — throw the error for real.</p>
+            <p class="tl">Wait: attempt 0 waits 250ms, attempt 1 waits 500ms, attempt 2 waits 1000ms, attempt 3 waits 2000ms. The random 0-100ms prevents all retrying clients from thundering back at once.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 2: timed() -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">timed() — the black box recorder</h2>
+      <p>Every call in the Oliver pattern is wrapped in <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#89B4FA;padding:2px 6px;border-radius:4px;">timed()</code>. This function records everything that happened — whether it succeeded, how long it took, and how many bytes came back. If it fails, it catches the error gracefully instead of crashing the whole batch.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">oliver.mjs — timed()</span>
+          <pre><code><span class="code-line"><span class="code-keyword">export async function</span> <span class="code-function">timed</span>(label, fn, credits = <span class="code-number">1</span>) {</span>
+<span class="code-line">  <span class="code-keyword">const</span> t0 = performance.<span class="code-function">now</span>();</span>
+<span class="code-line">  <span class="code-keyword">try</span> {</span>
+<span class="code-line">    <span class="code-keyword">const</span> result = <span class="code-keyword">await</span> <span class="code-function">fn</span>();</span>
+<span class="code-line">    <span class="code-keyword">const</span> ms = performance.<span class="code-function">now</span>() - t0;</span>
+<span class="code-line">    <span class="code-keyword">const</span> bytes = JSON.<span class="code-function">stringify</span>(result).length;</span>
+<span class="code-line">    <span class="code-keyword">return</span> { label, status: <span class="code-string">"ok"</span>, result, ms, bytes, credits };</span>
+<span class="code-line">  } <span class="code-keyword">catch</span> (err) {</span>
+<span class="code-line">    <span class="code-keyword">const</span> ms = performance.<span class="code-function">now</span>() - t0;</span>
+<span class="code-line">    <span class="code-keyword">return</span> { label, status: <span class="code-string">"err"</span>, error: err?.message, ms };</span>
+<span class="code-line">  }</span>
+<span class="code-line">}</span></code></pre>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">PLAIN ENGLISH</span>
+          <div class="translation-lines">
+            <p class="tl">Run function <em>fn</em>, label the result as <em>label</em>, track how many API credits it costs.</p>
+            <p class="tl">Note the time right now — this is our starting stopwatch.</p>
+            <p class="tl">Try to run the function...</p>
+            <p class="tl">If it worked, record the result.</p>
+            <p class="tl">Calculate how many milliseconds the call took.</p>
+            <p class="tl">Measure the response size by serializing it to text and measuring character count.</p>
+            <p class="tl">Return a success object with everything we know about this call.</p>
+            <p class="tl">If it threw an error — do NOT let it crash the whole batch. Catch it, record the elapsed time and error message, return an error object instead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Why non-crashing matters -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Why "never crash the batch" is a superpower</h2>
+      <p>Without timed(), if one of your 9 Helius calls fails, the entire Promise.all crashes and you lose all the data from the other 8 successful calls. With timed(), every call returns a result object — either <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#A6E3A1;padding:2px 6px;border-radius:4px;">status: "ok"</code> or <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#F38BA8;padding:2px 6px;border-radius:4px;">status: "err"</code>. You get partial results instead of nothing.</p>
+
+      <div class="badge-list stagger-children">
+        <div class="badge-item animate-in">
+          <code class="badge-code">status: "ok"</code>
+          <span class="badge-desc">Call succeeded. result, ms, bytes, credits are all populated.</span>
+        </div>
+        <div class="badge-item animate-in">
+          <code class="badge-code">status: "err"</code>
+          <span class="badge-desc">Call failed. error message is populated. ms tells you how long it took to fail. Batch continues without crashing.</span>
+        </div>
+        <div class="badge-item animate-in">
+          <code class="badge-code">credits</code>
+          <span class="badge-desc">How many Helius credits this call cost. Summed across all calls to show your total monthly burn rate.</span>
+        </div>
+        <div class="badge-item animate-in">
+          <code class="badge-code">bytes</code>
+          <span class="badge-desc">Size of the response payload in bytes. Useful for spotting unexpectedly large (or suspiciously empty) responses.</span>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong class="callout-title">Error objects over thrown exceptions — a production pattern</strong>
+          <p>In production systems, it is often better to return a structured error object than to throw an exception. Throwing crashes the whole operation. Returning an error object lets the rest of the system continue — and gives you something to display to the user or log for debugging. You will see this pattern in every large-scale system.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,95 @@
+<section class="module" id="module-1">
+  <div class="module-content">
+    <div class="module-header animate-in">
+      <span class="module-number">01</span>
+      <h1 class="module-title">The Speed Problem</h1>
+      <p class="module-subtitle">You want to fetch 9 pieces of data from a Solana wallet. The naive way takes 9 seconds. The Oliver way takes under 1.</p>
+    </div>
+
+    <!-- Screen 1: The scenario -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Imagine you run this command</h2>
+      <p>You type <code style="font-family:var(--font-mono);background:var(--color-bg-code);color:#A6E3A1;padding:2px 8px;border-radius:4px;">node helius_mcp_all.mjs BkMx5bRz…</code> and hit Enter. In under a second, your terminal fills with a complete wallet report — SOL balance, token holdings, recent transfers, NFT assets, priority fees, and more.</p>
+      <p>Nine different data requests. One second. How?</p>
+
+      <div class="callout callout-accent animate-in">
+        <div class="callout-icon">⚡</div>
+        <div class="callout-content">
+          <strong class="callout-title">This is a real script in your project</strong>
+          <p><code style="font-family:var(--font-mono)">helius_mcp_all.mjs</code> uses the Oliver pattern from <code style="font-family:var(--font-mono)">oliver.mjs</code>. By the end of this course, you will understand every line of both files and be able to apply the same pattern to any API you work with.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 2: Sequential vs parallel -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Sequential vs. Parallel — the core idea</h2>
+      <p>Think of making calls to an <span class="term" data-definition="An API (Application Programming Interface) is a doorbell for a service. You ring it with a specific request, it goes and gets what you asked for, and rings back with the answer. Helius is the doorbell to Solana blockchain data.">API</span> like sending letters and waiting for replies. The slow way: send one letter, wait for the reply, then send the next.</p>
+      <p>The Oliver way: send all nine letters at once, then collect all nine replies as they arrive.</p>
+
+      <div class="flow-animation" data-steps='[
+        {"highlight":"flow-actor-1","label":"Sequential approach: call 1 goes out — wait 800ms for reply"},
+        {"highlight":"flow-actor-2","label":"Only after reply arrives, call 2 goes out — wait another 700ms"},
+        {"highlight":"flow-actor-3","label":"Then call 3 — another 600ms. Total: 9 calls x ~700ms = ~6 seconds"},
+        {"highlight":"flow-actor-1","label":"Oliver approach: ALL 9 calls go out simultaneously at time zero"},
+        {"highlight":"flow-actor-2","label":"Replies arrive as they finish — fastest ones back first"},
+        {"highlight":"flow-actor-3","label":"Total time = duration of SLOWEST single call, not the sum of all. ~900ms."}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-actor-1">
+            <div class="flow-actor-icon">📤</div>
+            <span>Your Code</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-2">
+            <div class="flow-actor-icon">🌐</div>
+            <span>Helius API</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-3">
+            <div class="flow-actor-icon">📥</div>
+            <span>Your Results</span>
+          </div>
+        </div>
+        <div class="flow-packet" id="flow-packet"></div>
+        <div class="flow-step-label">Click "Next Step" to compare approaches</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn">Next Step</button>
+          <button class="btn flow-reset-btn">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: What this means in practice -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">What this means for your Solana tools</h2>
+      <p>The Helius <span class="term" data-definition="Free tier means you get a certain amount of usage at no cost — like a free plan. Helius gives you 100,000 credits per month for free. Each API call costs 1-10 credits depending on the type.">free tier</span> caps you at 100,000 credits per month. Every unnecessary second you spend waiting for sequential calls is also credits you are burning while your users stare at a loading spinner.</p>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-1)">
+          <div class="pattern-icon" style="background: var(--color-accent-light); font-size:1.4rem;">🐢</div>
+          <h4 class="pattern-title">Sequential</h4>
+          <p class="pattern-desc">Calls go one at a time. Total time = sum of every call. Fine for 1-2 requests. Painful at 9+.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-5)">
+          <div class="pattern-icon" style="background: var(--color-success-light); font-size:1.4rem;">🚀</div>
+          <h4 class="pattern-title">Oliver Pattern</h4>
+          <p class="pattern-desc">Calls fire simultaneously. Total time = slowest single call. 6-10× faster on real Helius wallets.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-4)">
+          <div class="pattern-icon" style="background: #FDF5E0; font-size:1.4rem;">🛡️</div>
+          <h4 class="pattern-title">With Guardrails</h4>
+          <p class="pattern-desc">A semaphore caps how many calls go out at once so you do not get rate-limited and banned.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <div class="callout-icon">💡</div>
+        <div class="callout-content">
+          <strong class="callout-title">The universal insight: I/O is not the bottleneck, waiting is</strong>
+          <p>Your computer can juggle thousands of pending network requests at once — it is just waiting for answers. The Oliver pattern exploits this: fire everything, then collect. This idea applies to any API, database, or web request you will ever build.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
