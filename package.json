@@ -3,7 +3,10 @@
   "version": "3.0.0",
   "type": "module",
   "description": "SOL balance/PnL router with GBrain + EvoHarness evolution",
-  "main": "sol_balance_router.mjs",
+  "main": "src/core/sol_balance_router.mjs",
+  "bin": {
+    "helius-cli": "src/cli/helius-cli.mjs"
+  },
   "dependencies": {
     "undici": "^7.0.0",
     "gbrain": "link:tools/gbrain"
@@ -15,9 +18,10 @@
     "node": ">=18"
   },
   "scripts": {
-    "test": "bun test_all_wallets_enhanced.mjs",
-    "test:node": "node test_all_wallets_enhanced.mjs",
-    "router": "node sol_balance_router.mjs",
+    "test": "bun tests/test_all_wallets_enhanced.mjs",
+    "test:node": "node tests/test_all_wallets_enhanced.mjs",
+    "cli": "node src/cli/helius-cli.mjs",
+    "router": "node src/core/sol_balance_router.mjs",
     "gbrain:doctor": "cd tools/gbrain && npx gbrain doctor --json",
     "gbrain:list": "cd tools/gbrain && npx gbrain list",
     "evo:run": "python -m meta.run_iteration"
