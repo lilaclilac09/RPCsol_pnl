@@ -1,0 +1,41 @@
+$ python3 /home/ubuntu/accept-kit/audit/capture-rpc-course.py
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+Traceback (most recent call last):
+  File "/home/ubuntu/accept-kit/audit/capture-rpc-course.py", line 19, in <module>
+    expect(quiz.locator('.quiz-feedback.correct')).to_have_count(3)
+  File "/home/ubuntu/airflow-venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 19199, in to_have_count
+    self._sync(self._impl_obj.to_have_count(count=count, timeout=timeout))
+  File "/home/ubuntu/airflow-venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/ubuntu/airflow-venv/lib/python3.12/site-packages/playwright/_impl/_assertions.py", line 309, in to_have_count
+    await self._expect_impl(
+  File "/home/ubuntu/airflow-venv/lib/python3.12/site-packages/playwright/_impl/_assertions.py", line 74, in _expect_impl
+    raise AssertionError(
+AssertionError: Locator expected to have count '3'
+Actual value: 0
+Call log:
+LocatorAssertions.to_have_count with timeout 5000ms
+  - waiting for locator("#quiz-module1").locator(".quiz-feedback.correct")
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+  -   locator resolved to 0 elements
+  -   unexpected value "0"
+
+
+exit code: 1

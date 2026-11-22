@@ -1,0 +1,6 @@
+$ python3 /home/ubuntu/accept-kit/audit/capture-rpc-course.py
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+PASS: 390x844 course UI: select three answers -> Check Answers -> three correct feedbacks -> Try Again -> selections cleared; no page errors
+
+exit code: 0

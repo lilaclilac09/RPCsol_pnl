@@ -1,0 +1,10 @@
+$ git submodule update --init --depth 1 tools/gbrain
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+Submodule 'tools/gbrain' (https://github.com/garrytan/gbrain.git) registered for path 'tools/gbrain'
+Cloning into '/home/ubuntu/rollout/RPCsol_pnl/tools/gbrain'...
+From https://git-manager.devin.ai/proxy/github.com/garrytan/gbrain
+ * branch              d547a64600f81b44c8cf85d3d97efa5bfa3d3cc0 -> FETCH_HEAD
+Submodule path 'tools/gbrain': checked out 'd547a64600f81b44c8cf85d3d97efa5bfa3d3cc0'
+
+exit code: 0

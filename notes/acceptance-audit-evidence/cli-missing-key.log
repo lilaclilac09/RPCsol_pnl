@@ -1,0 +1,8 @@
+$ python3 -c 'import os,subprocess; env=dict(os.environ); env.pop("HELIUS_API_KEY",None); r=subprocess.run(["node","src/cli/helius-cli.mjs"],env=env,text=True,capture_output=True); print(r.stdout+r.stderr,end=""); print("CLI exit:",r.returncode); assert r.returncode==1 and "Set HELIUS_API_KEY" in r.stderr; print("PASS: CLI fails closed without a key; no live RPC request performed")'
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+Set HELIUS_API_KEY
+CLI exit: 1
+PASS: CLI fails closed without a key; no live RPC request performed
+
+exit code: 0

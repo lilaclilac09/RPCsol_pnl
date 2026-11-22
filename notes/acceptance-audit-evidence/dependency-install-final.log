@@ -1,0 +1,8 @@
+$ npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 168 packages in 4s
+
+exit code: 0

@@ -1,0 +1,11 @@
+$ python3 -c 'import subprocess; files=["src/cli/helius-cli.mjs","src/core/sol_balance_router.mjs","scout/scout_rust_wrapper.mjs","scout/benchmarks/benchmark_scout.mjs","experiments/eval/eval_v15_stable.mjs","sol-pnl-course/main.js"]; [(subprocess.run(["node","--check",f],check=True), print("PASS: node --check",f,flush=True)) for f in files]'
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+PASS: node --check src/cli/helius-cli.mjs
+PASS: node --check src/core/sol_balance_router.mjs
+PASS: node --check scout/scout_rust_wrapper.mjs
+PASS: node --check scout/benchmarks/benchmark_scout.mjs
+PASS: node --check experiments/eval/eval_v15_stable.mjs
+PASS: node --check sol-pnl-course/main.js
+
+exit code: 0
