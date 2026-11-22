@@ -1,0 +1,19 @@
+$ env HOME=/home/ubuntu/accept-kit/audit/RPCsol_pnl/test-home npm run test:node
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+
+> rpc-sol-pnl-evo@3.0.0 test:node
+> node tests/test_all_wallets_enhanced.mjs
+
+  Migration 2 applied: slugify_existing_pages
+  Migration 3 applied: unique_chunk_index
+  Migration 4 applied: access_tokens_and_mcp_log
+  3 migration(s) applied
+❌ Set HELIUS_API_KEY env var first.
+npm notice
+npm notice New major version of npm available! 11.19.1 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+
+exit code: 1

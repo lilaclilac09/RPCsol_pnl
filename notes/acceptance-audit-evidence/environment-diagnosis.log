@@ -1,0 +1,11 @@
+$ python3 -c 'import os,shutil; from pathlib import Path; print("Repository environment loader files:",[p.name for p in Path(".").iterdir() if p.name in [".envrc","flake.nix","shell.nix",".tool-versions"]]); print("Tools:",{k:shutil.which(k) for k in ["node","npm","bun","cargo","pkg-config"]}); print("OpenSSL headers present:",Path("/usr/include/openssl/ssl.h").exists()); print("HELIUS_API_KEY configured:",bool(os.environ.get("HELIUS_API_KEY"))); print("GBrain source populated:",Path("tools/gbrain/src/core/engine-factory.ts").is_file()); print("Missing tools are not hidden by a repo environment loader; Rust prerequisites and live credentials remain unavailable.")'
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+Repository environment loader files: []
+Tools: {'node': '/opt/hostedtoolcache/node/24.22.3/x64/bin/node', 'npm': '/opt/hostedtoolcache/node/24.22.3/x64/bin/npm', 'bun': None, 'cargo': '/home/ubuntu/.cargo/bin/cargo', 'pkg-config': None}
+OpenSSL headers present: True
+HELIUS_API_KEY configured: False
+GBrain source populated: False
+Missing tools are not hidden by a repo environment loader; Rust prerequisites and live credentials remain unavailable.
+
+exit code: 0

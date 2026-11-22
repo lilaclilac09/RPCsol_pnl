@@ -1,6 +1,6 @@
 # ✅ Scout Rust Integration Complete
 
-Your **Scout Rust algorithm is now integrated and ready to use!**
+Historical integration guide, not current deployment verification. Status: BLOCKED — live RPC, GBrain and Rust checks remain limited; next human action: resolve the prerequisites and rerun the live checks. See [the audit and command logs](../../notes/acceptance-audit-2026-11-22.md). Readiness and timing statements below are historical claims, not newly observed results.
 
 ## 🎯 Quick Start
 

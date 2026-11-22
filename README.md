@@ -1,5 +1,7 @@
 # rpc-sol-pnl-evo
 
+Status: BLOCKED — live RPC behavior and enhanced integration tests are not verified; next human action: configure Helius access and complete the documented GBrain/Rust prerequisites before running the live checks.
+
 Solana wallet balance, PnL, and MEV analysis toolkit built on top of the Helius
 RPC. Includes a CLI for live wallet/MEV investigation, a routing engine that
 picks the right fetch strategy per wallet density and API tier, and a research
@@ -8,6 +10,7 @@ archive of the V1 → V15 evolution that produced today's defaults.
 ## Quickstart
 
 ```bash
+git submodule update --init tools/gbrain
 npm install
 cp .env.example .env        # then paste your HELIUS_API_KEY
 npm run cli profile <wallet_address>
@@ -104,6 +107,10 @@ See [docs/explain.md](docs/explain.md) for the full algorithm walkthrough and
   by the default `npm test`).
 * A Helius API key in `HELIUS_API_KEY`. A second key in `HELIUS_API_KEY_2` is
   only needed for the dual-key scout benchmarks.
+
+## Verification scope
+
+Historical timings, archived pass reports and Scout deployment checklists are not current production verification. See [the acceptance audit](notes/acceptance-audit-2026-11-22.md) for command logs and unresolved environment/runtime limits. Local course interaction evidence does not establish live RPC correctness or benchmark speedups. The archived MEV dashboard is not an approved production UI and was not launched by this audit.
 
 ## License
 

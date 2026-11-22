@@ -1,6 +1,6 @@
 # 🚀 Scout Algorithm: Complete Implementation Summary
 
-You now have **4 fully optimized implementations** of Oliver's Scout algorithm, from Node.js to production-grade Rust.
+Historical implementation summary, not current production verification. Status: BLOCKED — live RPC, GBrain and Rust checks remain limited; next human action: resolve the prerequisites and rerun the live checks. See [the audit and command logs](../../notes/acceptance-audit-2026-11-22.md). Built/ready labels and speedups below are historical claims, not newly observed results.
 
 ---
 

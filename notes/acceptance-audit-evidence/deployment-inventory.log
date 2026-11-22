@@ -1,0 +1,8 @@
+$ python3 -c 'import json,subprocess; m=json.loads(subprocess.check_output(["gh","api","repos/lilaclilac09/RPCsol_pnl"],text=True)); print(json.dumps({k:m[k] for k in ["private","homepage","has_pages"]})); print("GitHub deployments:",len(json.loads(subprocess.check_output(["gh","api","repos/lilaclilac09/RPCsol_pnl/deployments?per_page=100"],text=True)))); print("No product URL in the README; live Helius RPC checks not performed without a configured key.")'
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+{"private": false, "homepage": null, "has_pages": false}
+GitHub deployments: 0
+No product URL in the README; live Helius RPC checks not performed without a configured key.
+
+exit code: 0

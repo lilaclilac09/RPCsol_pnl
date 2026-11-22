@@ -1,0 +1,5 @@
+$ git diff --cached --check
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+
+exit code: 0

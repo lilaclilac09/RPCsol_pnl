@@ -1,4 +1,6 @@
-🎉 **SCOUT RUST INTEGRATION - COMPLETE & VERIFIED**
+SCOUT RUST INTEGRATION — HISTORICAL REPORT, NOT CURRENT VERIFICATION
+
+Status: BLOCKED — live RPC, GBrain and Rust checks remain limited; next human action: resolve the prerequisites and rerun the live checks. See ../../notes/acceptance-audit-2026-11-22.md for command logs. Verified/working labels and metrics below are historical claims, not newly observed results.
 
 ═══════════════════════════════════════════════════════════════════════════════
 

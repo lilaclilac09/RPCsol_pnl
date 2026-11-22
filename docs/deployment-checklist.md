@@ -1,5 +1,7 @@
 # ✅ Scout Algorithm - Deployment Checklist
 
+Historical checklist, not current deployment verification. Status: BLOCKED — live RPC, GBrain and Rust checks remain limited; next human action: resolve the prerequisites and rerun the live checks. See [the audit and command logs](../notes/acceptance-audit-2026-11-22.md). Checked boxes and timings below are historical claims, not newly observed results.
+
 ## Pre-Deployment Verification
 
 - [x] Scout Rust binary built and tested

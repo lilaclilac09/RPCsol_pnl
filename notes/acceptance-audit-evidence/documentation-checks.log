@@ -1,0 +1,14 @@
+$ python3 -c 'import pathlib,re,subprocess
+r=subprocess.run(['"'"'python3'"'"','"'"'scripts/check_acceptance.py'"'"','"'"'/home/ubuntu/accept-kit/audit/RPCsol_pnl.md'"'"']); assert r.returncode==0
+assert not re.search(r'"'"'should work|should be fixed|looks good'"'"',pathlib.Path('"'"'README.md'"'"').read_text(),re.I)
+print('"'"'PASS: README contains no forbidden unsupported completion phrases'"'"',flush=True)
+r=subprocess.run(['"'"'git'"'"','"'"'diff'"'"','"'"'--check'"'"']); assert r.returncode==0
+print('"'"'PASS: git diff --check'"'"',flush=True)
+'
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+ACCEPTANCE.md: evidence closer complete
+PASS: README contains no forbidden unsupported completion phrases
+PASS: git diff --check
+
+exit code: 0

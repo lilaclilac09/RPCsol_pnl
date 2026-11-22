@@ -1,0 +1,312 @@
+$ cargo test --manifest-path scout/implementations/sol_balance_scout_rust/Cargo.toml
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded utf8_iter v1.0.4
+  Downloaded http-body v0.4.6
+  Downloaded openssl-macros v0.1.1
+  Downloaded zerotrie v0.2.4
+  Downloaded zerovec v0.11.6
+  Downloaded zerovec-derive v0.11.3
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded anyhow v1.0.102
+  Downloaded autocfg v1.5.0
+  Downloaded yoke-derive v0.8.2
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded futures-channel v0.3.32
+  Downloaded futures-core v0.3.32
+  Downloaded h2 v0.3.27
+  Downloaded cc v1.2.60
+  Downloaded ryu v1.0.23
+  Downloaded sharded-slab v0.1.7
+  Downloaded foreign-types-shared v0.1.1
+  Downloaded icu_properties_data v2.2.0
+  Downloaded tracing-core v0.1.36
+  Downloaded hashbrown v0.17.0
+  Downloaded foreign-types v0.3.2
+  Downloaded shlex v1.3.0
+  Downloaded sync_wrapper v0.1.2
+  Downloaded num-traits v0.2.19
+  Downloaded try-lock v0.2.5
+  Downloaded writeable v0.6.3
+  Downloaded mio v1.2.0
+  Downloaded equivalent v1.0.2
+  Downloaded tower-service v0.3.3
+  Downloaded log v0.4.29
+  Downloaded litemap v0.8.2
+  Downloaded hyper v0.14.32
+  Downloaded reqwest v0.11.27
+  Downloaded synstructure v0.13.2
+  Downloaded getrandom v0.4.2
+  Downloaded openssl v0.10.77
+  Downloaded openssl-probe v0.2.1
+  Downloaded icu_normalizer_data v2.2.0
+  Downloaded once_cell v1.21.4
+  Downloaded url v2.5.8
+  Downloaded futures-macro v0.3.32
+  Downloaded hyper-tls v0.5.0
+  Downloaded smallvec v1.15.1
+  Downloaded zerofrom v0.1.7
+  Downloaded rustls-pemfile v1.0.4
+  Downloaded percent-encoding v2.3.2
+  Downloaded httparse v1.10.1
+  Downloaded slab v0.4.12
+  Downloaded futures-io v0.3.32
+  Downloaded icu_locale_core v2.2.0
+  Downloaded http v0.2.12
+  Downloaded indexmap v2.14.0
+  Downloaded chrono v0.4.44
+  Downloaded tokio-native-tls v0.3.1
+  Downloaded tracing v0.1.44
+  Downloaded tracing-subscriber v0.3.23
+  Downloaded futures-executor v0.3.32
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded libc v0.2.185
+  Downloaded uuid v1.23.0
+  Downloaded displaydoc v0.2.5
+  Downloaded httpdate v1.0.3
+  Downloaded memchr v2.8.0
+  Downloaded mime v0.3.17
+  Downloaded tracing-attributes v0.1.31
+  Downloaded yoke v0.8.2
+  Downloaded potential_utf v0.1.5
+  Downloaded futures v0.3.32
+  Downloaded iana-time-zone v0.1.65
+  Downloaded icu_normalizer v2.2.0
+  Downloaded bitflags v2.11.1
+  Downloaded openssl-sys v0.9.113
+  Downloaded thread_local v1.1.9
+  Downloaded syn v2.0.117
+  Downloaded futures-task v0.3.32
+  Downloaded nu-ansi-term v0.50.3
+  Downloaded native-tls v0.2.18
+  Downloaded want v0.3.1
+  Downloaded idna v1.1.0
+  Downloaded fnv v1.0.7
+  Downloaded form_urlencoded v1.2.2
+  Downloaded icu_collections v2.2.0
+  Downloaded tracing-log v0.2.0
+  Downloaded socket2 v0.5.10
+  Downloaded tinystr v0.8.3
+  Downloaded idna_adapter v1.2.1
+  Downloaded lazy_static v1.5.0
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded futures-sink v0.3.32
+  Downloaded futures-util v0.3.32
+  Downloaded ipnet v2.12.0
+  Downloaded pkg-config v0.3.33
+  Downloaded icu_provider v2.2.0
+  Downloaded async-trait v0.1.89
+  Downloaded socket2 v0.6.3
+  Downloaded base64 v0.21.7
+  Downloaded icu_properties v2.2.0
+  Downloaded tokio-util v0.7.18
+  Downloaded serde_json v1.0.149
+  Downloaded vcpkg v0.2.15
+  Downloaded encoding_rs v0.8.35
+  Downloaded tokio v1.51.1
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.45
+   Compiling libc v0.2.185
+   Compiling cfg-if v1.0.4
+   Compiling stable_deref_trait v1.2.1
+   Compiling smallvec v1.15.1
+   Compiling pin-project-lite v0.2.17
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v1.3.0
+   Compiling once_cell v1.21.4
+   Compiling pkg-config v0.3.33
+   Compiling parking_lot_core v0.9.12
+   Compiling vcpkg v0.2.15
+   Compiling cc v1.2.60
+   Compiling futures-sink v0.3.32
+   Compiling futures-core v0.3.32
+   Compiling scopeguard v1.2.0
+   Compiling bytes v1.11.1
+   Compiling lock_api v0.4.14
+   Compiling itoa v1.0.18
+   Compiling litemap v0.8.2
+   Compiling memchr v2.8.0
+   Compiling writeable v0.6.3
+   Compiling futures-channel v0.3.32
+   Compiling tracing-core v0.1.36
+   Compiling futures-io v0.3.32
+   Compiling syn v2.0.117
+   Compiling icu_normalizer_data v2.2.0
+   Compiling slab v0.4.12
+   Compiling icu_properties_data v2.2.0
+   Compiling utf8_iter v1.0.4
+   Compiling futures-task v0.3.32
+   Compiling serde_core v1.0.228
+   Compiling fnv v1.0.7
+   Compiling openssl v0.10.77
+   Compiling foreign-types-shared v0.1.1
+   Compiling errno v0.3.14
+   Compiling socket2 v0.6.3
+   Compiling mio v1.2.0
+   Compiling signal-hook-registry v1.4.8
+   Compiling log v0.4.29
+   Compiling parking_lot v0.12.5
+   Compiling openssl-sys v0.9.113
+   Compiling foreign-types v0.3.2
+   Compiling http v0.2.12
+   Compiling httparse v1.10.1
+   Compiling hashbrown v0.17.0
+   Compiling equivalent v1.0.2
+   Compiling native-tls v0.2.18
+   Compiling serde v1.0.228
+warning: openssl-sys@0.9.113: Could not find directory of OpenSSL installation, and this `-sys` crate cannot proceed without this knowledge. If OpenSSL is installed and this crate had trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the compilation process. See stderr section below for further information.
+error: failed to run custom build command for `openssl-sys v0.9.113`
+
+Caused by:
+  process didn't exit successfully: `/home/ubuntu/rollout/RPCsol_pnl/scout/implementations/sol_balance_scout_rust/target/debug/build/openssl-sys-e81f6a627a548033/build-script-main` (exit status: 101)
+  --- stdout
+  cargo:rustc-check-cfg=cfg(osslconf, values("OPENSSL_NO_OCB", "OPENSSL_NO_SM4", "OPENSSL_NO_SEED", "OPENSSL_NO_CHACHA", "OPENSSL_NO_CAST", "OPENSSL_NO_IDEA", "OPENSSL_NO_CAMELLIA", "OPENSSL_NO_RC4", "OPENSSL_NO_BF", "OPENSSL_NO_PSK", "OPENSSL_NO_DEPRECATED_3_0", "OPENSSL_NO_SCRYPT", "OPENSSL_NO_SM3", "OPENSSL_NO_RMD160", "OPENSSL_NO_EC2M", "OPENSSL_NO_OCSP", "OPENSSL_NO_CMS", "OPENSSL_NO_COMP", "OPENSSL_NO_SOCK", "OPENSSL_NO_STDIO", "OPENSSL_NO_EC", "OPENSSL_NO_SSL3_METHOD", "OPENSSL_NO_KRB5", "OPENSSL_NO_TLSEXT", "OPENSSL_NO_SRP", "OPENSSL_NO_SRTP", "OPENSSL_NO_RFC3779", "OPENSSL_NO_SHA", "OPENSSL_NO_NEXTPROTONEG", "OPENSSL_NO_ENGINE", "OPENSSL_NO_BUF_FREELISTS", "OPENSSL_NO_RC2"))
+  cargo:rustc-check-cfg=cfg(openssl)
+  cargo:rustc-check-cfg=cfg(libressl)
+  cargo:rustc-check-cfg=cfg(boringssl)
+  cargo:rustc-check-cfg=cfg(awslc)
+  cargo:rustc-check-cfg=cfg(awslc_pregenerated)
+  cargo:rustc-check-cfg=cfg(libressl250)
+  cargo:rustc-check-cfg=cfg(libressl251)
+  cargo:rustc-check-cfg=cfg(libressl252)
+  cargo:rustc-check-cfg=cfg(libressl261)
+  cargo:rustc-check-cfg=cfg(libressl270)
+  cargo:rustc-check-cfg=cfg(libressl271)
+  cargo:rustc-check-cfg=cfg(libressl273)
+  cargo:rustc-check-cfg=cfg(libressl280)
+  cargo:rustc-check-cfg=cfg(libressl281)
+  cargo:rustc-check-cfg=cfg(libressl291)
+  cargo:rustc-check-cfg=cfg(libressl310)
+  cargo:rustc-check-cfg=cfg(libressl321)
+  cargo:rustc-check-cfg=cfg(libressl332)
+  cargo:rustc-check-cfg=cfg(libressl340)
+  cargo:rustc-check-cfg=cfg(libressl350)
+  cargo:rustc-check-cfg=cfg(libressl360)
+  cargo:rustc-check-cfg=cfg(libressl361)
+  cargo:rustc-check-cfg=cfg(libressl370)
+  cargo:rustc-check-cfg=cfg(libressl380)
+  cargo:rustc-check-cfg=cfg(libressl381)
+  cargo:rustc-check-cfg=cfg(libressl382)
+  cargo:rustc-check-cfg=cfg(libressl390)
+  cargo:rustc-check-cfg=cfg(libressl400)
+  cargo:rustc-check-cfg=cfg(libressl410)
+  cargo:rustc-check-cfg=cfg(libressl420)
+  cargo:rustc-check-cfg=cfg(libressl430)
+  cargo:rustc-check-cfg=cfg(ossl101)
+  cargo:rustc-check-cfg=cfg(ossl102)
+  cargo:rustc-check-cfg=cfg(ossl102f)
+  cargo:rustc-check-cfg=cfg(ossl102h)
+  cargo:rustc-check-cfg=cfg(ossl110)
+  cargo:rustc-check-cfg=cfg(ossl110f)
+  cargo:rustc-check-cfg=cfg(ossl110g)
+  cargo:rustc-check-cfg=cfg(ossl110h)
+  cargo:rustc-check-cfg=cfg(ossl111)
+  cargo:rustc-check-cfg=cfg(ossl111b)
+  cargo:rustc-check-cfg=cfg(ossl111c)
+  cargo:rustc-check-cfg=cfg(ossl111d)
+  cargo:rustc-check-cfg=cfg(ossl300)
+  cargo:rustc-check-cfg=cfg(ossl310)
+  cargo:rustc-check-cfg=cfg(ossl320)
+  cargo:rustc-check-cfg=cfg(ossl330)
+  cargo:rustc-check-cfg=cfg(ossl340)
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_LIB_DIR
+  X86_64_UNKNOWN_LINUX_GNU_OPENSSL_LIB_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_LIB_DIR
+  OPENSSL_LIB_DIR unset
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_INCLUDE_DIR
+  X86_64_UNKNOWN_LINUX_GNU_OPENSSL_INCLUDE_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_INCLUDE_DIR
+  OPENSSL_INCLUDE_DIR unset
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_DIR
+  X86_64_UNKNOWN_LINUX_GNU_OPENSSL_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_DIR
+  OPENSSL_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_NO_PKG_CONFIG
+  cargo:rerun-if-env-changed=PKG_CONFIG_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG
+  cargo:rerun-if-env-changed=PKG_CONFIG
+  cargo:rerun-if-env-changed=OPENSSL_STATIC
+  cargo:rerun-if-env-changed=OPENSSL_DYNAMIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+  cargo:rerun-if-env-changed=OPENSSL_STATIC
+  cargo:rerun-if-env-changed=OPENSSL_DYNAMIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+  cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+
+
+  Could not find openssl via pkg-config:
+  Could not run `PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 pkg-config --libs --cflags openssl`
+  The pkg-config command could not be found.
+
+  Most likely, you need to install a pkg-config package for your OS.
+  Try `apt install pkg-config`, or `yum install pkg-config`, or `brew install pkgconf`
+  or `pkg install pkg-config`, or `apk add pkgconfig` depending on your distribution.
+
+  If you've already installed it, ensure the pkg-config command is one of the
+  directories in the PATH environment variable.
+
+  If you did not expect this build to link to a pre-installed system library,
+  then check documentation of the openssl-sys crate for an option to
+  build the library from source, or disable features or dependencies
+  that require pkg-config.
+
+  cargo:warning=Could not find directory of OpenSSL installation, and this `-sys` crate cannot proceed without this knowledge. If OpenSSL is installed and this crate had trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the compilation process. See stderr section below for further information.
+
+  --- stderr
+
+
+  Could not find directory of OpenSSL installation, and this `-sys` crate cannot
+  proceed without this knowledge. If OpenSSL is installed and this crate had
+  trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the
+  compilation process.
+
+  Make sure you also have the development packages of openssl installed.
+  For example, `libssl-dev` on Ubuntu or `openssl-devel` on Fedora.
+
+  If you're in a situation where you think the directory *should* be found
+  automatically, please open a bug at https://github.com/rust-openssl/rust-openssl
+  and include information about your system as well as this message.
+
+  $HOST = x86_64-unknown-linux-gnu
+  $TARGET = x86_64-unknown-linux-gnu
+  openssl-sys = 0.9.113
+
+
+  It looks like you're compiling on Linux and also targeting Linux. Currently this
+  requires the `pkg-config` utility to find OpenSSL but unfortunately `pkg-config`
+  could not be found. If you have OpenSSL installed you can likely fix this by
+  installing `pkg-config`.
+
+
+warning: build failed, waiting for other jobs to finish...
+
+exit code: 101

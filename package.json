@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "undici": "^7.0.0",
-    "gbrain": "link:tools/gbrain"
+    "gbrain": "file:tools/gbrain"
   },
   "devDependencies": {
     "@types/node": "^22.0.0"

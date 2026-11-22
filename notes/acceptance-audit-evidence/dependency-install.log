@@ -1,0 +1,8 @@
+$ npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+working directory: /home/ubuntu/rollout/RPCsol_pnl
+
+npm error code EUNSUPPORTEDPROTOCOL
+npm error Unsupported URL Type "link:": link:tools/gbrain
+npm error A complete log of this run can be found in: /home/ubuntu/.npm/_logs/2026-11-22T19_04_32_317Z-debug-0.log
+
+exit code: 1
